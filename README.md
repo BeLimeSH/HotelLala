@@ -1,1 +1,1 @@
-# 자바먹조 - 세미 프로젝트 - HotelLala
+# 자바먹조 - Semi Project(HotelLala)
