@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Hotel LaLa</title>
 
     <link rel="stylesheet" href="resources/css/main-style.css" type="text/css">
@@ -33,10 +33,12 @@
                     <a href="#">회원가입</a>
                 </div>
             </section>
- 
+
             <!-- 호텔 대표 사진 -->
-            <section class="mainPhoto">
-            </section>
+            <div class="mySlides fade mainPhoto hotelPhoto1"></div>
+            <div class="mySlides fade mainPhoto hotelPhoto2"></div>
+            <div class="mySlides fade mainPhoto hotelPhoto3"></div>
+            <div class="mySlides fade mainPhoto hotelPhoto4"></div>
             
         </header>
 
@@ -210,6 +212,9 @@
         </footer>
 
     </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="resources/js/main.js"></script>
 

@@ -64,24 +64,81 @@ header{height: 900px;}
     color: white;
 }
 
+/* ********** */
+
+.mySlides {display: none;}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .6} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .6} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
 .mainPhoto{
     height: 100%;
-
     position: relative;
     top : -100px;
-
     margin: 0;
+}
 
-    overflow: hidden;
-
+.hotelPhoto1{
     background:
         linear-gradient(
         to bottom,
-        rgba(255,255,255,0) 90%,
-        rgba(255,255,255,0.8)
+        rgba(255,255,255,0) 97%,
+        rgba(255,255,255,1)
         ),
         url(../images/main/hotel1.jpg) no-repeat 50% 50%;
 }
+
+.hotelPhoto2{
+    background:
+        linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 97%,
+        rgba(255,255,255,1)
+        ),
+        url(../images/main/hotel2.jpg) no-repeat 50% 50%;
+}
+
+.hotelPhoto3{
+    background:
+        linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 97%,
+        rgba(255,255,255,1)
+        ),
+        url(../images/main/hotel3.jpg) no-repeat 50% 50%;
+}
+
+.hotelPhoto4{
+    background:
+        linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 97%,
+        rgba(255,255,255,1)
+        ),
+        url(../images/main/hotel4.jpg) no-repeat 50% 50%;
+}
+
+/* ********** */
 
 /* 메인 section */
 .mainContent > section{
@@ -180,7 +237,7 @@ header{height: 900px;}
 }
 
 #joinBtn{
-    border: 2px solid #feb47b;
+    border: 3px solid #feb47b;
     background-color: #ffffff;
     padding: 10px 30px;
     margin: 20px 0 50px;
@@ -191,7 +248,7 @@ header{height: 900px;}
     text-decoration: none;
 }
 
-#joinBtn:hover{border: 2px solid #feb47b; background-color: white; color: gray;}
+#joinBtn:hover{border: 3px solid #feb47b; background-color: white; color: gray;}
 
 /* footer */
 footer ul{list-style: none;}
