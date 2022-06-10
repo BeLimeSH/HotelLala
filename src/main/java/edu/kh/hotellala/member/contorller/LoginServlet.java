@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 페이지로 forward
-		String path ="/WEB-INF/views/login.jsp";
+		String path ="/WEB-INF/views/member/login1.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
 	}
