@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <header>
         <!-- 헤더 -->
@@ -214,5 +215,8 @@
 
     <script src="resources/js/main.js"></script>
 
+=======
+	<h1>test</h1>
+>>>>>>> aabceb9b149ef0df31fdf03e5bda3f059712acb3
 </body>
 </html>
