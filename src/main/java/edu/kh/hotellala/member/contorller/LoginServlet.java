@@ -4,11 +4,16 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet("/member/login")
+import edu.kh.hotellala.member.model.service.MemberService;
+import edu.kh.hotellala.member.model.vo.Member;
+
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet{
 	
 	@Override
@@ -17,12 +22,73 @@ public class LoginServlet extends HttpServlet{
 		String path ="/WEB-INF/views/login.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
+		String path="WEB-INF/views/member/login.jsp";
+		req.getRequestDispatcher(path).forward(req, resp);
 	}
 	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 시도
-		req.getContextPath();
+		
+		String userId = req.getParameter("userId");
+		String userPw = req.getParameter("userPw");
+
+	
+		Member mem = new Member();
+		mem.setMemberEmail(userId);
+		mem.setMemberPw(userPw);
+		
+		try {
+			
+			
+			MemberService service =new MemberService();
+			
+			//아이디, 비밀번호 일치하는 회원을 조회하는 서비스 호출 후 반환
+			Member loginMember = service.login(mem); 
+			
+			HttpSession session =req.getSession();
+			
+			if(loginMember != null) { //로그인 성공 
+				
+				session.setAttribute("loginMember", loginMember );
+				
+				Cookie c = new Cookie("idSaveCheck", userId);
+				
+				
+				//아이디 저장이 체크된 경우
+				if(req.getParameter("idSaveCheck")!=null) {
+					
+					// 쿠키 파일을 30일 동안 유지
+					c.setMaxAge(60*60*24*30);
+					
+					
+				}else {// 체크 안된 경우
+					
+					//쿠키 파일을 0초 동안 유지 
+					//-> 기존에 존재하던 쿠키 파일에 유지 시간을 0초로 덮어씌움
+					//    == 삭제하겠다는 소리
+					c.setMaxAge(0);
+					
+				}
+				
+				c.setPath(req.getContextPath());
+				//req.getContextPath() : 최상위 주소 (/community)
+				// -> /communuty로 시작하는 주소에서만 쿠키 적용 
+				
+				//응답 객체를 이용해서 클라이언트로 전달 
+				resp.addCookie(c);
+				
+			}else { // 로그인 실패 
+				session.setAttribute("message", "아이디와 비밀번호가 일치하지 않습니다.");
+			}
+			
+			
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+
 	}
 }
