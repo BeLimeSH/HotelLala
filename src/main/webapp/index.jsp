@@ -28,9 +28,9 @@
                     </a>
                 </div>
                 <div>
-                    <a href="#">로그인</a>
+                    <a href="login">로그인</a>
                     <span>|</span>
-                    <a href="#">회원가입</a>
+                    <a href="signUp">회원가입</a>
                 </div>
             </section>
 

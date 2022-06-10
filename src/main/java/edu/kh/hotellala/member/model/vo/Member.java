@@ -11,4 +11,12 @@ import lombok.ToString;
 @ToString
 public class Member {
 
+	private String memberEmail;
+	private String memberPw;
+	private String memberName;
+	private String memberTel;
+	private String memberYear;
+	private String memberMonth;
+	private String memberDay;
+	
 }
