@@ -45,3 +45,18 @@ $(function(){
         clearInterval(theInterval);
     }
 });
+
+//nav 스크롤 이벤트 설정
+const colorChange = document.getElementsByClassName("seconds_bar")[0];
+
+window.addEventListener("scroll", function(){
+
+  if(window.pageYOffset > 790){
+    colorChange.style.color = "black";
+  }
+  
+  if(window.pageYOffset <= 790){
+    colorChange.style.color = "white";
+  }
+
+});

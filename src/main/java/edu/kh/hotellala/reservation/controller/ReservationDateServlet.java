@@ -17,6 +17,8 @@ public class ReservationDateServlet extends HttpServlet {
 		String path = "/WEB-INF/views/reservation/reservationDate.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
+		//세션에 값 저장 -> 예약하기 버튼 누를때 세션 값 초기화(메인 페이지 or nav만)
+		
 	}
 
 }

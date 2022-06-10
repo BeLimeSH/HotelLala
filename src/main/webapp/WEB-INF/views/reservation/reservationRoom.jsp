@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel LaLa</title>
 
-    <link rel="stylesheet" href="../../resources/css/main-style.css" type="text/css">
-    <link rel="stylesheet" href="../../resources/css/reservation-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
@@ -66,7 +66,7 @@
                 </label>
 
                 <!-- 이전페이지로 돌아가기 -->
-                <button id="dateUpdateBtn">날짜 수정</button>
+                <button id="dateUpdateBtn" onclick="history.back();">날짜 수정</button>
                 
             </div>
         </section>
@@ -152,7 +152,7 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="../../resources/js/reservation/selectedRoom.js"></script>
+    <script src="${contextPath}/resources/js/reservation/selectedRoom.js"></script>
     
 </body>
 </html>
