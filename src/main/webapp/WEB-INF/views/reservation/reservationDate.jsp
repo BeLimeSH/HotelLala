@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel LaLa</title>
 
-    <link rel="stylesheet" href="../../resources/css/main-style.css" type="text/css">
-    <link rel="stylesheet" href="../../resources/css/reservation-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
@@ -36,7 +36,7 @@
 
         <section class="reserveSection">
             <!-- 날짜 선택 바 -->
-            <form class="dateSelection" id="dateSelection" name="dateSelection" action="reservation-room.html" onsubmit="return dateValidate()">
+            <form class="dateSelection" id="dateSelection" name="dateSelection" action="${contextPath}/reservation/room" onsubmit="return dateValidate()">
 
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>
@@ -157,6 +157,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-    <script src="../../resources/js/reservation/selectedDate.js"></script>
+    <script src="${contextPath}/resources/js/reservation/selectedDate.js"></script>
 </body>
 </html>

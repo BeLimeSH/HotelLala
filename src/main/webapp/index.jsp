@@ -30,15 +30,22 @@
                 <div>
                     <a href="login">로그인</a>
                     <span>|</span>
-                    <a href="#">회원가입</a>
+                    <a href="signUp">회원가입</a>
                 </div>
             </section>
 
+            <!-- 그라데이션 효과용 div -->
+            <div class="gradation"></div>
+       
             <!-- 호텔 대표 사진 -->
-            <div class="mySlides fade mainPhoto hotelPhoto1"></div>
-            <div class="mySlides fade mainPhoto hotelPhoto2"></div>
-            <div class="mySlides fade mainPhoto hotelPhoto3"></div>
-            <div class="mySlides fade mainPhoto hotelPhoto4"></div>
+            <section class="mainPhoto">
+                
+                <img src="resources/images/main/mainPhoto1.jpg" class="slide" style="z-index: -1;">
+                <img src="resources/images/main/mainPhoto2.jpg" class="slide" style="z-index: -2;">
+                <img src="resources/images/main/mainPhoto3.jpg" class="slide" style="z-index: -3;">
+                <img src="resources/images/main/mainPhoto4.jpg" class="slide" style="z-index: -4;">
+                
+            </section>
             
         </header>
 
@@ -75,7 +82,7 @@
                     <br><br><br>
         
                     <ul class="list3">
-                        <h1><a href="#" class="white">예약하기</a></h1>
+                        <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
                     </ul>
                     
                     <br>
@@ -96,7 +103,7 @@
                     <p class="cursor" style="color:black;">MENU</p>
                 </a>
         
-                <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
+                <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
                 <a href="#"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
             </div>
 
@@ -129,7 +136,7 @@
                     <div class="mainTitle">
                         <p class="title">Package & Service</p>
                     </div>
-                    <a href="#">▶ Go to offer</a>
+                    <a href="${contextPath}/reservation/date">▶ Go to offer</a>
 
                     <div id="mainProduct">
         
