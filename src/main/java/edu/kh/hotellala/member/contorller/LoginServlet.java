@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import edu.kh.hotellala.member.model.service.MemberService;
-import edu.kh.hotellala.member.model.vo.Member;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
@@ -19,7 +17,7 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 페이지로 forward
-		String path ="/WEB-INF/views/login.jsp";
+		String path ="/WEB-INF/views/member/login1.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
 		String path="WEB-INF/views/member/login.jsp";
