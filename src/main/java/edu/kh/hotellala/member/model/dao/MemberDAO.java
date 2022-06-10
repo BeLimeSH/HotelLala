@@ -102,6 +102,7 @@ public class MemberDAO {
 		
 		try {
 			String sql = prop.getProperty("signUp");
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mem.getMemberEmail());
 			pstmt.setString(2, mem.getMemberPw());

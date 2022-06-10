@@ -17,6 +17,8 @@ public class ReservationRequestServlet extends HttpServlet {
 		String path = "/WEB-INF/views/reservation/reservationRoom.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
+		System.out.println( req.getParameter("reserveDate") );
+		
 	}
 	
 	@Override
