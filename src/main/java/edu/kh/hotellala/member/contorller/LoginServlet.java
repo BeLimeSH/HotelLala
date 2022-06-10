@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.hotellala.member.model.service.MemberService;
+import edu.kh.hotellala.member.model.vo.Member;
+
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
@@ -20,8 +23,6 @@ public class LoginServlet extends HttpServlet{
 		String path ="/WEB-INF/views/member/login1.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
-		String path="WEB-INF/views/member/login.jsp";
-		req.getRequestDispatcher(path).forward(req, resp);
 	}
 	
 	
