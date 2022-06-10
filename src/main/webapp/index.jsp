@@ -49,7 +49,6 @@
             
         </header>
 
-
         <!-- nav -->
         <nav>
 
@@ -100,7 +99,7 @@
         
                 <a href="#" class="seconds_bar">
                     <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor" style="color:black;">MENU</p>
+                    <p class="cursor">MENU</p>
                 </a>
         
                 <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
@@ -183,7 +182,7 @@
                     </p>
 
                     <div id="mainBtn">
-                        <a id="joinBtn" href="#">join</a>
+                        <a id="joinBtn" href="signUp">join</a>
                     </div>
 
                     <img class="dividing-line" src="resources/images/main/leaf-dividing-line.png" alt="구분선">
