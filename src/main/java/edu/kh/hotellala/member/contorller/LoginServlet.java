@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet{
 		// 로그인 페이지로 forward
 		String path ="/WEB-INF/views/member/login1.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
-		
+
 	}
 	
 	
@@ -30,13 +30,13 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 시도
 		
-		String userId = req.getParameter("userId");
-		String userPw = req.getParameter("userPw");
+		String inputId = req.getParameter("inputId");
+		String inputPw = req.getParameter("inputPw");
 
 	
 		Member mem = new Member();
-		mem.setMemberEmail(userId);
-		mem.setMemberPw(userPw);
+		mem.setMemberEmail(inputId);
+		mem.setMemberPw(inputPw);
 		
 		try {
 			
@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet{
 				
 				session.setAttribute("loginMember", loginMember );
 				
-				Cookie c = new Cookie("idSaveCheck", userId);
+				Cookie c = new Cookie("idSaveCheck", inputId);
 				
 				
 				//아이디 저장이 체크된 경우
@@ -81,6 +81,8 @@ public class LoginServlet extends HttpServlet{
 			}else { // 로그인 실패 
 				session.setAttribute("message", "아이디와 비밀번호가 일치하지 않습니다.");
 			}
+			
+			resp.sendRedirect(req.getContextPath());
 			
 			
 		

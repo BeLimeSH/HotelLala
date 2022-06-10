@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <title>로그인</title>
     
     <link rel="stylesheet" href="resources/css/qna.css">
     <link rel="stylesheet" href="resources/css/notice.css">
@@ -20,12 +20,14 @@
         <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
         <a href="./index.html" class="header fixed">Hotel LaLa</a>
         
-        <form action="login" methoed="get" class="first">
-            <div class="subtitle" >
-                <h1 class="notice">Sign in</h1>
-                <h4 class="notice_subtitle">라라호텔만의 특별함을 느껴보세요.</h4>
-            </div>
-            <div class="memberLogin">
+     
+            
+            <form action="login" method="post" class="first" onsubmit="return loginValidate()">
+                <div class="subtitle" >
+                    <h1 class="notice">Sign in</h1>
+                    <h4 class="notice_subtitle">라라호텔만의 특별함을 느껴보세요.</h4>
+                </div>
+                <div class="memberLogin">
                 <p class="loginFrm">
                     <span class="alertMessage">아이디를 입력해주세요.</span>
                     <label for="frm_userid" class="hidden">아이디</label>
@@ -41,25 +43,37 @@
                         <i class="fa-solid fa-check"></i>
                         <input type="checkbox" id="idSaveCheck">
                     </span>
-                    <label for="idSaveCheck">아이디 저장</label>
-                </span>
-                <button type="submit" class="loginBtn">로그인</button>
-                <div class="loginLink">
-                    <a href="signup.html">회원가입</a>
-                    <a href="">아이디/비밀번호 찾기</a>
+                    
+                    
+                    <%-- 쿠키에 idSaveCheck가 있는 경우--%>
+                    <c:if test="${ !empty cookie.idSaveCheck.value}">
+                        <%-- chk변수 생성 (page scope)--%>
+                        <c:set var="chk" value="checked"/>
+                        
+                    </c:if>
+                    
+                    
+                    
+                    <label for="idSaveCheck">
+                        <input type="checkbox"name="idSaveCheck" id="idSaveCheck" ${chk} >아이디 저장</label>
+                    </span>
+                    <button type="submit" class="loginBtn">로그인</button>
+                    <div class="loginLink">
+                        <a href="signup.html">회원가입</a>
+                        <a href="">아이디/비밀번호 찾기</a>
+                    </div>
                 </div>
-            </div>
-        </form>
- 
-       
-        
-        <div class="seconds">
-            <a href="#" class="first_bar">
-                <i class="fa-solid fa-x cursor"></i>
-                <p class="cursor" style="">close</p>
-                <a href="login.html"><p class="login cursor">Login</p></a>
-                <a href="signup.html"><p class="signup cursor">signUp</p></a>
-            </a>
+            </form>
+            
+     
+   
+            <div class="seconds">
+                <a href="#" class="first_bar">
+                    <i class="fa-solid fa-x cursor"></i>
+                    <p class="cursor" style="">close</p>
+                    <a href="login.html"><p class="login cursor">Login</p></a>
+                    <a href="signup.html"><p class="signup cursor">signUp</p></a>
+                </a>
 
             <div class="nav_bar">
                 <ul class="list1">
@@ -120,6 +134,9 @@
             </div>
         </div>
     </footer>
+    
+    
+
     <script src="js/index.js"></script>
     <script src="js/login.js"></script>
 </body>
