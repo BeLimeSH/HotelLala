@@ -15,7 +15,6 @@ toggleBtn2.addEventListener('click',()=>{
 });
 
 //메인 사진 슬라이드 쇼
-
 $(function(){
     
     var mainPhoto = $('.mainPhoto');
@@ -44,4 +43,19 @@ $(function(){
     function stopSlide() { //자동 멈추기
         clearInterval(theInterval);
     }
+});
+
+//nav 스크롤 이벤트 설정
+const colorChange = document.getElementsByClassName("seconds_bar")[0];
+
+window.addEventListener("scroll", function(){
+
+  if(window.pageYOffset > 790){
+    colorChange.style.color = "black";
+  }
+  
+  if(window.pageYOffset <= 790){
+    colorChange.style.color = "white";
+  }
+
 });

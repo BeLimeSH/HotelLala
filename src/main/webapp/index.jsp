@@ -15,101 +15,114 @@
 
 <body>
 
-    <main>
+    <header>
+        <!-- 헤더 -->
+        <section class="headArea">
+            <div></div>
+            <div>
+                <a href="#">
+                    HOTEL LALA
+                    <i class="fa-solid fa-cloud-moon"></i>
+                </a>
+            </div>
 
-        <header>
-            <!-- 헤더 -->
-            <section class="headArea">
-                <div></div>
-                <div>
-                    <a href="#">
-                        HOTEL LALA
-                        <i class="fa-solid fa-cloud-moon"></i>
-                    </a>
-                </div>
+            <c:if test="${empty SessionScope.loginMember}">
+
                 <div>
                     <a href="login">로그인</a>
                     <span>|</span>
                     <a href="signUp">회원가입</a>
                 </div>
-            </section>
 
-            <!-- 그라데이션 효과용 div -->
-            <div class="gradation"></div>
-       
-            <!-- 호텔 대표 사진 -->
-            <section class="mainPhoto">
-                
-                <img src="resources/images/main/mainPhoto1.jpg" class="slide" style="z-index: -1;">
-                <img src="resources/images/main/mainPhoto2.jpg" class="slide" style="z-index: -2;">
-                <img src="resources/images/main/mainPhoto3.jpg" class="slide" style="z-index: -3;">
-                <img src="resources/images/main/mainPhoto4.jpg" class="slide" style="z-index: -4;">
-                
-            </section>
+            </c:if>
+
+            <c:if test="${!empty SessionScope.loginMember}">
+
+                <div>
+                    <a href="#">로그아웃</a>
+                    <span>|</span>
+                    <a href="myPage">마이페이지</a>
+                </div>
+
+            </c:if>
+
+        </section>
+
+        <!-- 그라데이션 효과용 div -->
+        <div class="gradation"></div>
+   
+        <!-- 호텔 대표 사진 -->
+        <section class="mainPhoto">
             
-        </header>
+            <img src="resources/images/main/mainPhoto1.jpg" class="slide" style="z-index: -1;">
+            <img src="resources/images/main/mainPhoto2.jpg" class="slide" style="z-index: -2;">
+            <img src="resources/images/main/mainPhoto3.jpg" class="slide" style="z-index: -3;">
+            <img src="resources/images/main/mainPhoto4.jpg" class="slide" style="z-index: -4;">
+            
+        </section>
+        
+    </header>
 
+    <!-- nav -->
+    <nav>
 
-        <!-- nav -->
-        <nav>
+        <div class="seconds">
+    
+            <a href="#" class="first_bar">
+                <i class="fa-solid fa-x cursor"></i>
+                <p class="cursor">close</p>
+            <a href="#"><p class="login cursor">Login</p></a>
+            <a href="#"><p class="signup cursor">signUp</p></a>
+                
+    
+            <div class="nav_bar">
+    
+                <ul class="list1">
+                    <h4>Contact</h4>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">Q&A</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+    
+                <br><br>
+    
+                <ul class="list2">
+                    <h4>Location</h4>
+                    <li><a href="#">오시는 길</a></li>
+                    <li><a href="#">호텔라라 소개</a></li>
+                </ul>
+    
+                <br><br><br>
+    
+                <ul class="list3">
+                    <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
+                </ul>
+                
+                <br>
+    
+                <ul class="list3">
+                    <h1><a href="#" class="white">예약확인</a></h1>
+                </ul>
+                
+                <br>
+    
+            </div> 
+        </div>
+    
+        <div class="third">
+    
+            <a href="#" class="seconds_bar">
+                <i class="fa-solid fa-bars cursor"></i>
+                <p class="cursor">MENU</p>
+            </a>
+    
+            <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
+            <a href="#"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
+        </div>
 
-            <div class="seconds">
-        
-                <a href="#" class="first_bar">
-                    <i class="fa-solid fa-x cursor"></i>
-                    <p class="cursor">close</p>
-                <a href="#"><p class="login cursor">Login</p></a>
-                <a href="#"><p class="signup cursor">signUp</p></a>
-                    
-        
-                <div class="nav_bar">
-        
-                    <ul class="list1">
-                        <h4>Contact</h4>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">Q&A</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-        
-                    <br><br>
-        
-                    <ul class="list2">
-                        <h4>Location</h4>
-                        <li><a href="#">오시는 길</a></li>
-                        <li><a href="#">호텔라라 소개</a></li>
-                    </ul>
-        
-                    <br><br><br>
-        
-                    <ul class="list3">
-                        <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
-                    </ul>
-                    
-                    <br>
-        
-                    <ul class="list3">
-                        <h1><a href="#" class="white">예약확인</a></h1>
-                    </ul>
-                    
-                    <br>
-        
-                </div> 
-            </div>
-        
-            <div class="third">
-        
-                <a href="#" class="seconds_bar">
-                    <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor" style="color:black;">MENU</p>
-                </a>
-        
-                <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-                <a href="#"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-            </div>
+    </nav>
 
-        </nav>
-        
-
+    <main>
         <section class="mainContent">
             <!-- 호텔 소개 -->
             <section>
@@ -183,43 +196,19 @@
                     </p>
 
                     <div id="mainBtn">
-                        <a id="joinBtn" href="#">join</a>
+                        <a id="joinBtn" href="signUp">join</a>
                     </div>
 
                     <img class="dividing-line" src="resources/images/main/leaf-dividing-line.png" alt="구분선">
 
                 </article>
             </section>
-
         </section>
-
-        <!-- footer -->
-        <footer>
-            <div class="inner">
-                <div class="upper">
-                    <h1>Hotel LaLa</h1>
-                    <ul>
-                        <li><a href="#">Policy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Family Site</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
-                </div>
-    
-                <div class="lower">
-                    <address>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                        TEL : 02-111-1234 C.P : 010-1234-5678
-                    </address>
-                    <p>
-                        2022 Hotel LaLa &copy; copyright all right reserved.
-                    </p>
-                </div>
-            </div>
-        </footer>
-
     </main>
 
+    <!-- footer -->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

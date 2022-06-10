@@ -27,7 +27,6 @@ public class Member {
 	private int membershipNo;//멤버십 번호 
 	
 
-
 	private String memberTel;
 	private String memberYear;
 	private String memberMonth;

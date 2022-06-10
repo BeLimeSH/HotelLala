@@ -54,6 +54,8 @@ header{height: 900px;}
     flex-basis: 20%;
     padding: 10px;
     color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
     
     display: flex;
     justify-content: flex-end;
@@ -423,7 +425,9 @@ nav .menu-btn-title01{
     align-items: center;
     position: absolute;
     right: 0px;
-    font: bold 15px "arial";
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 17px;
     top: 145px;
 }
 
@@ -439,22 +443,26 @@ nav .menu-btn-title02{
     position: absolute;
     right: 0px;
     top: 181px;
-    font: bold 15px "arial";
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 17px;
     box-shadow: 5px 5px 10px black;
-	opacity: 0.3;
+	opacity: 0.7;
 }
 
 nav .fa-bars{
-    color:black;
     position:absolute;
     top:122px;
-    right:85px;
+    right:84px;
+    font-size: 17px;
 }
 
 nav .third p{
     position:absolute;
-    top:121px;
-    right:32px;
-    color:white;
-    font: bold 15px "arial";
+    top:116px;
+    right:25px;
+    font-weight: bold;
+    font-size: 17px;
 }
+
+nav .seconds_bar{color: black; letter-spacing: 1px;}
