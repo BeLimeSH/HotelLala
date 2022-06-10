@@ -1,17 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/nav.css">
-    <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
     <div class="seconds">
         <a href="#" class="first_bar">
             <i class="fa-solid fa-x cursor"></i>
@@ -56,5 +45,3 @@
     </div>
 </div>
     <script src="resources/js/main.js"></script>
-</body>
-</html>

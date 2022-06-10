@@ -102,9 +102,19 @@ public class MemberDAO {
 		
 		try {
 			String sql = prop.getProperty("signUp");
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mem.getMemberEmail());
+			pstmt.setString(2, mem.getMemberPw());
+			pstmt.setString(3, mem.getMemberName());
+			pstmt.setString(4, mem.getMemberTel());
+			pstmt.setString(5, mem.getMemberYear());
+			pstmt.setString(6, mem.getMemberMonth());
+			pstmt.setString(7, mem.getMemberDay());
+			
+			result= pstmt.executeUpdate();
 		}finally {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt
+			close(pstmt);
 		}
 		
 		return result;
