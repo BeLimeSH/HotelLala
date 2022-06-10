@@ -26,10 +26,6 @@ public class Member {
 	private char secessionFlag; //탈퇴여부
 	private int membershipNo;//멤버십 번호 
 	
-
-	private String memberEmail;
-	private String memberPw;
-	private String memberName;
 	private String memberTel;
 	private String memberYear;
 	private String memberMonth;
