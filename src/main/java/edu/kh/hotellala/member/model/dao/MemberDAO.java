@@ -103,8 +103,8 @@ public class MemberDAO {
 		try {
 			String sql = prop.getProperty("signUp");
 		}finally {
-			pstmt = conn.prepareStatement(sql);
-			pstmt
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt
 		}
 		
 		return result;

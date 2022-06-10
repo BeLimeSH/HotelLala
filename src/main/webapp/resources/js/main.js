@@ -15,7 +15,6 @@ toggleBtn2.addEventListener('click',()=>{
 });
 
 //메인 사진 슬라이드 쇼
-
 $(function(){
     
     var mainPhoto = $('.mainPhoto');
