@@ -27,9 +27,7 @@ public class Member {
 	private int membershipNo;//멤버십 번호 
 	
 
-	private String memberEmail;
-	private String memberPw;
-	private String memberName;
+
 	private String memberTel;
 	private String memberYear;
 	private String memberMonth;

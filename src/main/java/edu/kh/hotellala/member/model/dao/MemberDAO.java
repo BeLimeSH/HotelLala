@@ -53,6 +53,8 @@ public class MemberDAO {
 			pstmt.setString(1,mem.getMemberEmail());
 			pstmt.setString(2, mem.getMemberPw());
 			
+			rs= pstmt.executeQuery();
+			
 			
 			if(rs.next()) {
 				
@@ -60,7 +62,7 @@ public class MemberDAO {
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
 				Date birthDay= rs.getDate("BIRTH_DAY");
-				char Gender =rs.getString("MEMBER_GENDER").charAt(0);
+				char gender =rs.getString("GENDER").charAt(0);
 				String address =rs.getString("ADDRESS");
 				String request = rs.getString("REQUEST");
 				int membershipNo =rs.getInt("MEMBERSHIP_NO");
@@ -71,10 +73,11 @@ public class MemberDAO {
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
-				loginMember.setGender(Gender);
+				loginMember.setBirthDay(birthDay);
+				loginMember.setGender(gender);
 				loginMember.setAddress(address);
 				loginMember.setRequest(request);
-				loginMember.setGender(Gender);
+				loginMember.setMembershipNo(membershipNo);
 				
 		
 		
