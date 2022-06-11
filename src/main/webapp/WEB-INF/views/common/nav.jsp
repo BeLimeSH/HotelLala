@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    
+    <!-- 네비 시작 -->
     <nav>
         <div class="seconds">
     
@@ -16,8 +16,8 @@
     
                 <ul class="list1">
                     <h4>Contact</h4>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">Q&A</a></li>
+                    <li><a href="${contextPath}/menu/notice">공지사항</a></li>
+                    <li><a href="${contextPath}/menu/qna">Q&A</a></li>
                     <li><a href="${contextPath}/menu/faq">FAQ</a></li>
                 </ul>
     
@@ -59,7 +59,11 @@
 
     </nav>
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="${contextPath}/resources/js/main.js"></script>
+    
+    <!-- 네비 시작 -->
+    
+   <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	-->
+	
+    
 

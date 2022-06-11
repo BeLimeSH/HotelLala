@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +10,14 @@
     <title>signUp</title>
     <link rel="stylesheet" href="resources/css/qna.css">
     <link rel="stylesheet" href="resources/css/signup.css">
+    <link rel="stylesheet" href="resources/css/nav.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <div class="logo">
             <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-            <a href="./index.html" class="header fixed">Hotel LaLa</a>
+            <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         </div>
         <section class="signUp-content">
  
@@ -88,8 +89,8 @@
                     <input type="text" id="memberTel" name="memberTel"
                             placeholder="(- 없이 숫자만 입력)" maxlength="11">
                 </div>
-b
                 <span class="signUp-message error" id="telMessagm. e">전화번호 형식이 올바르지 않습니다.</span>
+                <br><br>
 
                 
                 <span class="required">생년월일</span> 
@@ -136,40 +137,15 @@ b
 
         </section>
     </div>
-        
-        <div class="seconds">
-            <a href="#" class="first_bar">
-                <i class="fa-solid fa-x cursor"></i>
-                <p class="cursor" style="">close</p>
-                <a href="login.html"><p class="login cursor">Login</p></a>
-                <a href="signup.html"><p class="signup cursor">signUp</p></a>
-            </a>
+       
 
-            <div class="nav_bar">
-                <ul class="list1">
-                    <h4>Contact</h4>
-                    <li><a href="notice.html">공지사항</a></li>
-                    <li><a href="qna.html">Q&A</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-                <br><br>
-                <ul class="list2">
-                    <h4>Location</h4>
-                    <li><a href="#">오시는 길</a></li>
-                    <li><a href="#">층별안내</a></li>
-                    <li><a href="#">호텔라라 소개</a></li>
-                </ul>
-                <br><br><br>
 
-                <ul class="list3">
-                    <h1><a href="#" class="white">예약하기</a></h1>
-                </ul><br>
-                <ul class="list3">
-                    <h1><a href="#" class="white">예약확인</a></h1>
-                </ul><br>
-            </div> 
-        </div>
 
+
+      <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+        <%--   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>--%>
+ 	
+ 	<div>
         <div class="third">
                 <a href="#" class="seconds_bar">
                     <i class="fa-solid fa-bars cursor"></i>
@@ -179,29 +155,7 @@ b
             <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
             <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
         </div>
-        <!-- <footer>
-            <div class="inner">
-                <div class="upper">
-                    <h1>Hotel LaLa</h1>
-                    <ul>
-                        <li><a href="#">Policy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Family Site</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
-                </div>
-    
-                <div class="lower">
-                    <address>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                        TEL : 02-111-1234 C.P : 010-1234-5678
-                    </address>
-                    <p>
-                        2022 Hotel LaLa &copy; copyright all right reserved.
-                    </p>
-                </div>
-            </div>
-        </footer> -->
+
     </div>
     <c:if test="${!empty sessionScope.message}">
         <script>
@@ -209,6 +163,10 @@ b
         </script>
         <c:remove var="message" scope="session" />
     </c:if>
-    <script src="js/index.js"></script>
+	
+
+
+    <script src="${contextPath}/resources/js/menu/nav.js"></script>
+ 
 </body>
 </html>

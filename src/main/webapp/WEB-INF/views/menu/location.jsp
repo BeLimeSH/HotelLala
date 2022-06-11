@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>location</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/location.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
-
+    <link rel="stylesheet" href="css/qna.css">
+    <link rel="stylesheet" href="css/location.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-    	
 
         <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
         <a href="./index.html" class="header fixed">Hotel LaLa</a>
@@ -104,17 +101,7 @@
         
 
         </div>
-        
-        <div class="seconds">
-            <a href="#" class="first_bar">
-                <i class="fa-solid fa-x cursor"></i>
-                <p class="cursor" style="">close</p>
-                <a href="login.html"><p class="login cursor">Login</p></a>
-                <a href="signup.html"><p class="signup cursor">signUp</p></a>
-            </a>
-
-        <jsp:include page="/WEB-INF/views/common/nav.jsp"></jsp:include>
-     	</div>
+        <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
         <div class="third">
                 <a href="#" class="seconds_bar">
@@ -150,9 +137,9 @@
         </footer>
     </div>
     
-    
+    <script src="js/index.js"></script>
     <!-- <script src="js/faq.js"></script> -->
-    <script src="${contextPath}/resources/js/menu/location.js"></script>
+    <script src="js/location.js"></script>
 
 
 	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f87425357f955c672a58b561cdeeccaa"></script>
