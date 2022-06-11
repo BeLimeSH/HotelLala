@@ -17,7 +17,7 @@ toggleBtn2.addEventListener('click',()=>{
 
 //메인 사진 슬라이드 쇼
 if( $('.mainPhoto') != '' ) {
-
+  
   console.log("야호");
   
   const colorChange = document.getElementsByClassName("seconds_bar")[0];
