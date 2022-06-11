@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+a{
+    text-decoration: none;
+}
+table a {
+	text-decoration: none;
+    color:black;
+}
+/* div{
+    border:1px solid black;
+    
+} */
+.seq a {color:black;}
+.first{
+    display:flex;
+    width: 100%;
+    max-width: 1400px;
+    flex-direction: column;
+    /* margin-left:315px; */
+    margin-top:130px;
+    height:560px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+}
+.notice_table-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: cdenter;
+}
+.tab1{
+    width:60%; /*테이블을 맞추면 알아서 간격유지*/
+    padding:20px;
+    border-collapse:collapse;
+    margin-top: 20px;
+}
+.tab1 th{
+    padding:15px;
+}
+.tab1 tr{
+    border-bottom:1px solid #ddd;
+}
+.tab1 tr > * {
+    text-align:center
+}
+.tab1 td:nth-of-type(2) {
+    border-left:1px solid #ddd;
+    padding:15px;
+    text-align: left;
+}
+.tab1 td:nth-of-type(3) {
+    border-left:1px solid #ddd;
+}
+.subtitle{
+    display:flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-right:641px;
+}
+.notice_subtitle{
+    margin-top:50px;
+}
+
+.inner:{
+    width:100%;
+}
+.seq{
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.active1 {
+    position:absolute;
+    top:70%;
+    left:50%;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.active1 a{
+    padding:9px;
+    color:black;
+}
+
