@@ -80,7 +80,6 @@
                             placeholder="성명" maxlength="5">
                 </div>
 
-
                 <label for="memberTel">
                     <span class="required">전화번호</span> 
                 </label>
@@ -89,8 +88,8 @@
                     <input type="text" id="memberTel" name="memberTel"
                             placeholder="(- 없이 숫자만 입력)" maxlength="11">
                 </div>
-
-                <span class="signUp-message error">전화번호 형식이 올바르지 않습니다.</span>
+b
+                <span class="signUp-message error" id="telMessagm. e">전화번호 형식이 올바르지 않습니다.</span>
 
                 
                 <span class="required">생년월일</span> 
@@ -204,7 +203,12 @@
             </div>
         </footer> -->
     </div>
-    
+    <c:if test="${!empty sessionScope.message}">
+        <script>
+            alert("${message}");
+        </script>
+        <c:remove var="message" scope="session" />
+    </c:if>
     <script src="js/index.js"></script>
 </body>
 </html>
