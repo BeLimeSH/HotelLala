@@ -140,5 +140,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
     <script src="${contextPath}/resources/js/reservation/selectedDate.js"></script>
+    <script src="${contextPath}/resources/js/main.js"></script>
+
 </body>
 </html>
