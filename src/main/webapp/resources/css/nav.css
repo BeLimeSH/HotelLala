@@ -4,7 +4,7 @@ nav *{
     box-sizing: border-box;
 }
 
-nav ul {list-style: none;}
+nav ul {list-style: none;} 
 
 nav a {
 	text-decoration: none;
@@ -166,6 +166,5 @@ nav .third p{
     position:absolute;
     top:121px;
     right:32px;
-    color:white;
     font: bold 15px "arial";
 }
