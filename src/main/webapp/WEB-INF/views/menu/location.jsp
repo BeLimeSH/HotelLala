@@ -103,15 +103,6 @@
         </div>
         <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
-        <div class="third">
-                <a href="#" class="seconds_bar">
-                    <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor">MENU</p>
-                
-                </a>
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-        </div>
         <footer>
             <div class="footert-inner">
                 <div class="upper">

@@ -146,15 +146,7 @@
         <%--   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>--%>
  	
  	<div>
-        <div class="third">
-                <a href="#" class="seconds_bar">
-                    <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor">MENU</p>
-                
-                </a>
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-        </div>
+ 
 
     </div>
     <c:if test="${!empty sessionScope.message}">
@@ -165,8 +157,8 @@
     </c:if>
 	
 
-
-    <script src="${contextPath}/resources/js/menu/nav.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/main.js"></script>
  
 </body>
 </html>
