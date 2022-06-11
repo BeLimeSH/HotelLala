@@ -75,7 +75,7 @@
                                 </li>
                                 
                                 <li>
-                                    <span class="payment-list">엑스트라 베드(40,000원)</span>
+                                    <span class="payment-list">엑스트라 베드(65,000원)</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list">0</span>
                                     <span class="payment-list">|</span>

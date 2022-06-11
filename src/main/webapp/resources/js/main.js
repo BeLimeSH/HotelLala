@@ -20,8 +20,10 @@ if( $('.mainPhoto') != '' ) {
   
   console.log("야호");
   
-  const colorChange = document.getElementsByClassName("seconds_bar")[0];
-  colorChange.style.color = "white";
+  const colorChange1 = document.getElementsByClassName("fa-bars")[0];
+  const colorChange2 = document.getElementsByClassName("seconds_bar")[0];
+  colorChange1.style.color = "white";
+  colorChange2.style.color = "white";
   
   $(function(){
       
@@ -57,11 +59,13 @@ if( $('.mainPhoto') != '' ) {
   window.addEventListener("scroll", function(){
   
     if(window.pageYOffset > 790){
-      colorChange.style.color = "black";
+      colorChange1.style.color = "black";
+      colorChange2.style.color = "black";
     }
     
     if(window.pageYOffset <= 790){
-      colorChange.style.color = "white";
+      colorChange1.style.color = "white";
+      colorChange2.style.color = "white";
     }
   
   });
