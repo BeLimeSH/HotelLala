@@ -66,7 +66,7 @@
                                 </li>
                                 
                                 <li>
-                                    <div class="payment-list">엑스트라 베드 / 40,000원</div>
+                                    <div class="payment-list">엑스트라 베드 / 65,000원</div>
                                     
                                     <div class="btn-area">
                                         <button type="button" class="minusBtn"><i class="fa-solid fa-minus"></i></button>
