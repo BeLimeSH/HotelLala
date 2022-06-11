@@ -64,63 +64,7 @@
     </header>
 
     <!-- nav -->
-    <nav>
-
-        <div class="seconds">
-    
-            <a href="#" class="first_bar">
-                <i class="fa-solid fa-x cursor"></i>
-                <p class="cursor">close</p>
-            <a href="#"><p class="login cursor">Login</p></a>
-            <a href="#"><p class="signup cursor">signUp</p></a>
-                
-    
-            <div class="nav_bar">
-    
-                <ul class="list1">
-                    <h4>Contact</h4>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">Q&A</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-    
-                <br><br>
-    
-                <ul class="list2">
-                    <h4>Location</h4>
-                    <li><a href="#">오시는 길</a></li>
-                    <li><a href="#">호텔라라 소개</a></li>
-                </ul>
-    
-                <br><br><br>
-    
-                <ul class="list3">
-                    <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
-                </ul>
-                
-                <br>
-    
-                <ul class="list3">
-                    <h1><a href="#" class="white">예약확인</a></h1>
-                </ul>
-                
-                <br>
-    
-            </div> 
-        </div>
-    
-        <div class="third">
-    
-            <a href="#" class="seconds_bar">
-                <i class="fa-solid fa-bars cursor"></i>
-                <p class="cursor">MENU</p>
-            </a>
-    
-            <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="#"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-        </div>
-
-    </nav>
+    <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
     <main>
         <section class="mainContent">

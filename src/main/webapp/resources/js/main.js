@@ -16,7 +16,7 @@ toggleBtn2.addEventListener('click',()=>{
 });
 
 //메인 사진 슬라이드 쇼
-if( $('.mainPhoto') != '' ) {
+if( $('.mainPhoto').length != 0 ) {
   
   console.log("야호");
   

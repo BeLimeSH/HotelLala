@@ -13,15 +13,12 @@ main{margin: auto;}
 *{font-family: 'IBMPlexSansKR-Regular';} */
 
 @font-face {
-    font-family: 'GmarketSans';
-    font-weight: 500; 
-    font-style: normal; 
-    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff2) format('woff2'),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff) format('woff');
-    font-display: swap;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
-*{font-family: 'GmarketSans';}
+*{font-family: 'GmarketSansMedium';}
 
 /* header */
 header{height: 900px;}
@@ -65,7 +62,6 @@ header{height: 900px;}
     flex-basis: 20%;
     padding: 10px;
     color: white;
-    font-weight: bold;
     letter-spacing: 1px;
     
     display: flex;
@@ -181,7 +177,7 @@ header{height: 900px;}
 
 .mainSection2 > a{
     font-size: 22px;
-    margin: 20px 30px;
+    margin: 20px 10px;
     text-decoration: none;
     color: #ff7E5F;
 }
@@ -471,8 +467,8 @@ nav .fa-bars{
 
 nav .third p{
     position:absolute;
-    top:116px;
-    right:25px;
+    top:121px;
+    right:18px;
     font-weight: bold;
     font-size: 17px;
 }
