@@ -15,30 +15,38 @@ a {
 }
 
 .inners{
-    position:absolute;
+    /* position:absolute;
     top: 100px;
-    left:310px;
+    left:310px; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width:100%;
     max-width: 1400px;
     margin: 0 auto 60px;
+    margin-top: 130px;
 }
-
+.inner-text{
+    display:flex;
+    width:100%; 
+    margin-left:345px;
+}
 .down.exit{
     display:none;
 }
 .label .up{
-    position: absolute;
-    right:443px;
+    margin-left:812px;
     display:none;
 }
 .up.active{
-    display:inline-block;
+    display:flex;
 }
 /* .content{
     display:none;
 } */
 .content.active{
-    display:block;
+    display:flex;
 }
 
 .inners h1{
@@ -94,14 +102,14 @@ a {
 .content-inner>p{
     color:black;
 }
-.trnas{
+.trans{
     transition: 0.5s;
 }
 /* .content{
     display:none;
 } */
-footer{
-    margin-top: 500px;
+.foot{
+
     width:100%;
     /* background-color: black; */
 }

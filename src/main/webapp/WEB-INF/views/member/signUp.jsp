@@ -19,6 +19,7 @@
             <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
             <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         </div>
+        
         <section class="signUp-content">
  
             <form action="signUp" method="POST" name="signUp-form">
@@ -131,7 +132,27 @@
                     </div>
                 </div>
 
+                <label for="memberAddress" class="address-title">
+                    주소
+                </label>
+
+                <div class="signUp-input-area">
+                    <input type="text" id="memberAddress" name="memberAddress"
+                            placeholder="우편번호" maxlength="6">
+
+                    <button type="button">검색</button>
+                </div>
+
+                <div class="signUp-input-area">
+                    <input type="text" name="memberAddress" placeholder="도로명주소">
+                </div>
+
+                <div class="signUp-input-area">
+                    <input type="text" name="memberAddress" placeholder="상세주소">
+                </div>
+
                 <button type="submit" id="signUp-btn">가입하기</button>
+
 
             </form>
 

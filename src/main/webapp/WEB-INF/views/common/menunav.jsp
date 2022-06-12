@@ -8,25 +8,25 @@
             <a href="#" class="first_bar">
                 <i class="fa-solid fa-x cursor"></i>
                 <p class="cursor">close</p>
-            <a href="login"><p class="login cursor">Login</p></a>
-            <a href="signUp"><p class="signup cursor">signUp</p></a>
+            <a href="${contextPath}/login"><p class="login cursor">Login</p></a>
+            <a href="${contextPath}/signUp"><p class="signup cursor">signUp</p></a>
                 
     
             <div class="nav_bar">
     
                 <ul class="list1">
                     <h4>Contact</h4>
-                    <li><a href="menu/notice">공지사항</a></li>
-                    <li><a href="menu/qna">Q&A</a></li>
-                    <li><a href="menu/faq">FAQ</a></li>
+                    <li><a href="notice">공지사항</a></li>
+                    <li><a href="qna">Q&A</a></li>
+                    <li><a href="faq">FAQ</a></li>
                 </ul>
     
                 <br><br>
     
                 <ul class="list2">
                     <h4>Location</h4>
-                    <li><a href="menu/location">오시는 길</a></li>
-                    <li><a href="menu/room">호텔라라 소개</a></li>
+                    <li><a href="location">오시는 길</a></li>
+                    <li><a href="room">호텔라라 소개</a></li>
                 </ul>
     
                 <br><br><br>

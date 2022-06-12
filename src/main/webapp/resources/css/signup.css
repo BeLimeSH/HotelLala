@@ -12,6 +12,7 @@ form {
   color: black;
   font-weight: bold;
   padding: 0 5px;
+  font-size:18px;
 }
 
 /* 회원가입 폼 */
@@ -91,16 +92,18 @@ form[name="signUp-form"] > label {
 }
 .bir_wrap {
   display: flex;
+  width:500px;
 }
 .bir_yy {
   display: table-cell;
   table-layout: fixed;
-  width: 147px;
+  width: 35%;
   vertical-align: middle;
 }
 .bir_mm,
 .bir_dd {
   margin-left: 10px;
+  width:35%;
 }
 .ps_box {
   margin-top: 5px;
@@ -145,4 +148,8 @@ form[name="signUp-form"] > label {
 }
 .dd.int {
   margin-right: -92px;
+}
+.address-title{
+  font-weight: bold;
+  margin-left:10px;
 }

@@ -88,48 +88,60 @@ li {
     /* position:fixed; */
 }
 .c-1{
-    position:absolute;
+    /* position:absolute;
     top:608px;
-    left:-164px;
+    left:-164px;     */
     width:20px;
     height:20px;
     cursor: pointer;
+    margin-left: -513px;
+    margin-top: 10px;
     
 }
 .c-1in{
-    position:absolute;
+    /* position:absolute;
     top:605px;
-    left:25px;
+    left:25px; */
+    margin-left: -166px;
 }
 .first{
     background-color: white;
     width:100%;
-    height:980px;     
+    height:100%;     
     opacity: 0.3px;
 
 }
 .first-in{
-    position: absolute;
-    top: 100px;
-    left: 250px;
-    width:1000px;
-    height:500px;
+    margin-top:130px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 .first-in ul{
-    position: absolute;
-    left:130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
 }
 .first-in p{
     font-size:20px;
+    /* margin-left: -340px; */
 
 }
+.a-1{
+    margin-left: -340px;
+}
+
 .first-in > p:nth-of-type(1){
     font-size: 30px;
     font-weight: bold;
 }
 .first-in li span:nth-of-type(2){
-    position:absolute;
-    left:373px;
+    /* position:absolute;
+    left:373px; */
+    margin-left: 320px;
 }
 .first-in li input{
     border:none;
