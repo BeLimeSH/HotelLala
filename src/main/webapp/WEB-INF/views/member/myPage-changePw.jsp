@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(비밀번호 변경)</title>
-    <link rel="stylesheet" href="css/myPage-changePw.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css//myPage-style.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
            
 
         <!-- 사이드 메뉴 include -->
-        <jsp:include page="WEB-INF/views/member/sieMenu.jsp"/>
+        <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
        
     <section class="myPage-content">
