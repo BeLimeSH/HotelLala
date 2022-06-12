@@ -14,10 +14,19 @@ footer{
 /* div{
     border:1px solid black;
 } */
+.first{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .inners{
-    position:absolute;
+    /* position:absolute;
     top: 100px;
-    left:250px;
+    left:250px; */
+    text-align: center;
+    display: flex;
+    margin-top: 130px;
+    flex-direction: column;
     width:100%;
     max-width: 1400px;
     margin: 0 auto 60px;
@@ -28,19 +37,23 @@ footer{
 }
 .reservation01{
     display:flex;
+    justify-content: center;
     flex-wrap:wrap;
-    width:auto;
+    width:60%;
     margin:0 2%;
+    margin-left: 200px;
 }
 .write{
     margin:0;
-    display:inline-block;
+    /* display:flex; */
 }
 .write:nth-of-type(1){
-    width: calc(15% - 60px);
+    text-align: initial;
+    width: calc(40% - 60px);
     margin-right:60px;
 }
 .write:nth-of-type(2){
+    text-align: initial;
     width: calc(35% - 60px);
     margin-right:60px;
 }
@@ -75,15 +88,20 @@ footer{
 }
 
 .faq_wrapper{
-    position: absolute;
+    /* position: absolute;
     top: 310px;
-    left: 250px;
-    width: 63%;
+    left: 325px; */
+    display:flex;
+    justify-content: center;
+    width: 100%;
     margin: 0 auto 60px;
 }
 .tab{
     width:100%;
     height:auto;
+}
+.tab_wrapper{
+    width:60%;
 }
 .tab_menu_wrap{
     display:block;
@@ -146,6 +164,7 @@ footer{
     position: absolute;
     right:15px;
     display:none;
+    margin-right: 304px;
 }
 .up.active{
     display:inline-block;

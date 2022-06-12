@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/nav.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
 
         <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="./index.html" class="header fixed">Hotel LaLa</a>
+        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         <div class="first">
             <div class="first-in">
               <p style="margin-left:130px">Q&A</p><br><br>
@@ -60,7 +61,7 @@
                         </div>   
                     </li>
                     <li>
-                        <p>개인정보 수집 및 이용</p>
+                        <p class="a-1">개인정보 수집 및 이용</p>
                         <div class="d-1">
                             <input type="checkbox" class="c-1">
                             <span class="c-1in">[필수]개인정보처리방침안내의 내용에 동의합니다.</span>
@@ -76,42 +77,11 @@
             </div>
         </div>
         
-        <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
-
-        <div class="third">
-                <a href="#" class="seconds_bar">
-                    <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor">MENU</p>
-                
-                </a>
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-        </div>
+        <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
 
     </div>
-    <footer>
-        <div class="footert-inner">
-            <div class="upper">
-                <h1>Hotel LaLa</h1>
-                <ul>
-                    <li><a href="#">Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Family Site</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                    TEL : 02-111-1234 C.P : 010-1234-5678
-                </address>
-                <p>
-                    2022 Hotel LaLa &copy; copyright all right reserved.
-                </p>
-            </div>
-        </div>
-    </footer>    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>

@@ -45,3 +45,10 @@ footer{
 span{
     font-size: 13px;
 }
+button{
+    width: 30%;
+    height: 70%;
+    background-color: white;
+    border: 1px solid gray;
+    cursor: pointer;
+}

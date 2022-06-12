@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    <footer>
+    <footer class="foot">
         <div class="inner">
             <div class="upper">
                 <h1>Hotel LaLa</h1>

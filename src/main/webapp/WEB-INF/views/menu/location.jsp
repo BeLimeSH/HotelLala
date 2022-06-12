@@ -8,18 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>location</title>
-    <link rel="stylesheet" href="css/qna.css">
-    <link rel="stylesheet" href="css/location.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/location.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
 
         <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="./index.html" class="header fixed">Hotel LaLa</a>
+        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         <div class="first">
             <div class="inners">
-                <h1>LOCATION</h1>
+               
+                    <h1>LOCATION</h1>
+              
                 <div class="guide">
                     <div id="map" style="width:100%;height:100%;"></div>
                 </div>
@@ -88,6 +92,7 @@
                                             종로3가역       2호선 -> <br>
                                             을지로입구역    하차
                                             
+                                            
                                         </p>
                                     </div>
                                 </div>
@@ -100,32 +105,10 @@
         </div>
         
 
+        <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
         </div>
-        <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
-        <footer>
-            <div class="footert-inner">
-                <div class="upper">
-                    <h1>Hotel LaLa</h1>
-                    <ul>
-                        <li><a href="#">Policy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Family Site</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
-                </div>
-    
-                <div class="lower">
-                    <address>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                        TEL : 02-111-1234 C.P : 010-1234-5678
-                    </address>
-                    <p>
-                        2022 Hotel LaLa &copy; copyright all right reserved.
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </div>
     
     <script src="js/index.js"></script>
@@ -176,7 +159,10 @@
         kakao.maps.event.addListener(marker, 'dragend', function() {
             console.log('마커에 dragend 이벤트가 발생했습니다!');
         });
-
-</script>
+	
+	</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/main.js"></script>
+    <script src="${contextPath}/resources/js/menu/location.js"></script>
 </body>
 </html>

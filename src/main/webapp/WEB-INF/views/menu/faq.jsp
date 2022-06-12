@@ -16,9 +16,13 @@
     <main>
         <div class="container">
             <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-            <a href="./index.html" class="header fixed">Hotel LaLa</a>
+            <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
             <div class="first">
-                <div class="inners">
+
+                <div>
+                    
+            
+                <div class="inners" style="margin-top: 130px;">
                     <h1>FAQ</h1>
                     <form name="sch_form" id="sch_form" method="post" action="?">
                         <div class="reservation01">
@@ -123,6 +127,16 @@
                                                 호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
 
                                                 South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.
+                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.
+                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.<br>
                                             </p>
                                         </div>
                                     </div>
@@ -152,50 +166,9 @@
             </section>
 
             </div>
-            <div class="seconds">
-                <a href="#" class="first_bar">
-                    <i class="fa-solid fa-x cursor"></i>
-                    <p class="cursor" style="">close</p>
-                    <a href="login.html"><p class="login cursor">Login</p></a>
-                    <a href="signup.html"><p class="signup cursor">signUp</p></a>
-                </a>
-
-                <div class="nav_bar">
-                    <ul class="list1">
-                        <h4>Contact</h4>
-                        <li><a href="notice.html">공지사항</a></li>
-                        <li><a href="qna.html">Q&A</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                    </ul>
-                    <br><br>
-                    <ul class="list2">
-                        <h4>Location</h4>
-                        <li><a href="location.html">오시는 길</a></li>
-                        <!-- <li><a href="#">층별안내</a></li> -->
-                        <li><a href="room.html">호텔라라 소개</a></li>
-                    </ul>
-                    <br><br><br>
-
-                    <ul class="list3">
-                        <h1><a href="#" class="white">예약하기</a></h1>
-                    </ul><br>
-                    <ul class="list3">
-                        <h1><a href="#" class="white">예약확인</a></h1>
-                    </ul><br>
-                </div>  
-            </div>
-
-            <div class="third">
-                    <a href="#" class="seconds_bar">
-                        <i class="fa-solid fa-bars cursor"></i>
-                        <p class="cursor">MENU</p>
-                    
-                    </a>
-                <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-                <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-            </div>
             
-        </div>
+    <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
+    
     </main>
 
     <footer>
@@ -221,6 +194,7 @@
             </div>
         </div>
     </footer>
+    	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
     <script src="${contextPath}/resources/js/menu/faq.js"></script>
 </body>

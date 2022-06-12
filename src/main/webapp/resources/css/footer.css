@@ -5,6 +5,7 @@ a{
     text-decoration: none;
 }
 footer {
+	margin-top:100px;
 	width: 100%;
 	background: #333;
 	padding: 65px 0px;

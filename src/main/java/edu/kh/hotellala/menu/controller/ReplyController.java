@@ -29,7 +29,7 @@ public class ReplyController extends HttpServlet {
 	    	  if(command.equals("faq")) {
 	    		  path = "/WEB-INF/views/menu/faq.jsp";
 	    	  }
-	    	  if(command.equals("faq")) {
+	    	  if(command.equals("qna")) {
 	    		  path = "/WEB-INF/views/menu/qna.jsp";
 	    	  }
 	    	  if(command.equals("notice")) {
