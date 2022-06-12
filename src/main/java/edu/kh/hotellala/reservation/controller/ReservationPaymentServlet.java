@@ -17,6 +17,7 @@ public class ReservationPaymentServlet extends HttpServlet {
 		String path = "/WEB-INF/views/payment/paymentRequest.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
+		//주문번호는 여기서 만들려무나
 	}
 
 }

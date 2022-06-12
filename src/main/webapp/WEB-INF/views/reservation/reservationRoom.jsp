@@ -41,11 +41,11 @@
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>
 
-                    <span class="reserveContent" id="date-span">2022/06/07 - 2022/06/08</span>
+                    <span class="reserveContent" id="date-span">${reservation.checkIn} ~ ${reservation.checkOut}</span>
 
                     <span class="reserveContent" id="dividingBar">|</span>
 
-                    <span class="reserveContent" id="dateRange-span">1</span>
+                    <span class="reserveContent" id="dateRange-span">${reservation.dateRange}</span>
                     <span class="reserveContent">박</span>
                 </div>
 
@@ -55,7 +55,7 @@
                     <div class="reserveTitle">성인</div>
 
                     <div class="reserveCount">
-                        <span class="reserveContent">1</span>
+                        <span class="reserveContent">${reservation.adultCount}</span>
                     </div>
                 </label>
                 
@@ -63,7 +63,7 @@
                     <div class="reserveTitle">어린이</div>
                     
                     <div class="reserveCount">
-                        <span class="reserveContent">0</span>
+                        <span class="reserveContent">${reservation.childCount}</span>
                     </div>
                 </label>
 
