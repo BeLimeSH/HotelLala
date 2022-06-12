@@ -21,8 +21,7 @@
             <div></div>
             <div>
                 <a href="#">
-                    HOTEL LALA
-                    <i class="fa-solid fa-cloud-moon"></i>
+                    <img src="${contextPath}/resources/images/logo/logo-white-width.png" alt="logo">
                 </a>
             </div>
 
@@ -98,27 +97,27 @@
                     <div id="mainProduct">
         
                         <li>
-                            <a class="product" href="#">
+                            <span class="product">
                                 <img src="resources/images/main/pool.jpg" alt="수영장"> <br>
                                 Pool
-                            </a>
-                            <div>글자를 적어 봅시다.</div>
+                            </span>
+                            <div>Hotel LaLa의 실내 수영장은<br>계절에 상관없이 이용하실 수 있습니다.</div>
                         </li>
                         
                         <li>
-                            <a class="product" href="#">
+                            <span class="product">
                                 <img src="resources/images/main/dinner.jpg" alt="음식"> <br>
-                                Special Dinner
-                            </a>
-                            <div>글자를 적어 봅시다.</div>
+                                Special Breackfast
+                            </span>
+                            <div>고객님의 여유로운 호텔 스테이를 위해<br>모든 패키지에는 조식이 포함되어 있습니다.</div>
                         </li>
                         
                         <li>
-                            <a class="product" href="#">
+                            <span class="product">
                                 <img src="resources/images/main/room.jpg" alt="방"> <br>
                                 Room
-                            </a>
-                            <div>글자를 적어 봅시다.</div>
+                            </span>
+                            <div>Hotel LaLa의 객실을<br>회원 전용 가격으로 만나보세요.</div>
                         </li>
                         
                     </div>
