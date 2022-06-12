@@ -14,8 +14,8 @@ $(function() {
     $('#reserve-datepicker').daterangepicker({
         "autoApply": true,
         "locale": {
-            "format": "YYYY/MM/DD",
-            "separator": " - ",
+            "format": "YYYY-MM-DD",
+            "separator": " ~ ",
             "applyLabel": "Apply",
             "cancelLabel": "Cancel",
             "fromLabel": "From",

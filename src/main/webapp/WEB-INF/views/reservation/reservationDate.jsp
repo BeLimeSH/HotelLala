@@ -39,7 +39,7 @@
 
         <section class="reserveSection">
             <!-- 날짜 선택 바 -->
-            <form class="dateSelection" id="dateSelection" name="dateSelection" action="${contextPath}/reservation/room" onsubmit="return dateValidate()">
+            <form class="dateSelection" id="dateSelection" name="dateSelection" action="${contextPath}/reservation/room" method="post" onsubmit="return dateValidate()">
 
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>

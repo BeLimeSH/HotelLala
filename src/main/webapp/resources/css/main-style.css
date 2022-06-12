@@ -12,13 +12,25 @@ main{margin: auto;}
 
 *{font-family: 'IBMPlexSansKR-Regular';} */
 
-@font-face {
+/* @font-face {
     font-family: 'GmarketSansMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-*{font-family: 'GmarketSansMedium';}
+*{font-family: 'GmarketSansMedium';} */
+
+@font-face {
+    font-family: "NeueKabelW01-Medium";
+    src: url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.eot");
+    src: url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/88a6dfda073ae4dbaf9a5dab9cfbb1ba.svg#NeueKabelW01-Medium") format("svg");
+}
+
+*{font-family: 'NeueKabelW01-Medium';}
 
 /* header */
 header{height: 900px;}
