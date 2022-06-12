@@ -1,0 +1,241 @@
+main{
+    width: 100%;
+    margin: auto;
+}
+
+/* 마이페이지 영역 */
+.myPage-content{
+    width: 1000px;
+    height: 800px;
+    margin: 50px auto;
+
+    display: flex;
+}
+
+/* 왼쪽 사이드 메뉴 */
+.left-side{
+    width: 25%;
+}
+
+.list-group{
+    width: 100%;
+    padding: 0 20px 0 0;
+        /*  상  우 하 좌 */
+}
+
+.list-group > li{
+    list-style: none;
+    height: 50px;
+    font-size: 18px;
+}
+
+.list-group > li > a {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #967e56;
+    
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group > li > a > span {
+    font-size: 13px;
+    text-decoration: none;
+    color: #967e56;
+    
+    height: 100%;
+
+    display: flex;
+
+    justify-content: left;
+    align-items: center;
+}
+
+.list-group > li:hover{
+    background-color: #cab78c;   
+}
+
+/* 마이페이지 공통 부분 */
+.myPage-main{
+    width: 75%;
+    padding: 30px 50px 30px 30px;
+}
+
+
+.myPage-title{
+    margin : 0 0 10px 0;
+    font-size: 30px;
+}
+
+.myPage-row{
+    width: 500px;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.myPage-row > *{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.myPage-row > label{
+    width: 30%;
+    color: #455ba8;
+}
+
+.myPage-row > span{
+    width: 70%;
+}
+
+.myPage-row > input{
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    outline: 0;
+    font-weight: normal;
+}
+
+.myPage-row:focus-within{
+    border-bottom: 2px solid #455ba8;
+}
+ 
+form[name="myPage-form"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------------------------------- */
+/* 마이페이지 sideMenu 스타일 */
+.myPageMenu {
+    font-family: Dotum, '돋움';
+    font-size: 12px;
+    color: #101010;
+    width: 200px;
+    height: 450px;
+    border: #dbc798 solid 1px;
+    background: #f1e3c4;
+    padding: 23px;
+    margin: 0 0 30px 0;
+}    
+
+/* h2 class="tit" 밑줄선 효과 */
+.tit > a{
+    font-size: 25px;
+    font-family: Dotum, '돋움';
+    text-decoration: none;
+    color: black;
+    height: 53px;
+
+    display: flex;
+
+    justify-content: left;
+    align-items: center;
+
+    border-bottom: 2px solid #101010;
+}
+
+/* h4 class="tit2" 밑줄선 효과 */
+.tit2 > a{
+    text-decoration: none;
+    color: black;
+    height: 53px;
+
+    display: flex;
+
+    justify-content: left;
+    align-items: center;
+
+    border-bottom: 3px solid #a1886f;
+}
+
+
+
+
+/* 아래선 효과 */
+.rsv-Underline {
+    display: block;
+    height: 5px;
+    border-bottom: 5px solid #432c10;
+}
+
+/* 예약 확인 공통 부분 */
+.rsvCheck-main{
+    width: 700px;
+    padding: 0 50px;
+}
+
+/* 예약 확인/취소 제목 */
+.rsvCheck-title{
+    margin : 0 0 10px 0;
+    font-size: 30px;
+}
+
+.rsv-explanation{
+    height: 51px;
+    line-height: 50px;
+    color: rgb(111, 111, 111);
+    font-family: Dotum, '돋움', sans-serif, Arial, Helvetica;
+}
+
+/* 예약 확인 div */
+.contain{
+    font-family: Dotum, '돋움', sans-serif, Arial, Helvetica;
+    margin: 0;
+    font-size: 12px;
+    color: #101010;
+    padding: 65px 0 0 0;
+    position: relative;
+}
+
+/* 예약 확인 박스 영역 */
+.contain {
+    position: relative;
+    border: #e3d6c6 solid 1px;
+    padding: 20px;
+
+}
+
+/* table 리스트 */
+.rsvList {
+    border: none;
+    border-top: 1px solid #cdcbbe;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 7px 10px 6px;
+}
+
+.rsvList th, .rsvList td {
+    border: none;
+    border-bottom: 1px solid #cdcbbe;
+    padding: 7px 10px 6px;
+    text-align: center;
+    line-height: 30px;
+    color: #1b1b1b;
+}
+
+.list-table th{
+    border: none;
+    border-bottom: 1px solid #cdcbbe;
+    padding: 7px 10px 6px;
+    line-height: 30px;
+    color: #707070;
+}
+
+
+/* 조회 버튼 */
+.search{
+    position: relative;
+    left: 90%;
+}
