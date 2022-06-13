@@ -1,3 +1,11 @@
+//객실 조회하기
+//roomList 배열의 길이만큼 for 문을 돌려서 li태그 생성
+
+
+
+
+
+
 // 팝업창 열기(미완)
 const roomDetail = document.getElementsByClassName("room-detail");
 
@@ -9,3 +17,4 @@ if(roomDetail.length != 0){
     });
 
 }
+

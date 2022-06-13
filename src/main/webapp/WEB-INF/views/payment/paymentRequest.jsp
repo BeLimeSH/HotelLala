@@ -9,12 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel LaLa</title>
 
-    <link rel="stylesheet" href="../../resources/css/main-style.css" type="text/css">
-    <link rel="stylesheet" href="../../resources/css/reservation-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- 헤더 비슷한 거 -->
+    <a href="${contextPath}" class="hotelLogo">
+        <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
 
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
@@ -223,9 +229,7 @@
                     </div>
         
                     <div class="payment-div2">
-                        <button>
-                            <a href="reservation-option.html" style="color: white;">이전 페이지로</a>
-                        </button>
+                        <button onclick="history.back();">이전 페이지로</button>
     
                         <button type="button" id="iamportPayment">결제하기</button>
                     </div>
@@ -244,7 +248,7 @@
     <!-- iamport.payment.js -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
-    <script src="../../resources/js/payment/payment.js"></script>
+    <script src="${contextPath}/resources/js/payment/payment.js"></script>
 
 </body>
 </html>
