@@ -61,7 +61,7 @@ public class MemberDAO {
 				int memberNo =rs.getInt("MEMBER_NO");
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
-				Date birthDay= rs.getDate("BIRTH_DAY");
+				String birthDay= rs.getString("BIRTH_DAY");
 				char gender =rs.getString("GENDER").charAt(0);
 				String address =rs.getString("ADDRESS");
 				String request = rs.getString("REQUEST");
@@ -73,7 +73,7 @@ public class MemberDAO {
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
-				loginMember.setBirthDay(birthDay);
+				loginMember.setMemberBR(birthDay);
 				loginMember.setGender(gender);
 				loginMember.setMemberAddress(address);
 				loginMember.setRequest(request);
@@ -112,9 +112,8 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getMemberName());
 			pstmt.setString(4, mem.getMemberTel());
 			pstmt.setString(5, mem.getMemberAddress());
-			pstmt.setString(6, mem.getMemberYear());
-			pstmt.setString(7, mem.getMemberMonth());
-			pstmt.setString(8, mem.getMemberDay());
+			pstmt.setString(6, mem.getMemberBR());
+
 			
 			result= pstmt.executeUpdate();
 		}finally {

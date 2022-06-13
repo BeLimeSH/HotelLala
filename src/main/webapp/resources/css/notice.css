@@ -23,7 +23,7 @@ table a {
 .first{
     display:flex;
     width: 100%;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     flex-direction: column;
     /* margin-left:315px; */
     margin-top:130px;
@@ -81,9 +81,10 @@ table a {
     padding: 8px;
 }
 .active1 {
-    position:absolute;
+    /* position:absolute;
     top:70%;
-    left:50%;
+    left:50%; */
+    margin-top:20px;
     border: 1px solid;
     border-radius: 50%;
     width: 30px;
