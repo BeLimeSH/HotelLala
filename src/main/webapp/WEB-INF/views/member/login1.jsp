@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="resources/css/qna.css">
     <link rel="stylesheet" href="resources/css/notice.css">
     <link rel="stylesheet" href="resources/css/login.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>

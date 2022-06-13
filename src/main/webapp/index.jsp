@@ -69,6 +69,7 @@
         <section class="mainContent">
             <!-- 호텔 소개 -->
             <section>
+                ${loginMember}
 
                 <article class="mainSection1">
                     <div class="mainTitle">
