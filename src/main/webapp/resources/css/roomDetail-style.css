@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: 'IBMPlexSansKR-Regular'; box-sizing: border-box;}
+
+body{margin: 0; display: flex; justify-content: center; background-color: #ddd; position: relative;}
+
+main{width: 900px; background-color: white; margin: 10px;}
+
+/* 이미지 영역 */
+.room-image-area{
+    height: 560px;
+    border: 5px solid #ddd;
+    border-bottom: 0;
+    padding: 30px 0;
+
+    position: relative;
+}
+.room-image-area>div{display: flex; justify-content: center; align-items: center;}
+.room-image-area img{height: 480px; overflow: hidden;}
+
+/* .swiper-container 설정  */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 80px;
+}
+
+/* .swiper-slide 설정  */
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* swiper.css에서 수정을 해야 되지만 cdn으로 불러와서 여기서 중복 설정 + !important로 제어 하였음 */
+.swiper-container-vertical>.swiper-pagination-bullets{
+    top: unset !important;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+/* swiper.css에서 수정을 해야 되지만 cdn으로 불러와서 여기서 중복 설정 + !important로 제어 하였음 */
+.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{
+      display : inline-block !important;
+      margin: 6px 2px !important;
+}
+
+
+/* 객실 정보 영역 */
+.room-info-area{height: 600px; display: flex;}
+.room-info-area>section{padding: 20px;}
+.room-info-area>section:nth-child(1){flex-basis: 60%; border: 5px solid #ddd; border-right: 0;}
+.room-info-area>section:nth-child(2){flex-basis: 40%;}
+
+#roomInfo{font-size: 18px; font-weight: bold; color: rgb(100,100,100); margin-bottom: 20px;}
+.wifiMessage{color: rgb(100,100,100);}
+
+.room-detail{font-size: 18px;}
+.room-subtit{font-weight: bold; margin: 30px 0 10px;}
+.room-detail>ul{margin: 0; padding: 0; list-style: none;}
+.room-detail>ul>li>span:nth-child(1){
+    font-weight: bold;
+    display: inline-block;
+    width:100px;
+    color: rgb(100,100,100);
+    margin-left: 10px;
+}
+
+/* 어메니티 영역 */
+.amenity-area{font-size: 18px;}
+.amenity-area>table{margin-left: 10px;}
+.first-row{font-weight: bold; color: rgb(100,100,100);}
+.first-row>td:nth-child(1){width: 220px}
+.first-row>td:nth-child(2){width: 150px}
+.first-row>td:nth-child(3){width: 280px}
+
+/* 호텔 이용 안내 */
+.hotel-info-area{font-size: 18px; border: 5px solid #ddd;}
+.hotel-info-area>div{font-weight: bold;}
+.hotel-info-area>ul{margin: 30px 0; padding: 0; list-style: none;}
+.hotel-info-area>ul>li{margin-left: 10px;}
+.hotel-info-area>ul>li:nth-child(1){
+    font-weight: bold;
+    margin-left: 0;
+    margin-bottom: 10px;
+    color: rgb(100,100,100);
+}
+.hotel-tel>span{color: rgb(100,100,100); margin-right: 10px;}
+
+/* 스크롤바 */
+body::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 30%; 
+    background: #302b65; 
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);
+}

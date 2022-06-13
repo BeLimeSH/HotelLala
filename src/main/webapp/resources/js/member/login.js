@@ -1,13 +1,3 @@
-// const frm = document.querySelector(".frm");
-const check = document.querySelector(".fa-check");
-const chkstyle = document.querySelector(".chkstyle");
-chkstyle.addEventListener("click",function(){
-    // check.style.color="white";
-    // chkstyle.style.backgroundColor="black"
-    check.classList.toggle('active');
-    chkstyle.classList.toggle('backchk');
-    // chkstyle.classList.toggle('exit');
-});
 
 
 // 로그인 유효성 검사 
@@ -37,4 +27,17 @@ function loginValidate(){
     return true;
 }
 
-document.getElementById("idSaveCheck")
+// 아이디 저장 체크박스가 체크되었을때 이벤트
+document.getElementById("idSaveCheck").addEventListener("change",function(){
+
+    // this == 체크박스
+    if(this.checked){
+        const str = "개인 정보 보호를 위해 개인 PC에서의 사용을 권장합니다. 개인 PC가 아닌 경우 취소를 눌러주세요.";
+    
+        if(!confirm(str)){ //취소를 눌렀을때
+            this.checked=false; // 체크해제
+        }
+    }
+
+  
+});
