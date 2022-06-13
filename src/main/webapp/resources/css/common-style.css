@@ -1,3 +1,5 @@
+/* nav style */
+
 nav *{
     margin:0;
     padding:0;
@@ -152,7 +154,7 @@ nav .menu-btn-title02{
     top: 181px;
     font: bold 15px "arial";
     box-shadow: 5px 5px 10px black;
-	opacity: 0.3;
+	/* opacity: 0.3; */
 }
 
 nav .fa-bars{
@@ -167,4 +169,65 @@ nav .third p{
     top:121px;
     right:32px;
     font: bold 15px "arial";
+}
+
+/* footer style */
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+footer {
+	margin-top:100px;
+	width: 100%;
+	background: #333;
+	padding: 65px 0px;
+	border-top: 1px solid #888;
+}
+footer .inner {
+	width: 1180px;
+	margin: 0px auto;
+}
+footer .inner .upper {
+	width: 100%;
+	border-bottom: 1px solid #777;
+	padding-bottom: 20px;
+}
+footer .inner .upper::after {
+	/*상단 영역 float해제*/
+	content: "";
+	display: block;
+	clear: both;
+}
+footer .inner .upper h1 {
+	float: left;
+	font: bold 24px/1 "arial";
+	color: #666;
+}
+footer .inner .upper ul {
+	float: right;
+}
+footer .inner .upper ul li {
+	float: left;
+	margin-left: 20px;
+}
+footer .inner .upper ul li a {
+	font: bold 14px/1 "arial";
+	color: #666;
+}
+footer .inner .lower {
+	width: 100%;
+	padding-top: 20px;
+}
+footer .inner .lower address {
+	width: 100%;
+	font: 12px/1.3 "arial";
+	color: #777;
+	margin-bottom: 20px;
+}
+footer .inner .lower p {
+	width: 100%;
+	font: 12px/1 "arial";
+	color: #777;
 }

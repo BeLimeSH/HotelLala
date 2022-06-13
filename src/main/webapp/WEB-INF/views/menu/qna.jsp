@@ -10,17 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common-style.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
 
-        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
+        <a href="${contextPath}">
+            <img class="logo"src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+        </a>
         <div class="first">
             <div class="first-in">
-              <p style="margin-left:130px">Q&A</p><br><br>
+              <p>Q&A</p><br><br>
                 <ul>
                     <li>
                         <p>문의내용</p><br>
