@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>reservation-sql-pjh.xml</comment>
+
+
+	<entry key="selectBoardList">
+	SELECT COUNT(*) FROM BOARD
+		WHERE BOARD_ST = 'N';
+	</entry>
+	
+	
+</properties>
