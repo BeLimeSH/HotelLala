@@ -164,30 +164,89 @@ roomSearchBtn.addEventListener("click", function(){
             const ul = document.getElementById("roomList");
             ul.innerHTML = "";
 
-            //roomList에 저장된 요소를 하나씩 접근
-            for(let room of roomList){
+            //roomList가 비어있지 않을 때
+            if(roomList != ''){
 
-                //행
-                const li = document.createElement("li");
+                //roomList에 저장된 요소를 하나씩 접근
+                for(let room of roomList){
 
-                //내용 들어있는 div!!
-                const roomBox = document.createElement("div");
-                roomBox.classList.add("roomBox");
+                    //행
+                    const li = document.createElement("li");
 
-                // 마지막에 줄 긋는 div!!
-                const dividingRow = document.createElement("div");
-                dividingRow.classList.add("dividing-row");
+                    //내용 들어있는 div!!
+                    const roomBox = document.createElement("div");
+                    roomBox.classList.add("roomBox");
 
-                //roomBox 안에 들어갈 내용!!
-                const div = document.createElement("div");
+                    // 마지막에 줄 긋는 div!!
+                    const dividingRow = document.createElement("div");
+                    dividingRow.classList.add("dividing-row");
+                    
+                    // li>.roomBox>div>img
 
-                //썸네일이미지!!
-                const img = document.createElement("img");
-                img.setAttribute("src", contextPath + room.roomThumbnail);
+                    //roomBox 안에 들어갈 큰 div!!
+                    const div1 = document.createElement("div");
+                    
+                    //썸네일이미지!!
+                    const img = document.createElement("img");
+                    img.setAttribute("src", contextPath + room.roomThumbnail);
+                    
 
+                    // li>.roomBox>div>.roomTit, .roomDetail
+                    const div2 = document.createElement("div");
+                    
+                    // 객실 종류!
+                    const roomTitType = document.createElement("div");
+                    roomTitType.classList.add("room-tit");
+                    roomTitType.innerText = room.roomType;
+                    
+                    //객실 자세히 보기!
+                    const roomDetail = document.createElement("a");
+                    roomDetail.setAttribute("href", contextPath + "/room/detail?type=" + room.roomType);
+                    roomDetail.classList.add("room-detail");
+                    roomDetail.innerText = "▶ 객실 자세히 보기";
+                    
+
+                    // li>.roomBox>div>.roomTit, .roomContent, .reserveBtn
+                    const div3 = document.createElement("div");
+
+                    // 가격!
+                    const roomTitRates = document.createElement("div");
+                    roomTitRates.classList.add("room-tit");
+                    roomTitRates.innerText = room.roomRates + "원";
+
+                    // 작은 글씨!
+                    const roomContent =  document.createElement("div");
+                    roomContent.classList.add("room-content");
+                    roomContent.innerText = "1박";
+
+                    // 예약하기 버튼 a태그
+                    const reserveBtn = document.createElement("a");
+                    reserveBtn.setAttribute("href", contextPath + "/reservation/option?type=" + room.roomType);
+                    reserveBtn.classList.add("reserveBtn");
+                    reserveBtn.innerText = "예약하기";
+
+
+                    div1.append(img);
+                    div2.append(roomTitType, roomDetail);
+                    div3.append(roomTitRates, roomContent, reserveBtn);
+
+                    roomBox.append(div1, div2, div3);
+
+                    li.append(roomBox, dividingRow);
+
+                    ul.append(li);
+
+                }
+            
+            // roomList가 비어있을 때
+            } else {
+
+                const unavailable = document.createAttribute("div");
+                unavailable.classList.add("unavailable");
+                unavailable.innerText = "해당 날짜에 이용 가능한 객실이 없습니다.";
+
+                ul.append(unavailable);
             }
-
-
     
         },
         error : function(req, status, error){
@@ -197,6 +256,8 @@ roomSearchBtn.addEventListener("click", function(){
     })
 
 })
+
+// 객실 자세히 보기 수정 필요!!
 
 
 // 팝업창 열기(미완)

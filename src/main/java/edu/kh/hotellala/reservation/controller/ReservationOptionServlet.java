@@ -23,8 +23,6 @@ public class ReservationOptionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		//옵션 값 입력 받아오기
-		//값이 없으면 '0'값 넣어둘 것
-		//앞에서 작성한 옵션 번호를 프라이머리키로
 		
 		
 		

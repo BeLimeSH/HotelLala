@@ -133,38 +133,8 @@
                     예약 날짜와 인원 수를 선택해주세요.
                 </div>
 
-                <!-- 조회된 객실이 없을 때 -->                        
-                <!-- <div class="unavailable">해당 날짜에 이용 가능한 객실이 없습니다.</div> -->    
-                
-                <!-- li태그 생성 > div태그 2개 생성(첫 div는 class roomBox/ 두번째는 dividing-row)
-                    > div 3개 생성
-                -->
-                <!-- 1번 객실 -->
-                <ul id="roomList">
-
-                    <!-- <li>
-                        <div class="roomBox">
-                            <div>
-                                <img src="">
-                            </div>
-
-                            <div>
-                                <div class="room-tit">객실 종류</div>
-
-                                <a href="#" class="room-detail">▶ 객실 자세히 보기</a>
-                            </div>
-
-                            <div>
-                                <div class="room-tit">가격</div>
-                                <div class="room-content">1박</div>
-                                <button class="reserveBtn">예약하기</button>
-                            </div>
-
-                        </div>
-                        <div class="dividing-row"></div>
-                    </li> -->
-                    
-                </ul>
+                <!-- 객실 리스트 조회 위치 -->
+                <ul id="roomList"></ul>
 
             </article>
         </section>

@@ -2,6 +2,8 @@ package edu.kh.hotellala.reservation.controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -38,8 +40,6 @@ public class ReservationRequestServlet extends HttpServlet {
 		//객실 + 날짜 값 입력받아오기
 		//2022/06/12 - 2022/06/13
 		
-		//옵션 번호 여기서 정해서 넣어놓기
-		
 		//ajax의 data로 파라미터 값을 얻어오고
 		//얻어온 파라미터 값을 세션에 저장!!
 		
@@ -54,6 +54,9 @@ public class ReservationRequestServlet extends HttpServlet {
 		Date checkOut = Date.valueOf( reserveDate.substring(13, 23) );
 		
 		ReservationRequest reservation = new ReservationRequest();
+		
+		//주문번호 생성
+		reservation.setRequestNo( makeRequestNo() );
 		
 		reservation.setCheckIn(checkIn);
 		reservation.setCheckOut(checkOut);
@@ -90,9 +93,23 @@ public class ReservationRequestServlet extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-
-		
 	}
 	
+	private String makeRequestNo() {
+		
+		String requestNo = "";
+
+		LocalDateTime time = LocalDateTime.now();
+		String timeSet = time.format( DateTimeFormatter.ofPattern("yyyyMMddHHmmss") );
+		
+		System.out.println("timeSet : " + timeSet);
+		
+		//0~9 난수 생성
+		int random = (int)(Math.random() * 10);
+		
+		requestNo = "OR" + timeSet + random;
+		
+		return requestNo;
+		
+	}
 }
