@@ -17,13 +17,13 @@ public class Member {
 	private String memberEmail;//회원 아이디
 	private String memberName;//회원이름
 	private String memberPw;// 비밀번호
-<<<<<<< HEAD
+
 	private String memberTel; //전화번호
 	private String memberBR;// 생년월일
-=======
+
 
 	private Date birthDay;// 생년월일
->>>>>>> origin/main
+
 	private char gender;//성별
 	
 	private String memberAddress; //주소
