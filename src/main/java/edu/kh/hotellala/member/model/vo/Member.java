@@ -21,7 +21,7 @@ public class Member {
 	private Date birthDay;// 생년월일
 	private char gender;//성별
 	
-	private String address; //주소
+	private String memberAddress; //주소
 	private String request;//고객 요청
 	private char secessionFlag; //탈퇴여부
 	private int membershipNo;//멤버십 번호 

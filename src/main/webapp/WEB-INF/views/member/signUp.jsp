@@ -23,7 +23,7 @@
         
         <section class="signUp-content">
  
-            <form action="signUp" method="POST" name="signUp-form">
+            <form action="signUp" method="POST" name="signUp-form" onsubmit="return signUpValidate()">
 
                 <label for="memberEmail">
                     <span class="required">아이디</span> 
@@ -72,7 +72,7 @@
                             placeholder="비밀번호 확인" maxlength="30">
                 </div>
                 
-                <span class="signUp-message error">비밀번호가 일치하지 않습니다.</span>
+                <span class="signUp-message" id="pwMessage">영문/숫자/특수문자 포함 6글자 이상 작성해주세요.</span>
                 
                 <label for="memberName">
                     <span class="required">성명</span>
