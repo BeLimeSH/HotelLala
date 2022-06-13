@@ -18,8 +18,11 @@
 <body>
     <div class="container">
 
-        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
+        <div class="logo">
+	        <a href="${contextPath}">
+				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+	        </a>
+        </div>
         <div class="first">
             <div class="first-in">
               <p>ROOMS</p><br><br>

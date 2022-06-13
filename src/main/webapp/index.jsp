@@ -28,7 +28,7 @@
                 </a>
             </div>
 
-            <c:if test="${empty SessionScope.loginMember}">
+            <c:if test="${empty sessionScope.loginMember}">
 
                 <div>
                     <a href="login">로그인</a>
@@ -38,12 +38,12 @@
 
             </c:if>
 
-            <c:if test="${!empty SessionScope.loginMember}">
+            <c:if test="${!empty sessionScope.loginMember}">
 
                 <div>
-                    <a href="#">로그아웃</a>
+                    <a href="${contextPath}/member/logout">로그아웃</a>
                     <span>|</span>
-                    <a href="myPage">마이페이지</a>
+                    <a href="${contextPath}/member/myPage/info">마이페이지</a>
                 </div>
 
             </c:if>
@@ -72,6 +72,7 @@
         <section class="mainContent">
             <!-- 호텔 소개 -->
             <section>
+                ${loginMember}
 
                 <article class="mainSection1">
                     <div class="mainTitle">

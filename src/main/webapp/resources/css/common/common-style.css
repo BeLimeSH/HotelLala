@@ -1,3 +1,14 @@
+
+/* font style*/
+*{font-family: 'GowunBatang-Regular';}
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* nav style */
 nav *{
     margin:0;
     padding:0;
@@ -152,7 +163,7 @@ nav .menu-btn-title02{
     top: 181px;
     font: bold 15px "arial";
     box-shadow: 5px 5px 10px black;
-	opacity: 0.3;
+	/* opacity: 0.3; */
 }
 
 
@@ -171,7 +182,6 @@ nav .third p{
     font: bold 15px "arial";
 }
 
-/* footer style */
 /* footer style */
 
 ul,li{
@@ -233,3 +243,14 @@ footer .inner .lower p {
 	font: 12px/1 "arial";
 	color: #777;
 }
+
+/*logo style*/
+.logo-img{
+    position:sticky;
+    margin:20px;
+    width:100px;
+  
+    top:0;
+    left:0;
+}
+
