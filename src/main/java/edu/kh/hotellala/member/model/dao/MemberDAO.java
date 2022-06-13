@@ -61,21 +61,23 @@ public class MemberDAO {
 				int memberNo =rs.getInt("MEMBER_NO");
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
+				String memberTel= rs.getString("MEMBER_PHONE");
 				Date birthDay= rs.getDate("BIRTH_DAY");
 				char gender =rs.getString("GENDER").charAt(0);
-				String address =rs.getString("ADDRESS");
+				String memberAddress =rs.getString("ADDRESS");
 				String request = rs.getString("REQUEST");
 				int membershipNo =rs.getInt("MEMBERSHIP_NO");
 				
-				
+			
 				//6)얻어온 컬럼 값을 이용해 Member 객체를 생성하여 loginMember 변수에 저장하여 하나로 묶는 작업 
 				loginMember = new Member();
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
+				loginMember.setMemberTel(memberTel);
 				loginMember.setBirthDay(birthDay);
 				loginMember.setGender(gender);
-				loginMember.setMemberAddress(address);
+				loginMember.setMemberAddress(memberAddress);
 				loginMember.setRequest(request);
 				loginMember.setMembershipNo(membershipNo);
 				
@@ -119,6 +121,37 @@ public class MemberDAO {
 			result= pstmt.executeUpdate();
 		}finally {
 			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	/** 회원 정보 수정 DAO
+	 * @param conn
+	 * @param mem
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int updateMember(Connection conn, Member mem) throws Exception {
+		
+		int result =0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateMember");
+			pstmt= conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberName());
+			pstmt.setString(2, mem.getMemberTel());
+			pstmt.setString(3, mem.getMemberAddress());
+			pstmt.setInt(4,mem.getMemberNo());
+			
+			result=pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+			
 		}
 		
 		return result;

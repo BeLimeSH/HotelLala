@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(회원 탈퇴)</title>
     <link rel="stylesheet" href="css/myPage-style.css">
-    <link rel="stylesheet" href="css/footer.css">
-
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
 
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
@@ -18,8 +17,10 @@
 <body>
 
 
-    <!-- nav -->
-    <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+
+
+<!-- nav -->
+<jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
     
 <main>
@@ -28,27 +29,8 @@
 
 
 
-        <!-- 왼쪽 사이드 메뉴 -->
-        <section class="left-side">
-            <ul class="list-group">
-                <li>예약확인</li>
-                   
-                <li><a href="#">*객실 예약</a></li>
-        
-              
-                
-                <li>개인정보관리</li>
-               
-                <li><a href="#">*개인정보수정</a></li>
-                <li><a href="#">*비밀번호 변경</a></li>
-                <li><a href="#">*회원탈퇴</a></li>
-                    
-                
-                <li>로그아웃</li>
-                
-
-            </ul>
-        </section>
+    <!-- 사이드 메뉴 include -->
+    <jsp:include page="${contextPath}/WEB-INF/views/member/sideMenu.jsp"/>
             
 
 
@@ -103,7 +85,7 @@
 </main>
 
  <!-- footer -->
- <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+ <jsp:include page="${contextPath}/WEB-INF/views/common/footer.jsp"/>
 
 
 </body>
