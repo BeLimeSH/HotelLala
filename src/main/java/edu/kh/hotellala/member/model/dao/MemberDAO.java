@@ -61,12 +61,12 @@ public class MemberDAO {
 				int memberNo =rs.getInt("MEMBER_NO");
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
-<<<<<<< HEAD
+
 				String birthDay= rs.getString("BIRTH_DAY");
-=======
+
 				String memberTel= rs.getString("MEMBER_PHONE");
-				Date birthDay= rs.getDate("BIRTH_DAY");
->>>>>>> origin/main
+				String memberBR = rs.getString("BIRTH_DAY");
+
 				char gender =rs.getString("GENDER").charAt(0);
 				String memberAddress =rs.getString("ADDRESS");
 				String request = rs.getString("REQUEST");
@@ -78,12 +78,12 @@ public class MemberDAO {
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
-<<<<<<< HEAD
+
 				loginMember.setMemberBR(birthDay);
-=======
+
 				loginMember.setMemberTel(memberTel);
-				loginMember.setBirthDay(birthDay);
->>>>>>> origin/main
+//				loginMember.setBirthDay(birthDay);
+
 				loginMember.setGender(gender);
 				loginMember.setMemberAddress(memberAddress);
 				loginMember.setRequest(request);

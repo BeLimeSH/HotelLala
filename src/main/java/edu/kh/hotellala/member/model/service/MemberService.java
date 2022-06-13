@@ -102,4 +102,10 @@ public class MemberService {
 	}
 
 
+	public int insertCertification(String inputEmail, String cNumber) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
 }
