@@ -205,8 +205,13 @@
 
                                     <!-- --------------------- -->
                                 </table><br>
-    
-                                <button onclick="cancelReserve(${reserve.reservationNo})">조회</button>
+                                
+                                <c:if test="${loginMember.memberNo == reservation.memberNo}">
+	    							<div class="cancel-btn-area">
+		                                <button onclick="cancelReserve(${reserve.reservationNo})">예약취소</button>
+	    							</div>
+                                </c:if>
+    							
                             </div>
                         </div>
                     </div>

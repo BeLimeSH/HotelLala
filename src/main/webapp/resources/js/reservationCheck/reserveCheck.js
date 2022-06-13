@@ -32,6 +32,27 @@ function reserveCheck(){
 				const roomNo = document.createElement("td");
                 roomNo.innerText = reserve.roomNo; 
 				
+				/* ----------------------------------------------------- */
+				
+				// 로그인한 회원번호와 예약 시 회원번호가 같을 시
+				if( loginMemberNo ==  reserve.memberNo ){
+					
+					// 버튼 영역
+	                const cancelBtnArea = document.createElement("div");
+	                cancelBtnArea.classList.add("reply-btn-area");
+					
+					// 취소 버튼
+					const cancelBtn = document.createElement("button");
+	                cancelBtn.innerText = "취소";
+	                
+	                // 취소 버튼 onclick 이벤트 추가
+	                cancelBtn.setAttribute("onclick", "cancelReserve("+reserve.reservationNo+")");
+	
+	                // 버튼 영역 마지막 자식으로 수정/삭제 버튼 추가
+	                replyBtnArea.append(cancelBtn);
+	                
+				}
+				
 			}
 			
 		},
