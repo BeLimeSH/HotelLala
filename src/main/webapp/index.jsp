@@ -25,7 +25,7 @@
                 </a>
             </div>
 
-            <c:if test="${empty SessionScope.loginMember}">
+            <c:if test="${empty sessionScope.loginMember}">
 
                 <div>
                     <a href="login">로그인</a>
@@ -35,7 +35,7 @@
 
             </c:if>
 
-            <c:if test="${!empty SessionScope.loginMember}">
+            <c:if test="${!empty sessionScope.loginMember}">
 
                 <div>
                     <a href="#">로그아웃</a>
