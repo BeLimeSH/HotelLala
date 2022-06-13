@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>조회</title>
+    <title>예약 조회</title>
 
-    <link rel="stylesheet" href="resources/css/reservationCheck.css" type="text/css">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+    <link rel="stylesheet" href="${contextPath}resources/css/reservationCheck.css" type="text/css">
+
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -69,64 +73,63 @@
             <section class="myPage-content">
                 
                 <!-- 왼쪽 사이드(마이페이지) 메뉴 -->
-                <section class="left-side">
-                    <div class="myPageMenu">
-                        <h2 class="tit"><a>마이페이지</a></h2>
-                        <ul class="list-group">
-                            <li class=""><a href="#">예약 확인/취소</a></li>
-                        </ul><br>
-    
-                        <ul class="list-group">
-                            <h2 class="tit"><a>내 정보</a></h2>
-    
-                            <li class="my">
-                                <a href="">
-                                    <span>프로필 수정</span>
-                                </a>
-                            </li>
-                            <li class="my">
-                                <a href="">
-                                    <span>비밀번호 변경</span>
-                                </a>
-                            </li>
-                            <li class="my">
-                                <a href="">
-                                    <span>문의 내역</span>
-                                </a>
-                            </li>
-                            <li class="my">
-                                <a href="">
-                                    <span>회원탈퇴</span>
-                                </a>
-                            </li>
-                        </ul>
-                            
-                    </div>
-                    </section>
+                <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
     
                 <!-- 오른쪽 예약 확인 주요 내용 부분 -->
                 <section class="myPage-main">
+
                     <h1 class="myPage-title">예약 확인/취소</h1>
                     <div class="rsv-Underline"></div>
                     <span class="rsv-explanation">객실 예약 내역을 확인하실 수 있습니다.</span><br>
-    
-    
-                    <div class="contain">
-                        <div class="mypageWrap">
-    
-                            <!-- daterangepicker -->
-                            <input type="date" name="startDate" id="startDate">
-                            <input type="date" name="endDate" id="endDate">
-    
-                            <!-- 예약 조회 -->  
-                            <div class="rsvCheck-myPageRsv">
-                                <div class="myRsv title">
-                                    <h4 class="tit2"><a>객실 예약</a></h4>
-                                </div>
+                    
+                    
+                    <form action="cancel" method="POST" onsubmit="return cancelConfirmValidate()">
+                        <div class="contain">
+                            <div class="mypageWrap">
+        
+                                <!-- daterangepicker -->
+                                <table>
+                                    <tr>
+                                    <td colspan="3">
+                                        <div class="dateBtn">
+                                            <span class="chkbox2">
+                                                <input type="button" name="dateType" id="dateType5" class="btn btn-default btn-sm" onclick="setSearchDate('3m')" value="3개월"/>
+                                            </span>
+                                            <span class="chkbox2">
+                                                <input type="button" name="dateType" id="dateType6" class="btn btn-default btn-sm" onclick="setSearchDate('6m')" value="6개월"/>
+                                            </span>
+                                            <span class="chkbox2">
+                                                <input type="button" name="dateType" id="dateType7" class="btn btn-default btn-sm" onclick="setSearchDate('1y')" value="1년"/>
+                                            </span>
+                                            <div><br></div>
+                                            <div class="clearfix">
+                                                <!-- 시작일 -->
+                                                <span class="dset">
+                                                    <input type="text" class="datepicker inpType" name="startDate" id="date1" value="${sform.startDate}">
+                                                    <input type="button" id="dateBtn" class="btn btn-grey btn-sm" value="달력" onclick="$('#date1').datepicker('show');">
+                                                </span>
+                                                <span class="demi">~</span>
+                                                <!-- 종료일 -->
+                                                <span class="dset">
+                                                    <input type="text" class="datepicker inpType" name="endDate" id="date2" value="${sform.endDate}">
+                                                    <input type="button" id="dateBtn" class="btn btn-grey btn-sm" value="달력" onclick="$('#date2').datepicker('show');">
+                                                </span>
+                                                <button type="button" id="searchBtn" class="btn btn-default btn-sm">검색</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                </table>
+        
+
                                 
+                                <!-- 예약 조회 -->  
+                                <div class="rsvCheck-myPageRsv">
+                                    <div class="myRsv title">
+                                        <h4 class="tit2"><a>객실 예약</a></h4>
+                                    </div>
                                 
-                                <div class="count">Total : 0</div>
-                                
+                            
     
                                 <table summary="주문번호, 예약상태, 결제번호, 객실종류, 객실호수로 구성된 리스트 표"
                                         class="rsvList">
@@ -136,7 +139,6 @@
                                         <col width="10%" class="col3">
                                         <col width="10%" class="col4">
                                         <col width="10%" class="col5">
-                                        <col width="10%" class="col6"> 
                                     </colgroup>
                                     <thead>
                                         <tr>
@@ -160,26 +162,55 @@
                                         <col width="10%" class="col2">
                                         <col width="10%" class="col3">
                                         <col width="10%" class="col4">
-                                        <col width="10%" class="col5">
-                                        <col width="10%" class="col6">  
+                                        <col width="10%" class="col5"> 
                                     </colgroup>
+
+
+                                    <!-- ------------------------ -->
                                     <tbody>
                                         <tr>
-                                            <th scope="col">0001</th>
-                                            <th scope="col">0001</th>
-                                            <th scope="col">Y</th>
-                                            <th scope="col">OR202206110925140</th>
-                                            <th scope="col">standard</th>
-                                            <th scope="col">R403</th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
+                                            <th scope="col"></th>
                                         </tr>
+                                        
+                                        
+                                        <c:choose>
+                                        <c:when test="${empty reserveCheck}">
+                                            <!--  예약 조회 결과가 비어있다면 -->
+                                            <tr>
+                                                <th colspan="5">예약 내역이 존재하지 않습니다.</th>
+                                            </tr>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                        
+
+                                            <c:forEach var="reserve" items="${rsvList}">
+                                                <tr>
+                                                    <td>${reserve.reservationNo}</td>
+                                                    <td>${reserve.requestNo}</td>
+                                                    <td>${reserve.reservationFl}</td>
+                                                    <td>${reserve.paymentNo}</td>
+                                                    <td>${reserve.roomNo}</td>
+                                                </tr>
+                                            </c:forEach>
+                                            
+                                        </c:otherwise>
+                                    </c:choose>
+                                    
                                     </tbody>
+
+                                    <!-- --------------------- -->
                                 </table><br>
     
-                                <button class="search" id="">조회</button>
+                                <button onclick="cancelReserve(${reserve.reservationNo})">조회</button>
                             </div>
                         </div>
                     </div>
-    
+                </form>
                 </section>
                 
             </section>
