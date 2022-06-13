@@ -8,28 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(비밀번호 변경)</title>
-   
     <link rel="stylesheet" href="css/myPage-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
-    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
-  
+
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-
-
 
 <!-- nav -->
 <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
 
-<main>
+    <main>
     <section class="myPage-content">
            
 
-    <!-- 사이드 메뉴 include -->
-    <jsp:include page="${contextPath}/WEB-INF/views/member/sideMenu.jsp"/>
+        <!-- 사이드 메뉴 include -->
+        <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
        
     <section class="myPage-content">
@@ -71,10 +66,8 @@
     
     
 </main>
-
-
  <!-- footer -->
- <jsp:include page="${contextPath}/WEB-INF/views/common/footer.jsp"/>
+ <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
 </body>
 </html>

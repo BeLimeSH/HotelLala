@@ -23,7 +23,7 @@
         </div>
         <div class="first">
             <div class="first-in">
-              <p>Q&A</p><br><br>
+              <p style="margin-left:130px">Q&A</p><br><br>
                 <ul>
                     <li>
                         <p>문의내용</p><br>
