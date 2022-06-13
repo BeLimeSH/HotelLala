@@ -11,7 +11,7 @@
     <title>Q&A</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/room.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
    
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
