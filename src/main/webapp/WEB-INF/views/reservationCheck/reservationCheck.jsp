@@ -11,7 +11,6 @@
     <title>예약 조회</title>
 
     <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     <link rel="stylesheet" href="${contextPath}resources/css/reservationCheck.css" type="text/css">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
@@ -85,41 +84,26 @@
                     
                     <form action="cancel" method="POST" onsubmit="return cancelConfirmValidate()">
                         <div class="contain">
-                            <div class="mypageWrap">
-        
-                                <!-- daterangepicker -->
-                                <table>
-                                    <tr>
-                                    <td colspan="3">
-                                        <div class="dateBtn">
-                                            <span class="chkbox2">
-                                                <input type="button" name="dateType" id="dateType5" class="btn btn-default btn-sm" onclick="setSearchDate('3m')" value="3개월"/>
-                                            </span>
-                                            <span class="chkbox2">
-                                                <input type="button" name="dateType" id="dateType6" class="btn btn-default btn-sm" onclick="setSearchDate('6m')" value="6개월"/>
-                                            </span>
-                                            <span class="chkbox2">
-                                                <input type="button" name="dateType" id="dateType7" class="btn btn-default btn-sm" onclick="setSearchDate('1y')" value="1년"/>
-                                            </span>
-                                            <div><br></div>
-                                            <div class="clearfix">
-                                                <!-- 시작일 -->
-                                                <span class="dset">
-                                                    <input type="text" class="datepicker inpType" name="startDate" id="date1" value="${sform.startDate}">
-                                                    <input type="button" id="dateBtn" class="btn btn-grey btn-sm" value="달력" onclick="$('#date1').datepicker('show');">
-                                                </span>
-                                                <span class="demi">~</span>
-                                                <!-- 종료일 -->
-                                                <span class="dset">
-                                                    <input type="text" class="datepicker inpType" name="endDate" id="date2" value="${sform.endDate}">
-                                                    <input type="button" id="dateBtn" class="btn btn-grey btn-sm" value="달력" onclick="$('#date2').datepicker('show');">
-                                                </span>
-                                                <button type="button" id="searchBtn" class="btn btn-default btn-sm">검색</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                </table>
+                            <!-- daterangepicker -->
+	                        <div>
+	                            <table>
+	                                <tr>
+	                                <td colspan="3">
+	                                    <div class="dateBtn">
+	                                        <span class="chkbox2">
+	                                            <!-- <button class="w-btn-outline w-btn-blue-outline" type="button">예약 취소</button> -->
+	                                            <input type="button" name="dateType" id="dateType5" class="btn btn-default btn-sm" onclick="setSearchDate('3m')" value="3개월"/>
+	                                        </span>
+	                                        <span class="chkbox2">
+	                                            <input type="button" name="dateType" id="dateType6" class="btn btn-default btn-sm" onclick="setSearchDate('6m')" value="6개월"/>
+	                                        </span>
+	                                        <span class="chkbox2">
+	                                            <input type="button" name="dateType" id="dateType7" class="btn btn-default btn-sm" onclick="setSearchDate('1y')" value="12개월"/>
+	                                        </span>
+	                                    </div>
+	                                </td>
+	                                </tr>
+	                            </table>
         
 
                                 
@@ -208,7 +192,7 @@
                                 
                                 <c:if test="${loginMember.memberNo == reservation.memberNo}">
 	    							<div class="cancel-btn-area">
-		                                <button onclick="cancelReserve(${reserve.reservationNo})">예약취소</button>
+		                                <button class="w-btn-outline w-btn-blue-outline" type="button">예약 취소</button>
 	    							</div>
                                 </c:if>
     							

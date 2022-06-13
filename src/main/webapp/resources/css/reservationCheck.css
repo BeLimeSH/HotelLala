@@ -3,6 +3,15 @@ main{
     margin: auto;
 }
 
+/* 폰트 */
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* 마이페이지 영역 */
 .myPage-content{
     width: 1000px;
@@ -33,7 +42,7 @@ main{
     font-size: 17px;
     font-weight: bold;
     text-decoration: none;
-    color: #967e56;
+    color: white;
     
     height: 100%;
 
@@ -46,7 +55,7 @@ main{
 .list-group > li > a > span {
     font-size: 13px;
     text-decoration: none;
-    color: #967e56;
+    color: white;
     
     height: 100%;
 
@@ -57,7 +66,7 @@ main{
 }
 
 .list-group > li:hover{
-    background-color: #cab78c;   
+    background-color: #3350c2;   
 }
 
 /* 마이페이지 공통 부분 */
@@ -68,8 +77,10 @@ main{
 
 
 .myPage-title{
-    margin : 0 0 10px 0;
+    font-family: 'GowunBatang-Regular';
     font-size: 30px;
+    margin : 0 0 10px 0;
+
 }
 
 .myPage-row{
@@ -88,7 +99,7 @@ main{
 
 .myPage-row > label{
     width: 30%;
-    color: #455ba8;
+    color: #1a2a6c;
 }
 
 .myPage-row > span{
@@ -105,7 +116,7 @@ main{
 }
 
 .myPage-row:focus-within{
-    border-bottom: 2px solid #455ba8;
+    border-bottom: 2px solid #1a2a6c ;
 }
  
 form[name="myPage-form"]{
@@ -119,23 +130,23 @@ form[name="myPage-form"]{
 /* ------------------------------- */
 /* 마이페이지 sideMenu 스타일 */
 .myPageMenu {
-    font-family: Dotum, '돋움';
+    font-family: 'GowunBatang-Regular';
     font-size: 12px;
     color: #101010;
     width: 200px;
     height: 450px;
-    border: #dbc798 solid 1px;
-    background: #f1e3c4;
+    border: #0a1c45 solid 2px;
+    background: #1a2a6c;
     padding: 23px;
     margin: 0 0 30px 0;
 }    
 
 /* h2 class="tit" 밑줄선 효과 */
 .tit > a{
+    font-family: 'GowunBatang-Regular';
     font-size: 25px;
-    font-family: Dotum, '돋움';
     text-decoration: none;
-    color: black;
+    color: white;
     height: 53px;
 
     display: flex;
@@ -143,21 +154,22 @@ form[name="myPage-form"]{
     justify-content: left;
     align-items: center;
 
-    border-bottom: 2px solid #101010;
+    border-bottom: 2px solid #ddd;
 }
 
 /* h4 class="tit2" 밑줄선 효과 */
 .tit2 > a{
+    font-size: 18px;
     text-decoration: none;
     color: black;
-    height: 53px;
+    height: 45px;
 
     display: flex;
 
     justify-content: left;
     align-items: center;
 
-    border-bottom: 3px solid #a1886f;
+    border-bottom: 3px solid #42475a;
 }
 
 
@@ -167,7 +179,7 @@ form[name="myPage-form"]{
 .rsv-Underline {
     display: block;
     height: 5px;
-    border-bottom: 5px solid #432c10;
+    border-bottom: 5px solid #0d1a4e;
 }
 
 /* 예약 확인 공통 부분 */
@@ -183,15 +195,15 @@ form[name="myPage-form"]{
 }
 
 .rsv-explanation{
+    font-family: 'GowunBatang-Regular';
     height: 51px;
     line-height: 50px;
-    color: rgb(111, 111, 111);
-    font-family: Dotum, '돋움', sans-serif, Arial, Helvetica;
+    color: #101010;
 }
 
 /* 예약 확인 div */
 .contain{
-    font-family: Dotum, '돋움', sans-serif, Arial, Helvetica;
+    font-family: 'GowunBatang-Regular';
     margin: 0;
     font-size: 12px;
     color: #101010;
@@ -202,7 +214,7 @@ form[name="myPage-form"]{
 /* 예약 확인 박스 영역 */
 .contain {
     position: relative;
-    border: #e3d6c6 solid 1px;
+    border: #7078a1 solid 1px;
     padding: 20px;
 
 }
@@ -210,7 +222,7 @@ form[name="myPage-form"]{
 /* table 리스트 */
 .rsvList {
     border: none;
-    border-top: 1px solid #cdcbbe;
+    border-top: 1px solid #aca99f;
     width: 100%;
     border-collapse: collapse;
     padding: 7px 10px 6px;
@@ -218,7 +230,7 @@ form[name="myPage-form"]{
 
 .rsvList th, .rsvList td {
     border: none;
-    border-bottom: 1px solid #cdcbbe;
+    border-bottom: 1px solid #aca99f;
     padding: 7px 10px 6px;
     text-align: center;
     line-height: 30px;
@@ -227,7 +239,7 @@ form[name="myPage-form"]{
 
 .list-table th{
     border: none;
-    border-bottom: 1px solid #cdcbbe;
+    border-bottom: 1px solid #aca99f;
     padding: 7px 10px 6px;
     line-height: 30px;
     color: #707070;
@@ -235,7 +247,57 @@ form[name="myPage-form"]{
 
 
 /* 조회 버튼 */
-.search{
+/* .search{
     position: relative;
-    left: 90%;
+} */
+
+/* 예약 취소 버튼 */
+.w-btn-outline {
+    position: relative;
+    left: 85%;
+    padding: 7px 12px;
+    border-radius: 2px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.25s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.w-btn-blue-outline {
+    font-family: 'GowunBatang-Regular';
+    border: 1px solid #4a5a94;
+    color: #101010;
+}
+
+.w-btn-blue-outline:hover {
+    background-color: #4a5a94;
+    color: #d4dfe6;
+}
+
+/* 3,6,12 개월 기간 조회 */
+.btn{
+    position: relative;
+    left: 235%;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.25s;
+    margin-right: 12px;
+}
+
+.btn-sm{
+    font-family: 'GowunBatang-Regular';
+    border: 1px solid #4a5a94;
+    color: #101010;
+}
+
+.btn-sm:hover{
+    background-color: #4a5a94;
+    color: #d4dfe6;
 }

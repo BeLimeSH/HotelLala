@@ -1,5 +1,4 @@
 $(function() {
-
     $(".dateclick").dateclick();    // DateClick
     $(".searchDate").schDate();
 });
