@@ -1,23 +1,16 @@
+/* 폰트 */
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{box-sizing: border-box;}
 body{margin: 0; min-width: 1260px;}
 
 main{margin: auto;}
 
-/* @font-face {
-    font-family: 'IBMPlexSansKR-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{font-family: 'IBMPlexSansKR-Regular';} */
-
-/* @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{font-family: 'GmarketSansMedium';} */
 
 @font-face {
     font-family: "NeueKabelW01-Medium";
