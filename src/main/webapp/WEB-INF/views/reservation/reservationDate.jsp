@@ -34,7 +34,6 @@
                 <li class="pageNum currentPage">1</li>
                 <li class="pageNum">2</li>
                 <li class="pageNum">3</li>
-                <li class="pageNum">4</li>
 
                 <div class="reserveTitle" id="pageDef-1">날짜 & 인원 선택</div>
             </ul>
@@ -45,7 +44,7 @@
 
         <section class="reserveSection">
             <!-- 날짜 선택 바 -->
-            <form class="dateSelection" id="dateSelection" name="dateSelection" action="${contextPath}/reservation/room" method="post" onsubmit="return dateValidate()">
+            <div class="dateSelection">
 
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>
@@ -78,7 +77,7 @@
 
                 <button id="roomSearchBtn">객실 검색</button>
                 
-            </form>
+            </div>
         </section>
 
         <section class="reserveSection removeResource" id="headcountBox">
@@ -127,17 +126,48 @@
         <!-- 메세지 -->
         <section class="reserveSection">
 
-            <c:if test="${empty roomList}">
-                <article id="dateMessage" class="selectionContents">
+            <!-- 객실 조회 -->
+            <article id="selectRoom" class="selectionContents">
+                
+                <div id="dateMessage">
                     예약 날짜와 인원 수를 선택해주세요.
-                </article>
-                
+                </div>
 
+                <!-- 조회된 객실이 없을 때 -->                        
+                <!-- <div class="unavailable">해당 날짜에 이용 가능한 객실이 없습니다.</div> -->    
                 
-            </c:if>
-            
+                <!-- li태그 생성 > div태그 2개 생성(첫 div는 class roomBox/ 두번째는 dividing-row)
+                    > div 3개 생성
+                -->
+                <!-- 1번 객실 -->
+                <ul id="roomList">
+
+                    <!-- <li>
+                        <div class="roomBox">
+                            <div>
+                                <img src="">
+                            </div>
+
+                            <div>
+                                <div class="room-tit">객실 종류</div>
+
+                                <a href="#" class="room-detail">▶ 객실 자세히 보기</a>
+                            </div>
+
+                            <div>
+                                <div class="room-tit">가격</div>
+                                <div class="room-content">1박</div>
+                                <button class="reserveBtn">예약하기</button>
+                            </div>
+
+                        </div>
+                        <div class="dividing-row"></div>
+                    </li> -->
+                    
+                </ul>
+
+            </article>
         </section>
-
     </main>
 
     <!-- footer -->
@@ -149,6 +179,11 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- js에 전역변수로 contextPath 선언 -->
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
 
     <script src="${contextPath}/resources/js/reservation/selectedDate.js"></script>
     <script src="${contextPath}/resources/js/main.js"></script>

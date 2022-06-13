@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/reservation/date")
+//@WebServlet("/reservation/date")
 public class ReservationDateServlet extends HttpServlet {
 	
 	@Override

@@ -16,6 +16,6 @@ public class RoomType {
 	private String roomType;
 	private int roomRates;
 	private int maxNumber;
-	private String roomThubnail;
+	private String roomThumbnail;
 
 }

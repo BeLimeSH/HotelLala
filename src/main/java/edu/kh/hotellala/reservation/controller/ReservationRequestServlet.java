@@ -17,14 +17,21 @@ import edu.kh.hotellala.reservation.model.service.ReservationRequestService;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
-@WebServlet("/reservation/room")
+@WebServlet("/reservation/date")
 public class ReservationRequestServlet extends HttpServlet {
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		//화면 불러오기
-		String path = "/WEB-INF/views/reservation/reservationRoom.jsp";
+		String path = "/WEB-INF/views/reservation/reservationDate.jsp";
+		req.getRequestDispatcher(path).forward(req, resp);
+	
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		
 		//남는 객실 조회
 		
@@ -32,6 +39,9 @@ public class ReservationRequestServlet extends HttpServlet {
 		//2022/06/12 - 2022/06/13
 		
 		//옵션 번호 여기서 정해서 넣어놓기
+		
+		//ajax의 data로 파라미터 값을 얻어오고
+		//얻어온 파라미터 값을 세션에 저장!!
 		
 		//전달된 파라미터 변수에 저장
 		String reserveDate = req.getParameter("reserveDate");
@@ -80,6 +90,8 @@ public class ReservationRequestServlet extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+
 		
 	}
 	

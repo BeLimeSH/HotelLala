@@ -61,7 +61,7 @@ public class ReservationRequestDAO {
 				
 				r.setRoomType(rs.getString(1));
 				r.setRoomRates(rs.getInt(2));
-				r.setRoomThubnail(rs.getString(3));
+				r.setRoomThumbnail(rs.getString(3));
 				
 				roomList.add(r);
 				

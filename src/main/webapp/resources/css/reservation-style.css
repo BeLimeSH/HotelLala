@@ -60,7 +60,7 @@
     color: rgb(100, 100, 100);
 }
 
-#pageDef-1{margin-top: 30px; text-align: left;}
+#pageDef-1{margin-top: 30px; margin-right: 150px;}
 #pageDef-2{margin-top: 30px; margin-left: 110px; text-align: left;}
 #pageDef-3{margin-top: 30px; margin-left: 195px; text-align: left;}
 #pageDef-4{margin-top: 30px; margin-left: 291px; text-align: left;}
@@ -148,7 +148,6 @@
 /* reservation-date */
 #dateMessage{
     height: 400px;
-    margin: 25px 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,7 +251,10 @@
 #date-span{margin-left: 10px;}
 #dateRange-span{margin-left: 50px;}
 
-#selectRoom{margin-top: 25px; margin-bottom: 100px;}
+#selectRoom{
+    margin-top: 25px; 
+    margin-bottom: 100px;
+}
 
 /* 객실 조회 X */
 .unavailable{
@@ -735,4 +737,4 @@ input::-webkit-inner-spin-button {
 
 /* 요소 숨기기 class */
 .hideResource{visibility: hidden;}
-.removeResource{display: none;}
+.removeResource{display: none!important;}
