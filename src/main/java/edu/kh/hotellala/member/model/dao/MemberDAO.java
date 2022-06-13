@@ -75,7 +75,7 @@ public class MemberDAO {
 				loginMember.setMemberName(memberName);
 				loginMember.setBirthDay(birthDay);
 				loginMember.setGender(gender);
-				loginMember.setAddress(address);
+				loginMember.setMemberAddress(address);
 				loginMember.setRequest(request);
 				loginMember.setMembershipNo(membershipNo);
 				
@@ -111,7 +111,7 @@ public class MemberDAO {
 			pstmt.setString(2, mem.getMemberPw());
 			pstmt.setString(3, mem.getMemberName());
 			pstmt.setString(4, mem.getMemberTel());
-			pstmt.setString(5, mem.getAddress());
+			pstmt.setString(5, mem.getMemberAddress());
 			pstmt.setString(6, mem.getMemberYear());
 			pstmt.setString(7, mem.getMemberMonth());
 			pstmt.setString(8, mem.getMemberDay());
