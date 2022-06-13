@@ -6,7 +6,7 @@
 
 	<!-- 로그인 -->
 	<entry key="login">
-		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,
+		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,MEMBER_PHONE,
 		TO_CHAR(BIRTH_DAY,'YYYY-MM-DD') AS BIRTH_DAY,
 		GENDER,ADDRESS,REQUEST,MEMBERSHIP_NO
 		FROM MEMBER
@@ -14,8 +14,6 @@
 		AND MEMBER_PW=?
 		AND SECESSION_FL='N'
 	</entry>
-
-
 
 
 
@@ -31,6 +29,19 @@
 		WHERE MEMBER_EMAIL = ?
 		AND SECESSION_FL = 'N'
 	</entry>
+	
+
+
+	<!-- 회원 정보 수정   -->
+	<entry key="updateMember">
+	UPDATE MEMBER SET 
+	MEMBER_NM=?,
+	MEMBER_PHONE=?,
+	ADDRESS=?
+	WHERE MEMBER_NO=?
+	</entry>
+	
+	
 	<!-- 비밀번호 변경 새비밀번호-> 회원번호-> 현재비밀번호   -->
 	<entry key="changePw">
 	UPDATE MEMBER SET 
