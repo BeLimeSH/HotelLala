@@ -10,15 +10,13 @@
     <title>FAQ</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/faq.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common-style.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
         <div class="container">
-            <a href="${contextPath}">
-                <img class="logo"src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-            </a>
+            <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
+            <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
             <div class="first">
 
                 <div>
@@ -130,7 +128,15 @@
 
                                                 South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.
                                                 호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
-                                                
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.
+                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.                                                호텔에는 취사 가능 시설이 없습니다. 취사는 불가능합니다.<br>
+
+                                                South 타워 1층 레스토랑 입구에서 전자레인지 사용 가능합니다.<br>
                                             </p>
                                         </div>
                                     </div>
@@ -164,8 +170,30 @@
     <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
     
     </main>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-    
+
+    <footer>
+        <div class="footert-inner">
+            <div class="upper">
+                <h1>Hotel LaLa</h1>
+                <ul>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Family Site</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                    TEL : 02-111-1234 C.P : 010-1234-5678
+                </address>
+                <p>
+                    2022 Hotel LaLa &copy; copyright all right reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
     	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
     <script src="${contextPath}/resources/js/menu/faq.js"></script>

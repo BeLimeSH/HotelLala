@@ -27,16 +27,10 @@ public class SignUpServlet extends HttpServlet{
 		String memberPw = req.getParameter("memberPw");
 		String memberName = req.getParameter("memberName");
 		String memberTel = req.getParameter("memberTel");
-		String[] address = req.getParameterValues("memberAddress");
 		String memberYear = req.getParameter("memberYear");
 		String memberMonth = req.getParameter("memberMonth");
 		String memberDay = req.getParameter("memberDay");
 		
-		String memberAddress = null;
-		
-		if(!address[0].equals("")) {
-			memberAddress = String.join(",,", memberAddress);
-		}
 		Member mem = new Member();
 		
 		mem.setMemberEmail(memberEmail);

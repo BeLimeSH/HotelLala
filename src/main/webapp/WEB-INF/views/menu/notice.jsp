@@ -8,18 +8,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTICE</title>
+    <title>공지사항</title>
     
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/notice.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common-style.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <a href="${contextPath}">
-            <img class="logo"src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-        </a>
+        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
+        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         
         <div class="first">
             <div class="notice-first">    
@@ -80,7 +78,29 @@
         <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
     </div>
            
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <footer>
+        <div class="footert-inner">
+            <div class="upper">
+                <h1>Hotel LaLa</h1>
+                <ul>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Family Site</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                    TEL : 02-111-1234 C.P : 010-1234-5678
+                </address>
+                <p>
+                    2022 Hotel LaLa &copy; copyright all right reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
     <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>

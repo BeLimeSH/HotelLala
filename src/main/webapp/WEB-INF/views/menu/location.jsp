@@ -7,18 +7,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOCATION</title>
+    <title>location</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/location.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
     
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <a href="${contextPath}">
-            <img class="logo"src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-        </a>
+
+        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
+        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
         <div class="first">
             <div class="inners">
                
@@ -81,7 +81,7 @@
                             </div>
                             <div class="accordion-list2">
                                 <div class="label">
-                                    <span>터미널 출발 시 </span>
+                                    <span>고속터미널 출발 시 </span>
                                     <a><i class="fa-solid fa-angle-up up"></i></a>
                                     <a><i class="fa-solid fa-angle-down down"></i></a>
                                 </div>
