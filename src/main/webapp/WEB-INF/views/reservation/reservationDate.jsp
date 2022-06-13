@@ -127,9 +127,14 @@
         <!-- 메세지 -->
         <section class="reserveSection">
 
-            <article id="dateMessage" class="selectionContents">
-                예약 날짜와 인원 수를 선택해주세요.
-            </article>
+            <c:if test="${empty roomList}">
+                <article id="dateMessage" class="selectionContents">
+                    예약 날짜와 인원 수를 선택해주세요.
+                </article>
+                
+
+                
+            </c:if>
             
         </section>
 

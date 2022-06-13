@@ -2,6 +2,7 @@ package edu.kh.hotellala.reservation.controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
+import edu.kh.hotellala.reservation.model.service.ReservationRequestService;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
+import edu.kh.hotellala.reservation.model.vo.RoomType;
 
 @WebServlet("/reservation/room")
 public class ReservationRequestServlet extends HttpServlet {
@@ -58,16 +63,23 @@ public class ReservationRequestServlet extends HttpServlet {
 			if(reservation != null) {
 				session.setAttribute("reservation", reservation);
 			}
-
-			req.getRequestDispatcher(path).forward(req, resp);
+			
+			//ReservationRequestService 불러오기
+			ReservationRequestService service = new ReservationRequestService();
+			
+			//객실 조회하기
+			List<RoomType> roomList = service.selectAvailableRoom(reservation);
+			
+			System.out.println(roomList);
+			
+			req.setAttribute("roomList", roomList);
+			
+			//JSON 변환 + 응답
+			new Gson().toJson(roomList, resp.getWriter());
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
 		
 	}
 	

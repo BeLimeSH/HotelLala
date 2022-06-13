@@ -254,14 +254,6 @@
 
 #selectRoom{margin-top: 25px; margin-bottom: 100px;}
 
-.selectbox-area{
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-}
-
 /* 객실 조회 X */
 .unavailable{
     height: 250px;

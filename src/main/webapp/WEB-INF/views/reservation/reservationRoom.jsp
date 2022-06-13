@@ -61,7 +61,7 @@
                     <div class="reserveTitle">성인</div>
 
                     <div class="reserveCount">
-                        <span class="reserveContent">${reservation.adultCount}</span>
+                        <span class="reserveContent" id="adult">${reservation.adultCount}</span>
                     </div>
                 </label>
                 
@@ -69,7 +69,7 @@
                     <div class="reserveTitle">어린이</div>
                     
                     <div class="reserveCount">
-                        <span class="reserveContent">${reservation.childCount}</span>
+                        <span class="reserveContent" id="child">${reservation.childCount}</span>
                     </div>
                 </label>
 
@@ -85,28 +85,24 @@
             <!-- 객실 조회 -->
             <article id="selectRoom" class="selectionContents">
 
-                <div class="selectbox-area">
-                    <select name="selectbox-room" id="">
-                        <option value="최신 순">최신 순</option>
-                        <option value="낮은 가격 순">낮은 가격 순</option>
-                        <option value="높은 가격 순">높은 가격 순</option>
-                    </select>
-                </div>
-
                 <div class="dividing-row"></div>
 
                 <!-- 1번 객실 -->
                 <ul id="roomList">
 
                     <!-- 조회된 객실이 없을 때 -->
+                    <c:if test="${empty roomList}">
+                    
                     <div class="unavailable">해당 날짜에 이용 가능한 객실이 없습니다.</div>
 
-
+                    </c:if>
+                    
                     <!-- li태그 생성 > div태그 2개 생성(첫 div는 class roomBox/ 두번째는 dividing-row)
                         > div 3개 생성
                     
                     -->
-                    <!-- <li>
+<!-- 
+                    <li>
                         <div class="roomBox">
                             <div>
                                 <img src="">
@@ -142,6 +138,11 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <!-- js에 전역변수로 contextPath 선언 -->
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
+    
     <script src="${contextPath}/resources/js/reservation/selectedRoom.js"></script>
     
 </body>
