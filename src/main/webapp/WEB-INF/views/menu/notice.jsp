@@ -67,17 +67,18 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="seq">
-                        <ul>
-                            <li class="active1">
-                                <a href="">1</a>
-                            </li>
-                        </ul>
-                    </div>
+                   
                 </div>
             </div>
+            <div class="seq">
+                <ul>
+                    <li class="active1">
+                        <a href="">1</a>
+                    </li>
+                </ul>
+            </div>
         </div>
- 
+
        
         
         <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>

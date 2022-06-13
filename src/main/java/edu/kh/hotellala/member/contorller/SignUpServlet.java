@@ -28,22 +28,26 @@ public class SignUpServlet extends HttpServlet{
 		String memberName = req.getParameter("memberName");
 		String memberTel = req.getParameter("memberTel");
 		String[] address = req.getParameterValues("memberAddress");
-		
+		String[] br = req.getParameterValues("memberBR");
 //		String bt ="";
 		
-		String memberYear = req.getParameter("memberYear");
-		String memberMonth = req.getParameter("memberMonth");
-		String memberDay = req.getParameter("memberDay");
+//		String memberYear = req.getParameter("memberYear");
+//		String memberMonth = req.getParameter("memberMonth");
+//		String memberDay = req.getParameter("memberDay");
 		
 //		bt += memberYear+"년"+memberMonth+"월"+memberDay+"일";
 		
 		String memberAddress = null;
-		
+		String memberBR = null;
 		if(!address[0].equals("")) {
-			memberAddress = String.join(",,", memberAddress);
+			memberAddress = String.join(",,", address);
 			
-			//
+		
 		}
+		if(!br[0].equals("")) {
+			memberBR = String.join("/", br);
+		}
+		System.out.println(memberAddress);
 		Member mem = new Member();
 		
 		mem.setMemberEmail(memberEmail);
@@ -51,10 +55,7 @@ public class SignUpServlet extends HttpServlet{
 		mem.setMemberName(memberName);
 		mem.setMemberTel(memberTel);
 		mem.setMemberAddress(memberAddress);
-		mem.setMemberYear(memberYear);
-		mem.setMemberMonth(memberMonth);
-		mem.setMemberDay(memberDay);
-		
+		mem.setMemberBR(memberBR);
 		try {
 			MemberService service = new MemberService();
 			

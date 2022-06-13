@@ -38,7 +38,7 @@
                     <!-- required : 필수 작성 input 태그 -->
 
                     <!-- 자바스크립로 코드 추가 예정 -->
-                    <button type="button">인증번호 받기</button>
+                    <button type="button" id="sendBtn">인증번호 받기</button>
                 </div>
 
                 <span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
@@ -48,14 +48,14 @@
                 </label>
 
                 <div class="signUp-input-area">
-                    <input type="text" id="emailCheck"
+                    <input type="text" id="cNumber"
                             placeholder="인증번호입력" maxlength="6"
                             autocomplete="off" required>
 
-                    <button type="button">인증하기</button>
+                    <button type="button" id="cBtn">인증하기</button>
                 </div>
 
-                <span class="signUp-message confirm">인증완료</span>
+                <span class="signUp-message" id="cMessage"></span>
 
 
                 <label for="memberPw">
@@ -101,13 +101,13 @@
                 <div class="bir_wrap">
                     <div class="bir_yy">
                         <span class="ps_box">
-                            <input type="text" id="yy" name="memberYear" placeholder="년(4자)" aria-label="년(4자)"
+                            <input type="text" id="yy" name="memberBR" placeholder="년(4자)" aria-label="년(4자)"
                             class="int" maxlength="4">
                         </span>
                     </div>
                     <div class="bir_mm">
                         <span class="ps_box">
-                            <select name="memberMonth" id="mm" class="sel" aria-label="월">
+                            <select name="memberBR" id="mm" class="sel" aria-label="월">
                                 <option value>월</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="bir_dd">
                         <span class="ps_box">
-                            <input type="text" name="memberDay" id="dd" placeholder="일" aria-label="일" class="int"
+                            <input type="text" name="memberBR" id="dd" placeholder="일" aria-label="일" class="int"
                             maxlength="2">
                             <label for="dd" class="1b1"></label>
                         </span>
@@ -175,7 +175,7 @@
         <script>
             alert("${message}");
         </script>
-        <c:remove var="message" scope="session" />
+        <c:remove var="message" scope="session"/>
     </c:if>
 	
 
