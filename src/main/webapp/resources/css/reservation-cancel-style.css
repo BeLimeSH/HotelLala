@@ -1,0 +1,139 @@
+main{
+    width: 100%;
+    margin: auto;
+}
+
+/* 상단 div */
+.dateSelection{
+    height: 170px; 
+    width: 700px;
+    margin: 30px 0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1a2a6c;
+}
+
+/* 상단 div 제목 */
+.reserve-Title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+/* 취소 일시 */
+.dateSelection span{
+    font-size: 18px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------------------------------------------- */
+
+/* 취소 내역 박스 */
+.reserveCancelTitleSection{
+    margin: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reserveCancelSection{
+    padding: 0 30px 60px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  
+}
+
+
+/* 취소 내역 박스 */
+.selectionContents{
+    width: 700px;
+    height: 700px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 5px;
+    padding: 1em;
+}
+
+
+
+
+/* 취소 내역 타이틀 */
+.cancelTitle{
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    padding: 50px 0 50px 70px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 28px;
+
+}
+
+.cancelTitle-notice{
+    height: 30px;
+    display: flex;
+    justify-content: left;
+    padding-left: 75px;
+    align-items: left;
+    color: #1a2a6c;
+    font-size: 17px;
+} 
+
+a{
+    text-decoration: none;
+    height: 30px;
+    display: flex;
+    border-bottom: 1px solid rgb(204, 204, 204);
+
+}
+.cancelSubTitle{
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    padding: 50px 0 50px 70px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 28px;  
+}
+
+.totalPay{
+    justify-content: right;
+    padding-left: 300px;
+    color: #c90d81; 
+}
+
+.subPay{
+    display: flex;
+    padding-left: 340px;
+    color: #c90d81; 
+}
+.subPay2{
+    display: flex;
+    padding-left: 300px;
+    color: #c90d81; 
+}
+
+.subPoint{
+    display: flex;
+    padding-left: 330px;
+    color: #c90d81; 
+}
+
+.cancelSub{
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    padding: 30px 0 30px 70px;
+    align-items: center;
+    color: #1a2a6c;
+    font-size: 24px;
+}
+
