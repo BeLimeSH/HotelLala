@@ -11,10 +11,16 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
     <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- 헤더 비슷한 거 -->
+    <a href="${contextPath}" class="hotelLogo">
+        <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
 
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
@@ -90,14 +96,20 @@
                 <div class="dividing-row"></div>
 
                 <!-- 1번 객실 -->
-                <!-- <ul id="roomList">
+                <ul id="roomList">
 
-                    <li>
+                    <!-- 조회된 객실이 없을 때 -->
+                    <div class="unavailable">해당 날짜에 이용 가능한 객실이 없습니다.</div>
+
+
+                    <!-- li태그 생성 > div태그 2개 생성(첫 div는 class roomBox/ 두번째는 dividing-row)
+                        > div 3개 생성
+                    
+                    -->
+                    <!-- <li>
                         <div class="roomBox">
                             <div>
-                                <a href="#">
-                                    <img src="" alt="객실사진">
-                                </a>
+                                <img src="">
                             </div>
 
                             <div>
@@ -114,12 +126,9 @@
 
                         </div>
                         <div class="dividing-row"></div>
-                    </li>
+                    </li> -->
                     
-                </ul> -->
-
-                <!-- 조회된 객실이 없을 때 -->
-                <div class="unavailable">해당 날짜에 이용 가능한 객실이 없습니다.</div>
+                </ul>
 
             </article>
             

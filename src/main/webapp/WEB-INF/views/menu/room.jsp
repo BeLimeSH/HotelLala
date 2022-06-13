@@ -11,15 +11,18 @@
     <title>Q&A</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/room.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
    
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
 
-        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
+        <div class="logo">
+	        <a href="${contextPath}">
+				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+	        </a>
+        </div>
         <div class="first">
             <div class="first-in">
               <p>ROOMS</p><br><br>

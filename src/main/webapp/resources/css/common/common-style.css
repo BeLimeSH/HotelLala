@@ -1,0 +1,256 @@
+
+/* font style*/
+*{font-family: 'GowunBatang-Regular';}
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* nav style */
+nav *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav ul {list-style: none;} 
+
+nav a {
+	text-decoration: none;
+    color:rgba(221, 221, 221, 0.504);
+}
+
+nav .white{
+    color:white;
+}
+
+nav .cursor {
+    cursor:pointer;
+}
+
+nav .fab1{
+    color:white;
+    display: flex;
+    justify-content: center;
+    font-size:30px;
+    top:32px;
+    left:48px;
+    opacity: 0.5;
+    position:fixed;
+}
+
+nav .fab1 > i{
+    margin-top:10px;
+    margin-right:70px;
+}
+
+nav .seconds{
+    
+    background-color: black;
+    opacity: 0.9;
+    position:fixed;
+    width:270px;
+    height:880px;
+    top:0px;
+    right:0px;
+    display:none;
+    z-index:50;
+}
+
+nav .seconds.active{
+    display:flex;
+}
+
+nav .seconds.exit{
+    display:none;
+}
+
+nav .fa-x{
+    color:white;
+    position:absolute;
+    top:20px;
+    right:52px;
+}
+
+nav .fa-arrow-right-to-bracket{
+    color:white;
+    position:absolute;
+    top:40px;
+    right:52px;
+}
+
+nav .seconds p:nth-of-type(1){
+    position:absolute;
+    top:15px;
+    right:10px;
+    color:white;
+}
+
+nav .seconds a:nth-of-type(2){
+    position: absolute;
+    top: 35px;
+    right: 157px;
+    color: white;
+    font-size:13px;
+}
+
+nav .seconds a:nth-of-type(3){
+    position: absolute;
+    top: 35px;
+    right: 107px;
+    color: white;
+    font-size:13px;
+}
+
+nav .container img{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+nav .nav_bar{
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:10%;
+    right:20%;
+    width: 200px;
+}
+
+nav .third{
+    display:flex;
+    position:fixed;
+    width:250px;
+    height:680px;
+    top:0px;
+    right:0px;
+}
+
+nav .third.active{display:flex;}
+
+nav .third.exit{display:none;}
+
+nav .menu-btn-title01{
+    background: #082954;
+    color: #fff;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    font: bold 15px "arial";
+    top: 145px;
+}
+
+nav .menu-btn-title02{
+    background: #fff;
+    opacity: 0.8;
+    color: #082954;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    top: 181px;
+    font: bold 15px "arial";
+    box-shadow: 5px 5px 10px black;
+	/* opacity: 0.3; */
+}
+
+
+/* nav style */
+nav .fa-bars{
+    color:black;
+    position:absolute;
+    top:122px;
+    right:85px;
+}
+
+nav .third p{
+    position:absolute;
+    top:121px;
+    right:32px;
+    font: bold 15px "arial";
+}
+
+/* footer style */
+
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+footer {
+	margin-top:100px;
+	width: 100%;
+	background: #333;
+	padding: 65px 0px;
+	border-top: 1px solid #888;
+}
+footer .inner {
+	width: 1180px;
+	margin: 0px auto;
+}
+footer .inner .upper {
+	width: 100%;
+	border-bottom: 1px solid #777;
+	padding-bottom: 20px;
+}
+footer .inner .upper::after {
+	/*상단 영역 float해제*/
+	content: "";
+	display: block;
+	clear: both;
+}
+footer .inner .upper h1 {
+	float: left;
+	font: bold 24px/1 "arial";
+	color: #666;
+}
+footer .inner .upper ul {
+	float: right;
+}
+footer .inner .upper ul li {
+	float: left;
+	margin-left: 20px;
+}
+footer .inner .upper ul li a {
+	font: bold 14px/1 "arial";
+	color: #666;
+}
+footer .inner .lower {
+	width: 100%;
+	padding-top: 20px;
+}
+footer .inner .lower address {
+	width: 100%;
+	font: 12px/1.3 "arial";
+	color: #777;
+	margin-bottom: 20px;
+}
+footer .inner .lower p {
+	width: 100%;
+	font: 12px/1 "arial";
+	color: #777;
+}
+
+/*logo style*/
+.logo-img{
+    position:sticky;
+    margin:20px;
+    width:100px;
+  
+    top:0;
+    left:0;
+}
+

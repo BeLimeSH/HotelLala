@@ -9,12 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel LaLa</title>
 
-    <link rel="stylesheet" href="../../resources/css/main-style.css" type="text/css">
-    <link rel="stylesheet" href="../../resources/css/reservation-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- 헤더 비슷한 거 -->
+    <a href="${contextPath}" class="hotelLogo">
+        <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
 
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
@@ -115,10 +121,7 @@
                     </div>
                     
                     <div class="payment-div2">
-                        <!-- a 태그(임시) -> 삭제 예정 -->
-                        <button>
-                            <a href="reservation-room.html" style="color: white;">이전 페이지로</a>
-                        </button>
+                        <button onclick="history.back();">이전 페이지로</button>
                         
                         <button>예약하기</button>
                     </div>
@@ -134,7 +137,7 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="../../resources/js/reservation/option.js"></script>
+    <script src="${contextPath}/resources/js/reservation/option.js"></script>
     
 </body>
 </html>

@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Hotel LaLa</title>
 
+    <!-- *** 웹 상단에 호텔 아이콘 추가 *** -->
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
+
     <link rel="stylesheet" href="resources/css/main-style.css" type="text/css">
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>

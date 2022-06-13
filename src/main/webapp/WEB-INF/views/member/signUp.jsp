@@ -10,14 +10,15 @@
     <title>signUp</title>
     <link rel="stylesheet" href="resources/css/qna.css">
     <link rel="stylesheet" href="resources/css/signup.css">
-    <link rel="stylesheet" href="resources/css/nav.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-            <a href="${contextPath}" class="header fixed">Hotel LaLa</a>
+	        <a href="${contextPath}">
+				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+	        </a>
         </div>
         
         <section class="signUp-content">
@@ -40,7 +41,7 @@
                     <button type="button">인증번호 받기</button>
                 </div>
 
-                <span class="signUp-message">메일을 받을 수 있는 이메일을 입력해주세요.</span>
+                <span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
 
                 <label for="emailCheck">
                     <span class="required">인증번호</span> 
@@ -90,7 +91,7 @@
                     <input type="text" id="memberTel" name="memberTel"
                             placeholder="(- 없이 숫자만 입력)" maxlength="11">
                 </div>
-                <span class="signUp-message error" id="telMessagm. e">전화번호 형식이 올바르지 않습니다.</span>
+                <span class="signUp-message" id="telMessage">전화번호를 입력해주세요.(- 제외)</span>
                 <br><br>
 
                 
@@ -180,6 +181,6 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
- 
+    <script src="${contextPath}/resources/js/member/signUp.js"></script>
 </body>
 </html>
