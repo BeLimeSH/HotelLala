@@ -41,9 +41,9 @@
             <c:if test="${!empty sessionScope.loginMember}">
 
                 <div>
-                    <a href="#">로그아웃</a>
+                    <a href="${contextPath}/member/logout">로그아웃</a>
                     <span>|</span>
-                    <a href="myPage">마이페이지</a>
+                    <a href="${contextPath}/member/myPage/info">마이페이지</a>
                 </div>
 
             </c:if>
