@@ -29,10 +29,8 @@ public class ReservationCheckServlet extends HttpServlet{
 			List<ReservationCheck> list = service.reservationCheck();
 			
 			
-			// new Gson().toJson(list, resp.getWriter());
+			new Gson().toJson(list, resp.getWriter());
 			
-			String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
-			req.getRequestDispatcher(path).forward(req, resp);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
