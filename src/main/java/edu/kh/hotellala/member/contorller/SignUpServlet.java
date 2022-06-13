@@ -28,9 +28,14 @@ public class SignUpServlet extends HttpServlet{
 		String memberName = req.getParameter("memberName");
 		String memberTel = req.getParameter("memberTel");
 		String[] address = req.getParameterValues("memberAddress");
+		
+//		String bt ="";
+		
 		String memberYear = req.getParameter("memberYear");
 		String memberMonth = req.getParameter("memberMonth");
 		String memberDay = req.getParameter("memberDay");
+		
+//		bt += memberYear+"년"+memberMonth+"월"+memberDay+"일";
 		
 		String memberAddress = null;
 		
@@ -45,6 +50,7 @@ public class SignUpServlet extends HttpServlet{
 		mem.setMemberPw(memberPw);
 		mem.setMemberName(memberName);
 		mem.setMemberTel(memberTel);
+		mem.setMemberAddress(memberAddress);
 		mem.setMemberYear(memberYear);
 		mem.setMemberMonth(memberMonth);
 		mem.setMemberDay(memberDay);

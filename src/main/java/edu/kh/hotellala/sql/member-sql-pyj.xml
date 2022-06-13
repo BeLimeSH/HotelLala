@@ -22,11 +22,15 @@
 	<!-- 회원가입 -->
 	<entry key="signUp">
 		INSERT INTO MEMBER
-		VALUES( SEQ_MEMBER_NO.NEXTVAL , ?,
-		?, ?, ?, ?, ?, ?, ?, ?, ? DEFAULT, DEFAULT, DEFAULT)
+		VALUES( SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?,DEFAULT, DEFAULT)
 	</entry>
-
-
+	
+	<!-- 이메일 중복 검사 -->
+	<entry key="emailDupCheck">
+		SELECT COUNT(*)  FROM MEMBER
+		WHERE MEMBER_EMAIL = ?
+		AND SECESSION_FL = 'N'
+	</entry>
 	<!-- 비밀번호 변경 새비밀번호-> 회원번호-> 현재비밀번호   -->
 	<entry key="changePw">
 	UPDATE MEMBER SET 

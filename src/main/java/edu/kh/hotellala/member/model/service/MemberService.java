@@ -66,4 +66,20 @@ public class MemberService {
 		
 		return result;
 	}
+
+
+	/** 이메일 중복 검사 Service
+	 * @param memberEmail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int emailDupCheck(String memberEmail) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.emailDupCheck(conn, memberEmail);
+		
+		close(conn);
+		
+		return result;
+	}
 }
