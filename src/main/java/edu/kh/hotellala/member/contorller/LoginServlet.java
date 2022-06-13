@@ -73,7 +73,7 @@ public class LoginServlet extends HttpServlet{
 				
 				c.setPath(req.getContextPath());
 				//req.getContextPath() : 최상위 주소 (/community)
-				// -> /communuty로 시작하는 주소에서만 쿠키 적용 
+				 
 				
 				//응답 객체를 이용해서 클라이언트로 전달 
 				resp.addCookie(c);

@@ -122,4 +122,37 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+	/** 비밀번호 변경 
+	 * @param conn
+	 * @param currentPw
+	 * @param memberNo
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int changePw(Connection conn, String currentPw,String newPw, int memberNo) throws Exception {
+		
+		int result= 0;
+		
+		// 왜 TRY-FINALLY? 
+		// try 구문에서 JDBC 관련 예외가 발생하더라도 
+		// 사용중이던 JDBC 객체 자원을 무조건 반환하기 위해서
+		try {
+			
+			String sql = prop.getProperty("changePw");
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,newPw);
+			pstmt.setInt(2,memberNo);
+			pstmt.setString(3,currentPw);
+			
+			result= pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+			
+			
+		}
+		return result;
+	}
 }
