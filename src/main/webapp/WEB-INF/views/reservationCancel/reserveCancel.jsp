@@ -24,8 +24,8 @@
                 <div>
                     <div class="reserve-Title">취소가 완료되었습니다.</div>
 
-                    <span>예약 일시 : ${}</span>
-                    <span>취소 일시 : ${}</span>
+                    <span>결제 일시 : ${contextPath}${payment.pamentDT}</span>
+                    <span>환불 요청 일시 : ${contextPath}${refund.refundDT}</span>
 
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <a></a>
                     
                 <div class="cancelSubTitle">총 환불액
-                    <div class="totalPay">${}</div>
+                    <div class="totalPay">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">환불금액
@@ -57,7 +57,7 @@
                 <a></a>
 
                 <div class="cancelSubTitle">총 예약가
-                    <div class="totalPay">${}</div>
+                    <div class="totalPay">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">실결제 금액
