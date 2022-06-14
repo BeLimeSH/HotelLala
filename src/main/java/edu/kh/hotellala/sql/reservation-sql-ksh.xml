@@ -10,6 +10,11 @@
 	WHERE MAX_NUM >= ?
 	</entry>
 
-
+	<!-- 타입에 따른 객실 가격 조회 -->
+	<entry key="selectRates">
+	SELECT ROOM_RATES
+	FROM ROOM_TB
+	WHERE ROOM_TYPE = ?
+	</entry>
 
 </properties>

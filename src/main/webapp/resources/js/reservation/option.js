@@ -1,3 +1,25 @@
+const roomRatesSpan = document.getElementById('room-rates');
+
+(function(){
+    roomRatesSpan.innerText = priceToString(roomRates);
+})();
+
+//가격 포맷 바꾸기
+function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+//옵션 사항 ul 태그 클릭될 때 이벤트 추가
+const optionCon = document.getElementsByClassName('option-con')[0];
+
+optionCon.addEventListener("click", function(){
+
+    console.log( $('#a-breakfast').val()*15000 +  $('#c-breakfast').val()*10000 + $('#extra-bed').val()*65000 );
+    roomRatesSpan.innerText = priceToString( parseInt( roomRates ) + $('#a-breakfast').val()*15000
+                                            + $('#c-breakfast').val()*10000 + $('#extra-bed').val()*65000 );
+
+});
+
 // 추가 요청사항
 $('#req-input').on("change", function(){
 
@@ -60,4 +82,4 @@ for(let i=0; i<plusBtn.length; i++){
         }
         minusBtn[i].nextElementSibling.value = count;
     });
-}
+};

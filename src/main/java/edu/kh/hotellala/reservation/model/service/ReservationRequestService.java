@@ -38,4 +38,21 @@ public class ReservationRequestService {
 		return roomList;
 	}
 
+	/**
+	 * 객실 가격 받아오기 Service
+	 * @param type
+	 * @return roomRates
+	 * @throws Exception
+	 */
+	public int selectRates(String type) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int roomRates = dao.selectRates(conn, type);
+		
+		close(conn);
+		
+		return roomRates;
+	}
+
 }

@@ -70,7 +70,7 @@ public class ReservationRequestServlet extends HttpServlet {
 			//Session 객체 얻어오기
 			HttpSession session = req.getSession();
 			
-			//1시간 후 만료
+			//1시간 후 만료 -> 로그인에 있으면 빼도 될것
 			session.setMaxInactiveInterval(3600);
 			
 			if(reservation != null) {

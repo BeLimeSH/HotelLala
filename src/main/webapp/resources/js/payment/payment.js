@@ -22,40 +22,6 @@ iamportPayment.addEventListener("click", function(){
     });
 })
 
-//포인트 입력 값 제어하기
-const availablePoint = document.getElementById("availablePoint");
-const usingPoint = document.getElementById("usingPoint");
-
-const aPoint = availablePoint.innerText.replace(/,/g,"");
-
-usingPoint.addEventListener("change", function(){
-
-    if(this.value > parseInt(aPoint) ){
-        this.value = aPoint;
-    }
-
-    if(this.value < 0){
-        this.value = 0;
-    }
-
-    $('#usingPoint2').text( this.value );
-    
-});
-
-//포인트 모두 사용
-$('#allUsed').on("change", function(){
-    
-    if($(this).is(":checked")){
-        usingPoint.value = aPoint;
-    } else {
-        usingPoint.value = 0;
-    }
-    
-    $('#usingPoint2').text( usingPoint.value );
-
-});
-
-
 // 결제 방법
 const payOptionBox = document.getElementById("pay-option-box");
 const payOption = document.getElementsByName("pay-option");
