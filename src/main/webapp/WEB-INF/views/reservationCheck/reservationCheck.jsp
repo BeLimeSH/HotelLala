@@ -187,12 +187,11 @@
                                     
                                     </tbody>
 
-                                    <!-- --------------------- -->
                                 </table><br>
                                 
-                                <c:if test="${loginMember.memberNo == reservation.memberNo}">
+                                <c:if test="${loginMember.requestNo == reservation.requestNo}">
 	    							<div class="cancel-btn-area">
-		                                <button class="w-btn-outline w-btn-blue-outline" type="button">예약 취소</button>
+		                                <button class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button>
 	    							</div>
                                 </c:if>
     							
