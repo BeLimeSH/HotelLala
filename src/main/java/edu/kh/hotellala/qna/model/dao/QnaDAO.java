@@ -11,11 +11,8 @@ public class QnaDAO {
 	public int qnA(Connection conn, Qna q) throws Exception{
 		int result = 0;
 		
-		try {
-			String sql = prop.get
-		}finally {
-			
-		}
+		
+		
 		return result;
 	}
 
