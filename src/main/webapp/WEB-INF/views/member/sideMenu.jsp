@@ -10,14 +10,14 @@
            
            <li>개인정보관리</li>
           
-           <li><a href="${contextPath}member/myPage/info">*개인정보수정</a></li>
+           <li><a href="${contextPath}/member/myPage/info">*개인정보수정</a></li>
            
            <!-- /hotellala/member/myPage/changePw-->
-           <li><a href="${contextPath}member/myPage/changePw">*비밀번호 변경</a></li>
+           <li><a href="${contextPath}/member/myPage/changePw">*비밀번호 변경</a></li>
            <li><a href="#">*회원탈퇴</a></li>
                
            
-           <li>로그아웃</li>
+           <li><a href="${contextPath}/member/logout">로그아웃</a></li>
            
 
        </ul>

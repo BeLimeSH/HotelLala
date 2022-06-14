@@ -61,10 +61,10 @@ public class MemberDAO {
 				int memberNo =rs.getInt("MEMBER_NO");
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
-				String memberTel= rs.getString("MEMBER_PHONE");
-				Date birthDay= rs.getDate("BIRTH_DAY");
+				String memberTel= rs.getString("MEMBER_TEL");
+				Date birthDay= rs.getDate("MEMBER_BR");
 				char gender =rs.getString("GENDER").charAt(0);
-				String memberAddress =rs.getString("ADDRESS");
+				String memberAddress =rs.getString("MEMBER_ADDR");
 				String request = rs.getString("REQUEST");
 				int membershipNo =rs.getInt("MEMBERSHIP_NO");
 				
@@ -134,11 +134,14 @@ public class MemberDAO {
 	 */
 	public int updateMember(Connection conn, Member mem) throws Exception {
 		
-		int result =0;
+		int result = 0;
 		
 		try {
 			
 			String sql = prop.getProperty("updateMember");
+			
+			System.out.println(mem);
+			
 			pstmt= conn.prepareStatement(sql);
 			
 			pstmt.setString(1, mem.getMemberName());
@@ -146,7 +149,7 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getMemberAddress());
 			pstmt.setInt(4,mem.getMemberNo());
 			
-			result=pstmt.executeUpdate();
+			result = pstmt.executeUpdate();
 			
 			
 		}finally {
