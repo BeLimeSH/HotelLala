@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import edu.kh.hotellala.reservationCheck.model.service.ReservationCheckService;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 
-@WebServlet("/reservationCheck/cancel")
+@WebServlet("")
 public class ReservationCheckServlet extends HttpServlet{
 
 	@Override

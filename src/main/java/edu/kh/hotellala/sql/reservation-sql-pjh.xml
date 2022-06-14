@@ -13,8 +13,9 @@
 	
 	<!-- 예약 취소 -->
 	<entry key="selectBoardList">
-	UPDATE RESERVATION_REQ SET
-		CANCEL_FL = 'Y'
+	UPDATE RESERVATION_REQ, REFUND SET
+		CANCEL_FL = 'Y',
+		REFUND_FL = 'Y'
 		WHERE REQEUST_REQ = ?
 	</entry>
 	
