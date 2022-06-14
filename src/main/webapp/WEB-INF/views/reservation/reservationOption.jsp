@@ -30,15 +30,14 @@
         <section class="reserveSection" id="pageBarSection">
             <ul id="pagination">
                 <li class="pageNum">1</li>
-                <li class="pageNum">2</li>
-                <li class="pageNum currentPage">3</li>
-                <li class="pageNum">4</li>
+                <li class="pageNum currentPage">2</li>
+                <li class="pageNum">3</li>
 
-                <div class="reserveTitle" id="pageDef-3">옵션 선택</div>
+                <div class="reserveTitle" id="pageDef-2">옵션 선택</div>
             </ul>
         </section>
 
-        <form action="reservation-payment.html" onsubmit="return reqValidate()">
+        <form action="${contextPath}/reservation/payment" method="post" onsubmit="return reqValidate()">
             <!-- 옵션 영역 -->
             <section class="reserveSection">
                 
@@ -52,7 +51,7 @@
 
                                 
                                 <li>
-                                    <div class="payment-list">성인 조식 / 15,000원</div>
+                                    <div class="payment-list">성인 조식 / 30,000원</div>
                                     
                                     <div class="btn-area">
                                         <button type="button" class="minusBtn"><i class="fa-solid fa-minus"></i></button>
@@ -62,7 +61,7 @@
                                 </li>
                                 
                                 <li>
-                                    <div class="payment-list">어린이 조식 / 10,000원</div>
+                                    <div class="payment-list">어린이 조식 / 25,000원</div>
                                     
                                     <div class="btn-area">
                                         <button type="button" class="minusBtn"><i class="fa-solid fa-minus"></i></button>
@@ -98,7 +97,7 @@
                                     -> 특수문자 잘못 들어갔을 경우 alert로 경고, sudmit X -->
                                 <textarea id="req-input" maxlength="200"></textarea>
                                 <!-- class="removeResource" -->
-                                <input type="text" name="extraRequest" id="extra-request">
+                                <input type="text" name="extraRequest" id="extra-request" class="hideResource">
                                 <button type="button" id="req-reset-btn">초기화</button>
                             </div>
                             <span class="extra-note">
@@ -117,11 +116,11 @@
             <section class="payment-area">
                 <div>
                     <div class="payment-div1">
-                        금액 <span class="room-rates">100,000</span> 원               
+                        금액 <span class="room-rates" id="room-rates"></span>            
                     </div>
                     
                     <div class="payment-div2">
-                        <button onclick="history.back();">이전 페이지로</button>
+                        <button type="button" onclick="history.back();">이전 페이지로</button>
                         
                         <button>예약하기</button>
                     </div>
@@ -133,6 +132,11 @@
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const roomRates = "${roomRates}";
+        const dateRange = "${reservation.dateRange}";
+    </script>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(회원 탈퇴)</title>
-    <link rel="stylesheet" href="css/myPage-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
 
@@ -19,18 +19,27 @@
 
 
 
-<!-- nav -->
-<jsp:include page="/WEB-INF/views/common/nav.jsp"/>
-
+    
     
 <main>
+   
+
+<!-- nav -->
+<jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+    
+<div class="logo">
+    <a href="${contextPath}">
+        <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
+</div>
+    
     <section class="myPage-content">
            
 
 
 
     <!-- 사이드 메뉴 include -->
-    <jsp:include page="${contextPath}/WEB-INF/views/member/sideMenu.jsp"/>
+    <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
             
 
 
@@ -85,8 +94,12 @@
 </main>
 
  <!-- footer -->
- <jsp:include page="${contextPath}/WEB-INF/views/common/footer.jsp"/>
+ <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+
+ <!-- js -->
+<script src="${contextPath}/resources/js/member/myPage.js"></script>
+        
 
 </body>
 </html>

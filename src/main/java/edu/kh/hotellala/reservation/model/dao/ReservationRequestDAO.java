@@ -73,4 +73,34 @@ public class ReservationRequestDAO {
 		return roomList;
 	}
 
+	/**
+	 * 객실 가격 받아오기 DAO
+	 * @param conn
+	 * @param type
+	 * @return roomRates
+	 * @throws Exception
+	 */
+	public int selectRates(Connection conn, String type) throws Exception {
+		int roomRates = 0;
+		
+		try {
+			String sql = prop.getProperty("selectRates");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, type);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				roomRates = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return roomRates;
+	}
+
 }

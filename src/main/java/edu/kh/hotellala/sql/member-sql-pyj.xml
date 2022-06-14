@@ -6,9 +6,8 @@
 
 	<!-- 로그인 -->
 	<entry key="login">
-		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,MEMBER_PHONE,
-		TO_CHAR(BIRTH_DAY,'YYYY-MM-DD') AS BIRTH_DAY,
-		GENDER,ADDRESS,REQUEST,MEMBERSHIP_NO
+		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,MEMBER_TEL,
+		MEMBER_BR,MEMBER_ADDR
 		FROM MEMBER
 		WHERE MEMBER_EMAIL=?
 		AND MEMBER_PW=?
@@ -36,8 +35,8 @@
 	<entry key="updateMember">
 	UPDATE MEMBER SET 
 	MEMBER_NM=?,
-	MEMBER_PHONE=?,
-	ADDRESS=?
+	MEMBER_TEL=?,
+	MEMBER_ADDR=?
 	WHERE MEMBER_NO=?
 	</entry>
 	
@@ -77,6 +76,15 @@
 		      ELSE '3'   
 		   END         
 	FROM DUAL
+   </entry>
+   
+   <!-- 회원 탈퇴 -->
+   <entry key="secession">
+   		UPDATE SET MEMBER
+   		SECESSION_FL='Y'
+   		WHERE MEMBER_NO=?
+   		AND MEMBER_PW=?
+   		
    </entry>
 
 </properties>

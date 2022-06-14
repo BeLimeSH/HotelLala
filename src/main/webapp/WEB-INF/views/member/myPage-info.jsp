@@ -26,7 +26,11 @@
 <!-- nav -->
 <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
  
- 
+<div class="logo">
+    <a href="${contextPath}">
+        <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
+</div>
 <section class="myPage-content">
            
 
@@ -48,7 +52,7 @@
               
                 <div class="myPage-row">
                     <label>NAME*</label>
-                    <input type="text" name="membername" value="${loginMember.memberName}" maxlength="10">
+                    <input type="text" name="memberName" value="${loginMember.memberName}" maxlength="10">
                 </div>
 
                 <div class="myPage-row">
@@ -74,20 +78,12 @@
                 <div class="myPage-row info-address">
                     <input type="text" name="memberAddress" value="${addr[2]}">
                 </div>
-               
-               
-
-
+        
                 <button id="info-update-btn">수정하기</button>
-
 
             </form>
 
-
-
-
         </section>
-
 
     </section>
     
@@ -96,8 +92,8 @@
 <!-- footer -->
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
-    
-    
+<!-- js -->
+<script src="${contextPath}/resources/js/member/myPage.js"></script>
         
 
     
