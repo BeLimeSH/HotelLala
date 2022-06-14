@@ -54,7 +54,7 @@
                                 <li>
                                     <div class="payment-list">객실</div>
                                     <div class="unbundling">
-                                        <span class="payment-list">Standard/1박</span>
+                                        <span class="payment-list">${reservation.roomType} / ${reservation.dateRange}박</span>
                                         <span class="payment-list">100,000원</span>
                                     </div>
                                 </li>
@@ -64,7 +64,7 @@
                                 <li class="payment-list">선택한 옵션(옵션 / 수량 / 가격)</li>
                                 
                                 <li>
-                                    <span class="payment-list">성인 조식(15,000원)</span>
+                                    <span class="payment-list">성인 조식(30,000원)</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list">0</span>
                                     <span class="payment-list">|</span>
@@ -72,7 +72,7 @@
                                 </li>
                                 
                                 <li>
-                                    <span class="payment-list">어린이 조식(10,000원)</span>
+                                    <span class="payment-list">어린이 조식(25,000원)</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list">0</span>
                                     <span class="payment-list">|</span>
@@ -94,7 +94,7 @@
                         <div>
                             <div class="req-result">
                                 <div class="payment-list">추가 요청사항</div>
-                                <div class="textBox"></div>
+                                <div class="textBox">${reservation.extraRequest}</div>
                             </div>
 
                             <div class="req-result-message">* 기타 문의사항은 Q&A게시판 또는 객실 예약과(010-0000-000)로 <br> 문의주세요.</div>
