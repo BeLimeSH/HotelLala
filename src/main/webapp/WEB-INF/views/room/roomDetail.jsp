@@ -29,19 +29,19 @@
                 <div class="swiper-wrapper">
                     <!-- <div class="swiper-slide">내용</div> 를 추가하면된다 -->
                     <div class="swiper-slide">
-                        <img src="../../Semi_resources/image/room/Standard/standard-bed1.jpg">
+                        <img src="${contextPath}/resources/images/room/Single/single0.jpg">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="../../Semi_resources/image/room/Standard/standard-bed2.jpg">
+                        <img src="${contextPath}/resources/images/room/Single/single1.jpg">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="../../Semi_resources/image/room/Standard/standard-bed3.jpg">
+                        <img src="${contextPath}/resources/images/room/Single/single2.jpg">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="../../Semi_resources/image/room/Standard/standard-bath1.jpg">
+                        <img src="${contextPath}/resources/images/room/Single/single3.jpg">
                     </div>
                     
                 </div>

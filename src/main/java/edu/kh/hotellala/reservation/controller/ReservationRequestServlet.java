@@ -37,7 +37,7 @@ public class ReservationRequestServlet extends HttpServlet {
 		
 		//남는 객실 조회
 		
-		//객실 + 날짜 값 입력받아오기
+		//객실 + 날짜 값 입력받아오기 --> 추가 예정
 		//2022/06/12 - 2022/06/13
 		
 		//ajax의 data로 파라미터 값을 얻어오고
@@ -64,13 +64,13 @@ public class ReservationRequestServlet extends HttpServlet {
 		reservation.setAdultCount(adultCount);
 		reservation.setChildCount(childCount);
 		
-		System.out.println(reservation);
+//		System.out.println(reservation);
 				
 		try{
 			//Session 객체 얻어오기
 			HttpSession session = req.getSession();
 			
-			//1시간 후 만료
+			//1시간 후 만료 -> 로그인에 있으면 빼도 될것
 			session.setMaxInactiveInterval(3600);
 			
 			if(reservation != null) {
@@ -83,7 +83,7 @@ public class ReservationRequestServlet extends HttpServlet {
 			//객실 조회하기
 			List<RoomType> roomList = service.selectAvailableRoom(reservation);
 			
-			System.out.println(roomList);
+//			System.out.println(roomList);
 			
 			req.setAttribute("roomList", roomList);
 			

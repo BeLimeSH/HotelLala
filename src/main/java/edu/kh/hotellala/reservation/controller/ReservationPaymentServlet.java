@@ -14,10 +14,25 @@ public class ReservationPaymentServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+
+		
+		try {
+			
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		String path = "/WEB-INF/views/payment/paymentRequest.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 		
-		//주문번호는 여기서 만들려무나
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		//ajax 처리
 	}
 
 }
