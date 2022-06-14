@@ -65,11 +65,9 @@ public class MemberDAO {
 
 				String memberTel= rs.getString("MEMBER_TEL");
 				String memberBR= rs.getString("MEMBER_BR");
-
-				char gender =rs.getString("GENDER").charAt(0);
 				String memberAddress =rs.getString("MEMBER_ADDR");
-				String request = rs.getString("REQUEST");
-				int membershipNo =rs.getInt("MEMBERSHIP_NO");
+			
+			
 				
 			
 				//6)얻어온 컬럼 값을 이용해 Member 객체를 생성하여 loginMember 변수에 저장하여 하나로 묶는 작업 
@@ -79,11 +77,9 @@ public class MemberDAO {
 				loginMember.setMemberName(memberName);
 				loginMember.setMemberBR(memberBR);
 				loginMember.setMemberTel(memberTel);
-				loginMember.setGender(gender);
 				loginMember.setMemberAddress(memberAddress);
-				loginMember.setRequest(request);
-				loginMember.setMembershipNo(membershipNo);
-				
+			
+			
 		
 		
 			}
@@ -315,6 +311,37 @@ public class MemberDAO {
 	      
 	      return result;
 	   }
+
+	/** 회원 탈퇴 
+	 * @param conn
+	 * @param memberNo
+	 * @param memberPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int secession(Connection conn, int memberNo, String memberPw) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("secession");
+			
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, memberPw);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			
+			close(pstmt);
+		
+		}
+		return result;
+	}
 
 
 }

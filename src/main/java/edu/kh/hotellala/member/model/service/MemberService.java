@@ -45,7 +45,7 @@ public class MemberService {
 		return result;
 	}
 
-	/**회원 정보 수정 
+	/**회원 정보 수정 Service 
 	 * @param mem
 	 * @return result 
 	 * @throws Exception
@@ -64,7 +64,7 @@ public class MemberService {
 		return result;
 	}
 
-	/**비밀번호 변경 
+	/**비밀번호 변경 Service
 	 * @param currentPw
 	 * @param newPw
 	 * @param memberNo
@@ -134,6 +134,28 @@ public class MemberService {
 		Connection conn = getConnection();
 		
 		int result = dao.checkNumber(conn, inputEmail, cNumber);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
+	/** 회원 탈퇴 Service 
+	 * @param memberNo
+	 * @param memberPw
+	 * @return
+	 * @throws Exception
+	 */
+	public int secession(int memberNo, String memberPw) throws Exception{
+	
+
+		Connection conn = getConnection();
+		
+		int result = dao.secession(conn,memberNo,memberPw);
+		
+		if(result>0) commit(conn);
+		else	 	 rollback(conn);
 		
 		close(conn);
 		

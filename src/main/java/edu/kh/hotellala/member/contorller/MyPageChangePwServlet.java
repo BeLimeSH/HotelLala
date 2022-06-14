@@ -55,17 +55,21 @@ public class MyPageChangePwServlet extends HttpServlet {
 			int result = service.changePw(currentPw, newPw, memberNo);
 			
 			if(result>0) { // 비밀번호 성공 시
+				
 				// session scope = key:message / value: 비밀번호가 변경되었습니다.
 				// path = "내정보 페이지 주소"
 				session.setAttribute("message", "비밀번호가 변경되었습니다.");
 				path =req.getContextPath();
 				//+ "/member/myPage/예약 현황 페이지 or 내정보수정 "; // 페이지로 이동 
+			
 			}else { // 실패 시
+			
 				// session scope = key:message / value: 현재 비밀번호가 일치하지않습니다.
 				// paht= "비밀번호 변경 페이지 주소"
 				session.setAttribute("message", "현재 비밀번호가 일치하지않습니다.");
 				path=req.getContextPath() + "/member/myPage/changePw";
 				//path="changePw"; -> 상대경로
+			
 			}
 			
 			resp.sendRedirect(path);
