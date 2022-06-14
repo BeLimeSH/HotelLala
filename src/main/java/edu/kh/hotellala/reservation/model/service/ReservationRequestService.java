@@ -31,9 +31,6 @@ public class ReservationRequestService {
 		List<RoomType> roomList = dao.selectAvailableRoom(conn, headCount);
 		
 		
-		
-		
-		
 		// 객실 타입 받아와서 날짜 + 객실 호수(객실 타입으로 switch로 지정)를 where절 조건에 넣어서 조회되는 수 카운트 하기
 		
 		close(conn);

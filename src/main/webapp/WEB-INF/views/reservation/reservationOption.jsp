@@ -30,15 +30,14 @@
         <section class="reserveSection" id="pageBarSection">
             <ul id="pagination">
                 <li class="pageNum">1</li>
-                <li class="pageNum">2</li>
-                <li class="pageNum currentPage">3</li>
-                <li class="pageNum">4</li>
+                <li class="pageNum currentPage">2</li>
+                <li class="pageNum">3</li>
 
-                <div class="reserveTitle" id="pageDef-3">옵션 선택</div>
+                <div class="reserveTitle" id="pageDef-2">옵션 선택</div>
             </ul>
         </section>
 
-        <form action="reservation-payment.html" onsubmit="return reqValidate()">
+        <form action="${contextPath}/reservation/payment" method="post" onsubmit="return reqValidate()">
             <!-- 옵션 영역 -->
             <section class="reserveSection">
                 
@@ -117,7 +116,7 @@
             <section class="payment-area">
                 <div>
                     <div class="payment-div1">
-                        금액 <span class="room-rates">100,000</span> 원               
+                        금액 <span class="room-rates">100,000</span>            
                     </div>
                     
                     <div class="payment-div2">
