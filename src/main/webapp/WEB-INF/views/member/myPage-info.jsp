@@ -26,7 +26,11 @@
 <!-- nav -->
 <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
  
- 
+<div class="logo">
+    <a href="${contextPath}">
+        <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
+</div>
 <section class="myPage-content">
            
 
