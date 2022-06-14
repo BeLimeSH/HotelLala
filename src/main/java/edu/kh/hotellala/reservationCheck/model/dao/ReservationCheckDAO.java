@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 
 public class ReservationCheckDAO {
@@ -21,7 +22,18 @@ public class ReservationCheckDAO {
 	private ResultSet rs;	
 	private Properties prop;
 	
-
+	public ReservationCheckDAO() {
+		try {
+			prop = new Properties();
+			
+			String filePath = ReservationRequestDAO.class.getResource("/edu/kh/hotellala/sql/reservation-sql-pjh.xml").getPath();
+			
+			prop.loadFromXML(new FileInputStream(filePath));
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	/** 예약 조회 DAO
 	 * @param conn
@@ -33,7 +45,7 @@ public class ReservationCheckDAO {
 		List<ReservationCheck> list = new ArrayList<ReservationCheck>();
 		
 		try {
-			String sql = prop.getProperty("selectBoardList");
+			String sql = prop.getProperty("/edu/kh/hotellala/sql/reservation-sql-pjh.xml");
 			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
