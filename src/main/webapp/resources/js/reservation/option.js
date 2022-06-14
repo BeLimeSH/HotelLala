@@ -1,7 +1,7 @@
 const roomRatesSpan = document.getElementById('room-rates');
 
 (function(){
-    roomRatesSpan.innerText = priceToString(roomRates);
+    roomRatesSpan.innerText = priceToString(roomRates) +" 원";
 })();
 
 //가격 포맷 바꾸기
@@ -16,7 +16,7 @@ optionCon.addEventListener("click", function(){
 
     console.log( $('#a-breakfast').val()*15000 +  $('#c-breakfast').val()*10000 + $('#extra-bed').val()*65000 );
     roomRatesSpan.innerText = priceToString( parseInt( roomRates ) + $('#a-breakfast').val()*15000
-                                            + $('#c-breakfast').val()*10000 + $('#extra-bed').val()*65000 );
+                                            + $('#c-breakfast').val()*10000 + $('#extra-bed').val()*65000 ) + " 원";
 
 });
 

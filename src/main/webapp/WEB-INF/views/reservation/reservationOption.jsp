@@ -40,7 +40,6 @@
         <form action="${contextPath}/reservation/payment" method="get" onsubmit="return reqValidate()">
             <!-- 옵션 영역 -->
             <section class="reserveSection">
-                ${reservation}
                 
                 <section id="optionBox" class="selectionContents">
                     <div class="payment-tit">옵션 선택</div>

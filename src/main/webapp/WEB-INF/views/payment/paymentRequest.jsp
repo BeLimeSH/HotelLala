@@ -32,10 +32,9 @@
             <ul id="pagination">
                 <li class="pageNum">1</li>
                 <li class="pageNum">2</li>
-                <li class="pageNum">3</li>
-                <li class="pageNum currentPage">4</li>
+                <li class="pageNum currentPage">3</li>
 
-                <div class="reserveTitle" id="pageDef-4">결제</div>
+                <div class="reserveTitle" id="pageDef-3">결제</div>
             </ul>
 
         </section>
@@ -158,7 +157,7 @@
             <section class="payment-area">
                 <div>
                     <div class="payment-div1">
-                        최종 금액 <span class="room-price">100,000</span> 원              
+                        최종 금액 <span class="room-price">100,000</span>           
                     </div>
         
                     <div class="payment-div2">
