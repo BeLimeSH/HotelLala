@@ -37,7 +37,7 @@
             </ul>
         </section>
 
-        <form action="${contextPath}/reservation/payment" method="get" onsubmit="return reqValidate()">
+        <form action="${contextPath}/reservation/payment" method="post" onsubmit="return reqValidate()">
             <!-- 옵션 영역 -->
             <section class="reserveSection">
                 
@@ -51,7 +51,7 @@
 
                                 
                                 <li>
-                                    <div class="payment-list">성인 조식 / 15,000원</div>
+                                    <div class="payment-list">성인 조식 / 30,000원</div>
                                     
                                     <div class="btn-area">
                                         <button type="button" class="minusBtn"><i class="fa-solid fa-minus"></i></button>
@@ -61,7 +61,7 @@
                                 </li>
                                 
                                 <li>
-                                    <div class="payment-list">어린이 조식 / 10,000원</div>
+                                    <div class="payment-list">어린이 조식 / 25,000원</div>
                                     
                                     <div class="btn-area">
                                         <button type="button" class="minusBtn"><i class="fa-solid fa-minus"></i></button>
@@ -135,6 +135,7 @@
 
     <script>
         const roomRates = "${roomRates}";
+        const dateRange = "${reservation.dateRange}";
     </script>
 
     <!-- jQuery -->
