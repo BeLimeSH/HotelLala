@@ -58,7 +58,7 @@ memberEmail.addEventListener("input", function(){
     // 입력이 되지 않은 경우
     if( memberEmail.value.length == 0 ){
 
-        emailMessage.innerText = "메일을 받을 수 있는 이메일을 입력해주세요.";
+        emailMessage.innerText = "메일을 받을 수 o있는 이메일을 입력해주세요.";
         emailMessage.classList.remove("confirm", "error");
 
         checkObj.memberEmail = false; //유효하지 않은 상태임을 기록
@@ -228,7 +228,8 @@ let checkInterval; //setInterval을 저장할 변수
 let min = 4;
 let sec = 59;
 
-
+cMessage.classList.remove("confirm");
+cMessage.classList.remove("error");
 
 sendBtn.addEventListener("click", function(){
 	if(checkObj.memberEmail){ //우혀한 이메일이 작성되어 있을 경우에만 메일 보내기
@@ -330,6 +331,7 @@ cBtn.addEventListener("click",function(){
 			});
 		}else{ //6자리 아님 
 			alert("인증번호를 정확하게 입력해주세요.");
+            cNumber.focus();
 		}
 	}else{ // 인증번호를 안받은 경우 
 		alert("인증번호 받기 버튼을 먼저 클릭해주세요");

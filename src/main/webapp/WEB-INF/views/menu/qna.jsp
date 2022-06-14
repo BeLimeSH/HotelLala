@@ -62,6 +62,7 @@
                             <span>이메일</span><br>
                             <input type="text" placeholder="수신가능한 이메일을 적어주세요.">  
                         </div>   
+                        <!-- <input type="hidden" name="member" value="${membere.membNO}"> -->
                     </li>
                     <li>
                         <p class="a-1">개인정보 수집 및 이용</p>
