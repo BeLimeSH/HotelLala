@@ -14,13 +14,16 @@ import com.google.gson.Gson;
 import edu.kh.hotellala.reservationCheck.model.service.ReservationCheckService;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 
-@WebServlet("")
+@WebServlet("/reservation/check")
 public class ReservationCheckServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String reservationNo = req.getParameter("reservationNo");
+		String requestNo = req.getParameter("requestNo");
+		
+		String startDate = req.getParameter("startDate");
+		String endDate = req.getParameter("endDate");
 		
 		try {
 

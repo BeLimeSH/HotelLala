@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import edu.kh.hotellala.reservationCheck.model.service.ReservationCheckService;
 
-@WebServlet("/reservationCheck/cancel")
+@WebServlet("/reservation/cancel")
 public class ReservationCancelServlet extends HttpServlet{
 
 	@Override
@@ -24,7 +24,6 @@ public class ReservationCancelServlet extends HttpServlet{
 			
 			HttpSession session = req.getSession();
 			
-			String path = null;
 			String message = null;
 			
 			// 취소 성공
@@ -32,13 +31,12 @@ public class ReservationCancelServlet extends HttpServlet{
 				message = "예약이 취소되었습니다.";
 			}else { // 실패 시
 				message = "예약 취소 요청에 실패하였습니다.";
-				path = req.getHeader("");
-				// -> 이전 페이지(예약 조회 페이지 이동)
 			}
 			
 			session.setAttribute("message", message);
 			
-			resp.sendRedirect(path);
+			String path = "/WEB-INF/views/reservationCancel/reservationCancel.jsp";
+			req.getRequestDispatcher(path).forward(req, resp);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
