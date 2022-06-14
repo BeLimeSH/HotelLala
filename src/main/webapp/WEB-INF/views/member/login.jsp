@@ -13,14 +13,20 @@
     <link rel="stylesheet" href="resources/css/notice.css">
     <link rel="stylesheet" href="resources/css/login.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+    <!-- *** 웹 상단에 호텔 아이콘 추가 *** -->
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
+
     
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <div class="container">
-        <a href="#" class="fab1 fixed"><i class="fa-solid fa-cloud-moon"></i></i></a>
-        <a href="./index.html" class="header fixed">Hotel LaLa</a>
-        
+        <div class="logo">
+	        <a href="${contextPath}">
+				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+	        </a>
+        </div>
      
             
             <form action="login" method="post" class="first" onsubmit="return loginValidate()">
@@ -68,77 +74,14 @@
             
      
    
-            <div class="seconds">
-                <a href="#" class="first_bar">
-                    <i class="fa-solid fa-x cursor"></i>
-                    <p class="cursor" style="">close</p>
-                    <a href="login.html"><p class="login cursor">Login</p></a>
-                    <a href="signup.html"><p class="signup cursor">signUp</p></a>
-                </a>
+<!-- nav -->
+<jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
-            <div class="nav_bar">
-                <ul class="list1">
-                    <h4>Contact</h4>
-                    <li><a href="notice.html">공지사항</a></li>
-                    <li><a href="qna.html">Q&A</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-                <br><br>
-                <ul class="list2">
-                    <h4>Location</h4>
-                    <li><a href="location.html">오시는 길</a></li>
-                    <!-- <li><a href="#">층별안내</a></li> -->
-                    <li><a href="room.html">호텔라라 소개</a></li>
-                </ul>
-                <br><br><br>
 
-                <ul class="list3">
-                    <h1><a href="#" class="white">예약하기</a></h1>
-                </ul><br>
-                <ul class="list3">
-                    <h1><a href="#" class="white">예약확인</a></h1>
-                </ul><br>
-            </div> 
-        </div>
+<!-- footer -->
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-        <div class="third">
-                <a href="#" class="seconds_bar">
-                    <i class="fa-solid fa-bars cursor"></i>
-                    <p class="cursor">MENU</p>
-                
-                </a>
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
-        </div>
-    </div>
-           
-    <footer>
-        <div class="footert-inner">
-            <div class="upper">
-                <h1>Hotel LaLa</h1>
-                <ul>
-                    <li><a href="#">Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Family Site</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                    TEL : 02-111-1234 C.P : 010-1234-5678
-                </address>
-                <p>
-                    2022 Hotel LaLa &copy; copyright all right reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    
-
-    <script src="js/index.js"></script>
-    <script src="js/login.js"></script>
+<script src="${contextPath}/resources/js/main.js"></script>
+<script src="${contextPath}/resources/js/member/login.js"></script>
 </body>
 </html>

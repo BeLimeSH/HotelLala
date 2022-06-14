@@ -6,7 +6,7 @@
 
 	<!-- 로그인 -->
 	<entry key="login">
-		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,
+		SELECT MEMBER_NO,MEMBER_EMAIL,MEMBER_NM,MEMBER_PHONE,
 		TO_CHAR(BIRTH_DAY,'YYYY-MM-DD') AS BIRTH_DAY,
 		GENDER,ADDRESS,REQUEST,MEMBERSHIP_NO
 		FROM MEMBER
@@ -17,12 +17,10 @@
 
 
 
-
-
 	<!-- 회원가입 -->
 	<entry key="signUp">
 		INSERT INTO MEMBER
-		VALUES( SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?,DEFAULT, DEFAULT)
+		VALUES( SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)
 	</entry>
 	
 	<!-- 이메일 중복 검사 -->
@@ -31,6 +29,19 @@
 		WHERE MEMBER_EMAIL = ?
 		AND SECESSION_FL = 'N'
 	</entry>
+	
+
+
+	<!-- 회원 정보 수정   -->
+	<entry key="updateMember">
+	UPDATE MEMBER SET 
+	MEMBER_NM=?,
+	MEMBER_PHONE=?,
+	ADDRESS=?
+	WHERE MEMBER_NO=?
+	</entry>
+	
+	
 	<!-- 비밀번호 변경 새비밀번호-> 회원번호-> 현재비밀번호   -->
 	<entry key="changePw">
 	UPDATE MEMBER SET 
@@ -39,6 +50,33 @@
 	AND MEMBER_PW= ?  
 	</entry>
 
-
+	<!-- 인증번호 수정 -->
+   <entry key="updateCertification">
+      UPDATE CERTIFICATION SET
+      C_NUMBER = ?,
+      ISSUE_DT = SYSDATE
+      WHERE EMAIL = ?
+   </entry>
+   
+   <!-- 인증번호 생성 -->
+   <entry key="insertCertification">
+      INSERT INTO CERTIFICATION VALUES(?, ?, SYSDATE)
+   </entry>
+   
+   <!-- 인증번호 확인 -->
+   <entry key="checkNumber">
+	   	SELECT 
+		   CASE WHEN (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND C_NUMBER = ?)  = 1
+		   
+		      THEN NVL( (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+		
+		      ELSE '3'   
+		   END         
+	FROM DUAL
+   </entry>
 
 </properties>

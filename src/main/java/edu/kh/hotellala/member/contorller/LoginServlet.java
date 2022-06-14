@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 페이지로 forward
-		String path ="/WEB-INF/views/member/login1.jsp";
+		String path ="/WEB-INF/views/member/login.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 
 	}
@@ -50,6 +50,8 @@ public class LoginServlet extends HttpServlet{
 			Member loginMember = service.login(mem); 
 			
 			HttpSession session =req.getSession();
+			
+			String path="/WEB-INF/views/member/login.jsp";
 			
 			if(loginMember != null) { //로그인 성공 
 				
@@ -81,11 +83,16 @@ public class LoginServlet extends HttpServlet{
 				//응답 객체를 이용해서 클라이언트로 전달 
 				resp.addCookie(c);
 				
+				resp.sendRedirect(req.getContextPath());
+				
 			}else { // 로그인 실패 
 				session.setAttribute("message", "아이디와 비밀번호가 일치하지 않습니다.");
+				
+			
+				req.getRequestDispatcher(path).forward(req, resp);
+				
 			}
 			
-			resp.sendRedirect(req.getContextPath());
 			
 			
 		

@@ -45,6 +45,24 @@ public class MemberService {
 		return result;
 	}
 
+	/**회원 정보 수정 
+	 * @param mem
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int updateMember(Member mem) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updateMember(conn,mem);
+		
+		if(result>0)  commit(conn);
+		else		  rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 
 	/**비밀번호 변경 
 	 * @param currentPw
@@ -82,4 +100,45 @@ public class MemberService {
 		
 		return result;
 	}
+
+
+	/** 인증 번호 DB 추가 Service
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 */
+	public int insertCertification(String inputEmail, String cNumber) throws Exception {
+		
+		Connection conn = getConnection();
+		int result = dao.updateCertification(conn, inputEmail, cNumber);
+		
+		if(result==0) {
+			result = dao.insertCertification(conn, inputEmail, cNumber);
+			
+		}
+		
+		if(result>0) commit(conn);
+		else		 rollback(conn);
+		return result;
+	}
+
+
+	/** 인증번호 확인 Service
+	 * @param inputEmail
+	 * @param cNumber
+	 * @return
+	 * @throws Exception
+	 */
+	public int checkNumber(String inputEmail, String cNumber) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.checkNumber(conn, inputEmail, cNumber);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 }

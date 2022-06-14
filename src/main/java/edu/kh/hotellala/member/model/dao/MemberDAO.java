@@ -1,6 +1,7 @@
 package edu.kh.hotellala.member.model.dao;
 
 
+//import static edu.kh.community.common.JDBCTemplate.close;
 import static edu.kh.hotellala.common.JDBCTemplate.*;
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -61,21 +62,31 @@ public class MemberDAO {
 				int memberNo =rs.getInt("MEMBER_NO");
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
-				Date birthDay= rs.getDate("BIRTH_DAY");
+
+				String birthDay= rs.getString("BIRTH_DAY");
+
+				String memberTel= rs.getString("MEMBER_PHONE");
+				String memberBR = rs.getString("BIRTH_DAY");
+
 				char gender =rs.getString("GENDER").charAt(0);
-				String address =rs.getString("ADDRESS");
+				String memberAddress =rs.getString("ADDRESS");
 				String request = rs.getString("REQUEST");
 				int membershipNo =rs.getInt("MEMBERSHIP_NO");
 				
-				
+			
 				//6)얻어온 컬럼 값을 이용해 Member 객체를 생성하여 loginMember 변수에 저장하여 하나로 묶는 작업 
 				loginMember = new Member();
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
-				loginMember.setBirthDay(birthDay);
+
+				loginMember.setMemberBR(birthDay);
+
+				loginMember.setMemberTel(memberTel);
+//				loginMember.setBirthDay(birthDay);
+
 				loginMember.setGender(gender);
-				loginMember.setMemberAddress(address);
+				loginMember.setMemberAddress(memberAddress);
 				loginMember.setRequest(request);
 				loginMember.setMembershipNo(membershipNo);
 				
@@ -112,13 +123,43 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getMemberName());
 			pstmt.setString(4, mem.getMemberTel());
 			pstmt.setString(5, mem.getMemberAddress());
-			pstmt.setString(6, mem.getMemberYear());
-			pstmt.setString(7, mem.getMemberMonth());
-			pstmt.setString(8, mem.getMemberDay());
+			pstmt.setString(6, mem.getMemberBR());
+
 			
 			result= pstmt.executeUpdate();
 		}finally {
 			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	/** 회원 정보 수정 DAO
+	 * @param conn
+	 * @param mem
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int updateMember(Connection conn, Member mem) throws Exception {
+		
+		int result =0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateMember");
+			pstmt= conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberName());
+			pstmt.setString(2, mem.getMemberTel());
+			pstmt.setString(3, mem.getMemberAddress());
+			pstmt.setInt(4,mem.getMemberNo());
+			
+			result=pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+			
 		}
 		
 		return result;
@@ -186,6 +227,97 @@ public class MemberDAO {
 		
 		return result;
 	}
+	
+	   /** 인증번호, 발급일 수정 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("updateCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, cNumber);
+	         pstmt.setString(2, inputEmail);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+	
+
+	   /** 인증번호 생성 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("insertCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+
+
+
+	   /** 인증번호 확인 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int checkNumber(Connection conn, String inputEmail, String cNumber) throws Exception{
+	      int result = 0;
+	      
+	      try {
+	         
+	         String sql = prop.getProperty("checkNumber");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         pstmt.setString(3, inputEmail);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         if(rs.next()) {
+	            result = rs.getInt(1);
+	         }
+	         
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
 
 
 }

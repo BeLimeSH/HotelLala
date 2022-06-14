@@ -34,7 +34,6 @@
                 <li class="pageNum currentPage">1</li>
                 <li class="pageNum">2</li>
                 <li class="pageNum">3</li>
-                <li class="pageNum">4</li>
 
                 <div class="reserveTitle" id="pageDef-1">날짜 & 인원 선택</div>
             </ul>
@@ -45,7 +44,7 @@
 
         <section class="reserveSection">
             <!-- 날짜 선택 바 -->
-            <form class="dateSelection" id="dateSelection" name="dateSelection" action="${contextPath}/reservation/room" method="post" onsubmit="return dateValidate()">
+            <div class="dateSelection">
 
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>
@@ -78,7 +77,7 @@
 
                 <button id="roomSearchBtn">객실 검색</button>
                 
-            </form>
+            </div>
         </section>
 
         <section class="reserveSection removeResource" id="headcountBox">
@@ -127,12 +126,18 @@
         <!-- 메세지 -->
         <section class="reserveSection">
 
-            <article id="dateMessage" class="selectionContents">
-                예약 날짜와 인원 수를 선택해주세요.
-            </article>
-            
-        </section>
+            <!-- 객실 조회 -->
+            <article id="selectRoom" class="selectionContents">
+                
+                <div id="dateMessage">
+                    예약 날짜와 인원 수를 선택해주세요.
+                </div>
 
+                <!-- 객실 리스트 조회 위치 -->
+                <ul id="roomList"></ul>
+
+            </article>
+        </section>
     </main>
 
     <!-- footer -->
@@ -144,6 +149,11 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- js에 전역변수로 contextPath 선언 -->
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
 
     <script src="${contextPath}/resources/js/reservation/selectedDate.js"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
