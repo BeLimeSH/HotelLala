@@ -20,7 +20,7 @@ import edu.kh.hotellala.wrapper.EncryptWrapper;
 
 @WebFilter(filterName="encryptFilter",
 		   urlPatterns = {"/login",
-				   		  "/member/signUp",
+				   		  "/signUp",
 				   		  "/member/myPage/changePw",
 				   		  "/member/myPage/secession"})
 
