@@ -7,21 +7,35 @@
 }
 
 main{
+    position: relative;
+    overflow: auto;
     width: 100%;
     margin: auto;
 }
 
+/* 취소 내역 박스 */
+.reserveCancelTitleSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
 /* 상단 div */
 .dateSelection{
-    height: 170px; 
-    width: 700px;
-    margin: 30px 0;
+    width: 67.6%;
+    height: 200px; 
+    margin: 30px;
     border-top: 2px solid #ddd;
     border-bottom: 2px solid #ddd;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #1a2a6c;
+    border: 3px solid #0f2478;
+    border-radius: 5px;
 }
 
 /* 상단 div 제목 */
@@ -29,6 +43,7 @@ main{
     font-family: 'GowunBatang-Regular';
     font-size: 30px;
     font-weight: bold;
+    justify-content: center;
     margin-bottom: 10px;
     color: white;
 }
@@ -45,14 +60,7 @@ main{
 
 /* ----------------------------------------------- */
 
-/* 취소 내역 박스 */
-.reserveCancelTitleSection{
-    margin: 0 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 
 .reserveCancelSection{
     padding: 0 30px 60px 30px;
@@ -65,7 +73,8 @@ main{
 
 /* 취소 내역 박스 */
 .selectionContents{
-    width: 700px;
+    justify-content: space-between;
+    width: 70%;
     height: 700px;
     border: 1px solid rgb(185, 185, 185);
     border-radius: 5px;
@@ -92,25 +101,38 @@ main{
     font-family: 'GowunBatang-Regular';
     height: 30px;
     display: flex;
+    font-weight: bold;
     justify-content: left;
     padding-left: 75px;
     align-items: left;
     color: #1a2a6c;
     font-size: 17px;
+}
+
+.cancelTitle-notice-sub{
+    font-family: 'GowunBatang-Regular';
+    height: 30px;
+    display: flex;
+    font-weight: bold;
+    justify-content: right;
+    align-items: flex-end;
+    padding-left: 75px;
+    color: #1a2a6c;
+    font-size: 17px;
 } 
 
 a{
-    text-decoration: none;
+    
     height: 30px;
     display: flex;
     border-bottom: 1px solid rgb(204, 204, 204);
-
 }
+
 .cancelSubTitle{
     font-family: 'GowunBatang-Regular';
     height: 70px;
     display: flex;
-    justify-content: left;
+    /* justify-content: left; */
     padding: 50px 0 50px 70px;
     align-items: center;
     font-weight: bold;
@@ -120,9 +142,9 @@ a{
 .totalPay{
     font-family: 'GowunBatang-Regular';
     display: flex;
-    position: relative;
-    left: 50%;
-    text-align: center;
+    /* position: relative;
+    left: 50%; */
+    text-align: right;
     color: #c90d81; 
 }
 

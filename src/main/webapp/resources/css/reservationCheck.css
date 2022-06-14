@@ -3,6 +3,13 @@ main{
     margin: auto;
 }
 
+/* 로고 크기 */
+a{  
+    height: 30px;
+    display: flex;
+    border-bottom: 1px solid rgb(195, 195, 195);
+}
+
 /* 폰트 */
 @font-face {
     font-family: 'GowunBatang-Regular';
@@ -14,8 +21,8 @@ main{
 
 /* 마이페이지 영역 */
 .myPage-content{
-    width: 1000px;
-    height: 800px;
+    width: 1400px;
+    height: 600px;
     margin: 50px auto;
 
     display: flex;
@@ -23,7 +30,8 @@ main{
 
 /* 왼쪽 사이드 메뉴 */
 .left-side{
-    width: 25%;
+    width: 300px;
+    margin: auto;
 }
 
 .list-group{
@@ -37,6 +45,8 @@ main{
     height: 50px;
     font-size: 18px;
 }
+
+
 
 .list-group > li > a {
     font-size: 17px;
@@ -71,8 +81,8 @@ main{
 
 /* 마이페이지 공통 부분 */
 .myPage-main{
-    width: 75%;
-    padding: 30px 50px 30px 30px;
+    width: 100%;
+    margin: auto;
 }
 
 
@@ -134,11 +144,11 @@ form[name="myPage-form"]{
     font-size: 12px;
     color: #101010;
     width: 200px;
-    height: 450px;
+    height: 500px;
     border: #0a1c45 solid 2px;
     background: #1a2a6c;
     padding: 23px;
-    margin: 0 0 30px 0;
+    margin: 60px 30px 0;
 }    
 
 /* h2 class="tit" 밑줄선 효과 */
@@ -204,6 +214,7 @@ form[name="myPage-form"]{
 /* 예약 확인 div */
 .contain{
     font-family: 'GowunBatang-Regular';
+    width: 100%;
     margin: 0;
     font-size: 12px;
     color: #101010;
@@ -254,7 +265,7 @@ form[name="myPage-form"]{
 /* 예약 취소 버튼 */
 .w-btn-outline {
     position: relative;
-    left: 85%;
+    left: 90%;
     padding: 7px 12px;
     border-radius: 2px;
     font-family: "paybooc-Light", sans-serif;
@@ -279,8 +290,8 @@ form[name="myPage-form"]{
 
 /* 3,6,12 개월 기간 조회 */
 .btn{
-    position: relative;
-    left: 235%;
+    justify-content: space-around;
+    align-items: center;
     padding: 3px 6px;
     border-radius: 2px;
     font-family: "paybooc-Light", sans-serif;
@@ -300,4 +311,9 @@ form[name="myPage-form"]{
 .btn-sm:hover{
     background-color: #4a5a94;
     color: #d4dfe6;
+}
+
+.reserveNothing{
+    justify-content: center;
+    align-items: center;
 }
