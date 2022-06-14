@@ -7,27 +7,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel LaLa</title>
+    <title>예약 취소</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/main-style-test.css" type="text/css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-style.css" type="text/css">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-style-rsvCancel.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservation-cancel-style.css" type="text/css">
 
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
+	<!-- header -->
+	<a href="${contextPath}" class="hotelLogo">
+       <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
+
+    <!-- nav -->
+    <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+    
     <main>
-
         <section class="reserveCancelTitleSection">
-
             <div class="dateSelection" name="dateSelection">
-
-                <div>
-                    <div class="reserve-Title">취소가 완료되었습니다.</div>
-
-                    <span>예약 일시 : ${}</span>
-                    <span>취소 일시 : ${}</span>
-
-                </div>
+                <div class="reserve-Title">취소가 완료되었습니다.</div>
+                <span>결제 일시 : ${contextPath}${payment.paymentDT}</span>
+                <span>환불 요청 일시 : ${contextPath}${refund.refundDT}</span>
             </div>
         </section>
 
@@ -43,7 +46,7 @@
                     <a></a>
                     
                 <div class="cancelSubTitle">총 환불액
-                    <div class="totalPay">${}</div>
+                    <div class="totalPay">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">환불금액
@@ -57,7 +60,7 @@
                 <a></a>
 
                 <div class="cancelSubTitle">총 예약가
-                    <div class="totalPay">${}</div>
+                    <div class="totalPay">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">실결제 금액
@@ -73,8 +76,14 @@
         </section>
 
     </main>
+    
+     <!-- footer -->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-   
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  	<script src="${contextPath}/resources/js/main.js"></script>
     
 </body>
 </html>

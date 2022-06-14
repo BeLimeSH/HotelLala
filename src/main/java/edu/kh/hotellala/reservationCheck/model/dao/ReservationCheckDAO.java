@@ -1,6 +1,7 @@
 package edu.kh.hotellala.reservationCheck.model.dao;
 
 import static edu.kh.hotellala.common.JDBCTemplate.*;
+import static edu.kh.hotellala.common.JDBCTemplate.close;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -22,6 +23,11 @@ public class ReservationCheckDAO {
 	
 
 
+	/** 예약 조회 DAO
+	 * @param conn
+	 * @return list
+	 * @throws Exception
+	 */
 	public List<ReservationCheck> reservationCheck(Connection conn)  throws Exception{
 		
 		List<ReservationCheck> list = new ArrayList<ReservationCheck>();
@@ -50,6 +56,36 @@ public class ReservationCheckDAO {
 		}
 		
 		return list;
+	}
+
+
+
+	/** 예약 취소 DAO
+	 * @param conn
+	 * @param requestNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reserveCancel(Connection conn, int requestNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("cancelReserve");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, requestNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 	
 

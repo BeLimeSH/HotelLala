@@ -21,7 +21,7 @@
 				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
 	        </a>
         </div>
-        <div class="first">
+        <form action="qna" method="POST" class="first" onsubmit="return writeValidate()">
             <div class="first-in">
               <p style="margin-left:130px">Q&A</p><br><br>
                 <ul>
@@ -30,16 +30,16 @@
                         <div class="d-1">
                             <span>제목</span>
                             <span>유형</span><br>
-                            <input type="text" placeholder="제목을 입력해주세요.">
+                            <input type="text" name="qnaTitle"placeholder="제목을 입력해주세요.">
                             <!-- <input type="text"><br> -->
-                            <select name=active"qna" class="qna"><br>
+                            <select name="qnaCd" class="qna"><br>
                                 <option value="client">고객문의</option>
                                 <option value="client1">객실문의</option>
                                 <option value="client2">기타문의</option>
                                 <option selected>선택하세요.</option>
                             </select><br>
                             <span>내용</span><br>
-                            <p><textarea class="text"cols="100" rows="5" placeholder="내용을 입력해주세요."></textarea></p>
+                            <p><textarea class="text" name="qnaContent"cols="100" rows="5" placeholder="내용을 입력해주세요."></textarea></p>
                             <span>첨부파일</span><br>
                             <div class="file-wrap">
                                 <input type="file" name="filename" id="file">
@@ -52,17 +52,7 @@
                         
                     </li>
                     <br><br>
-                    <li>
-                        <p>작성자 정보</p><br>
-                        <div class="d-1">      
-                            <span>이름</span>
-                            <span>휴대전화</span><br>
-                            <input type="text" placeholder="성함을 입력해주세요.">
-                            <input type="text" placeholder="숫자만 입력해주세요."><br>
-                            <span>이메일</span><br>
-                            <input type="text" placeholder="수신가능한 이메일을 적어주세요.">  
-                        </div>   
-                    </li>
+
                     <li>
                         <p class="a-1">개인정보 수집 및 이용</p>
                         <div class="d-1">
@@ -74,11 +64,12 @@
                     <br><br>
                     <div class="sub">
                         <div class="div1 cursor">취소</div>
-                        <div class="div1 cursor">문의하기</div>
+                        <button type="submit" class="div1 cursor">문의하기</button>
                     </div>
                 </ul>
             </div>
-        </div>
+            <input type="hidden" name="loginNo" value="${loginMember.memberNo}">
+        </form>
         
         <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
 

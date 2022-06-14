@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<comment>reservation-sql-ksh.xml</comment>
+	<comment>reservation-sql-ksh.xml</comment>
+
+	<!-- 인원 수에 따른 객실 조회 -->
+	<entry key="selectAvailableRoom">
+	SELECT ROOM_TYPE, ROOM_RATES, ROOM_THUMBNAIL
+	FROM ROOM_TB
+	WHERE MAX_NUM >= ?
+	</entry>
+
+	<!-- 타입에 따른 객실 가격 조회 -->
+	<entry key="selectRates">
+	SELECT ROOM_RATES
+	FROM ROOM_TB
+	WHERE ROOM_TYPE = ?
+	</entry>
+
 </properties>

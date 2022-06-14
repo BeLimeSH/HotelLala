@@ -1,6 +1,7 @@
 package edu.kh.hotellala.member.model.dao;
 
 
+//import static edu.kh.community.common.JDBCTemplate.close;
 import static edu.kh.hotellala.common.JDBCTemplate.*;
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -62,15 +63,11 @@ public class MemberDAO {
 				String memberEmail =rs.getString("MEMBER_EMAIL");
 				String memberName =rs.getString("MEMBER_NM");
 
-				String birthDay= rs.getString("BIRTH_DAY");
-
-				String memberTel= rs.getString("MEMBER_PHONE");
-				String memberBR = rs.getString("BIRTH_DAY");
-
-				char gender =rs.getString("GENDER").charAt(0);
-				String memberAddress =rs.getString("ADDRESS");
-				String request = rs.getString("REQUEST");
-				int membershipNo =rs.getInt("MEMBERSHIP_NO");
+				String memberTel= rs.getString("MEMBER_TEL");
+				String memberBR= rs.getString("MEMBER_BR");
+				String memberAddress =rs.getString("MEMBER_ADDR");
+			
+			
 				
 			
 				//6)얻어온 컬럼 값을 이용해 Member 객체를 생성하여 loginMember 변수에 저장하여 하나로 묶는 작업 
@@ -78,17 +75,11 @@ public class MemberDAO {
 				loginMember.setMemberNo(memberNo);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberName(memberName);
-
-				loginMember.setMemberBR(birthDay);
-
+				loginMember.setMemberBR(memberBR);
 				loginMember.setMemberTel(memberTel);
-//				loginMember.setBirthDay(birthDay);
-
-				loginMember.setGender(gender);
 				loginMember.setMemberAddress(memberAddress);
-				loginMember.setRequest(request);
-				loginMember.setMembershipNo(membershipNo);
-				
+			
+			
 		
 		
 			}
@@ -141,11 +132,14 @@ public class MemberDAO {
 	 */
 	public int updateMember(Connection conn, Member mem) throws Exception {
 		
-		int result =0;
+		int result = 0;
 		
 		try {
 			
 			String sql = prop.getProperty("updateMember");
+			
+			System.out.println(mem);
+			
 			pstmt= conn.prepareStatement(sql);
 			
 			pstmt.setString(1, mem.getMemberName());
@@ -153,7 +147,7 @@ public class MemberDAO {
 			pstmt.setString(3, mem.getMemberAddress());
 			pstmt.setInt(4,mem.getMemberNo());
 			
-			result=pstmt.executeUpdate();
+			result = pstmt.executeUpdate();
 			
 			
 		}finally {
@@ -224,6 +218,128 @@ public class MemberDAO {
 			
 		}
 		
+		return result;
+	}
+	
+	   /** 인증번호, 발급일 수정 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("updateCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, cNumber);
+	         pstmt.setString(2, inputEmail);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+	
+
+	   /** 인증번호 생성 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("insertCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+
+
+
+	   /** 인증번호 확인 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int checkNumber(Connection conn, String inputEmail, String cNumber) throws Exception{
+	      int result = 0;
+	      
+	      try {
+	         
+	         String sql = prop.getProperty("checkNumber");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         pstmt.setString(3, inputEmail);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         if(rs.next()) {
+	            result = rs.getInt(1);
+	         }
+	         
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+
+	/** 회원 탈퇴 
+	 * @param conn
+	 * @param memberNo
+	 * @param memberPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int secession(Connection conn, int memberNo, String memberPw) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("secession");
+			
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, memberPw);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			
+			close(pstmt);
+		
+		}
 		return result;
 	}
 

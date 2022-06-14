@@ -32,10 +32,9 @@
             <ul id="pagination">
                 <li class="pageNum">1</li>
                 <li class="pageNum">2</li>
-                <li class="pageNum">3</li>
-                <li class="pageNum currentPage">4</li>
+                <li class="pageNum currentPage">3</li>
 
-                <div class="reserveTitle" id="pageDef-4">결제</div>
+                <div class="reserveTitle" id="pageDef-3">결제</div>
             </ul>
 
         </section>
@@ -102,73 +101,6 @@
                         </div>
                     </div>
                 </section>
-            
-                <!-- 포인트 영역 -->
-                <section id="point-box" class="selectionContents">
-                    <div class="payment-tit">포인트 혜택</div>
-                    
-                    <div class="payment-con" id="point-div">
-                        
-                        <div class="point-con">
-
-                            <div class="point-row">
-                                <span>보유 포인트</span>
-                                <span>
-                                    <span id="availablePoint">10,000</span> p
-                                </span>
-                            </div>
-
-                            <div class="point-row">
-                                <span>사용할 포인트</span>
-                                <span>
-                                    <!-- 보유포인트 < 결제금액 -->
-                                    <!-- max="보유 포인트" min="0" 기본값?="0" -->
-                                    
-                                    <!-- 보유포인트 > 결제금액 -->
-                                    <!-- max="결제금액" min="0" 기본값?="0" -->
-
-                                    <!-- 키보드로 입력하는 숫자가 max보다 클때 input.value = "max" -->
-                                    <!-- 키보드로 입력하는 숫자가 max보다 작을때 input.value = "min" -->
-                                    <input type="number" name="usingPoint" id="usingPoint" min="0" placeholder="0">
-                                    <label class="extra-note">
-                                        <!-- checkbox 체크시 max값이 input에 입력 -->
-                                        <input type="checkbox" id="allUsed"> 모두 사용
-                                    </label>
-                                </span>
-                            </div>
-
-
-                        </div>
-
-                        <div class="dividing-col"></div>
-
-                        <div class="point-con">
-                            <ul>
-                                <li class="point-row">
-                                    <span>결제 금액 : </span>
-                                    <span>110,000 원</span>
-                                </li>
-                                
-                                <li class="point-row">
-                                    <span>포인트 사용 :</span>
-                                    <span>- <span id="usingPoint2">0</span> p</span>
-                                </li>
-
-                                <li class="point-row">
-                                    <span>최종 금액 : </span>
-                                    <span>100,000 원</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </section>
-                
-                <!-- 적립예정 포인트 -->
-                <section id="saving-point-box" class="selectionContents">
-                    <span>적립 예정 포인트 : </span>
-                    <span id="saving-point">1,000</span>
-                </section>
 
                 <!-- 결제 방법 선택 -->
                 <!-- API 필수 -->
@@ -225,7 +157,7 @@
             <section class="payment-area">
                 <div>
                     <div class="payment-div1">
-                        최종 금액 <span class="room-price">100,000</span> 원              
+                        최종 금액 <span class="room-price">100,000</span>           
                     </div>
         
                     <div class="payment-div2">

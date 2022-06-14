@@ -25,7 +25,7 @@ public class LogoutServlet extends HttpServlet {
 		//회원 정보 무효화 시키기
 		session.invalidate();
 		
-		//메인 페잊로 돌아가기
+		//메인 페이지로 돌아가기
 		//redirect : 메인 페이지로 재요청
 		resp.sendRedirect(req.getContextPath());//최상위 주소 
 	

@@ -12,10 +12,10 @@ import javax.servlet.http.HttpSession;
 import edu.kh.hotellala.member.model.service.MemberService;
 import edu.kh.hotellala.member.model.vo.Member;
 
-@WebServlet("/changePw")
+@WebServlet("/member/myPage/changePw")
 public class MyPageChangePwServlet extends HttpServlet {
 	
-	// /WEB-INF/views/member/myPage-changePw.jsp요청 위임
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -45,7 +45,7 @@ public class MyPageChangePwServlet extends HttpServlet {
 		
 		int memberNo = loginMember.getMemberNo();//로그인 회원 번호
 		
-		String path =null; // 리타이렉트 주소
+		String path =null; // 리다이렉트 주소
 		
 		// 매개 변수로 하나하나 전달 
 		try {
@@ -55,17 +55,21 @@ public class MyPageChangePwServlet extends HttpServlet {
 			int result = service.changePw(currentPw, newPw, memberNo);
 			
 			if(result>0) { // 비밀번호 성공 시
+				
 				// session scope = key:message / value: 비밀번호가 변경되었습니다.
 				// path = "내정보 페이지 주소"
 				session.setAttribute("message", "비밀번호가 변경되었습니다.");
 				path =req.getContextPath();
 				//+ "/member/myPage/예약 현황 페이지 or 내정보수정 "; // 페이지로 이동 
+			
 			}else { // 실패 시
+			
 				// session scope = key:message / value: 현재 비밀번호가 일치하지않습니다.
 				// paht= "비밀번호 변경 페이지 주소"
 				session.setAttribute("message", "현재 비밀번호가 일치하지않습니다.");
 				path=req.getContextPath() + "/member/myPage/changePw";
 				//path="changePw"; -> 상대경로
+			
 			}
 			
 			resp.sendRedirect(path);

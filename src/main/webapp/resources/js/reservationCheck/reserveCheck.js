@@ -66,27 +66,21 @@ function reserveCheck(){
 
 
 // 예약 취소
-function cancelReserve(reservationNo){
-	
-	if( confirm("정말로 취소 하시겠습니까?") ){
-		
-		$.ajax({
-			url : contextPath + "/reservationCheck/cancel",
-			data : {"reservationNo" : reservationNo},
-			type : "GET",
-			success : function(result){
-				if(result > 0){
-					alert("예약이 취소되었습니다.");
-				}else{
-					alert("예약 취소 요청이 거부되었습니다.");
-				}
-			},
-			error : function(req, status, error){
-				console.log("예약 취소 실패");
-                console.log(req.responseText);
-			}
-		});
-		
-	}
-	
-}
+(function(){
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    if(cancelBtn != null){
+
+        cancelBtn.addEventListener("click", function(){
+
+            let url = "reservationCheck/cancel"; // 상대경로
+
+            if( confirm("정말로 삭제 하시겠습니까?") ){
+                location.href = url; // get방식으로 url에 요청
+            }
+
+        });
+
+    }
+
+})();

@@ -60,10 +60,9 @@
     color: rgb(100, 100, 100);
 }
 
-#pageDef-1{margin-top: 30px; text-align: left;}
-#pageDef-2{margin-top: 30px; margin-left: 110px; text-align: left;}
-#pageDef-3{margin-top: 30px; margin-left: 195px; text-align: left;}
-#pageDef-4{margin-top: 30px; margin-left: 291px; text-align: left;}
+#pageDef-1{margin-top: 30px; margin-right: 150px;}
+#pageDef-2{margin-top: 30px;}
+#pageDef-3{margin-top: 30px; margin-left: 155px;}
 
 
 /* 날짜 선택 바 */
@@ -148,7 +147,6 @@
 /* reservation-date */
 #dateMessage{
     height: 400px;
-    margin: 25px 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,14 +250,9 @@
 #date-span{margin-left: 10px;}
 #dateRange-span{margin-left: 50px;}
 
-#selectRoom{margin-top: 25px; margin-bottom: 100px;}
-
-.selectbox-area{
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
+#selectRoom{
+    margin-top: 25px; 
+    margin-bottom: 100px;
 }
 
 /* 객실 조회 X */
@@ -279,7 +272,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 35px;
+    padding: 20px;
 }
 
 #roomList{margin:0; padding: 0;}
@@ -289,7 +282,9 @@
     list-style: none;
 }
 
-.roomBox img{width:300px;}
+.plusPadding{height: 50px;}
+
+.roomBox img{width:300px; border-radius: 3px;}
 
 .roomBox>div:nth-of-type(1){
     width: 300px;
@@ -321,20 +316,34 @@
 
 .roomBox>div:nth-child(3)>div{width:100%}
 
-.room-tit{font-size: 24px; font-weight: bold; margin: 5px;}
-.room-content{font-size: 17px; margin: 5px;}
-.room-detail{font-size: 17px; margin: 5px;}
+.room-tit{
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0 10px 3px 20px;
+    letter-spacing: 1px;
+}
+.room-content{font-size: 20px; margin: 0 10px 3px;}
+.room-detail{
+    font-size: 18px;
+    margin-left: 20px; margin-bottom: 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .reserveBtn{
+    text-align: center;
+    padding-top: 3px;
     font-size: 24px;
     font-weight: bold;
-    margin: 5px;
+    margin: 5px 10px;
     width: 120px;
     height: 50px;
     border-radius: 5px;
     border: 4px solid #ff7E5F;
     background-color: #ff7E5F;
     color: white;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .reserveBtn:hover{
@@ -374,8 +383,8 @@
 .payment-con>div:nth-child(3){width:50%; height: 100%; padding: 20px;}
 
 #optionBox{height: 350px; margin: 30px 0;}
-#noteBox{height:320px;}
-#ruleBox{height:175px; margin: 30px 0 50px;}
+#noteBox{height:350px;}
+#ruleBox{height:160px; margin: 30px 0 50px;}
 
 /* 내용 글꼴 지정 */
 .payment-list{font-size: 20px; font-weight: bold; color: rgb(80, 80, 80);}
@@ -394,7 +403,7 @@
 }
 .option-con>li{margin-bottom: 10px;}
 
-.extra-note{color: rgb(100, 100, 100); font-size: 16px; margin: 0;}
+.extra-note{color: rgb(100, 100, 100); font-size: 16px; margin: 0; letter-spacing: -0.3px;}
 
 .btn-area>input{
     width:30px;
@@ -459,10 +468,10 @@
     resize: none;
 }
 
-.note-con>ul{margin: 0; padding: 15px; font-size: 16px; font-weight: bold;}
+.note-con>ul{margin: 0; padding: 15px; font-size: 17px; font-weight: bold; line-height: 27px;}
 .note-con>ul>li{
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: normal;
     color: rgb(100, 100, 100);
     list-style: circle;
@@ -486,6 +495,8 @@
 
 .payment-div1{
     text-align: right;
+    font-size: 24px;
+    margin-bottom: 3px;
 }
 
 .payment-div2{
@@ -743,4 +754,4 @@ input::-webkit-inner-spin-button {
 
 /* 요소 숨기기 class */
 .hideResource{visibility: hidden;}
-.removeResource{display: none;}
+.removeResource{display: none!important;}
