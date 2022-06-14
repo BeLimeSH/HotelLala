@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(비밀번호 변경)</title>
    
-    <link rel="stylesheet" href="css/myPage-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
   
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
@@ -29,7 +29,7 @@
            
 
     <!-- 사이드 메뉴 include -->
-    <jsp:include page="${contextPath}/WEB-INF/views/member/sideMenu.jsp"/>
+    <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
        
     <section class="myPage-content">
@@ -76,5 +76,9 @@
  <!-- footer -->
  <jsp:include page="${contextPath}/WEB-INF/views/common/footer.jsp"/>
     
+
+<!-- js -->
+<script src="${contextPath}/resources/js/member/myPage.js"></script>
+        
 </body>
 </html>
