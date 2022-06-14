@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 
 public class ReservationCheckDAO {
@@ -26,7 +27,7 @@ public class ReservationCheckDAO {
 
 			prop = new Properties();
 			
-			String filePath = ReservationCheckDAO.class.getResource("/edu/kh/hotellala/sql/reservation-sql-pjh.xml").getPath();
+			String filePath = ReservationRequestDAO.class.getResource("/edu/kh/hotellala/sql/reservation-sql-pjh.xml").getPath();
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 
