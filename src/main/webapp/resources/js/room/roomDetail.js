@@ -7,7 +7,7 @@ const swiper = new Swiper('.swiper-container', {
     //페이지와 페이지 사이의 간격
     spaceBetween: 500,
     //드레그 기능 true 사용가능 false 사용불가
-    debugger: true,
+    debugger: false,
     //마우스 휠기능 true 사용가능 false 사용불가
     mousewheel: false,
     //반복 기능 true 사용가능 false 사용불가

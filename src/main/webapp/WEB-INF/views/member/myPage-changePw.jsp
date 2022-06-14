@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지(비밀번호 변경)</title>
    
-    <link rel="stylesheet" href="css/myPage-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
   
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>
@@ -23,13 +23,17 @@
 <!-- nav -->
 <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
 
+<div class="logo">
+    <a href="${contextPath}">
+        <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+    </a>
+</div>
 
 <main>
     <section class="myPage-content">
-           
 
     <!-- 사이드 메뉴 include -->
-    <jsp:include page="${contextPath}/WEB-INF/views/member/sideMenu.jsp"/>
+    <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
        
     <section class="myPage-content">
@@ -43,7 +47,7 @@
             <span class="myPage-subexplanation">현재 비밀번호가 일치하는 경우 새 비밀번호 변경할 수 있습니다.</span>
 
           
-               <form action="changePw" method="POST" name="myPage-form" >
+               <form action="changePw" method="POST" name="myPage-form" onsubmit="return changePwValidate()">
 
                    <div class="myPage-row">
                        <label>CURRUNT PASSWORD*</label>
@@ -74,7 +78,11 @@
 
 
  <!-- footer -->
- <jsp:include page="${contextPath}/WEB-INF/views/common/footer.jsp"/>
+ <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
+
+<!-- js -->
+<script src="${contextPath}/resources/js/member/myPage.js"></script>
+        
 </body>
 </html>

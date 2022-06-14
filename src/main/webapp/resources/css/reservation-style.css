@@ -61,9 +61,8 @@
 }
 
 #pageDef-1{margin-top: 30px; margin-right: 150px;}
-#pageDef-2{margin-top: 30px; margin-left: 110px; text-align: left;}
-#pageDef-3{margin-top: 30px; margin-left: 195px; text-align: left;}
-#pageDef-4{margin-top: 30px; margin-left: 291px; text-align: left;}
+#pageDef-2{margin-top: 30px;}
+#pageDef-3{margin-top: 30px; margin-left: 155px;}
 
 
 /* 날짜 선택 바 */
@@ -273,7 +272,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px;
 }
 
 #roomList{margin:0; padding: 0;}
@@ -282,6 +281,8 @@
     padding: 0;
     list-style: none;
 }
+
+.plusPadding{height: 50px;}
 
 .roomBox img{width:300px; border-radius: 3px;}
 
@@ -322,7 +323,12 @@
     letter-spacing: 1px;
 }
 .room-content{font-size: 20px; margin: 0 10px 3px;}
-.room-detail{font-size: 20px; margin-left: 20px; margin-bottom: 2px;}
+.room-detail{
+    font-size: 18px;
+    margin-left: 20px; margin-bottom: 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .reserveBtn{
     text-align: center;
@@ -377,8 +383,8 @@
 .payment-con>div:nth-child(3){width:50%; height: 100%; padding: 20px;}
 
 #optionBox{height: 350px; margin: 30px 0;}
-#noteBox{height:320px;}
-#ruleBox{height:175px; margin: 30px 0 50px;}
+#noteBox{height:350px;}
+#ruleBox{height:160px; margin: 30px 0 50px;}
 
 /* 내용 글꼴 지정 */
 .payment-list{font-size: 20px; font-weight: bold; color: rgb(80, 80, 80);}
@@ -397,7 +403,7 @@
 }
 .option-con>li{margin-bottom: 10px;}
 
-.extra-note{color: rgb(100, 100, 100); font-size: 16px; margin: 0;}
+.extra-note{color: rgb(100, 100, 100); font-size: 16px; margin: 0; letter-spacing: -0.3px;}
 
 .btn-area>input{
     width:30px;
@@ -462,10 +468,10 @@
     resize: none;
 }
 
-.note-con>ul{margin: 0; padding: 15px; font-size: 16px; font-weight: bold;}
+.note-con>ul{margin: 0; padding: 15px; font-size: 17px; font-weight: bold; line-height: 27px;}
 .note-con>ul>li{
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: normal;
     color: rgb(100, 100, 100);
     list-style: circle;
@@ -489,6 +495,8 @@
 
 .payment-div1{
     text-align: right;
+    font-size: 24px;
+    margin-bottom: 3px;
 }
 
 .payment-div2{

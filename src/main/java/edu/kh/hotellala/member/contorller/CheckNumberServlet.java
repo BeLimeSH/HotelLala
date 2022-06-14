@@ -21,6 +21,8 @@ public class CheckNumberServlet extends HttpServlet{
 			
 			int result = new MemberService().checkNumber(inputEmail, cNumber);
 			
+			resp.getWriter().print(result);
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}

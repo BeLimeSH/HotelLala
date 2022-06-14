@@ -80,6 +80,7 @@ public class MyPageInfoServlet extends HttpServlet {
 
 			// 성공/실패 상관 없이 다시 내정보 화면으로 돌아오기
 			resp.sendRedirect(req.getContextPath()+"/member/myPage/info");
+	
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

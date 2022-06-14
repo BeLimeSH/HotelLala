@@ -121,10 +121,10 @@ const roomSearchBtn = document.getElementById("roomSearchBtn");
 
 roomSearchBtn.addEventListener("click", function(){
     
-    console.log(reserveDate.value);
-    console.log(dateRange.value);
-    console.log(adultCount.value);
-    console.log(childCount.value);
+    // console.log(reserveDate.value);
+    // console.log(dateRange.value);
+    // console.log(adultCount.value);
+    // console.log(childCount.value);
 
     // 날짜 인원 선택 검사
     if(dateRange.value == 0){
@@ -158,7 +158,7 @@ roomSearchBtn.addEventListener("click", function(){
         dataType: "JSON",
         success: function(roomList){
     
-            console.log(roomList);
+            // console.log(roomList);
 
             //화면에 출력되어 있는 객실 리스트 삭제
             const ul = document.getElementById("roomList");
@@ -166,6 +166,10 @@ roomSearchBtn.addEventListener("click", function(){
 
             //roomList가 비어있지 않을 때
             if(roomList != ''){
+
+                const padding = document.createElement("div");
+                padding.classList.add("plusPadding");
+                ul.append(padding);
 
                 //roomList에 저장된 요소를 하나씩 접근
                 for(let room of roomList){
@@ -200,24 +204,25 @@ roomSearchBtn.addEventListener("click", function(){
                     roomTitType.innerText = room.roomType;
                     
                     //객실 자세히 보기!
-                    const roomDetail = document.createElement("a");
-                    roomDetail.setAttribute("href", contextPath + "/room/detail?type=" + room.roomType);
+                    const roomDetail = document.createElement("span");
                     roomDetail.classList.add("room-detail");
                     roomDetail.innerText = "▶ 객실 자세히 보기";
+                    roomDetail.addEventListener("click", function(){
+                        window.open(contextPath + '/room/detail?type=' + room.roomType,'객실 상세보기','width=960px, height=640px, left=100px, top = 100px, scrollbars = no');
+                    });
                     
-
                     // li>.roomBox>div>.roomTit, .roomContent, .reserveBtn
                     const div3 = document.createElement("div");
 
                     // 가격!
                     const roomTitRates = document.createElement("div");
                     roomTitRates.classList.add("room-tit");
-                    roomTitRates.innerText = room.roomRates + "원";
+                    roomTitRates.innerText = priceToString( room.roomRates * dateRange.value ) + "원";
 
                     // 작은 글씨!
                     const roomContent =  document.createElement("div");
                     roomContent.classList.add("room-content");
-                    roomContent.innerText = "1박";
+                    roomContent.innerText = dateRange.value +"박";
 
                     // 예약하기 버튼 a태그
                     const reserveBtn = document.createElement("a");
@@ -232,7 +237,7 @@ roomSearchBtn.addEventListener("click", function(){
 
                     roomBox.append(div1, div2, div3);
 
-                    li.append(roomBox, dividingRow);
+                    li.append(dividingRow, roomBox);
 
                     ul.append(li);
 
@@ -257,18 +262,7 @@ roomSearchBtn.addEventListener("click", function(){
 
 })
 
-// 객실 자세히 보기 수정 필요!!
-
-
-// 팝업창 열기(미완)
-// const roomDetail = document.getElementsByClassName("room-detail");
-
-// if(roomDetail.length != 0){
-    
-//     roomDetail[0].addEventListener("click", function(){
-    
-//         window.open('../../Semi_HTML/popUp/room-popUp.html','객실 상세보기','width=920px, height=600px, left=100px, top = 100px, scrollbars = yes, resizable=no');
-//     });
-
-// }
-
+//가격 포맷 바꾸기
+function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
