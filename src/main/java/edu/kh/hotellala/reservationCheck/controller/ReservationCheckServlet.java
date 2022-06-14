@@ -20,24 +20,27 @@ public class ReservationCheckServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String requestNo = req.getParameter("requestNo");
+		String path = "/WEB-INF/views/reservation/reservationCheck.jsp";
+		req.getRequestDispatcher(path).forward(req, resp);
 		
-		String startDate = req.getParameter("startDate");
-		String endDate = req.getParameter("endDate");
-		
-		try {
-
-			ReservationCheckService service = new ReservationCheckService();
-	
-			List<ReservationCheck> list = service.reservationCheck();
-			
-			
-			new Gson().toJson(list, resp.getWriter());
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		String requestNo = req.getParameter("requestNo");
+//		
+//		String startDate = req.getParameter("startDate");
+//		String endDate = req.getParameter("endDate");
+//		
+//		try {
+//
+//			ReservationCheckService service = new ReservationCheckService();
+//	
+//			List<ReservationCheck> list = service.reservationCheck();
+//			
+//			
+//			new Gson().toJson(list, resp.getWriter());
+//			
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	
 	}
 	

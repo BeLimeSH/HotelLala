@@ -23,18 +23,12 @@ public class ReservationCheckDAO {
 	
 	public ReservationCheckDAO() {
 		try {
-			
+
 			prop = new Properties();
 			
 			String filePath = ReservationCheckDAO.class.getResource("/edu/kh/hotellala/sql/reservation-sql-pjh.xml").getPath();
 			
 			prop.loadFromXML(new FileInputStream(filePath));
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 
 
 	/** 예약 조회 DAO
@@ -47,7 +41,7 @@ public class ReservationCheckDAO {
 		List<ReservationCheck> list = new ArrayList<ReservationCheck>();
 		
 		try {
-			String sql = prop.getProperty("selectBoardList");
+			String sql = prop.getProperty("/edu/kh/hotellala/sql/reservation-sql-pjh.xml");
 			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
