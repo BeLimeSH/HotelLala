@@ -3,11 +3,19 @@
 <properties>
 <comment>reservation-sql-pjh.xml</comment>
 
-
+	<!-- 예약 조회 -->
 	<entry key="selectBoardList">
-	SELECT COUNT(*) FROM BOARD
-		WHERE BOARD_ST = 'N';
+	SELECT RESERVATION_NO, REQUEST_NO, RESERVATION_FL, PAYMENT_NO, ROOM_NO
+		FROM RESERVATION_REQ
+		WHERE REQUEST_NO = ?
+		AND CANCEL_FL = 'N'
 	</entry>
 	
+	<!-- 예약 취소 -->
+	<entry key="selectBoardList">
+	UPDATE RESERVATION_REQ SET
+		CANCEL_FL = 'Y'
+		WHERE REQEUST_REQ = ?
+	</entry>
 	
 </properties>
