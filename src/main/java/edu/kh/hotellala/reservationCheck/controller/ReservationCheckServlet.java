@@ -20,8 +20,10 @@ public class ReservationCheckServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String path = "/WEB-INF/views/reservation/reservationCheck.jsp";
+		String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
+	
+	}
 		
 //		String requestNo = req.getParameter("requestNo");
 //		
@@ -42,6 +44,6 @@ public class ReservationCheckServlet extends HttpServlet{
 //			e.printStackTrace();
 //		}
 	
-	}
+	
 	
 }
