@@ -89,7 +89,7 @@
                     <li class="active1">
                         <a href="">1</a>
                     </li>
-                    <li class="active1">
+                    <!-- <li class="active1">
                         <a href="${contextPath}/menu/notice&cp=2">2</a>
                     </li>
                     <li class="active1">
@@ -97,7 +97,7 @@
                     </li>
                     <li class="active1">
                         <a href="">4</a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
