@@ -96,7 +96,14 @@
                     <div class="mainTitle">
                         <p class="title">Package & Service</p>
                     </div>
-                    <a href="${contextPath}/reservation/date">▶ Go to offer</a>
+
+                    <c:if test="${!empty sessionScope.loginMember}">
+                        <a href="${contextPath}/reservation/date">▶ Go to offer</a>
+                    </c:if>
+                    
+                    <c:if test="${empty sessionScope.loginMember}">
+                        <a href="${contextPath}/login">▶ Go to offer</a>
+                    </c:if>
 
                     <div id="mainProduct">
         

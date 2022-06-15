@@ -21,10 +21,14 @@ public class ReservationPaymentServlet extends HttpServlet {
 		//payment?adultBreakfast=2&childBreakfast=1&extraBed=0&extraRequest=힝구
 		//req.getParameter("");
 		
-		// 옵션 테이블에 사용할 값들
+		// 옵션 테이블에 사용할 값들?
 		int adultBreakfast = Integer.parseInt( req.getParameter("adultBreakfast") );
 		int childBreakfast = Integer.parseInt( req.getParameter("childBreakfast") );
 		int extraBed = Integer.parseInt( req.getParameter("extraBed") );
+		
+		req.setAttribute("adultBreakfast", adultBreakfast);
+		req.setAttribute("childBreakfast", childBreakfast);
+		req.setAttribute("extraBed", extraBed);
 		
 		// session에 저장해 둘 값
 		String extraRequest = req.getParameter("extraRequest");
@@ -46,6 +50,9 @@ public class ReservationPaymentServlet extends HttpServlet {
 			int roomRates = service.selectRates(type);
 			
 			req.setAttribute("roomRates", roomRates);
+			
+			//결제 요청시 필요한 값
+			//회원 이름, 회원 이메일 조회해오기,,
 			
 			
 		} catch(Exception e) {
