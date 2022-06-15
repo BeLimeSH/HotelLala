@@ -83,10 +83,10 @@
 								<div class="reserveTitle">CHECK IN / OUT</div>
 								<!-- 날짜 선택 input!! -->
 
-								<!-- 시작일 -->
+								<!-- 시작~종료 일 -->
 								<input type="text" id="reserve-datepicker" class="reserveContent" name="reserveDate" readonly><span class="reserveContent" id="dividingBar">|</span>
 
-								<!-- 종료일 -->
+								<!-- n박 -->
 								<input type="text" id="dateRange" name="dateRange" class="reserveContent"  value="1" readonly> <span class="reserveContent">박</span>
 
 								<!-- 선택한 날짜로 조회 -->
@@ -225,9 +225,6 @@
 
 	<!-- 예약 조회, 예약 취소 내역 조회 검사 -->
 	<script src="${contextPath}/resources/js/reservationCheck/datepickCheck.js"></script>
-	
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	<!-- datepicker js -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>

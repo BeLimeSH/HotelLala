@@ -5,24 +5,21 @@
 		
 	<!-- 예약 조회(주문번호, 회원번호, 예약상태, 체크인날짜, 체크아웃날짜, 객실 종류, 객실 번호) -->
 	<entry key="reservationCheck">
-		SELECT 
-		REQUEST_NO, MEMBER_NO, CHECK_IN, CHECK_OUT, ROOM_NO
+		SELECT REQUEST_NO, MEMBER_NO, CHECK_IN, CHECK_OUT, ROOM_NO
 		FROM RESERVATION
 		WHERE MEMBER_NO = ?
 		AND CHECK_IN BETWEEN ? AND ?
 	</entry>
 	
 	
+	<!-- 예약 취소 요청(환불번호, 결제번호, 환불처리여부(DEFAULT:N),
+		환불요청일(DEFAULT:SYSDATE), 환불사유, 회원번호 -->
+	<entry key="reservationCancelRequest">
+		INSERT INTO REFUND VALUES(REFUND_NO_SEQ.NEXTVAL, ?, DAFAULT, SYSDATE, ?, ?)
+	</entry>
 	
 	
-	
-	<!-- 예약 취소 내역 조회
-		(환불 번호, 결제번호,  환불 요청일 
-		+ 결제 테이블 결제 금액
-		+ 로그인한 회원 번호와 회원 테이블 회원 번호 비교 조회)
-		
-		- 환불 테이블 컬럼 모두 조회?
-	-->
+	<!-- 예약 취소 내역 조회 -->
 	<entry key="reservationCancelCheck">
 		SELECT REFUND_NO, PAYMENT_NO, REFUND_DT, REFUND_RESON
 		FROM REFUND

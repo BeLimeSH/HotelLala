@@ -20,4 +20,5 @@ public class Refund {
 	private String refundFlags;
 	private Date refundDate;
 	private String refundReason; 
+	private int memberNo;
 }
