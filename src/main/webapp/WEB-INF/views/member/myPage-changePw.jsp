@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%-- 문자열 관련 함수(메서드) 제공 JSTL (EL형식으로 작성) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,18 +53,18 @@
                <form action="changePw" method="POST" name="myPage-form" onsubmit="return changePwValidate()">
 
                    <div class="myPage-row">
-                       <label>CURRUNT PASSWORD*</label>
-                       <input type="password" name="currentPw"  maxlength="30">              
+                       <label>CURRENT PASSWORD*</label>
+                       <input type="password" name="currentPw" id="currentPw"  maxlength="30">              
                    </div>
 
                    <div class="myPage-row">
                        <label>NEW PASSWORD*</label>
-                       <input type="password" name="newPw" maxlength="30">              
+                       <input type="password" name="newPw" id="newPw" maxlength="30">              
                    </div>
 
                    <div class="myPage-row">
                        <label>CONFIRM PASSWORD*</label>
-                       <input type="password" name="newPwConfirm" maxlength="30">              
+                       <input type="password" name="newPwConfirm" id="newPwConfirm" maxlength="30">              
                    </div>
 
                    <button id="info-update-btn">변경하기</button>
