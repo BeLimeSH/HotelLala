@@ -28,5 +28,7 @@ public class ReservationRequest {
 	
 	private int memberNo;
 	private String roomType;
+	
+	private String reserveDate;
 
 }

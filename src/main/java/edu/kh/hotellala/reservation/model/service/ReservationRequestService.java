@@ -5,6 +5,7 @@ import static edu.kh.hotellala.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.util.List;
 
+import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
@@ -54,5 +55,6 @@ public class ReservationRequestService {
 		
 		return roomRates;
 	}
+
 
 }
