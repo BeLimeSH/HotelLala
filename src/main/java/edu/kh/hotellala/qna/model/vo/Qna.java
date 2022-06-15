@@ -13,9 +13,9 @@ import lombok.ToString;
 @ToString
 public class Qna {
 	private String qnaTitle;
-	private String qnaCd;
+	private int qnaCd;
 	private String qnaContent;
-	
+	private int memberNo;
 	
 	
 }

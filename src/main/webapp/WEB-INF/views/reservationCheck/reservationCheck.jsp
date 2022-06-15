@@ -10,19 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약 조회</title>
 
-    <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
-    <link rel="stylesheet" href="${contextPath}resources/css/reservationCheck.css" type="text/css">
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservationCheck.css" type="text/css">
+	<link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+	<link rel="shortcut icon" href="/HotelLala/resources/images/wIcon.ico">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
+    
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <!-- header -->
+
+    <!-- header -->
     <a href="${contextPath}" class="hotelLogo">
         <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
     </a>
 
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+    
     
     <main>
         <!-- 조회 탭 -->
@@ -33,7 +38,8 @@
                 <div class="myPageMenu">
                     <h2 class="tit"><a>마이페이지</a></h2>
                     <ul class="list-group">
-                        <li class=""><a href="#">예약 확인/취소</a></li>
+                        <li class=""><a href="#">예약 확인</a></li>
+                        <li class=""><a href="#">예약 취소 조회</a></li>
                     </ul><br>
 
                     <ul class="list-group">
@@ -51,7 +57,7 @@
                         </li>
                         <li class="my">
                             <a href="">
-                                <span>문의 내역</span>
+                                <span>로그아웃</span>
                             </a>
                         </li>
                         <li class="my">
@@ -76,30 +82,21 @@
                     <div class="contain">
 
                     <!-- daterangepicker -->
-                    <table>
-                        <tr>
-                        <td colspan="3">
-                            <div class="dateBtn">
-                                <span class="chkbox2">
-                                    <!-- <button class="w-btn-outline w-btn-blue-outline" type="button">예약 취소</button> -->
-                                    <input type="button" name="dateType" id="dateType5" class="btn btn-default btn-sm" onclick="setSearchDate('3m')" value="3개월"/>
-                                </span>
-                                <span class="chkbox2">
-                                    <input type="button" name="dateType" id="dateType6" class="btn btn-default btn-sm" onclick="setSearchDate('6m')" value="6개월"/>
-                                </span>
-                                <span class="chkbox2">
-                                    <input type="button" name="dateType" id="dateType7" class="btn btn-default btn-sm" onclick="setSearchDate('1y')" value="12개월"/>
-                                </span>
-                                
-                        		<input class="datepicker">
-                        		
-                            </div>
-                        </td>
-                        </tr>
-                        
-
-                    </table>
-
+                    <!-- 날짜 선택 바 -->
+		            <div class="dateSelection">
+		                <div>
+		                    <div class="reserveTitle">CHECK IN / OUT</div>
+		                    <!-- 날짜 선택 input!! -->
+		                    <input type="text" id="reserve-datepicker" class="reserveContent" name="reserveDate" readonly>
+		                    <span class="reserveContent" id="dividingBar">|</span>
+		                    <input type="text" id="dateRange" name="dateRange" class="reserveContent" value="1" readonly>
+		                    <span class="reserveContent">박</span>
+		                    
+							<button id="searchBtn" class="searchBtn">검색</button>
+		                </div>
+					</div>
+							
+							
     
                     <!-- 예약 조회 -->  
                     <div class="rsvCheck-myPageRsv">
@@ -128,12 +125,12 @@
                                         <c:when test="${empty reserveCheck}">
                                             <!--  예약 조회 결과가 비어있다면 -->
                                             <tr>
-                                                <th colspan="5" class="reserveNothing">예약 내역이 존재하지 않습니다.</th>
+                                                <td colspan="5" class="reserveNothing">예약 내역이 존재하지 않습니다.</th>
                                             </tr>
                                         </c:when>
 
                                         <c:otherwise>
-                                            <c:forEach var="reserve" items="${rsvList}">
+                                            <c:forEach var="reserve" items="${checkList}">
                                                 <table class="rsvList">
                                                     <tr>
                                                         <td>${reserve.reservationNo}</td>
@@ -166,8 +163,6 @@
 
     </main>
     
-    <script>const contextPath = "${contextPath}";</script>
-     
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
@@ -177,10 +172,16 @@
 
 
 	<!-- datepicker CDN -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/js/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/css/bootstrap-datetimepicker.min.css">
+
+
+	<script>
+        const contextPath = "${contextPath}";
+    </script>
 	
 	<!-- nav 메인 js -->
     <script src="${contextPath}/resources/js/main.js"></script>
@@ -191,7 +192,21 @@
     <!-- datepicker js -->
     <script src="${contextPath}/resources/js/reservationCheck/dateCheck.js"></script>
     
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- js에 전역변수로 contextPath 선언 -->
+    <script>
+        const contextPath = "${contextPath}";
+        const dateRangeR = "${reservation.dateRange}"
+    </script>
     
+    <script src="${contextPath}/resources/js/reservationCheck/datepickCheck.js"></script>
+    <script src="${contextPath}/resources/js/main.js"></script>
     
 </body>
 </html>

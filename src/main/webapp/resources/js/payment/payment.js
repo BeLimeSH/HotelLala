@@ -1,3 +1,19 @@
+(function(){
+    // console.log(roomRates);
+    // console.log(adultBreakfast);
+    // console.log(childBreakfast);
+    // console.log(extraBed);
+    // console.log(dateRange);
+
+    $('#r-price').text( priceToString( roomRates*dateRange ) );
+    $('#ab-price').text( priceToString( adultBreakfast*30000 ) + "원" );
+    $('#cb-price').text( priceToString( childBreakfast*25000 ) + "원" );
+    $('#e-price').text( priceToString( extraBed*65000 )+ "원" );
+    $('#sum-price').text( priceToString( roomRates*dateRange + adultBreakfast*30000 + childBreakfast*25000 + extraBed*65000) + " 원" );
+})();
+
+
+
 const iamportPayment = document.getElementById("iamportPayment");
 iamportPayment.addEventListener("click", function(){
     
@@ -12,9 +28,26 @@ iamportPayment.addEventListener("click", function(){
         name: "Standard", //상품명
         amount: 100, //금액
         buyer_email: "",
-        buyer_name: ""
+        buyer_name: "유저일"
     }, function(rsp){
         if(rsp.success){
+            // location.href
+
+            // jQuery로 HTTP 요청
+            // jQuery.ajax({
+            //     url: "{서버의 결제 정보를 받는 endpoint}", import 서블릿
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     data: {
+            //         imp_uid: rsp.imp_uid,
+            //         merchant_uid: rsp.merchant_uid
+            //     }
+            // }).done(function (data) {
+            //   // 가맹점 서버 결제 API 성공시 로직
+                //success 서블릿 주소 요청
+
+            // })
+
             alert("결제 성공 -> imp_uid : " + rsp.imp_uid + " / merchant_uid : " + rsp.merchant_uid);
         } else {
             alert("결제 실패 : 코드(" + rsp.error_code +") / 메세지(" + rsp.error_msg + ")");
@@ -39,3 +72,8 @@ payOptionBox.addEventListener("click", function(){
         }
     }
 });
+
+//가격 포맷 바꾸기
+function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}

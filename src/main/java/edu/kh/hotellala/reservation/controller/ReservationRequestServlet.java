@@ -51,8 +51,17 @@ public class ReservationRequestServlet extends HttpServlet {
 			session.setMaxInactiveInterval(3600);
 			
 			//memberNo 얻어오기
-//			Member member = (Member)(session.getAttribute("loginMember"));
-//			int memberNo = member.getMemberNo();
+			int memberNo = 0;
+			
+			if(session.getAttribute("loginMember") != null) {
+				
+				Member member = (Member)(session.getAttribute("loginMember"));
+				memberNo = member.getMemberNo();
+				
+			} else {
+				session.setAttribute("message", "로그인 후 이용해주세요.");
+				return;
+			}
 			
 			//전달된 파라미터 변수에 저장
 			String reserveDate = req.getParameter("reserveDate");
@@ -69,7 +78,7 @@ public class ReservationRequestServlet extends HttpServlet {
 			//주문번호 생성
 			reservation.setRequestNo( makeRequestNo() );
 			
-//			reservation.setMemberNo(memberNo);
+			reservation.setMemberNo(memberNo);
 			
 			reservation.setCheckIn(checkIn);
 			reservation.setCheckOut(checkOut);

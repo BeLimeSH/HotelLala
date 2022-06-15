@@ -25,12 +25,19 @@
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
     
-    <main>
+     <main>
+
         <section class="reserveCancelTitleSection">
+
             <div class="dateSelection" name="dateSelection">
-                <div class="reserve-Title">취소가 완료되었습니다.</div>
-                <span>결제 일시 : ${contextPath}${payment.paymentDT}</span>
-                <span>환불 요청 일시 : ${contextPath}${refund.refundDT}</span>
+
+                <div>
+                    <div class="reserve-Title">취소가 완료되었습니다.</div>
+
+                    <span>결제 일시 : ${contextPath}${payment.paymentDT}</span><br>
+                    <span>환불 요청 일시 : ${contextPath}${refund.refundDT}</span>
+
+                </div>
             </div>
         </section>
 
@@ -50,11 +57,11 @@
                 </div>
 
                 <div class="cancelSub">환불금액
-                    <div class="subPay">${}</div>
+                    <div class="subPay">${refund.refundAmount}</div>
                 </div>
 
                 <div class="cancelSub">환불포인트
-                    <div class="subPoint">${}</div>
+                    <span class="cancelTitle-notice-sub">당일 환불은 불가하며<br>환불 시 사용된 포인트는 반환되지 않습니다.</span>
                 </div>
 
                 <a></a>
@@ -64,16 +71,14 @@
                 </div>
 
                 <div class="cancelSub">실결제 금액
-                    <div class="subPay2">${}</div>
+                    <div class="subPay2">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">포인트사용
-                    <div class="subPoint">${}</div>
+                    <div class="subPoint"></div>
                 </div>
 
             </section>
-            
-        </section>
 
     </main>
     

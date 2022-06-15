@@ -51,7 +51,7 @@
             <span class="myPage-subexplanation">정보를 안전하게 보호하기 위해 비밀번호를 다시 한 번 확인합니다.</span>
             
 
-            <form action="secession" method="POST" name="myPage-form"  >
+            <form action="secession" method="POST" name="myPage-form"  onsubmit="return secessionValidate()">
 
                 <div class="myPage-row">
                     <label>PASSWORD*</label>

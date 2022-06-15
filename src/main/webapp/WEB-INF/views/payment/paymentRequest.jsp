@@ -55,7 +55,7 @@
                                     <div class="payment-list">객실</div>
                                     <div class="unbundling">
                                         <span class="payment-list">${reservation.roomType} / ${reservation.dateRange}박</span>
-                                        <span class="payment-list">100,000원</span>
+                                        <span class="payment-list" id="r-price"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -66,25 +66,25 @@
                                 <li>
                                     <span class="payment-list">성인 조식(30,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">${op.adultBreakfast}</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">0원</span>
+                                    <span class="payment-list" id="ab-price"></span>
                                 </li>
                                 
                                 <li>
                                     <span class="payment-list">어린이 조식(25,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">${op.childBreakfast}</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">0원</span>
+                                    <span class="payment-list" id="cb-price"></span>
                                 </li>
                                 
                                 <li>
                                     <span class="payment-list">엑스트라 베드(65,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">${op.extraBed}</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">100,000원</span>
+                                    <span class="payment-list" id="e-price"></span>
                                 </li>
                             </ul>
                         </div>
@@ -157,11 +157,11 @@
             <section class="payment-area">
                 <div>
                     <div class="payment-div1">
-                        최종 금액 <span class="room-price">100,000</span>           
+                        최종 금액 <span class="room-price" id="sum-price"></span>           
                     </div>
         
                     <div class="payment-div2">
-                        <button onclick="history.back();">이전 페이지로</button>
+                        <button type="button" onclick="history.back();">이전 페이지로</button>
     
                         <button type="button" id="iamportPayment">결제하기</button>
                     </div>
@@ -173,6 +173,14 @@
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const adultBreakfast = "${op.adultBreakfast}";
+        const childBreakfast = "${op.childBreakfast}";
+        const extraBed = "${op.extraBed}";
+        const roomRates = "${roomRates}";
+        const dateRange = "${reservation.dateRange}";
+    </script>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
