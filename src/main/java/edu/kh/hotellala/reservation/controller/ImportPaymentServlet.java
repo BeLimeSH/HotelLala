@@ -59,7 +59,6 @@ public class ImportPaymentServlet extends HttpServlet {
 	
 	//payment(import에서 보내준 데이터) -> PAYMENT 테이블 삽입
 	
-	
 	// -> 결제 완료 페이지로 넘어감...
 	
 	//실패했을때 페이지 안넘어감?

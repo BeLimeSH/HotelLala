@@ -47,20 +47,20 @@
                             <ul>
                                 <li>
                                     <span>예약 일</span>
-                                    <span class="result-val">2022.05.27 ~ 2022.05.28 (1박)</span>
+                                    <span class="result-val">${reservation.checkIn} ~ ${reservation.checkOut} (${reservation.dateRange}박)</span>
                                 </li>
                                 <li>
                                     <span>예약 인원</span>
-                                    <span class="result-val">성인 2 / 어린이 1</span>
+                                    <span class="result-val">성인 ${reservation.adultCount} / 어린이 ${reservation.childCount}</span>
                                 </li>
                                 <li>
                                     <span>예약자명</span>
-                                    <span class="result-val">예약자</span>
+                                    <span class="result-val">${loginMember.memberName}</span>
                                 </li>
 
                                 <li>
                                     <span>객실</span>
-                                    <span class="result-val">Standard</span>
+                                    <span class="result-val">${reservation.roomType}</span>
                                 </li>
                             </ul>
                         </div>
@@ -74,17 +74,17 @@
                                     <ul>
                                         <li>
                                             <span>성인 조식</span>
-                                            <span>0</span>
+                                            <span>${op.adultBreakfast}</span>
                                         </li>
 
                                         <li>
                                             <span>어린이 조식</span>
-                                            <span>0</span>
+                                            <span>${op.childBreakfast}</span>
                                         </li>
 
                                         <li>
                                             <span>엑스트라 베드</span>
-                                            <span>0</span>
+                                            <span>${op.extraBed}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -92,7 +92,7 @@
                                 <li>요청 사항</li>
                                 
                                 <!-- 값이 없으면 안보이는 부분 -->
-                                <div id="req-result">객실에 베개 한 개 추가해주세요.</div>
+                                <div id="req-result">${reservation.extraBed}</div>
                             </ul>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                             </li>
                             <li>
                                 <span>결제 시간</span>
-                                <span class="result-val">2022.05.27 17:27:04</span>
+                                <span class="result-val">${payment.paymentDate}</span>
                             </li>
 
                             <!-- 선긋기 -->
@@ -122,15 +122,11 @@
                                 <span>추가 옵션 비용</span>
                                 <span class="result-val">0원</span>
                             </li>
-                            <li>
-                                <span>포인트 할인</span>
-                                <span class="result-val">- 10,000</span>
-                            </li>
 
                         </ul>
                         <div class="complete-pay-box">
                             <span>결제 금액</span>
-                            <span class="result-val">100,000 원</span>
+                            <span class="result-val">${payment.paymentAmount} 원</span>
                         </div>
                     </div>
                 </section>
