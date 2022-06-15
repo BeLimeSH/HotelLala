@@ -10,19 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약 조회</title>
 
-    <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
-    <link rel="stylesheet" href="${contextPath}resources/css/reservationCheck.css" type="text/css">
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservationCheck.css" type="text/css">
+	<link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+	<link rel="shortcut icon" href="/HotelLala/resources/images/wIcon.ico">
+    <link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
+    
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <!-- header -->
+
+    <!-- header -->
     <a href="${contextPath}" class="hotelLogo">
         <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
     </a>
 
     <!-- nav -->
     <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
+    
     
     <main>
         <!-- 조회 탭 -->
@@ -90,14 +95,14 @@
                                 <span class="chkbox2">
                                     <input type="button" name="dateType" id="dateType7" class="btn btn-default btn-sm" onclick="setSearchDate('1y')" value="12개월"/>
                                 </span>
-                                
-                        		<input class="datepicker">
-                        		
+
+                                <input class="datepicker">
+
                             </div>
                         </td>
-                        </tr>
+                    </tr>
+                    
                         
-
                     </table>
 
     
@@ -128,7 +133,7 @@
                                         <c:when test="${empty reserveCheck}">
                                             <!--  예약 조회 결과가 비어있다면 -->
                                             <tr>
-                                                <th colspan="5" class="reserveNothing">예약 내역이 존재하지 않습니다.</th>
+                                                <td colspan="5" class="reserveNothing">예약 내역이 존재하지 않습니다.</th>
                                             </tr>
                                         </c:when>
 
@@ -166,8 +171,6 @@
 
     </main>
     
-    <script>const contextPath = "${contextPath}";</script>
-     
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
@@ -180,7 +183,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
+
+
+	<script>
+        const contextPath = "${contextPath}";
+    </script>
 	
 	<!-- nav 메인 js -->
     <script src="${contextPath}/resources/js/main.js"></script>

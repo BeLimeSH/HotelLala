@@ -217,12 +217,12 @@ roomSearchBtn.addEventListener("click", function(){
                     // 가격!
                     const roomTitRates = document.createElement("div");
                     roomTitRates.classList.add("room-tit");
-                    roomTitRates.innerText = priceToString( room.roomRates ) + "원";
+                    roomTitRates.innerText = priceToString( room.roomRates * dateRange.value ) + "원";
 
                     // 작은 글씨!
                     const roomContent =  document.createElement("div");
                     roomContent.classList.add("room-content");
-                    roomContent.innerText = "1박";
+                    roomContent.innerText = dateRange.value +"박";
 
                     // 예약하기 버튼 a태그
                     const reserveBtn = document.createElement("a");

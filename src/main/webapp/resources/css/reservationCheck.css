@@ -4,10 +4,15 @@ main{
 }
 
 /* 로고 크기 */
-a{  
-    height: 30px;
-    display: flex;
-    border-bottom: 1px solid rgb(195, 195, 195);
+.hotelLogo{
+    top:30px;
+    left:30px;
+    position:fixed;
+}
+.hotelLogo > img {
+    width: 190px;
+    box-sizing: border-box;
+    font-family: 'GowunBatang-Regular';
 }
 
 /* 폰트 */
@@ -23,7 +28,7 @@ a{
 .myPage-content{
     width: 1400px;
     height: 600px;
-    margin: 50px auto;
+    margin: 130px 100px 150px 250px;
 
     display: flex;
 }
