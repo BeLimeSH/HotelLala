@@ -41,32 +41,25 @@ public class ReservationPaymentServlet extends HttpServlet {
 		try {
 			HttpSession session = req.getSession();
 			ReservationRequest reservation = (ReservationRequest)(session.getAttribute("reservation"));
-			Member loginMember = (Member)(session.getAttribute("loginMember"));
 					
+			//세션의 reservation에 추가요청사항 세팅
+			reservation.setExtraRequest(extraRequest);
+			
+			//페이지 만들 때 필요한 값
+			// 객실가격*dateRange, 옵션 수량, 옵션수량*가격
+			
 			//세션에 op 세팅
 			session.setAttribute("op", op);
 			
-			//세션의 reservation에 추가요청사항 세팅
-			if(extraRequest != null) {
-				reservation.setExtraRequest(extraRequest);				
-			}
-			
-			int memberNo = loginMember.getMemberNo();
-			
+			//세션에서 객실 타입 가져오기
 			String type = reservation.getRoomType();
 			
 			System.out.println(reservation);
 			System.out.println(op);
 			
-			//페이지 만들 때 필요한 값
-			// 객실가격*dateRange, 옵션 수량, 옵션수량*가격
 			int roomRates = service.selectRates(type);
 			
 			req.setAttribute("roomRates", roomRates);
-			
-			//결제 요청시 필요한 값
-			//회원 이름, 회원 이메일 조회해오기,,
-			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
