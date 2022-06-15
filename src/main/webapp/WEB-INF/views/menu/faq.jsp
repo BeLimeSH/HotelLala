@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,14 +54,16 @@
                     <div class="tab">
                         <div class="tab_menu_wrap">
                             <div class="tab_menu">
-                                <button class="tab-menu-link active1">전체</button>
-                                <button class="tab-menu-link">객실예약</button>
-                                <button class="tab-menu-link">시설</button>
+                                <button class="tab-menu-link active1" onclick="location.href='faq?type=3'">결제</button>
+                                <button class="tab-menu-link" onclick="location.href='faq?type=4'">객실예약</button>
+                                <button class="tab-menu-link" onclick="location.href='faq?type=5'">시설예약</button>
+                                <button class="tab-menu-link" onclick="location.href='faq?type=6'">단체이용</button>
+                                <button class="tab-menu-link" onclick="location.href='faq?type=1'">기타</button>
                                 <button class="tab-menu-link">기타문의</button>
                             </div>
                         </div>
                         <div class="tab-bar">
-                            <div class="tab-bar-content">
+                            <!-- <div class="tab-bar-content">
                                 <div class="texts">
                                     <div class="accordion-container btn">
                                         <div class="accordion-title"> 
@@ -99,26 +102,24 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="tab-bar-content">
                                 <div class="texts">
                                     <div class="accordion-container btn2">
                                         <div class="accordion-title"> 
-                                            <p>[객실예약] 체크인 / 체크아웃 시간은 언제인가요?</p>
+                                            <p>${board.boardTitle}</p>
                                             <a><i class="fa-solid fa-angle-up up"></i></a>
                                             <a><i class="fa-solid fa-angle-down down"></i></a>
                                         </div>
                                         <div class="accordion-innerbox inner">
                                             <p>
-                                                일반적으로 체크인 시간은 15시부터 가능하고, 체크아웃은 익일 11시까지이며, 상품에 따라 변동이 있을 수 있습니다.<br>
-                                                - 레이트 체크아웃은 1시간에 44,000원 비용 부과 및 최대 14시까지 이용 가능합니다.<br>
-                                                (당일 객실 상황에 따라 레이트 체크아웃은 이용이 어려울 수 있습니다.)
+                                                ${board.boardContent}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-bar-content">
+                            <!-- <div class="tab-bar-content">
                                 <div class="texts">
                                     <div class="accordion-container btn3">
                                         <div class="accordion-title"> 
@@ -145,7 +146,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="tab-bar-content">
                                 <div class="texts">
                                     <div class="accordion-container btn4">

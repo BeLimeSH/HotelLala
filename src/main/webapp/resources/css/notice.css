@@ -94,4 +94,11 @@ table a {
     padding:9px;
     color:black;
 }
+.page{
+    display:flex;
 
+}
+
+.page li{
+    margin-left:10px;
+}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
 <!DOCTYPE html>
@@ -24,6 +25,7 @@
 	        </a>
         </div>
         
+        
         <div class="first">
             <div class="notice-first">    
                 <div class="subtitle">
@@ -38,7 +40,7 @@
                                 <th>제목</th>
                                 <th>등록일</th>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>[ NOTICE ]</td>
                                 <td>
                                     <a href="#">호텔 사용 안내</a>
@@ -64,17 +66,39 @@
                                 <td>
                                     <p>2022.05.21</p>
                                 </td>
-                            </tr>
+                            </tr> -->
+							<c:forEach var="board" items="${list}"  varStatus="vs">
+                                 <tr>
+                                    <td> ${fn:length(list) - vs.index} </td>
+                                    <td>
+                                        <a href="#.?no=${board.boardNo}" id="${board.boardNo}">${board.boardTitle}</a>
+                                    </td>
+                                    <td>
+                                        <p>${board.createDate}</p>
+                                    </td>
+                                </tr>
+							</c:forEach>              
+
                         </tbody>
                     </table>
                    
                 </div>
             </div>
             <div class="seq">
-                <ul>
+                <ul class="page">
                     <li class="active1">
                         <a href="">1</a>
                     </li>
+                    <li class="active1">
+                        <a href="${contextPath}/menu/notice&cp=2">2</a>
+                    </li>
+                    <li class="active1">
+                        <a href="">3</a>
+                    </li>
+                    <li class="active1">
+                        <a href="">4</a>
+                    </li>
+
                 </ul>
             </div>
         </div>

@@ -35,6 +35,8 @@ public class SignUpServlet extends HttpServlet{
 //		String memberMonth = req.getParameter("memberMonth");
 //		String memberDay = req.getParameter("memberDay");
 		
+		
+		
 //		bt += memberYear+"년"+memberMonth+"월"+memberDay+"일";
 		
 		String memberAddress = null;
