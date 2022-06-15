@@ -23,7 +23,6 @@ import edu.kh.hotellala.wrapper.EncryptWrapper;
 				   		  "/member/signUp",
 				   		  "/member/myPage/changePw",
 				   		  "/member/myPage/secession"})
-							///member/myPage/secession
 public class EncryptFilter extends HttpFilter implements Filter {
 	
 	
