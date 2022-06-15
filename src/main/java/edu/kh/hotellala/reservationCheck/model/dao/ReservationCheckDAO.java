@@ -5,6 +5,7 @@ import static edu.kh.hotellala.common.JDBCTemplate.close;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -13,6 +14,8 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
+import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
+import edu.kh.hotellala.reservationCheck.model.vo.Refund;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 
 public class ReservationCheckDAO {
@@ -38,69 +41,91 @@ public class ReservationCheckDAO {
 
 
 	/** 예약 조회 DAO
-	 * @param conn
+	 * @param conn 
+	 * @param memberNo
+	 * @param checkOut 
+	 * @param checkIn 
 	 * @return list
 	 * @throws Exception
 	 */
-	public List<ReservationCheck> reservationCheck(Connection conn)  throws Exception{
+	public List<ReservationRequest> reservationCheck(Connection conn, int memberNo, Date checkIn, Date checkOut)  throws Exception{
 		
-		List<ReservationCheck> list = new ArrayList<ReservationCheck>();
+		List<ReservationRequest> checkList = new ArrayList<ReservationRequest>();
 		
 		try {
-			String sql = prop.getProperty("/edu/kh/hotellala/sql/reservation-sql-pjh.xml");
-			
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
+			String sql = prop.getProperty("reservationCheck");
+
+			pstmt = conn.prepareStatement(sql);
+					
+			pstmt.setInt(1, memberNo);
+			pstmt.setDate(2, checkIn);
+			pstmt.setDate(3, checkOut);
+			rs = pstmt.executeQuery();
 			
 			while( rs.next() ) {
+				ReservationRequest reservation = new ReservationRequest();
+			
+				reservation.setRequestNo(rs.getString(1));
+				reservation.setMemberNo(rs.getInt(2));
+				reservation.setCheckIn(rs.getDate(3));
+				reservation.setCheckOut(rs.getDate(4));
+				reservation.setRoomNo(rs.getInt(5));
 				
-				ReservationCheck rsvCheck = new ReservationCheck();
-				
-				rsvCheck.setReservationNo( rs.getInt(1) );
-				rsvCheck.setRequestNo( rs.getString(2) );
-				rsvCheck.setReservationFl( rs.getString(3) );
-				rsvCheck.setPaymentNo( rs.getInt(4) );
-				rsvCheck.setRoomNo( rs.getInt(5) );
-					
+				checkList.add(reservation);
+	
 			}
 			
 		} finally {
 			close(rs);
-			close(stmt);
+			close(pstmt);
 		}
 		
-		return list;
+		return checkList;
 	}
 
 
 
-	/** 예약 취소 DAO
+	/** 예약 취소 내역 조회 DAO
 	 * @param conn
 	 * @param requestNo
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reserveCancel(Connection conn, int requestNo) throws Exception{
+	public Refund reserveCancel(Connection conn, int requestNo) throws Exception{
 		
-		int result = 0;
+		// VO 생성?
+		Refund refund = null;
 		
 		try {
 			
-			String sql = prop.getProperty("cancelReserve");
+			String sql = prop.getProperty("reservationCancelCheck");
 			
 			pstmt = conn.prepareStatement(sql);
+					
+			pstmt.setInt(1, requestNo);			
+
+			rs = pstmt.executeQuery();
 			
-			pstmt.setInt(1, requestNo);
-			
-			result = pstmt.executeUpdate();
+			if(rs.next()) {
+				refund = new Refund();
+				
+				refund.setRefundNo(rs.getInt(1));
+				refund.setPaymentNo(rs.getInt(2));
+				refund.setRefundFlags(rs.getString(3));
+				refund.setRefundDate(rs.getDate(4));
+				refund.setRefundReason(rs.getString(5));
+					
+			}
 			
 			
 		} finally {
 			close(pstmt);
 		}
 		
-		return result;
+		return refund;
 	}
+
+
 	
 
 }
