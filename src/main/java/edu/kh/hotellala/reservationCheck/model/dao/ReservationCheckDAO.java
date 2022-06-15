@@ -82,6 +82,36 @@ public class ReservationCheckDAO {
 		
 		return checkList;
 	}
+	
+	
+	/** 예약 취소 요청 DAO
+	 * @param conn
+	 * @param refund
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertRefund(Connection conn, Refund refund) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reservationCancelRequest");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, refund.getPaymentNo());
+			pstmt.setString(2, refund.getRefundReason());
+			pstmt.setInt(3, refund.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 
 
@@ -124,6 +154,12 @@ public class ReservationCheckDAO {
 		
 		return refund;
 	}
+
+
+
+
+
+	
 
 
 	

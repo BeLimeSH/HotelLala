@@ -11,11 +11,13 @@ import javax.servlet.http.HttpSession;
 
 import edu.kh.hotellala.reservationCheck.model.service.ReservationCheckService;
 
-@WebServlet("/reservation/cancel")
-public class ReservationCancelServlet extends HttpServlet{
+@WebServlet("/reservation/cancelCheck")
+public class ReservationCancelCheckServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		// 취소 내역 조회
 		
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
