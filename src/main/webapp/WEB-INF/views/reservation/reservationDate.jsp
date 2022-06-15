@@ -153,6 +153,7 @@
     <!-- js에 전역변수로 contextPath 선언 -->
     <script>
         const contextPath = "${contextPath}";
+        const dateRangeR = "${reservation.dateRange}"
     </script>
 
     <script src="${contextPath}/resources/js/reservation/selectedDate.js"></script>

@@ -17,30 +17,32 @@ public class ReservationCancelServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		try {
-			int requestNo = Integer.parseInt(req.getParameter("requestNo"));
-			
-			int result = new ReservationCheckService().reserveCancel(requestNo);
-			
-			HttpSession session = req.getSession();
-			
-			String message = null;
-			
-			// 취소 성공
-			if(result > 0) {
-				message = "예약이 취소되었습니다.";
-			}else { // 실패 시
-				message = "예약 취소 요청에 실패하였습니다.";
-			}
-			
-			session.setAttribute("message", message);
-			
-			String path = "/WEB-INF/views/reservationCancel/reservationCancel.jsp";
-			req.getRequestDispatcher(path).forward(req, resp);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		String path = "/WEB-INF/views/reservationCancel/reservationCancel.jsp";
+		req.getRequestDispatcher(path).forward(req, resp);
+		
+//		try {
+//			int requestNo = Integer.parseInt(req.getParameter("requestNo"));
+//			
+//			int result = new ReservationCheckService().reserveCancel(requestNo);
+//			
+//			HttpSession session = req.getSession();
+//			
+//			String message = null;
+//			
+//			// 취소 성공
+//			if(result > 0) {
+//				message = "예약이 취소되었습니다.";
+//			}else { // 실패 시
+//				message = "예약 취소 요청에 실패하였습니다.";
+//			}
+//			
+//			session.setAttribute("message", message);
+//			
+//			
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 }

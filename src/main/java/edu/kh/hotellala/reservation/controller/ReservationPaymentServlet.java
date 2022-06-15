@@ -7,17 +7,52 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import edu.kh.hotellala.reservation.model.service.ReservationRequestService;
+import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 
 @WebServlet("/reservation/payment")
 public class ReservationPaymentServlet extends HttpServlet {
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-
+		//payment?adultBreakfast=2&childBreakfast=1&extraBed=0&extraRequest=힝구
+		//req.getParameter("");
+		
+		// 옵션 테이블에 사용할 값들?
+		int adultBreakfast = Integer.parseInt( req.getParameter("adultBreakfast") );
+		int childBreakfast = Integer.parseInt( req.getParameter("childBreakfast") );
+		int extraBed = Integer.parseInt( req.getParameter("extraBed") );
+		
+		req.setAttribute("adultBreakfast", adultBreakfast);
+		req.setAttribute("childBreakfast", childBreakfast);
+		req.setAttribute("extraBed", extraBed);
+		
+		// session에 저장해 둘 값
+		String extraRequest = req.getParameter("extraRequest");
+		
+		ReservationRequestService service = new ReservationRequestService();
 		
 		try {
+			HttpSession session = req.getSession();
+			ReservationRequest reservation = (ReservationRequest)(session.getAttribute("reservation"));
 			
+			reservation.setExtraRequest(extraRequest);
+			
+			String type = reservation.getRoomType();
+			
+			System.out.println(reservation);
+			
+			//페이지 만들 때 필요한 값
+			// 객실가격*dateRange, 옵션 수량, 옵션수량*가격
+			int roomRates = service.selectRates(type);
+			
+			req.setAttribute("roomRates", roomRates);
+			
+			//결제 요청시 필요한 값
+			//회원 이름, 회원 이메일 조회해오기,,
 			
 			
 		} catch(Exception e) {
@@ -26,13 +61,7 @@ public class ReservationPaymentServlet extends HttpServlet {
 		
 		String path = "/WEB-INF/views/payment/paymentRequest.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
-		
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		//ajax 처리
-	}
 
 }

@@ -33,9 +33,11 @@
                             <input type="text" name="qnaTitle"placeholder="제목을 입력해주세요.">
                             <!-- <input type="text"><br> -->
                             <select name="qnaCd" class="qna"><br>
-                                <option value="client">고객문의</option>
-                                <option value="client1">객실문의</option>
-                                <option value="client2">기타문의</option>
+                                <option value="1">기타</option>
+                                <option value="3">결제문의</option>
+                                <option value="4">객실문의</option>
+                                <option value="5">시설문의</option>
+                                <option value="6">단체이용</option>
                                 <option selected>선택하세요.</option>
                             </select><br>
                             <span>내용</span><br>
@@ -64,17 +66,23 @@
                     <br><br>
                     <div class="sub">
                         <div class="div1 cursor">취소</div>
-                        <button type="submit" class="div1 cursor">문의하기</button>
+                        <button type="submit" class="div1 sub-in cursor">문의하기</button>
                     </div>
                 </ul>
             </div>
-            <input type="hidden" name="loginNo" value="${loginMember.memberNo}">
+            <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
         </form>
         
         <jsp:include page="/WEB-INF/views/common/menunav.jsp"/>
 
     </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <c:if test="${!empty sessionScope.message}">
+        <script>
+            alert("${message}");
+        </script>
+        <c:remove var="message" scope="session"/>
+    </c:if>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
 </body>

@@ -25,14 +25,17 @@ public class QnaServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String qnaTitle = req.getParameter("qnaTitle");
-		String qnaCd = req.getParameter("qnaCd");
+		int qnaCd = Integer.parseInt(req.getParameter("qnaCd"));
 		String qnaContent = req.getParameter("qnaContent");
-
+		int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+		
+		System.out.println(memberNo);
 		
 		Qna q = new Qna();
 		q.setQnaTitle(qnaTitle);
 		q.setQnaCd(qnaCd);
 		q.setQnaContent(qnaContent);
+		q.setMemberNo(memberNo);
 		try {
 			QnaService service = new QnaService();
 			
@@ -45,6 +48,7 @@ public class QnaServlet extends HttpServlet{
 			}else {
 				session.setAttribute("message", "QnA 작성이 미완료되었습니다.");
 			}
+			resp.sendRedirect(req.getContextPath());
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
