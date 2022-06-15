@@ -75,7 +75,7 @@ function reserveCheck(){
 
             let url = "reservationCheck/cancel"; // 상대경로
 
-            if( confirm("정말로 삭제 하시겠습니까?") ){
+            if( confirm("예약을 취소 하시겠습니까?") ){
                 location.href = url; // get방식으로 url에 요청
             }
 
