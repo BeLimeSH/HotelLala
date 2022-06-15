@@ -51,9 +51,9 @@ public class SignUpServlet extends HttpServlet{
 		mem.setMemberName(memberName);
 		mem.setMemberTel(memberTel);
 		mem.setMemberAddress(memberAddress);
-		mem.setMemberYear(memberYear);
-		mem.setMemberMonth(memberMonth);
-		mem.setMemberDay(memberDay);
+//		mem.setMemberYear(memberYear);
+//		mem.setMemberMonth(memberMonth);
+//		mem.setMemberDay(memberDay);
 		
 		try {
 			MemberService service = new MemberService();

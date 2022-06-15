@@ -19,28 +19,6 @@ public class ReservationCancelCheckServlet extends HttpServlet{
 		
 		// 취소 내역 조회
 		
-		String uri = req.getRequestURI();
-		String contextPath = req.getContextPath();
-		String command = uri.substring(  (contextPath + "/cancel/").length()  );
-		
-		// Service
-		ReservationCheckService service = new ReservationCheckService();
-		
-		try {
-			
-			if(command.equals("cancel")) {
-				
-				// 예약 취소 눌렀을 시 관리자 전달
-				
-				// popup창 띄워서 환불 사유 적어서 전달
-				
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
 		String path = "/WEB-INF/views/reservationCancel/reservationCancel.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 
