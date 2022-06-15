@@ -57,6 +57,9 @@ public class LoginServlet extends HttpServlet{
 				
 				session.setAttribute("loginMember", loginMember );
 				
+				//특정 시간동안 요청이 없으면 세션 만료 
+				session.setMaxInactiveInterval(3600);//3600초 == 1시간
+				
 				Cookie c = new Cookie("idSaveCheck", inputId);
 				
 				

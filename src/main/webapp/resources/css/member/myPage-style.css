@@ -17,6 +17,13 @@ a{
     display: flex;
     
 }
+.myPage-inner{
+    /* flex-basis: 70%; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
 
 /* 왼쪽 사이드 메뉴 */
 
@@ -34,8 +41,10 @@ a{
 
 
 .left-side{
-    width: 20%;
+    flex-basis: 300px;
+    /* width: 20%; */
     border-right: 2px solid #ddd;
+    display: inline-block;
 }
 
 
@@ -64,11 +73,25 @@ a{
 
 }
 .list-group>li>a:hover{
-    background-color: #ddd;
+    background-color: white;
+    color:black;
+   
+    background: #fff;
+    transition: color 0.5s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+    font-family:/*  gothamL */ notokrL;
 }
+/* :hover{
+    background-color: #ddd;
+} */
 
 
 /* 마이 페이지 공통 부분 */
+.wrapper{
+    width : 100%;
+    padding: 0 150px;
+}
 
 .myPage-main{
     display: table-cell;
@@ -77,18 +100,27 @@ a{
 
 }
 .myPage-title{
+    display: inline-block;
+    width:100%;
     margin:0 0 10px 0;
     font-size: 30px;
-    
 }
+
+.myPage-subtitle{
+    display: inline-block;
+    width:100%;
+}
+
 .myPage-explanation{
-    display: block;
+    display: inline-block;
+    width:100%;
     margin-bottom: 30px;
     font-size: 14px;
     letter-spacing: -1px;
 }
-.mypage-subexplanation{
-    display: block;
+.myPage-subexplanation{
+    display: inline-block;
+    width:100%;
     margin-bottom: 30px;
     font-size: 14px;
     letter-spacing: -1px;
@@ -159,8 +191,9 @@ form[name="myPage-form"]{
 
 }
 #info-update-btn {
-    width: 100%;
-    padding: 10px;
+    height: 50px;
+    width: 500px;
+    /* padding: 10px; */
     margin: 50px 0;
     border: 1px solid black;
     font-size: 20px;

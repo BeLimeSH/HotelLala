@@ -21,64 +21,66 @@
 
 <main>
 
-
-
-
- 
 <div class="logo">
     <a href="${contextPath}">
         <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
     </a>
 </div>
+
 <section class="myPage-content">
            
 
-        <!-- 사이드 메뉴 include -->
-        <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
+    <!-- 사이드 메뉴 include -->
+    <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
             
         <!-- 오른쪽 마이페이지 상단  -->
-        <section class="myPage-content">
+        <section class="myPage-inner">
             
             <section class="myPage-main">
-            <h1 class="myPage-title">My Page</h1>
-            <span class="myPage-explanation">멤버쉽 회원을 위한 다양한 혜택이 준비되어 있습니다.</span>
-            
-            <h4 class="myPage-subtitle">내 정보</h4>
-            <span class="mypage-subexplanation">원하는 회원 정보를 수정할 수 있습니다.</span>
-
-            <form action="info" method="POST" name="myPage-form" onsubmit="return infoValidate()" >
+                
+                <form action="info" method="POST" name="myPage-form" onsubmit="return infoValidate()" >
+                    
+                    <h1 class="myPage-title">My Page</h1>
+                    <span class="myPage-explanation">멤버쉽 회원을 위한 다양한 혜택이 준비되어 있습니다.</span>
+                    
+                    <h4 class="myPage-subtitle">내 정보</h4>
+                    <span class="myPage-subexplanation">원하는 회원 정보를 수정할 수 있습니다.</span>
               
-                <div class="myPage-row">
-                    <label>NAME*</label>
-                    <input type="text" name="memberName" value="${loginMember.memberName}" id="memberName" maxlength="10">
-                </div>
+                    <div class="wrapper">
 
-                <div class="myPage-row">
-                    <label>PHONE NUMBER *</label>
-                    <input type="text" name="memberTel" value="${loginMember.memberTel}" id="memberTel" maxlength="11">
-                </div>
-
-
-                <!-- 주소-->
-                <c:set var="addr" value="${fn:split(loginMember.memberAddress,',,')}"/>
-                <div class="myPage-row info-title">
-                    <span>ADDRESS* </span>
-                </div>
-                <div class="myPage-row info-address">
-                    <input type="text" name="memberAddress" value="${addr[0]}" maxlength="6" id="sample6_postcode">
-                    <button type="button" id="info-address-btn" onclick="sample6_execDaumPostcode()">검색</button>
-                </div>
-
-                <div class="myPage-row info-address">
-                    <input type="text" name="memberAddress" value="${addr[1]}" id="sample6_address">
-                </div>
-
-                <div class="myPage-row info-address">
-                    <input type="text" name="memberAddress" value="${addr[2]}" id="sample6_detailAddress">
-                </div>
+                        <div class="myPage-row">
+                            <label>NAME*</label>
+                            <input type="text" name="memberName" value="${loginMember.memberName}" id="memberName" maxlength="10">
+                        </div>
         
-                <button id="info-update-btn">수정하기</button>
+                        <div class="myPage-row">
+                            <label>PHONE NUMBER *</label>
+                            <input type="text" name="memberTel" value="${loginMember.memberTel}" id="memberTel" maxlength="11">
+                        </div>
+        
+        
+                        <!-- 주소-->
+                        <c:set var="addr" value="${fn:split(loginMember.memberAddress,',,')}"/>
+                        <div class="myPage-row info-title">
+                            <span>ADDRESS* </span>
+                        </div>
+                        <div class="myPage-row info-address">
+                            <input type="text" name="memberAddress" value="${addr[0]}" maxlength="6" id="sample6_postcode">
+                            <button type="button" id="info-address-btn" onclick="sample6_execDaumPostcode()">검색</button>
+                        </div>
+        
+                        <div class="myPage-row info-address">
+                            <input type="text" name="memberAddress" value="${addr[1]}" id="sample6_address">
+                        </div>
+        
+                        <div class="myPage-row info-address">
+                            <input type="text" name="memberAddress" value="${addr[2]}" id="sample6_detailAddress">
+                        </div>
+
+                        <button id="info-update-btn">수정하기</button>
+                    </div>
+        
 
             </form>
 
@@ -86,7 +88,8 @@
 
     </section>
     
-    
+</section>    
+
 </main>
 
 
@@ -97,7 +100,9 @@
     
 <!-- js -->
 <script src="${contextPath}/resources/js/member/myPage.js"></script>
+<script src="${contextPath}/resources/js/menu/nav.js"></script>
         
+<!-- 주소 검색 js  -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {
@@ -144,7 +149,7 @@
         }).open();
     }
 </script>
-<script src="${contextPath}/resources/js/menu/nav.js"></script>
+
 
 </body>
 </html>
