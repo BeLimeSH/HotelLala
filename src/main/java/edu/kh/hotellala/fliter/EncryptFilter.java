@@ -20,10 +20,9 @@ import edu.kh.hotellala.wrapper.EncryptWrapper;
 
 @WebFilter(filterName="encryptFilter",
 		   urlPatterns = {"/login",
-				   		  "/signUp",
+				   		  "/member/signUp",
 				   		  "/member/myPage/changePw",
 				   		  "/member/myPage/secession"})
-
 public class EncryptFilter extends HttpFilter implements Filter {
 	
 	

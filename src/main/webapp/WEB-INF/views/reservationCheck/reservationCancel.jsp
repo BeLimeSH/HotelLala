@@ -71,11 +71,11 @@
                 </div>
 
                 <div class="cancelSub">실결제 금액
-                    <div class="subPay2">${payment.paymentAmount/div>
+                    <div class="subPay2">${payment.paymentAmount}</div>
                 </div>
 
                 <div class="cancelSub">포인트사용
-                    <div class="subPoint">${}</div>
+                    <div class="subPoint"></div>
                 </div>
 
             </section>

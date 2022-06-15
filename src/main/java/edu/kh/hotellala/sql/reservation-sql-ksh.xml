@@ -16,5 +16,6 @@
 	FROM ROOM_TB
 	WHERE ROOM_TYPE = ?
 	</entry>
+	
 
 </properties>

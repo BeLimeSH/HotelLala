@@ -22,11 +22,13 @@ public class ReservationRequest {
 	private String dateRange;
 	private int adultCount;
 	private int childCount;
-	private char cancleFlags;
+	private String extraRequest;
+	private char reservationFlags;
+	private int roomNo;
 	
 	private int memberNo;
-	
 	private String roomType;
-	private String extraRequest;
+	
+	private String reserveDate;
 
 }

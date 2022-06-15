@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
+import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.dao.ReservationCheckDAO;
 
 public class ReservationCheckService{
@@ -31,6 +32,14 @@ public class ReservationCheckService{
 		return list;
 	}
 
+	
+	public List<ReservationRequest> reservationCheck(ReservationRequest reservation) throws Exception{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
 
 	/** 예약 취소 Service
 	 * @param requestNo
@@ -50,6 +59,8 @@ public class ReservationCheckService{
 		
 		return result;
 	}
+
+
 
 
 	

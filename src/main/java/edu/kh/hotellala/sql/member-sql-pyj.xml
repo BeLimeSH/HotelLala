@@ -84,8 +84,6 @@
    		SECESSION_FL='Y'
    		WHERE MEMBER_NO=?
    		AND MEMBER_PW=?
-
-   		
    </entry>
 
 </properties>
