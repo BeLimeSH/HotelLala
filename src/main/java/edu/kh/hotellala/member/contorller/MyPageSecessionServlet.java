@@ -50,14 +50,21 @@ public class MyPageSecessionServlet extends HttpServlet {
 
 			
 			if(result>0) { // SECESSION_FL = 'Y' 수정 성공 
-				session.setAttribute("message", "탈퇴 신청이 완료되었습니다.");
-				session.invalidate();
-				session=req.getSession();
 				
+				session.invalidate();// loginMember 무효화 시키기 
+				
+				session=req.getSession(); //무효화 후 새로운 세션 얻어옴 
+				
+				session.setAttribute("message", "탈퇴 신청이 완료되었습니다.");
+				
+				resp.sendRedirect(req.getContextPath());//최상위 주소 
+//				path= req.getContextPath(); // 메인페이지
 				
 			}else { //실패 
 				session.setAttribute("message", "비밀번호를 다시 입력해주세요.");
+		
 				path=req.getContextPath()+"/member/myPage/secession";
+				resp.sendRedirect(path);
 			}
 			
 		}catch(Exception e) {

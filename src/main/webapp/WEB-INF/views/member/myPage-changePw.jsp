@@ -86,6 +86,7 @@
 
 <!-- js -->
 <script src="${contextPath}/resources/js/member/myPage.js"></script>
+<script src="${contextPath}/resources/js/menu/nav.js"></script>
         
 </body>
 </html>
