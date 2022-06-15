@@ -33,7 +33,7 @@ public class MyPageSecessionServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		
 		Member loginMember = (Member)(session.getAttribute("loginMember"));
-		
+		System.out.println(memberPw);
 		int memberNo = loginMember.getMemberNo();
 		
 		try {
@@ -42,6 +42,7 @@ public class MyPageSecessionServlet extends HttpServlet {
 			MemberService service = new MemberService();
 			
 			int result = service.secession(memberNo , memberPw);
+			System.out.println("step 2");
 			
 			
 			String path= null; //리다이렉트
@@ -54,10 +55,14 @@ public class MyPageSecessionServlet extends HttpServlet {
 				session.invalidate();
 				session=req.getSession();
 				
+				System.out.println("성공");
 				
 			}else { //실패 
 				session.setAttribute("message", "비밀번호를 다시 입력해주세요.");
 				path=req.getContextPath()+"/member/myPage/secession";
+
+				System.out.println("실패");
+				resp.sendRedirect(req.getContextPath());
 			}
 			
 		}catch(Exception e) {
