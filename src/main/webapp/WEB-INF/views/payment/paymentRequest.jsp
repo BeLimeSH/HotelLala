@@ -40,134 +40,132 @@
         </section>
 
         <!-- 결제 정보 form -->
-        <form action="#" id="pay-status">
-            <section class="reserveSection">
+        <section class="reserveSection">
 
-                <!-- 예약 정보 -->
-                <section id="order-box" class="selectionContents">
-                    <div class="payment-tit">결제 정보</div>
-                    
-                    <div class="payment-con" id="info-div">
-                        
-                        <div>
-                            <ul>
-                                <li>
-                                    <div class="payment-list">객실</div>
-                                    <div class="unbundling">
-                                        <span class="payment-list">${reservation.roomType} / ${reservation.dateRange}박</span>
-                                        <span class="payment-list" id="r-price"></span>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <ul class="option-result">
-                                <li class="payment-list">선택한 옵션(옵션 / 수량 / 가격)</li>
-                                
-                                <li>
-                                    <span class="payment-list">성인 조식(30,000원)</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list">${adultBreakfast}</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list" id="ab-price"></span>
-                                </li>
-                                
-                                <li>
-                                    <span class="payment-list">어린이 조식(25,000원)</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list">${childBreakfast}</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list" id="cb-price"></span>
-                                </li>
-                                
-                                <li>
-                                    <span class="payment-list">엑스트라 베드(65,000원)</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list">${extraBed}</span>
-                                    <span class="payment-list">|</span>
-                                    <span class="payment-list" id="e-price"></span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="dividing-col"></div>
-
-                        <div>
-                            <div class="req-result">
-                                <div class="payment-list">추가 요청사항</div>
-                                <div class="textBox">${reservation.extraRequest}</div>
-                            </div>
-
-                            <div class="req-result-message">* 기타 문의사항은 Q&A게시판 또는 객실 예약과(010-0000-000)로 <br> 문의주세요.</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 결제 방법 선택 -->
-                <!-- API 필수 -->
-                <section id="pay-option-box" class="selectionContents">
-                    <div class="payment-tit">결제 방법</div>
-                    
-                    <div class="payment-con pay-option-con">
-                        
-                        <!-- 카드 -->
-                        <label>
-                            <div class="option-btn">
-                                <i class="fa-solid fa-credit-card"></i>
-                                <div>카드 결제</div>
-                            </div>
-                            <input type="radio" name="pay-option" value="card" class="removeResource">
-                        </label>
-                        
-                        <!-- 실시간 계좌이체 -->
-                        <label>
-                            <div class="option-btn">
-                                <i class="fa-solid fa-money-bill-transfer"></i>
-                                <div>실시간 계좌이체</div>
-                            </div>
-                            <input type="radio" name="pay-option" value="trans" class="removeResource">
-                        </label>
-                        
-                        <!-- 가상계좌 -->
-                        <label>
-                            <div class="option-btn">
-                                <i class="fa-solid fa-money-check-dollar"></i>
-                                <div>가상계좌</div>
-                            </div>
-                            <input type="radio" name="pay-option" value="vbank" class="removeResource">
-                        </label>
-                        
-                        <!-- 핸드폰 -->
-                        <label>
-                            <div class="option-btn">
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                <div>핸드폰 결제</div>
-                            </div>
-                            <input type="radio" name="pay-option" value="phone" class="removeResource">
-                        </label>
-                        
-                    </div>
-                </section>
+            <!-- 예약 정보 -->
+            <section id="order-box" class="selectionContents">
+                <div class="payment-tit">결제 정보</div>
                 
-                <!-- 유의사항 & 환불 규정 -->
-                <jsp:include page="/WEB-INF/views/common/ruleBox.jsp"/>
+                <div class="payment-con" id="info-div">
+                    
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="payment-list">객실</div>
+                                <div class="unbundling">
+                                    <span class="payment-list">${reservation.roomType} / ${reservation.dateRange}박</span>
+                                    <span class="payment-list" id="r-price"></span>
+                                </div>
+                            </li>
+                        </ul>
 
-            </section>
-
-            <!-- 최종 결제 금액 -->
-            <section class="payment-area">
-                <div>
-                    <div class="payment-div1">
-                        최종 금액 <span class="room-price" id="sum-price"></span>           
+                        <ul class="option-result">
+                            <li class="payment-list">선택한 옵션(옵션 / 수량 / 가격)</li>
+                            
+                            <li>
+                                <span class="payment-list">성인 조식(30,000원)</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list">${op.adultBreakfast}</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list" id="ab-price"></span>
+                            </li>
+                            
+                            <li>
+                                <span class="payment-list">어린이 조식(25,000원)</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list">${op.childBreakfast}</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list" id="cb-price"></span>
+                            </li>
+                            
+                            <li>
+                                <span class="payment-list">엑스트라 베드(65,000원)</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list">${op.extraBed}</span>
+                                <span class="payment-list">|</span>
+                                <span class="payment-list" id="e-price"></span>
+                            </li>
+                        </ul>
                     </div>
-        
-                    <div class="payment-div2">
-                        <button type="button" onclick="history.back();">이전 페이지로</button>
-    
-                        <button type="button" id="iamportPayment">결제하기</button>
+
+                    <div class="dividing-col"></div>
+
+                    <div>
+                        <div class="req-result">
+                            <div class="payment-list">추가 요청사항</div>
+                            <div class="textBox">${reservation.extraRequest}</div>
+                        </div>
+
+                        <div class="req-result-message">* 기타 문의사항은 Q&A게시판 또는 객실 예약과(010-0000-000)로 <br> 문의주세요.</div>
                     </div>
                 </div>
             </section>
-        </form>
+
+            <!-- 결제 방법 선택 -->
+            <!-- API 필수 -->
+            <section id="pay-option-box" class="selectionContents">
+                <div class="payment-tit">결제 방법</div>
+                
+                <div class="payment-con pay-option-con">
+                    
+                    <!-- 카드 -->
+                    <label>
+                        <div class="option-btn">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <div>카드 결제</div>
+                        </div>
+                        <input type="radio" name="pay-option" value="card" class="removeResource">
+                    </label>
+                    
+                    <!-- 실시간 계좌이체 -->
+                    <label>
+                        <div class="option-btn">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <div>실시간 계좌이체</div>
+                        </div>
+                        <input type="radio" name="pay-option" value="trans" class="removeResource">
+                    </label>
+                    
+                    <!-- 가상계좌 -->
+                    <label>
+                        <div class="option-btn">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                            <div>가상계좌</div>
+                        </div>
+                        <input type="radio" name="pay-option" value="vbank" class="removeResource">
+                    </label>
+                    
+                    <!-- 핸드폰 -->
+                    <label>
+                        <div class="option-btn">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <div>핸드폰 결제</div>
+                        </div>
+                        <input type="radio" name="pay-option" value="phone" class="removeResource">
+                    </label>
+                    
+                </div>
+            </section>
+            
+            <!-- 유의사항 & 환불 규정 -->
+            <jsp:include page="/WEB-INF/views/common/ruleBox.jsp"/>
+
+        </section>
+
+        <!-- 최종 결제 금액 -->
+        <section class="payment-area">
+            <div>
+                <div class="payment-div1">
+                    최종 금액 <span class="room-price" id="sum-price"></span>           
+                </div>
+    
+                <div class="payment-div2">
+                    <button type="button" onclick="history.back();">이전 페이지로</button>
+
+                    <button type="button" id="iamportPayment">결제하기</button>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -175,11 +173,17 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
-        const adultBreakfast = "${adultBreakfast}";
-        const childBreakfast = "${childBreakfast}";
-        const extraBed = "${extraBed}";
+        const adultBreakfast = "${op.adultBreakfast}";
+        const childBreakfast = "${op.childBreakfast}";
+        const extraBed = "${op.extraBed}";
+
         const roomRates = "${roomRates}";
         const dateRange = "${reservation.dateRange}";
+        const roomType = "${reservation.roomType}";
+        const requestNo = "${reservation.requestNo}"
+
+        const memberName = "${loginMember.memberName}"
+        const memberNo = "${loginMember.memberNo}"
     </script>
 
     <!-- jQuery -->

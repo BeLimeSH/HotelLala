@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
@@ -102,5 +103,6 @@ public class ReservationRequestDAO {
 		
 		return roomRates;
 	}
+
 
 }

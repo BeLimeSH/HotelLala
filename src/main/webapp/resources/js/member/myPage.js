@@ -1,25 +1,25 @@
 // 내정보 수정 
 
-// 내 정보 수정 유효성 검사
 function infoValidate(){
 
     const memberName = document.getElementById("memberName");
     const memberTel = document.getElementById("memberTel");
+    const memberAddress = document.getElementsByName("memberAddress");
 
-    const regExp1 = /^[a-zA-Z0-9가-힣]{2,10}$/;        // 닉네임 정규식
-    const regExp2 = /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/; // 전화번호 정규식
-
-    // 닉네임 유효성 검사
-    if(memberName.value.length == 0){ // 미작성 시 : 닉네임을 입력해주세요.
-        alert("닉네임을 입력해주세요.");
-
-
+    const regExp1 = /^[a-zA-Z가-힣]{2,10}$/;
+    const regExp2 = /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/; 
+   
+ 
+    //이름 유효성 검사 
+    if(memberName.value.length == 0){ // 미작성 시 
+        alert("이름을 입력해주세요.");
         memberName.focus();
+        memberName.value="";
         return false;
     }
 
     if(!regExp1.test(memberName.value)){ // 유효하지 않은 경우
-        alert("닉네임은 영어/숫자/한글 2~10 글자 사이로 작성해주세요.");
+        alert("이름은 영문/한글 2~10 글자 사이로 작성해주세요.");
         memberName.focus();
         return false;
     }
@@ -37,6 +37,27 @@ function infoValidate(){
         memberTel.focus();
         return false;
     }
+    
+    //주소 유효성검사
+    if(memberAddress[0].value.trim().length==0){ // 유효하지 않은 경우
+        alert(" 우편번호를 입력해주세요");
+        memberAddress[0].focus();
+        memberAddress[0].value="";
+        return false;
+    }
+    
+    if(memberAddress[1].value.trim().length==0){ // 유효하지 않은 경우
+        alert(" 도로명 주소를 입력해주세요");
+        memberAddress[1].focus();
+        memberAddress[1].value="";
+        return false;
+    }
+    if(memberAddress[2].value.trim().length==0){ // 유효하지 않은 경우
+        alert(" 상세주소를 입력해주세요.");
+        memberAddress[2].focus();
+        memberAddress[2].value="";
+        return false;
+    }
 
 
 
@@ -51,9 +72,9 @@ function infoValidate(){
 function changePwValidate(){
 
     //input 요소
-    const currentPw =document.getElementsByName("currentPw")[0];
-    const newPw =document.getElementsByName("newPw")[0];
-    const newPwConfirm =document.getElementsByName("newPwConfirm")[0];
+    const currentPw =document.getElementById("currentPw");
+    const newPw =document.getElementById("newPw");
+    const newPwConfirm =document.getElementById("newPwConfirm");
     
 
 
@@ -65,9 +86,9 @@ function changePwValidate(){
 
 
     //현재 비밀번호 미작성
-    if(currentPw.vlaue.trim().length==0){
+    if(currentPw.value.trim().length==0){
         alert("현재 비밀번호를 입력해주세요");
-        currentPw.fucus();
+        currentPw.focus();
         currentPw.value="";
         return false;// form태그가 제출되지 않게 한다.
     }
@@ -77,7 +98,7 @@ function changePwValidate(){
     // 새비밀번호 미작성
     if(newPw.value.trim().length == 0){
         alert("새 비밀번호를 입력해주세요");
-        newPw.fucus();
+        newPw.focus();
         newPw.value="";
         return false;
     }
@@ -93,10 +114,10 @@ function changePwValidate(){
 
 
     // 새비밀번호 확인 미작성시 
-    if(newPwConfirm.vlaue.trim().length==0){
+    if(newPwConfirm.value.trim().length==0){
         alert("새비밀번호 확인을 입력해주세요");
    
-        newPwConfirm.fucus();
+        newPwConfirm.focus();
         newPwConfirm.value="";
         return false;
     }
@@ -139,9 +160,9 @@ function secessionValidate(){
     
 
     if(!agree.checked){ // 체크를 안했을때 
-        alert("약관 동의 후 탈퇴 버튼을 클릭해주세요.");
+        alert("유의사항 확인 후 탈퇴 신청 버튼을 눌러주세요.");
         agree.focus();
-        return false;
+        return false
         
     }
 
@@ -150,7 +171,7 @@ function secessionValidate(){
     //          확인 클릭 시 true / 취소 클릭 시 false
     //          window는 생략 가능 
 
-    if(!confirm("정말 탈퇴하시겠습니까?")){ // 취소를 누른 경우
+    if(!confirm("정말 탈퇴 신청을 하시겠습니까?")){ // 취소를 누른 경우
         return false;
 
     }

@@ -2,13 +2,13 @@
 
 
 <section class="left-side">
-
-        <div class="name">
-            <a href="${contextPath}/member/myPage/info">
-                <em class="nm">${loginMember.memberName} 님</em>
-            </a>
-        </div>
-       <ul class="list-group">
+    
+    <div class="name">
+        <a href="${contextPath}/member/myPage/info">
+            <em class="nm">${loginMember.memberName} 님</em>
+        </a>
+    </div>
+    <ul class="list-group">
 
            <li>예약확인</li>
               
