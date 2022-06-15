@@ -66,7 +66,7 @@
                                 <li>
                                     <span class="payment-list">성인 조식(30,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">${adultBreakfast}</span>
+                                    <span class="payment-list">${op.adultBreakfast}</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list" id="ab-price"></span>
                                 </li>
@@ -74,7 +74,7 @@
                                 <li>
                                     <span class="payment-list">어린이 조식(25,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">${childBreakfast}</span>
+                                    <span class="payment-list">${op.childBreakfast}</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list" id="cb-price"></span>
                                 </li>
@@ -82,7 +82,7 @@
                                 <li>
                                     <span class="payment-list">엑스트라 베드(65,000원)</span>
                                     <span class="payment-list">|</span>
-                                    <span class="payment-list">${extraBed}</span>
+                                    <span class="payment-list">${op.extraBed}</span>
                                     <span class="payment-list">|</span>
                                     <span class="payment-list" id="e-price"></span>
                                 </li>
@@ -175,9 +175,9 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
-        const adultBreakfast = "${adultBreakfast}";
-        const childBreakfast = "${childBreakfast}";
-        const extraBed = "${extraBed}";
+        const adultBreakfast = "${op.adultBreakfast}";
+        const childBreakfast = "${op.childBreakfast}";
+        const extraBed = "${op.extraBed}";
         const roomRates = "${roomRates}";
         const dateRange = "${reservation.dateRange}";
     </script>

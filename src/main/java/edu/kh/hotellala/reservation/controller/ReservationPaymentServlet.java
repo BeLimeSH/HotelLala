@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.service.ReservationRequestService;
+import edu.kh.hotellala.reservation.model.vo.OptionCount;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 
 @WebServlet("/reservation/payment")
@@ -20,15 +22,16 @@ public class ReservationPaymentServlet extends HttpServlet {
 		
 		//payment?adultBreakfast=2&childBreakfast=1&extraBed=0&extraRequest=힝구
 		//req.getParameter("");
+		OptionCount op = new OptionCount();
 		
 		// 옵션 테이블에 사용할 값들?
 		int adultBreakfast = Integer.parseInt( req.getParameter("adultBreakfast") );
 		int childBreakfast = Integer.parseInt( req.getParameter("childBreakfast") );
 		int extraBed = Integer.parseInt( req.getParameter("extraBed") );
 		
-		req.setAttribute("adultBreakfast", adultBreakfast);
-		req.setAttribute("childBreakfast", childBreakfast);
-		req.setAttribute("extraBed", extraBed);
+		op.setAdultBreakfast(adultBreakfast);
+		op.setChildBreakfast(childBreakfast);
+		op.setExtraBed(extraBed);
 		
 		// session에 저장해 둘 값
 		String extraRequest = req.getParameter("extraRequest");
@@ -38,12 +41,22 @@ public class ReservationPaymentServlet extends HttpServlet {
 		try {
 			HttpSession session = req.getSession();
 			ReservationRequest reservation = (ReservationRequest)(session.getAttribute("reservation"));
+			Member loginMember = (Member)(session.getAttribute("loginMember"));
+					
+			//세션에 op 세팅
+			session.setAttribute("op", op);
 			
-			reservation.setExtraRequest(extraRequest);
+			//세션의 reservation에 추가요청사항 세팅
+			if(extraRequest != null) {
+				reservation.setExtraRequest(extraRequest);				
+			}
+			
+			int memberNo = loginMember.getMemberNo();
 			
 			String type = reservation.getRoomType();
 			
 			System.out.println(reservation);
+			System.out.println(op);
 			
 			//페이지 만들 때 필요한 값
 			// 객실가격*dateRange, 옵션 수량, 옵션수량*가격
