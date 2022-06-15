@@ -15,7 +15,7 @@ let payMethod = "";
 const payOptionBox = document.getElementById("pay-option-box");
 const payOption = document.getElementsByName("pay-option");
 
-for(let i=0; i<4; i++) {
+for(let i=0; i<3; i++) {
 
     payOption[i].addEventListener("click", function(){
 
@@ -24,7 +24,7 @@ for(let i=0; i<4; i++) {
             payOption[i].previousElementSibling.style.color = "#ff7E5F";
             
             payMethod = payOption[i].value;
-            console.log(payMethod);
+            // console.log(payMethod);
         } 
     });
     
@@ -55,7 +55,7 @@ iamportPayment.addEventListener("click", function(){
         pay_method: payMethod,
         merchant_uid: requestNo, //주문 번호(중복X 문자열)
         name: roomType, //상품명
-        amount: amount, //금액
+        amount: 100, //금액amount
         buyer_name: memberName
     }, function(rsp){
         if(rsp.success){
@@ -63,23 +63,25 @@ iamportPayment.addEventListener("click", function(){
             jQuery.ajax({
                 url: contextPath + "/reservation/impay", //import 서블릿 /reservation/impay
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                // headers: { "Content-Type": "application/json" },
                 data: {
-                    "requestNo": rsp.merchant_uid,
-                    "amount" : rsp.amount,
-                    "memberNo" : memberNo,
-                    "payType" : rsp.pay_method
-                    //은행 코드 -> (무통장)
-                    //계좌번호 -> (무통장)
+                    // imp_uid: rsp.imp_uid,
+                    // merchant_uid: rsp.merchant_uid,
+                    // "requestNo": rsp.merchant_uid,
+                    "amount" : amount,
+                    "payType" : payMethod
                 }
             }).done(function (data) {
                 // 가맹점 서버 결제 API 성공시 로직
-                // success 서블릿 주소 요청
-                // /reservation/complete
-                
-                // location.href
+                // success 서블릿 주소 요청 /reservation/complete
+                if(data > 0){
+                    location.href = contextPath + "/reservation/complete";
+                    alert("예약 성공!");
+                } else {
+                    alert("예약 실패!");
+                }
+
             })
-            // alert("결제 성공 -> imp_uid : " + rsp.imp_uid + " / merchant_uid : " + rsp.merchant_uid);
         } else {
             alert("결제 실패 : 코드(" + rsp.error_code +") / 메세지(" + rsp.error_msg + ")");
         }
@@ -90,3 +92,17 @@ iamportPayment.addEventListener("click", function(){
 function priceToString(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+
+//결제 정보 검증하기..? ㅜㅜ
+
+//결제 번호, 주문번호 추출하기
+// app.use(bodyParser.json());
+// // "/payments/complete"에 대한 POST 요청을 처리
+// app.post("/payments/complete", async (req, res) => {
+//   try {
+//     const { imp_uid, merchant_uid } = req.body; // req의 body에서 imp_uid, merchant_uid 추출
+//   } catch (e) {
+//     res.status(400).send(e);
+//   }
+// });
