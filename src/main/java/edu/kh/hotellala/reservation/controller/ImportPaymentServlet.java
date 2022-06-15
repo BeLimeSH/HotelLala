@@ -45,21 +45,11 @@ public class ImportPaymentServlet extends HttpServlet {
 			
 			int result = service.insertReservation( reservation, payment, op );
 			
-			
-			
 			resp.getWriter().print(result); //data
-			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-	
-	
-	
-	
 	}
 	
 	//결제 성공했을 때

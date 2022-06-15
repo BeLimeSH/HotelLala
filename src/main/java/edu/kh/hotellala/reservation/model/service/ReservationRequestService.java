@@ -71,22 +71,54 @@ public class ReservationRequestService {
 		Connection conn = getConnection();
 		
 		int result = 0; // 결과값 전달 변수
-		
 		int count = 0; // 옵션 개수 담을 변수
+		String roomType = reservation.getRoomType();
+		String no = "10";
+		
+		System.out.println(roomType);
 		
 		//예약 -> 날짜 사이에 있는 룸 넘버 조회해봐야 함 + extraRequest가 null? !null?
+		switch(roomType) {
 		
+		case "SINGLE" : no = "20"; break;
+		case "STANDARD" : no = "30"; break;
+		case "DELUX" : no = "40"; break;
+		case "SUITE" : no = "50"; break;
+		case "FAMILY" : no = "60"; break;
+		
+		}
+		
+		int flag = 0;
+		int roomNo = 0;
+		
+		for(int i=1; i<=3; i++) {
+			
+			//검사할 객실 번호
+			int checkNo = Integer.parseInt(no + i);
+			System.out.println(checkNo);
+			
+			flag = dao.checkEmptyRoom(conn, checkNo, reservation.getCheckIn(), reservation.getCheckOut());
+			
+			if(flag == 0) {
+				roomNo = checkNo;
+				break;
+			}
+		}
+		
+		System.out.println(roomNo);
+		
+		//예약 정보 삽입
+		result = dao.insertReservation(conn, reservation, roomNo);
 		
 		//결제
 		if(result > 0) {
 			result = dao.insertPayment(conn, payment);
 		}
 		
-		
 		//옵션
 		int optionCode = 0;
 		
-		// count != 0 일때 옵션 각각 삽입
+		// count > 0 일때 옵션 각각 삽입
 		if(result > 0 && op.getAdultBreakfast() > 0) {
 			optionCode = 1;
 			count = op.getAdultBreakfast();
@@ -94,22 +126,21 @@ public class ReservationRequestService {
 			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
 		}
 		
-		if(result != 0 && op.getChildBreakfast() != 0) {
+		if(result > 0 && op.getChildBreakfast() > 0) {
 			optionCode = 2;
 			count = op.getChildBreakfast();
 			
 			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
 		}
 		
-		if(result != 0 && op.getExtraBed() != 0) {
+		if(result > 0 && op.getExtraBed() > 0) {
 			optionCode = 3;
 			count = op.getExtraBed();
 			
-			
 			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
 		}
-		
-		
+
+		//트랜잭션 제어
 		if(result > 0)	commit(conn);
 		else			rollback(conn);
 		
