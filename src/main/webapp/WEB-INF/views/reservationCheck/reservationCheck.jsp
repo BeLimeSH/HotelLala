@@ -42,8 +42,8 @@
 						<a>마이페이지</a>
 					</h2>
 					<ul class="list-group">
-						<li class=""><a href="#">예약 확인</a></li>
-						<li class=""><a href="#">예약 취소 조회</a></li>
+						<li class=""><a href="${contextPath}/reservation/check">예약 확인</a></li>
+						<li class=""><a href="${contextPath}/reservation/cancelCheck">예약 취소 조회</a></li>
 					</ul>
 					<br>
 
@@ -52,13 +52,13 @@
 							<a>내 정보</a>
 						</h2>
 
-						<li class="my"><a href=""> <span>프로필 수정</span>
+						<li class="my"><a href="${contextPath}/member/myPage/info"> <span>프로필 수정</span>
 						</a></li>
-						<li class="my"><a href=""> <span>비밀번호 변경</span>
+						<li class="my"><a href="${contextPath}/member/myPage/changePw"> <span>비밀번호 변경</span>
 						</a></li>
-						<li class="my"><a href=""> <span>로그아웃</span>
+						<li class="my"><a href="${contextPath}/member/logout"> <span>로그아웃</span>
 						</a></li>
-						<li class="my"><a href=""> <span>회원탈퇴</span>
+						<li class="my"><a href="${contextPath}/member/myPage/secession"> <span>회원탈퇴</span>
 						</a></li>
 					</ul>
 
@@ -75,7 +75,7 @@
 				<!-- form 태그 -->
 				<form action="check" method="POST" id="reserveSearchBtn"" onsubmit="return reserveSearchValidate()">
 
-					<div class="contain">
+					<div class="rsvCheck-contain">
 						<!-- daterangepicker -->
 						<!-- 날짜 선택 바 -->
 						<div class="dateSelection">
@@ -98,26 +98,19 @@
 
 						<!-- 예약 조회 -->
 						<div class="rsvCheck-myPageRsv">
-							<div class="myRsv title">
-								<h4 class="tit2">
-									<a>객실 예약</a>
-								</h4>
+							<div class="myRsvtitle">
+								<h4 class="tit2">객실 예약</h4>
 							</div>
 
 
 							<table summary=" 주문번호, 회원번호, 예약상태, 체크인날짜, 체크아웃날짜 객실번호로 구성된 리스트 표" class="rsvList">
 								<thead>
 									<tr>
-										<td>주문번호
-										</th>
-										<td>회원번호
-										</th>
-										<td>체크인
-										</th>
-										<td>체크아웃
-										</th>
-										<td>객실번호
-										</th>
+										<td>주문번호</td>
+										<td>회원번호</td>
+										<td>체크인</td>
+										<td>체크아웃</td>
+										<td>객실번호</td>
 									</tr>
 								</thead>
 							</table>
@@ -140,20 +133,27 @@
 													<c:forEach var="reserve" items="${checkList}">
 														<table class="rsvList">
 															<tr>
-																<th class="reserve-check-content">${reserve.requestNo}</td>
-																<th class="reserve-check-content">${reserve.memberNo}</td>
-																<th class="reserve-check-content">${reserve.checkIn}</td>
-																<th class="reserve-check-content">${reserve.checkOut}</td>
-																<th class="reserve-check-content">${reserve.roomNo}</td>
+																<td class="reserve-check-content">${reserve.requestNo}</td>
+																<td class="reserve-check-content2">${reserve.memberNo}</td>
+																<td class="reserve-check-content3">${reserve.checkIn}</td>
+																<td class="reserve-check-content4">${reserve.checkOut}</td>
+																<td class="">${reserve.roomNo}</td>
 															</tr>
 														</table>
+																<!-- 로그인 회원의 회원번호와 예약 테이블의 회원 번호가 일치해야 예약 취소 수행 가능 -->
+																<c:if test="${loginMember.memberNo == reservation.memberNo}">
+																	<div class="cancel-btn-area">
+																		<button id="cancelBtn" class="w-btn-outline w-btn-blue-outline">예약취소</button>
+																	</div>
+																</c:if>
+
 													</c:forEach>
 												</ul>
 
 											</c:otherwise>
 										</c:choose>
 									</tbody>
-								</table>
+								</table> <!-- 예약 조회 테이블 종료 -->
 								<br>
 							</div>
 						</div>
@@ -161,9 +161,9 @@
 				</form>
 
 				<!-- 로그인 회원의 회원번호와 예약 테이블의 회원 번호가 일치해야 예약 취소 수행 가능 -->
-				<c:if test="${loginMember.memberNo == reservation.memberNo}">
+				<%-- <c:if test="${loginMember.memberNo == reservation.memberNo}">
 					<div class="cancel-btn-area">
-						<%--<button class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button> --%>
+						<button class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button>
 
 						<!-- 취소 버튼 클릭 시 팝업 창 -->
 						<table id="datatable-scroller" class="table table-striped table-bordered text-center">
@@ -175,14 +175,15 @@
 								<tr>
 									<td></td>
 									<td style="text-align: center;">
-										<button onclick="${contextPath}/html/popupTest.html" class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button> 
+										<button onclick="${contextPath}/reservation/cancelRequest" class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button> 
 										<a href="javascript:void(0);" onclick="popupOpen();" id="cancelBtn" class="table table-striped table-bordered text-center">취소요청</a>
 									</td>
 								</tr>
 							</tbody>
-						</table>
+						</table> 
+						
 					</div>
-				</c:if>
+				</c:if> --%>
 
 			</section>
 
@@ -193,7 +194,7 @@
 	<!-- 예약 취소 클릭 시 출력되는 팝업 창 용 스크립트 -->
 	<script type="text/javascript">
             function popupOpen(){
-                //var popUrl = "${contextPath}/html/popupTest.html";
+                var popUrl = "${contextPath}/reservation/refundReason";
                 var popOption = "width=1200, height=600, resizable=no, scrollbars=no, status=no;";
                 var p = window.open(popUrl, "popup1", popOption);
                 p.focus();
@@ -215,9 +216,19 @@
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/js/bootstrap-datetimepicker.min.js"></script>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/css/bootstrap-datetimepicker.min.css"> -->
 
-
+	<!-- js에 전역변수 선언 -->
 	<script>
+		// 최상위 주소
         const contextPath = "${contextPath}";
+        
+        // datepicker n박
+        const dateRangeR = "${reservation.dateRange}"
+        
+        // 로그인한 회원 번호
+        const loginMemberNo = "${loginMember.memberNo}";
+        
+        // 주문번호(예약 취소 요청 추가)
+        const requestNo = "${reservation.requestNo}"
     </script>
 
 	<!-- nav 메인 js -->
@@ -230,13 +241,6 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
-	<!-- js에 전역변수로 contextPath 선언 -->
-	<script>
-        /* const contextPath = "${contextPath}"; */
-        const dateRangeR = "${reservation.dateRange}";
-        const loginMemberNo = "${loginMember.memberNo}";
-    </script>
 
 
 
