@@ -1,5 +1,15 @@
 /* body랑 main 태그에 설정 있음 */
 
+/* 로고 */
+.hotelLogo{
+    position:fixed;
+    margin:20px;
+    width:100px;
+  
+    top:0;
+    left:0;
+}
+
 /* 예약 section */
 .reserveSection{
     margin: 0 10%;
@@ -79,7 +89,7 @@
     color: black;
     background-color: white;
 
-    border: 5px solid #ff7E5F;
+    border: 5px solid rgb(254, 205, 113);
     border-radius: 10px;
 }
 
@@ -196,14 +206,14 @@
 /* 플러스 마이너스 버튼 */
 .roomCount button{
     border-radius: 5px;
-    border: 4px solid #ff7E5F;
-    background-color: #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
+    background-color: rgb(237, 87, 60);
     color: white;
 }
 
 .roomCount button:hover{
     cursor: pointer;
-    border: 4px solid #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -328,8 +338,8 @@
     width: 120px;
     height: 50px;
     border-radius: 5px;
-    border: 4px solid #ff7E5F;
-    background-color: #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
+    background-color: rgb(237, 87, 60);
     color: white;
     display: inline-block;
     text-decoration: none;
@@ -337,7 +347,7 @@
 
 .reserveBtn:hover{
     cursor: pointer;
-    border: 4px solid #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -410,14 +420,14 @@
     padding: 0;
     border-radius: 5px;
     
-    border: 4px solid #ff7E5F;
-    background-color: #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
+    background-color: rgb(237, 87, 60);
     color: white;
 }
 
 .btn-area>button:hover{
     cursor: pointer;
-    border: 4px solid #ff7E5F;
+    border: 4px solid rgb(237, 87, 60);
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -438,7 +448,7 @@
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
-    border: 3px solid #ff7E5F;
+    border: 3px solid rgb(237, 87, 60);
     background-color: white;
 }
 
@@ -518,14 +528,14 @@
     width: 160px;
     height: 60px;
     border-radius: 5px;
-    border: 4px solid #ff7E5F;
-    background-color: #ff7E5F;
-    color: white;
+    border: 4px solid rgb(254, 205, 113);
+    background-color: white;
+    color: rgb(80, 80, 80);
 }
 
 .payment-div2 button:hover{
     cursor: pointer;
-    border: 4px solid #ff7E5F;
+    border: 4px solid #ddd;
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -619,8 +629,8 @@ input::-webkit-inner-spin-button {
 .option-btn{
     width: 115px;
     height: 115px;
-    background-color: #ff7E5F;
-    border: 5px solid #ff7E5F;
+    background-color: rgb(237, 87, 60);
+    border: 5px solid rgb(237, 87, 60);
     border-radius: 5px;
     display: block;
     margin: 0 20px;
@@ -629,7 +639,7 @@ input::-webkit-inner-spin-button {
 }
 
 .option-btn:hover{
-    border: 5px solid #ff4c1f;
+    border: 5px solid rgb(237, 87, 60);
 }
 
 .option-btn>i{font-size: 50px; margin: 15px 0 5px;}
@@ -664,7 +674,7 @@ input::-webkit-inner-spin-button {
 
 .result-box{margin-top: 50px;}
 .result-tit{
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid rgb(237, 87, 60);
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
@@ -697,7 +707,7 @@ input::-webkit-inner-spin-button {
 .result-div2>ul>li:nth-child(3){margin-bottom: 5px;}
 #req-result{margin: 0 10px 10px; padding: 5px; border: 1px solid #ccc;}
 
-.selected-option>ul>li{font-size: 18px; padding: 0 20px; color: rgb(100, 100, 100); margin: 0;}
+.selected-option>ul>li{font-size: 18px; padding: 0 20px; color: rgb(100, 100, 100); margin: 5px 0;}
 
 .result-div3 li:nth-child(2){margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
 
@@ -728,16 +738,16 @@ input::-webkit-inner-spin-button {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    border: 5px solid #feb47b;
+    border: 5px solid rgb(254, 205, 113);
     border-radius: 5px;
-    background-color: #feb47b;
-    color: white;
+    background-color: white;
+    color: rgb(80, 80, 80);
     cursor: pointer;
     letter-spacing: -1px;
 }
 
 .result-btn-area>button:hover{
-    border: 5px solid #feb47b;
+    border: 5px solid #ddd;
     background-color: white;
     color: rgb(100, 100, 100);
 }

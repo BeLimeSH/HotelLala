@@ -158,7 +158,7 @@ roomSearchBtn.addEventListener("click", function(){
         dataType: "JSON",
         success: function(roomList){
     
-            // console.log(roomList);
+            console.log(roomList);
 
             //화면에 출력되어 있는 객실 리스트 삭제
             const ul = document.getElementById("roomList");
@@ -230,7 +230,6 @@ roomSearchBtn.addEventListener("click", function(){
                     reserveBtn.classList.add("reserveBtn");
                     reserveBtn.innerText = "예약하기";
 
-
                     div1.append(img);
                     div2.append(roomTitType, roomDetail);
                     div3.append(roomTitRates, roomContent, reserveBtn);
@@ -240,7 +239,6 @@ roomSearchBtn.addEventListener("click", function(){
                     li.append(dividingRow, roomBox);
 
                     ul.append(li);
-
                 }
             
             // roomList가 비어있을 때
