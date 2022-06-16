@@ -28,6 +28,8 @@ public class ReservationSuccessServlet extends HttpServlet {
 			String requestNo = reservation.getRequestNo();
 			
 			//결제 수단, 객실 가격, 결제일, 결제 금액
+//			payment = service.select
+			
 			
 			
 			
