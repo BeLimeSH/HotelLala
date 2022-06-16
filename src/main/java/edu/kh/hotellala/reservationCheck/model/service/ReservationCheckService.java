@@ -67,6 +67,7 @@ public class ReservationCheckService{
 
 	/**
 	 * @param refund
+	 * @param requestNo 
 	 * @return
 	 * @throws Exception
 	 */
@@ -82,6 +83,8 @@ public class ReservationCheckService{
 		
 		return refundList;
 	}
+
+
 
 
 	

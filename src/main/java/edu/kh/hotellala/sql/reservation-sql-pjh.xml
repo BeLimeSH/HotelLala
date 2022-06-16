@@ -6,17 +6,18 @@
 	<!-- 예약 조회(주문번호, 회원번호, 예약상태, 체크인날짜, 체크아웃날짜, 객실 종류, 객실 번호) -->
 	<entry key="reservationCheck">
 		SELECT REQUEST_NO, MEMBER_NO, CHECK_IN, CHECK_OUT, ROOM_NO
-		<!-- NVL( (SELECT '1' FROM REFUND WHERE REQUEST_NO = RESERVATION.REQUEST_NO), 0) FL -->
+		<!-- NVL( (SELECT '1' FROM REFUND2 WHERE REQUEST_NO = RESERVATION.REQUEST_NO), 0) FL -->
 		FROM RESERVATION
 		WHERE MEMBER_NO = ?
 		AND RESERVATION_FL = 'Y'
 		AND CHECK_IN BETWEEN ? AND ?
 	</entry>
 	
+	
 	<!-- X  예약 취소 요청(환불번호, 결제번호, 환불처리여부(DEFAULT:N), 환불요청일(DEFAULT:SYSDATE), 환불사유, 회원번호 -->
 	<!-- 환불번호, 환불요청일, 환불사유, 회원번호 -->
 	<entry key="reservationCancelRequest">
-		INSERT INTO REFUND VALUES(SEQ_REFUND_NO.NEXTVAL, ?, DEFAULT, DEFAULT, ?, ?)
+		INSERT INTO REFUND2 VALUES(SEQ_REFUND_NO.NEXTVAL, ?, DEFAULT, DEFAULT, ?, ?)
 	</entry>
 	
 	

@@ -29,6 +29,7 @@ public class ReservationCheckServlet extends HttpServlet{
 			
 			String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
 			req.getRequestDispatcher(path).forward(req, resp);
+
 	}
 	
 	@Override
@@ -120,6 +121,10 @@ public class ReservationCheckServlet extends HttpServlet{
 					refund.setRefundReason(refundReason);
 					refund.setMemberNo(memberNo);
 					
+					if(refund != null) {
+						session.setAttribute("refund", refund);
+					}
+					
 					// Service
 					int result = service.insertRefund(refund);
 					
@@ -173,3 +178,5 @@ public class ReservationCheckServlet extends HttpServlet{
 		}
 	}
 }
+
+
