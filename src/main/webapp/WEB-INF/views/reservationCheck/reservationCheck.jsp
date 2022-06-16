@@ -140,12 +140,21 @@
 																<td class="">${reserve.roomNo}</td>
 															</tr>
 														</table>
-																<!-- 로그인 회원의 회원번호와 예약 테이블의 회원 번호가 일치해야 예약 취소 수행 가능 -->
-																<c:if test="${loginMember.memberNo == reservation.memberNo}">
-																	<div class="cancel-btn-area">
-																		<button id="cancelBtn" class="w-btn-outline w-btn-blue-outline">예약취소</button>
+																<!-- 로그인 회원의 회원번호와 예약 테이블의 회원 번호가 일치해야 예약 취소 수행 가능(JS에서 수행) -->
+																<%-- <c:if test="${loginMember.memberNo == reservation.memberNo}">
+																	 <div class="cancel-btn-area">
+																		<button onclick="cancelReqeust(${reserve.requestNo})" class="w-btn-outline w-btn-blue-outline">예약취소</button>
 																	</div>
-																</c:if>
+																</c:if> --%>
+																	
+																	
+																	<!-- 환불 사유 작성 부분 -->
+																	<c:if test="${reserve.fl == 0 }">
+																	    <div class="refund-write-area">
+																	        <textarea class="refundReason"></textarea>
+																	        <button type="button" class="w-btn-outline w-btn-blue-outline cancelReqeust" id="${reserve.requestNo}">환불 요청</button>
+																	    </div>
+																    </c:if>
 
 													</c:forEach>
 												</ul>
@@ -236,6 +245,8 @@
 
 	<!-- 예약 조회, 예약 취소 내역 조회 검사 -->
 	<script src="${contextPath}/resources/js/reservationCheck/datepickCheck.js"></script>
+	
+	<script src="${contextPath}/resources/js/reservationCancel/reserveCancelRequest.js"></script>
 
 	<!-- datepicker js -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>

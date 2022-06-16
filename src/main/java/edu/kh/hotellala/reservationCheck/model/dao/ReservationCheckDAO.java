@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.vo.Refund;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
@@ -70,6 +71,7 @@ public class ReservationCheckDAO {
 				reservation.setCheckIn(rs.getDate(3));
 				reservation.setCheckOut(rs.getDate(4));
 				reservation.setRoomNo(rs.getInt(5));
+				reservation.setFl(rs.getString(6));
 				
 				checkList.add(reservation);
 	
@@ -84,7 +86,7 @@ public class ReservationCheckDAO {
 	}
 	
 	
-	/** 예약 취소 요청 DAO
+	/** 예약 취소(환불) 요청(INSERT) DAO
 	 * @param conn
 	 * @param refund
 	 * @return result
@@ -103,6 +105,7 @@ public class ReservationCheckDAO {
 			pstmt.setString(2, refund.getRefundReason());
 			pstmt.setInt(3, refund.getMemberNo());
 			
+			
 			result = pstmt.executeUpdate();
 			
 			
@@ -115,53 +118,45 @@ public class ReservationCheckDAO {
 
 
 
-	/** 예약 취소 내역 조회 DAO
+	/** 예약 취소 내역(환불 처리 내역) 조회 DAO
 	 * @param conn
 	 * @param requestNo
-	 * @return result
+	 * @return refundList
 	 * @throws Exception
 	 */
-	public Refund reserveCancel(Connection conn, int requestNo) throws Exception{
+	public List<Refund> refundCheck(Connection conn, String requestNo) throws Exception{
 		
-		// VO 생성?
-		Refund refund = null;
+		List<Refund> refundList = new ArrayList<Refund>();
 		
 		try {
-			
 			String sql = prop.getProperty("reservationCancelCheck");
-			
+
 			pstmt = conn.prepareStatement(sql);
 					
-			pstmt.setInt(1, requestNo);			
-
-			rs = pstmt.executeQuery();
+			pstmt.setString(1, requestNo);
 			
-			if(rs.next()) {
-				refund = new Refund();
+			if( rs.next() ) {
+				Refund refund = new Refund();
 				
-				refund.setRefundNo(rs.getInt(1));
-				refund.setPaymentNo(rs.getInt(2));
-				refund.setRefundFlags(rs.getString(3));
-				refund.setRefundDate(rs.getDate(4));
+				refund.setPaymentDate(rs.getDate(1));
+				refund.setPaymentAmount(rs.getInt(2));
+				refund.setRefundDate(rs.getDate(3));
+				refund.setRefundNo(rs.getInt(4));
 				refund.setRefundReason(rs.getString(5));
-					
+				
+				
 			}
+			
 			
 			
 		} finally {
 			close(pstmt);
+			close(rs);
 		}
 		
-		return refund;
+		return refundList;
 	}
 
 
-
-
-
-	
-
-
-	
 
 }
