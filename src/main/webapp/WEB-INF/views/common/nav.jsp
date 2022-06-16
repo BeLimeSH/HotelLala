@@ -8,25 +8,38 @@
             <a href="#" class="first_bar">
                 <i class="fa-solid fa-x cursor"></i>
                 <p class="cursor">close</p>
-            <a href="login"><p class="login cursor">Login</p></a>
+                
+           <c:if test="${empty sessionScope.loginMember}">
+
+    		<a href="login"><p class="login cursor">Login</p></a>
             <a href="signUp"><p class="signup cursor">signUp</p></a>
+
+            </c:if>
+
+            <c:if test="${!empty sessionScope.loginMember}">
+            
+                    <a href="${contextPath}/member/logout">Logout</a>
+                    <a href="${contextPath}/member/myPage/info">마이페이지</a>
+           
+            </c:if>
+  
                 
     
             <div class="nav_bar">
     
                 <ul class="list1">
                     <h4>Contact</h4>
-                    <li><a href="menu/notice">공지사항</a></li>
-                    <li><a href="menu/qna">Q&A</a></li>
-                    <li><a href="menu/faq">FAQ</a></li>
+                    <li><a href="${contextPath}/menu/notice">공지사항</a></li>
+                    <li><a href="${contextPath}/menu/qna">Q&A</a></li>
+                    <li><a href="${contextPath}/menu/faq">FAQ</a></li>
                 </ul>
     
                 <br><br>
     
                 <ul class="list2">
                     <h4>Location</h4>
-                    <li><a href="menu/location">오시는 길</a></li>
-                    <li><a href="menu/room">호텔라라 소개</a></li>
+                    <li><a href="${contextPath}/menu/location">오시는 길</a></li>
+                    <li><a href="${contextPath}/menu/room">호텔라라 소개</a></li>
                 </ul>
     
                 <br><br><br>
@@ -50,11 +63,11 @@
     
             <a href="#" class="seconds_bar">
                 <i class="fa-solid fa-bars cursor"></i>
-                <p class="cursor">MENU</p>
+                <p class="cursor" >MENU</p>
             </a>
     
             <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
+            <a href="${contextPath}/menu/notice"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
         </div>
 
     </nav>

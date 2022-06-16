@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <section class="left-side">
@@ -17,7 +18,7 @@
            <li class="bottom"> 문의</li>
               
           
-           <li class="margin"><a href="${contextPath}/menu/qnaCheck"> 내 문의 확인</a></li>
+           <li class="margin"><a href="${contextPath}/menu/qnaCheck?memberNo=${loginMember.memberNo}"> 내 문의 확인</a></li>
         
            
            <li class="bottom">개인정보관리</li>
@@ -30,7 +31,7 @@
                
            
            <li class="margin"><a href="${contextPath}/member/logout">로그아웃</a></li>
-           
+
 
        </ul>
    </section>

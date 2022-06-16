@@ -45,9 +45,6 @@
                                                 <div></p class="p1">${board.boardContent}</p></div>
                                                 <div></p class="p1">${board.createDate}</p></div>
                                         
-                                            <!-- <div>배송이 안옴!</div>
-                                            <div>2022.06.02</div>
-                                            <p class="p1">[객실예약] 객실 예약 안내 부탁드립니다.</p> -->
                                             <a><i class="fa-solid fa-angle-up up"></i></a>
                                             <a><i class="fa-solid fa-angle-down down"></i></a>
                                         </div>

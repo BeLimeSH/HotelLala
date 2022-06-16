@@ -4,6 +4,6 @@
 <comment>qna-sql.xml</comment>
 	<entry key="qna">
 		INSERT INTO QNA_BOARD
-		VALUES( SEQ_MEMBER_NO.NEXTVAL , ? , ? ,DEFAULT , DEFAULT ,DEFAULT,? , ?, DEFAULT)
+		VALUES( SEQ_QNA_BOARD_NO.NEXTVAL , ? , ? ,DEFAULT , DEFAULT ,DEFAULT,? , ?, DEFAULT)
 	</entry>
 </properties>
