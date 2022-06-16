@@ -93,7 +93,6 @@ function priceToString(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-
 //결제 정보 검증하기..? ㅜㅜ
 
 //결제 번호, 주문번호 추출하기
