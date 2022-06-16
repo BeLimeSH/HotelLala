@@ -11,6 +11,7 @@ import java.util.List;
 
 import edu.kh.hotellala.reservationCheck.model.vo.Refund;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.dao.ReservationCheckDAO;
 
@@ -60,30 +61,42 @@ public class ReservationCheckService{
 		return result;
 	}
 
-	
-	
-	
-
-	/** 예약 취소 내역 조회 Service
-	 * @param requestNo
-	 * @return result
-	 * @throws Exception
-	 */
-	/*
-	 * public int reserveCancel(int requestNo) throws Exception{
-	 * 
-	 * Connection conn = getConnection();
-	 * 
-	 * int result = dao.reserveCancel(conn, requestNo);
-	 * 
-	 * if(result > 0) commit(conn); else rollback(conn);
-	 * 
-	 * close(conn);
-	 * 
-	 * return result; }
-	 */
 
 
+//	/** 예약 취소 내역(환불 내역) 조회 Service
+//	 * @param refund 
+//	 * @param refundReason
+//	 * @return cancelCheckList
+//	 * @throws Exception
+//	 */
+//	public List<Refund> reservationCancelCheck(Refund refund, String refundReason) throws Exception{
+//		
+//		Connection conn = getConnection(); 
+//		
+//		int memberNo = refund.getMemberNo();
+//		int paymentNo = refund.getPaymentNo();
+//		
+//		List<Refund> cancelCheckList = dao.reservationCancelCheck(conn, paymentNo, memberNo, refundReason);
+//		
+//		close(conn);
+//		
+//		return cancelCheckList;
+//	}
+
+
+
+	public List<Refund> refundCheck(Refund refund) throws Exception{
+		
+		Connection conn = getConnection(); 
+		
+		String requestNo = refund.getRequestNo();
+		
+		List<Refund> refundList = dao.refundCheck(conn, requestNo);
+		
+		close(conn);
+		
+		return refundList;
+	}
 
 
 	
