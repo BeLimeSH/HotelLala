@@ -31,4 +31,5 @@ public class ReservationRequest {
 	
 	private String reserveDate;
 
+	private String fl;
 }
