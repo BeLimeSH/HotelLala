@@ -46,5 +46,14 @@
     ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Y', ?
 	)
 	</entry>
+	
+	<!-- 결제완료 내역 조회 -->
+	<entry key="selectPayment">
+	SELECT PAYTYPE, TO_CHAR(PAYMENT_DT, 'YYYY-MM-DD HH:MI:SS') PAYMENT_DT, ROOM_RATES, PAYMENT_AMOUNT
+	FROM PAYMENT
+	JOIN RESERVATION R USING(REQUEST_NO)
+	JOIN ROOM_TB T ON(R.ROOM_TYPE = T.ROOM_TYPE)
+	WHERE REQUEST_NO = ?
+	</entry>
 
 </properties>

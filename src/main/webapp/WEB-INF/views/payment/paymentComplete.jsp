@@ -105,7 +105,11 @@
                         <ul>
                             <li>
                                 <span>결제 방법</span>
-                                <span class="result-val">신용카드</span>
+
+                                <c:if test="${payment.payType} == 'card'">
+                                    <span class="result-val">신용카드</span>
+                                </c:if>
+
                             </li>
                             <li>
                                 <span>결제 시간</span>
@@ -116,11 +120,11 @@
 
                             <li>
                                 <span>객실 비용</span>
-                                <span class="result-val">110,000 원</span>
+                                <span class="result-val">${payment.roomRates} 원</span>
                             </li>
                             <li>
                                 <span>추가 옵션 비용</span>
-                                <span class="result-val">0원</span>
+                                <span class="result-val" id="optionRates">0원</span>
                             </li>
 
                         </ul>
@@ -133,18 +137,32 @@
     
                 <!-- 버튼 -->
                 <section class="result-btn-area">
-                    <button>메인페이지로</button>
+                    <button onclick="location.href = '${contextPath}'">메인페이지로</button>
                     <button>예약 내역 확인</button>
                 </section>
-    
             </section>
-
         </section>
-    
     </main>
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const optionRates = document.getElementById('optionRates');
+
+        const adultBreakfast = "${op.adultBreakfast}";
+        const childBreakfast = "${op.childBreakfast}";
+        const extraBed = "${op.extraBed}";
+
+        let sum = 30000*adultBreakfast + 25000*childBreakfast + 65000*extraBed;
+
+        (function(){
+
+            optionRates.innerText = sum;
+
+        })();
+
+    </script>
 
 </body>
 </html>

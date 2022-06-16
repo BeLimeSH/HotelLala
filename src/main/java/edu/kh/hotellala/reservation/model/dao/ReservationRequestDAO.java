@@ -240,6 +240,41 @@ public class ReservationRequestDAO {
 		return result;
 	}
 
+	/**
+	 * 결제 완료 내역 조회 DAO
+	 * @param conn
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Payment selectPayment(Connection conn, String requestNo) throws Exception {
+		
+		Payment payment = new Payment();
+		
+		try {
+			String sql = prop.getProperty("selectPayment");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, requestNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				payment.setPayType( rs.getString(1) );
+				payment.setPaymentDate( rs.getString(2) );
+				payment.setRoomRates( rs.getInt(3) );
+				payment.setPaymentAmount( rs.getInt(4) );
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return payment;
+	}
+
 
 
 

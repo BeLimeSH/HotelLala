@@ -149,5 +149,22 @@ public class ReservationRequestService {
 		return result;
 	}
 
+	/**
+	 * 결제 정보 조회
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Payment selectPayment(String requestNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Payment payment = dao.selectPayment(conn, requestNo);
+		
+		close(conn);
+		
+		return payment;
+	}
+
 
 }
