@@ -16,25 +16,41 @@
 
     <!-- <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css"> -->
     <link rel="stylesheet" href="${contextPath}/resources/css/qnaCheck.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
 
     <script src="https://kit.fontawesome.com/a5538decc7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
- 
-    
-        <%-- 검색을 진행한 경우 key,query를 쿼리스트링 형태로 저장한 변수 생성 --%>
-        <c:if test="${!empty param.key}">
-          <c:set var="sURL" value="&key=${param.key}&query=${param.query}" />
 
-        </c:if>
+    <div class="container">
+        <div class="logo">
+	        <a href="${contextPath}">
+				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+	        </a>
+        </div>
+    <main>
+
         
         
+    <%-- 검색을 진행한 경우 key,query를 쿼리스트링 형태로 저장한 변수 생성 --%>
+    <c:if test="${!empty param.key}">
+        <c:set var="sURL" value="&key=${param.key}&query=${param.query}" />
+        
+    </c:if>
+
+    <section class="myPage-content">  
+        
+        
+        <!-- 사이드 메뉴 include -->
+        <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
         <!-- 게시판 목록 조회 (몸통) -->
         <section class="board-list">
+            
+            
+            
             
             <h1 class="board-name">CUSTOMER SERVICE-문의하기</h1>
             
@@ -50,9 +66,9 @@
                 
                     <thead>
                         <tr>
-                            <th>글번호</th>
-                            <th>문의 유형</th>
-                            <th>작성자</th>
+                            <th>상담 구분</th>
+                            <th>상담 제목</th>
+                            <!-- <th>작성자</th> -->
                             <th>작성일</th>
                             <th>문의 답변</th>
                         </tr>
@@ -162,7 +178,6 @@
                     <option value="t">제목</option>
                     <option value="c">내용</option>
                     <option value="tc">제목+내용</option>
-                    <option value="w">작성자</option>
                 </select>
 
                 <input type="text" name="query" id="search-query"placeholder="검색어를 입력해주세요.">
@@ -173,6 +188,7 @@
 
         </section>
 
+    </section>
     </main>
 
 
@@ -188,7 +204,8 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     <!-- <script src="${contextPath}/resources/js/board/board.js"></script> -->
 
-
+    <script src="${contextPath}/resources/js/menu/nav.js"></script>
+        
 
 </body>
 </html>
