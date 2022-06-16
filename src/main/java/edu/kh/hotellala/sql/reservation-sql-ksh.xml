@@ -6,8 +6,13 @@
 	<!-- 인원 수에 따른 객실 조회 -->
 	<entry key="selectAvailableRoom">
 	SELECT ROOM_TYPE, ROOM_RATES, ROOM_THUMBNAIL
-	FROM ROOM_TB
+	FROM ROOM_TB T
 	WHERE MAX_NUM >= ?
+	AND (SELECT COUNT(*)
+    FROM RESERVATION R
+    WHERE (CHECK_IN BETWEEN ? AND ?
+    OR CHECK_OUT BETWEEN ? AND ?)
+    AND T.ROOM_TYPE = R.ROOM_TYPE) &lt; 3
 	</entry>
 
 	<!-- 타입에 따른 객실 가격 조회 -->
@@ -45,6 +50,24 @@
 	INSERT INTO RESERVATION VALUES(
     ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Y', ?
 	)
+	</entry>
+	
+	<!-- 결제완료 내역 조회 -->
+	<entry key="selectPayment">
+	SELECT PAYTYPE, TO_CHAR(PAYMENT_DT, 'YYYY-MM-DD HH:MI:SS') PAYMENT_DT, ROOM_RATES, PAYMENT_AMOUNT
+	FROM PAYMENT
+	JOIN RESERVATION R USING(REQUEST_NO)
+	JOIN ROOM_TB T ON(R.ROOM_TYPE = T.ROOM_TYPE)
+	WHERE REQUEST_NO = ?
+	</entry>
+	
+	<!-- 객실 자세히 보기 조회 -->
+	<entry key="selectRoomDetail">
+	SELECT ROOM_INFO, ROOM_FLOOR, BED_TYPE, ROOM_SIZE, STANDARD_NUM,
+    	   IMG_ONE, IMG_TWO, IMG_THREE, IMG_FOUR
+	FROM ROOM_BOARD
+	JOIN ROOM_IMG ON(ROOM_NO=ROOM_BOARD_NO)
+	WHERE ROOM_TYPE = ?
 	</entry>
 
 </properties>

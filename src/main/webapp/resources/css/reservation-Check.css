@@ -25,7 +25,7 @@ main{
 
 
 /* 마이페이지 영역 */
-.myPage-content{
+.myPage-content-reserve{
     width: 1400px;
     height: 600px;
     margin: 130px 100px 150px 250px;
@@ -34,18 +34,18 @@ main{
 }
 
 /* 왼쪽 사이드 메뉴 */
-.left-side{
+.left-side-reserve{
     width: 300px;
     margin: auto;
 }
 
-.list-group{
+.list-group-reserve{
     width: 100%;
     padding: 0 20px 0 0;
         /*  상  우 하 좌 */
 }
 
-.list-group > li{
+.list-group-reserve > li2{
     list-style: none;
     height: 50px;
     font-size: 18px;
@@ -53,7 +53,7 @@ main{
 
 
 
-.list-group > li > a {
+.list-group2 > li2 > a {
     font-size: 17px;
     font-weight: bold;
     text-decoration: none;
@@ -67,7 +67,7 @@ main{
     align-items: center;
 }
 
-.list-group > li > a > span {
+.list-group2 > li > a > span {
     font-size: 13px;
     text-decoration: none;
     color: white;
@@ -85,7 +85,7 @@ main{
 }
 
 /* 마이페이지 공통 부분 */
-.myPage-main{
+.myPage-main-reserve{
     width: 100%;
     height: auto;
     margin: auto;
@@ -93,7 +93,7 @@ main{
 }
 
 
-.myPage-title{
+.myPage-title-reserve{
     font-family: 'GowunBatang-Regular';
     font-size: 30px;
     margin : 0 0 10px 0;
@@ -286,16 +286,13 @@ form[name="myPage-form"]{
 /* 예약 취소 버튼 */
 .w-btn-outline {
     position: relative;
-    left: 90%;
-    padding: 7px 12px;
-    border-radius: 2px;
+
+    
     font-family: "paybooc-Light", sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     font-weight: 300;
-    transition: 0.25s;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    
 }
 
 .w-btn-blue-outline {

@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <link rel="stylesheet" href="resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+
+    
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 
@@ -72,7 +75,6 @@
         <section class="mainContent">
             <!-- 호텔 소개 -->
             <section>
-                ${loginMember}
 
                 <article class="mainSection1">
                     <div class="mainTitle">
@@ -150,7 +152,15 @@
                     </p>
 
                     <div id="mainBtn">
-                        <a id="joinBtn" href="signUp">join</a>
+
+                        <c:if test="${empty sessionScope.loginMember}">
+                            <button id="joinBtn" onclick="location.href = 'signUp'">join</button>
+                        </c:if>
+
+                        <c:if test="${!empty sessionScope.loginMember}">
+                            <button id="joinBtn" onclick="alert('${loginMember.memberName}님은 HotelLaLa의 소중한 고객입니다:D')">join</button>
+                        </c:if>
+
                     </div>
 
                     <img class="dividing-line" src="resources/images/main/leaf-dividing-line.png" alt="구분선">

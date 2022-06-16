@@ -131,7 +131,7 @@ header{height: 900px;}
 
 .title{
     font-size: 48px; font-weight: bold; text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(237, 87, 60);
 }
 
 /* mainSection1 */
@@ -170,7 +170,7 @@ header{height: 900px;}
 .mainSection2 > a{
     font-size: 22px;
     margin: 30px 15px 0;
-    color: #ff7E5F;
+    color: rgb(237, 87, 60);
     display: inline-block;
 }
 
@@ -197,7 +197,7 @@ header{height: 900px;}
 
 /* mainSection3 */
 .mainSection3{margin-bottom: 80px;}
-.dividing-line{height: 95px; opacity: 0.7;}
+.dividing-line{height: 95px; opacity: 0.4;}
 
 #club-text{font-size: 24px; text-align: center; color: rgb(80, 80, 80);}
 
@@ -209,7 +209,7 @@ header{height: 900px;}
 }
 
 #joinBtn{
-    border: 3px solid #feb47b;
+    border: 3px solid rgb(254, 205, 113);
     background-color: #ffffff;
     padding: 10px 30px;
     margin: 20px 0 50px;
@@ -218,63 +218,10 @@ header{height: 900px;}
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 }
 
-#joinBtn:hover{border: 3px solid #feb47b; background-color: white; color: gray;}
-
-/* footer */
-footer ul{list-style: none;}
-
-footer a{text-decoration: none;}
-
-footer {
-	width: 100%;
-	background: #333;
-	padding: 65px 0px;
-	border-top: 1px solid #888;
-}
-
-footer .inner {
-	width: 1180px;
-	margin: 0px auto;
-}
-
-footer .inner .upper {
-	width: 100%;
-	border-bottom: 1px solid #777;
-	padding-bottom: 20px;
-}
-
-footer .inner .upper::after {
-	/*상단 영역 float해제*/
-	content: "";
-	display: block;
-	clear: both;
-}
-
-footer .inner .upper h1 {
-	float: left;
-	font: bold 24px/1 "arial";
-	color: #666;
-}
-
-footer .inner .upper ul {float: right;}
-footer .inner .upper ul li {float: left; margin-left: 20px;}
-footer .inner .upper ul li a {font: bold 14px/1 "arial"; color: #666;}
-footer .inner .lower {width: 100%; padding-top: 20px;}
-
-footer .inner .lower address {
-	width: 100%;
-	font: 12px/1.3 "arial";
-	color: #777;
-	margin-bottom: 20px;
-}
-
-footer .inner .lower p {
-	width: 100%;
-	font: 12px/1 "arial";
-	color: #777;
-}
+#joinBtn:hover{border: 3px solid #ddd; background-color: white; color: gray;}
 
 /* 스크롤바 */
 body::-webkit-scrollbar {
@@ -291,6 +238,7 @@ body::-webkit-scrollbar-track {
 }
 
 /* 네브 */
+/* 
 nav *{
     margin:0;
     padding:0;
@@ -471,4 +419,6 @@ nav .third p{
     font-size: 17px;
 }
 
-nav .seconds_bar{color: black; letter-spacing: 1px;}
+nav .seconds_bar{color: black; letter-spacing: 1px;} */
+
+

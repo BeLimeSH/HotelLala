@@ -10,6 +10,7 @@ import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
 import edu.kh.hotellala.reservation.model.vo.OptionCount;
 import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
+import edu.kh.hotellala.reservation.model.vo.RoomBoard;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
 public class ReservationRequestService {
@@ -30,11 +31,8 @@ public class ReservationRequestService {
 		// 인원 수 세팅
 		int headCount = reservation.getAdultCount() + reservation.getChildCount();
 		
-		//인원수 조건에 맞는 roomList
-		List<RoomType> roomList = dao.selectAvailableRoom(conn, headCount);
-		
-		
-		// 객실 타입 받아와서 날짜 + 객실 호수(객실 타입으로 switch로 지정)를 where절 조건에 넣어서 조회되는 수 카운트 하기
+		//조건에 맞는 roomList
+		List<RoomType> roomList = dao.selectAvailableRoom(conn, headCount, reservation);
 		
 		close(conn);
 		
@@ -75,8 +73,6 @@ public class ReservationRequestService {
 		String roomType = reservation.getRoomType();
 		String no = "10";
 		
-		System.out.println(roomType);
-		
 		//예약 -> 날짜 사이에 있는 룸 넘버 조회해봐야 함 + extraRequest가 null? !null?
 		switch(roomType) {
 		
@@ -95,7 +91,7 @@ public class ReservationRequestService {
 			
 			//검사할 객실 번호
 			int checkNo = Integer.parseInt(no + i);
-			System.out.println(checkNo);
+//			System.out.println(checkNo);
 			
 			flag = dao.checkEmptyRoom(conn, checkNo, reservation.getCheckIn(), reservation.getCheckOut());
 			
@@ -104,8 +100,6 @@ public class ReservationRequestService {
 				break;
 			}
 		}
-		
-		System.out.println(roomNo);
 		
 		//예약 정보 삽입
 		result = dao.insertReservation(conn, reservation, roomNo);
@@ -149,5 +143,37 @@ public class ReservationRequestService {
 		return result;
 	}
 
+	/**
+	 * 결제 정보 조회
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Payment selectPayment(String requestNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Payment payment = dao.selectPayment(conn, requestNo);
+		
+		close(conn);
+		
+		return payment;
+	}
 
+	/**
+	 * 객실 상세 조회 Service
+	 * @param type
+	 * @return roomBoard
+	 * @throws Exception
+	 */
+	public RoomBoard selectRoomDetail(String type) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		RoomBoard roomBoard = dao.selectRoomDetail(conn, type);
+		
+		close(conn);
+		
+		return roomBoard;
+	}
 }

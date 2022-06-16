@@ -53,12 +53,15 @@
                             <label>NAME*</label>
                             <input type="text" name="memberName" value="${loginMember.memberName}" id="memberName" maxlength="10">
                         </div>
+
+                        <span class="signUp-message" id="nameMessage">변경할 회원명을 입력해주세요</span>
         
                         <div class="myPage-row">
                             <label>PHONE NUMBER *</label>
                             <input type="text" name="memberTel" value="${loginMember.memberTel}" id="memberTel" maxlength="11">
                         </div>
-        
+                        
+                        <span class="signUp-message" id="telMessage">변경할 전화번호를 입력해주세요</span>
         
                         <!-- 주소-->
                         <c:set var="addr" value="${fn:split(loginMember.memberAddress,',,')}"/>
@@ -77,6 +80,7 @@
                         <div class="myPage-row info-address">
                             <input type="text" name="memberAddress" value="${addr[2]}" id="sample6_detailAddress">
                         </div>
+                        <span class="signUp-message" id="addrMessage" style="display:block">변경할 주소를 입력해주세요.</span>
 
                         <button id="info-update-btn">수정하기</button>
                     </div>

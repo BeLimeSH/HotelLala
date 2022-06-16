@@ -21,4 +21,9 @@ public class Refund {
 	private Date refundDate;
 	private String refundReason; 
 	private int memberNo;
+	private String requestNo;
+	
+	private Date paymentDate;
+	private int paymentAmount;
+	
 }
