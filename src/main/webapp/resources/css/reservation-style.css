@@ -1,16 +1,5 @@
 /* body랑 main 태그에 설정 있음 */
 
-/* 헤더 비스무리한 거 */
-.hotelLogo{
-    top:30px;
-    left:30px;
-    position:fixed;
-}
-
-.hotelLogo>img{
-    width: 190px;
-}
-
 /* 예약 section */
 .reserveSection{
     margin: 0 10%;
@@ -55,7 +44,7 @@
 }
 
 .currentPage{
-    border: 5px solid #ff7E5F;
+    border: 5px solid rgb(237, 87, 60);
     background-color: white;
     color: rgb(100, 100, 100);
 }

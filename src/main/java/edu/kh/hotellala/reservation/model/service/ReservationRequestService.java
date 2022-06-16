@@ -91,7 +91,7 @@ public class ReservationRequestService {
 			
 			//검사할 객실 번호
 			int checkNo = Integer.parseInt(no + i);
-			System.out.println(checkNo);
+//			System.out.println(checkNo);
 			
 			flag = dao.checkEmptyRoom(conn, checkNo, reservation.getCheckIn(), reservation.getCheckOut());
 			

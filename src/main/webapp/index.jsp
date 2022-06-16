@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <link rel="stylesheet" href="resources/css/main-style.css" type="text/css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+
+    
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
 
