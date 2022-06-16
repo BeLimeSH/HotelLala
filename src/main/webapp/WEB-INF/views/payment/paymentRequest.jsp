@@ -127,14 +127,14 @@
                     </label>
                     
                     <!-- 가상계좌 -->
-                    <label>
+                    <!-- <label>
                         <div class="option-btn">
                             <i class="fa-solid fa-money-check-dollar"></i>
                             <div>가상계좌</div>
                         </div>
                         <input type="radio" name="pay-option" value="vbank" class="removeResource">
-                    </label>
-                    
+                    </label> -->
+                     
                     <!-- 핸드폰 -->
                     <label>
                         <div class="option-btn">
@@ -173,6 +173,8 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
+        const contextPath = "${contextPath}";
+
         const adultBreakfast = "${op.adultBreakfast}";
         const childBreakfast = "${op.childBreakfast}";
         const extraBed = "${op.extraBed}";
@@ -183,7 +185,6 @@
         const requestNo = "${reservation.requestNo}"
 
         const memberName = "${loginMember.memberName}"
-        const memberNo = "${loginMember.memberNo}"
     </script>
 
     <!-- jQuery -->

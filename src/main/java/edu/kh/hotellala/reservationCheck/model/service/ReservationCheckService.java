@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
+import edu.kh.hotellala.reservationCheck.model.vo.Refund;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.dao.ReservationCheckDAO;
@@ -37,11 +38,33 @@ public class ReservationCheckService{
 		
 		return checkList;
 	}
+
+
+	
+	/** 예약 취소 요청 Service
+	 * @param refund
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertRefund(Refund refund) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.insertRefund(conn, refund);
+		
+		if(result > 0)	  commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 	
 	
 	
 
-	/** 예약 취소 Service
+	/** 예약 취소 내역 조회 Service
 	 * @param requestNo
 	 * @return result
 	 * @throws Exception

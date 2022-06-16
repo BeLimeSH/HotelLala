@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.hotellala.member.model.vo.Member;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
@@ -103,6 +104,54 @@ public class ReservationRequestDAO {
 		
 		return roomRates;
 	}
+
+	/**
+	 * 결제 정보 삽입 DAO
+	 * @param conn
+	 * @param payment
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertPayment(Connection conn, Payment payment) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertPayment");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			//1 가격 2 회원넘버 3 주문번호 4 결제수단
+			pstmt.setInt(1, payment.getPaymentAmount());
+			pstmt.setInt(2, payment.getMemberNo());
+			pstmt.setString(3, payment.getRequestNo());
+			pstmt.setString(4, payment.getPayType());
+			
+			result = pstmt.executeUpdate();
+				
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/**
+	 * 옵션 주문 정보 삽입 DAO
+	 * @param conn
+	 * @param count
+	 * @param requestNo
+	 * @param optionCode
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertOption(Connection conn, int count, String requestNo, int optionCode) throws Exception {
+		
+		int result = 0;
+		
+		return result;
+	}
+
+
 
 
 }
