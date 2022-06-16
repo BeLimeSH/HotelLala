@@ -15,6 +15,7 @@ import java.util.Properties;
 import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
+import edu.kh.hotellala.reservation.model.vo.RoomBoard;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
 public class ReservationRequestDAO {
@@ -277,6 +278,46 @@ public class ReservationRequestDAO {
 			close(pstmt);
 		}
 		return payment;
+	}
+
+	/**
+	 * 객실 상세 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @return roomBoard
+	 * @throws Exception
+	 */
+	public RoomBoard selectRoomDetail(Connection conn, String type) throws Exception {
+		
+		RoomBoard roomBoard = new RoomBoard();
+		
+		try {
+			String sql = prop.getProperty("selectRoomDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, type);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				roomBoard.setRoomInfo( rs.getString(1) );
+				roomBoard.setRoomFloor( rs.getString(2) );
+				roomBoard.setBedType( rs.getString(3) );
+				roomBoard.setRoomSize( rs.getString(4) );
+				roomBoard.setStandardNumber( rs.getString(5) );
+				
+				roomBoard.setImageOne( rs.getString(6) );
+				roomBoard.setImageTwo( rs.getString(7) );
+				roomBoard.setImageThree( rs.getString(8) );
+				roomBoard.setImageFour( rs.getString(9) );
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return roomBoard;
 	}
 
 
