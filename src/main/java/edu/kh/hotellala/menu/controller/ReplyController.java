@@ -66,6 +66,9 @@ public class ReplyController extends HttpServlet {
 				
 				path = "/WEB-INF/views/menu/notice.jsp";
 	    	  }
+	    	  if(command.equals("qnaCheck")) {
+	    		  
+	    	  }
 	    	  
 	    	  req.getRequestDispatcher(path).forward(req, resp);
 	      }catch (Exception e) {
