@@ -225,3 +225,13 @@ form[name="myPage-form"]{
 .myPage-row>input[type="password"]{
     width :70%;
 }
+
+
+/* 비밀번호 변경 관련 메세지 */
+.signUp-message{
+    font-size: 14px;
+    letter-spacing: -1px; /* 자간 */
+
+}
+.confirm{color:green;}
+.error{color:red;}
