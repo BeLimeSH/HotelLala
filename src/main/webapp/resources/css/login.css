@@ -100,18 +100,18 @@ label{
     font-size: 22px;
     font-weight: 500;
     line-height: 66px;
-    background-color: black;
+    background-color:rgb(39,39,91);
     color:white;
 }
 .loginBtn:hover{
     background-color: white;
-    color:black;
+    color:rgb(39,39,91);
     border: 1px solid #000;
     background: #fff;
     transition: color 0.5s ease-in-out;
     overflow: hidden;
     z-index: 1;
-    font-family: gothamL, notokrL;
+    /* font-family: gothamL,  notokrL; */
 }
 .subtitle{
     display:flex;
