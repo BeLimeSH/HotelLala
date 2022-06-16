@@ -39,9 +39,9 @@ public class ImportPaymentServlet extends HttpServlet {
 			payment.setRequestNo( reservation.getRequestNo() );
 			payment.setPayType(payType);
 			
-			System.out.println(reservation);
-			System.out.println(op);
-			System.out.println(payment);
+//			System.out.println(reservation);
+//			System.out.println(op);
+//			System.out.println(payment);
 			
 			int result = service.insertReservation( reservation, payment, op );
 			
