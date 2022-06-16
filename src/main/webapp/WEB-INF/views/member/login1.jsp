@@ -138,7 +138,7 @@
     
     
 
-    <script src="js/index.js"></script>
-    <script src="js/login.js"></script>
+    <script src="${contextPath}/resources/js/main.js"></script>
+    <script src="${contextPath}/resources/js/member/login.js"></script>
 </body>
 </html>
