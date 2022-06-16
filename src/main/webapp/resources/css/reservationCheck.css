@@ -286,16 +286,13 @@ form[name="myPage-form"]{
 /* 예약 취소 버튼 */
 .w-btn-outline {
     position: relative;
-    left: 90%;
-    padding: 7px 12px;
-    border-radius: 2px;
+
+    
     font-family: "paybooc-Light", sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     font-weight: 300;
-    transition: 0.25s;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    
 }
 
 .w-btn-blue-outline {

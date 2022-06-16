@@ -34,8 +34,8 @@
                 <div>
                     <div class="reserve-Title">취소가 완료되었습니다.</div>
 
-                    <span>결제 일시 : ${contextPath}${payment.paymentDT}</span><br>
-                    <span>환불 요청 일시 : ${contextPath}${refund.refundDT}</span>
+                    <span>결제 일시 : ${contextPath}${payment.paymentDate}</span><br>
+                    <span>환불 요청 일시 : ${contextPath}${refund.refundDate}</span>
 
                 </div>
             </div>
@@ -47,36 +47,25 @@
             <section id="selectRoom" class="selectionContents">
 
                 
-                <div class="cancelTitle">취소 내역</div>
+                <div class="cancelTitle">취소/변경 및 노쇼(No-show) 안내</div>
                     
-                    <span class="cancelTitle-notice">취소 수수료는 실결제 금액과 포인트에 적용되며 환불 규정을 따릅니다.</span>
+                    <span class="cancelTitle-notice">숙박 예정일 1일 전 까지는 위약금 없이 취소 및 변경이 가능합니다.</span>
+                    <span class="cancelTitle-notice">숙박 예정일 당일 취소/변경 및 노쇼(No-show) 발생 시 예약 금액 환불이 불가능합니다.</span>
                     <a></a>
                     
-                <div class="cancelSubTitle">총 환불액
+                <div class="cancelSubTitle">환불금액
                     <div class="totalPay">${payment.paymentAmount}</div>
                 </div>
 
-                <div class="cancelSub">환불금액
-                    <div class="subPay">${refund.refundAmount}</div>
+                <div class="cancelSub">환불번호
+                    <div class="subPay">${refund.refundNo}</div>
                 </div>
 
-                <div class="cancelSub">환불포인트
-                    <span class="cancelTitle-notice-sub">당일 환불은 불가하며<br>환불 시 사용된 포인트는 반환되지 않습니다.</span>
+                <div class="cancelSub">환불사유
+                    <span class="cancelTitle-notice-sub">${refund.refundReason}</span>
                 </div>
 
-                <a></a>
-
-                <div class="cancelSubTitle">총 예약가
-                    <div class="totalPay">${payment.paymentAmount}</div>
-                </div>
-
-                <div class="cancelSub">실결제 금액
-                    <div class="subPay2">${payment.paymentAmount}</div>
-                </div>
-
-                <div class="cancelSub">포인트사용
-                    <div class="subPoint"></div>
-                </div>
+               
 
             </section>
 
