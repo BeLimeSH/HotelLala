@@ -12,16 +12,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Service</title>
+    <title>CUSTOMER SERVICE-문의하기</title>
 
-    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css"> -->
     <link rel="stylesheet" href="${contextPath}/resources/css/qnaCheck.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/faq.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
-    
+
 
     <script src="https://kit.fontawesome.com/a5538decc7.js" crossorigin="anonymous"></script>
 </head>
@@ -29,9 +28,9 @@
 
     <div class="container">
         <div class="logo">
-	        <a href="${contextPath}">
-				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-	        </a>
+           <a href="${contextPath}">
+            <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+           </a>
         </div>
     <main>
 
@@ -50,6 +49,7 @@
         <jsp:include page="/WEB-INF/views/member/sideMenu.jsp"/>
         
         <!-- 게시판 목록 조회 (몸통) -->
+        
         <section class="board-list">
             
             
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>    
-	                     </c:forEach>
+                        </c:forEach>
             
                 </div>
             </section>
@@ -164,6 +164,7 @@
 
 
         </section>
+
 
     </section>
     </main>
