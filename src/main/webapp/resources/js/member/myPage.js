@@ -68,6 +68,8 @@ function infoValidate(){
 
 
 
+
+
 // 비밀번호 변경 제출 유효성 검사 
 function changePwValidate(){
 
@@ -127,7 +129,6 @@ function changePwValidate(){
     if(newPw.value != newPwConfirm.value){
         alert("새비밀번호가 일치하지 않습니다.");
         newPw.focus();
-        newPw="";
         return false;
 
     }
@@ -147,7 +148,7 @@ function secessionValidate(){
 
     
 
-
+  
     // 비밀번호 미작성 
     if(memberPw.value.trim().length==0){
         alert(" 비밀번호를 입력해주세요.");
