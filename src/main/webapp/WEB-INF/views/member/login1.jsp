@@ -71,7 +71,7 @@
             <div class="seconds">
                 <a href="#" class="first_bar">
                     <i class="fa-solid fa-x cursor"></i>
-                    <p class="cursor" style="">close</p>
+                    <p class="cursor" >close</p>
                     <a href="login.html"><p class="login cursor">Login</p></a>
                     <a href="signup.html"><p class="signup cursor">signUp</p></a>
                 </a>
