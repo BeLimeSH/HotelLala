@@ -11,7 +11,10 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Board {
 	private int boardNo;
+	private int memberNo;
 	private String boardTitle;
 	private String createDate;
-	private String BoardContent;
+	private String boardContent;
+	private String answerContent;
+	
 }

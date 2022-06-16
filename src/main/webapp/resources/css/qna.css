@@ -413,3 +413,10 @@ footer .footert-inner .lower p {
     color: white;
     font-size:13px;
 }
+.p{
+    text-align: center;
+}
+.top_menu_wrap{
+    display:flex;
+    justify-content: space-around;
+}
