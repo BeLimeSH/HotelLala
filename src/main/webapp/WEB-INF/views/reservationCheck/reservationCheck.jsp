@@ -8,62 +8,38 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>예약 조회</title>
 
-
-<link rel="stylesheet" href="${contextPath}/resources/css/reservationCheck.css" type="text/css">
 <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
+<link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
+<link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+
+<!-- 예약 조회 탭 스타일 -->
+<link rel="stylesheet" href="${contextPath}/resources/css/reservation-Check.css" type="text/css">
+
+<!-- 사이트 탭 아이콘 -->
 <link rel="shortcut icon" href="/HotelLala/resources/images/wIcon.ico">
-<link rel="shortcut icon" href="${contextPath}/resources/images/logo-icon-black.png">
 
 <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 
-
-
 </head>
 <body>
-
-	<!-- header -->
-	<a href="${contextPath}" class="hotelLogo"> <img src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-	</a>
-
-	<!-- nav -->
-	<jsp:include page="/WEB-INF/views/common/nav.jsp" />
-
-
 	<main>
+
+		<div class="logo">
+		    <a href="${contextPath}">
+		        <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+		    </a>
+		</div>
+
 		<!-- 조회 탭 -->
 		<section class="myPage-content">
+			
+			<!-- 사이드 jsp 추가 -->
+			<jsp:include page="/WEB-INF/views/member/sideMenu.jsp" />
 
-			<!-- 왼쪽 사이드(마이페이지) 메뉴 -->
-			<section class="left-side">
-				<div class="myPageMenu">
-					<h2 class="tit">
-						<a>마이페이지</a>
-					</h2>
-					<ul class="list-group">
-						<li class=""><a href="${contextPath}/reservation/check">예약 확인</a></li>
-						<li class=""><a href="${contextPath}/reservation/cancelCheck">예약 취소 조회</a></li>
-					</ul>
-					<br>
-
-					<ul class="list-group">
-						<h2 class="tit">
-							<a>내 정보</a>
-						</h2>
-
-						<li class="my"><a href="${contextPath}/member/myPage/info"> <span>프로필 수정</span>
-						</a></li>
-						<li class="my"><a href="${contextPath}/member/myPage/changePw"> <span>비밀번호 변경</span>
-						</a></li>
-						<li class="my"><a href="${contextPath}/member/logout"> <span>로그아웃</span>
-						</a></li>
-						<li class="my"><a href="${contextPath}/member/myPage/secession"> <span>회원탈퇴</span>
-						</a></li>
-					</ul>
-
-				</div>
-			</section>
+			
 
 			<!-- 오른쪽 예약 확인 주요 내용 부분 -->
 			<section class="myPage-main">
@@ -167,32 +143,9 @@
 							</div>
 						</div>
 					</div>
+
 				</form>
 
-				<!-- 로그인 회원의 회원번호와 예약 테이블의 회원 번호가 일치해야 예약 취소 수행 가능 -->
-				<%-- <c:if test="${loginMember.memberNo == reservation.memberNo}">
-					<div class="cancel-btn-area">
-						<button class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button>
-
-						<!-- 취소 버튼 클릭 시 팝업 창 -->
-						<table id="datatable-scroller" class="table table-striped table-bordered text-center">
-							<colgroup>
-								<col width="50%">
-								<col width="100%"
-							</colgroup>
-							<tbody>
-								<tr>
-									<td></td>
-									<td style="text-align: center;">
-										<button onclick="${contextPath}/reservation/cancelRequest" class="w-btn-outline w-btn-blue-outline" id="cancelBtn" type="button">예약 취소</button> 
-										<a href="javascript:void(0);" onclick="popupOpen();" id="cancelBtn" class="table table-striped table-bordered text-center">취소요청</a>
-									</td>
-								</tr>
-							</tbody>
-						</table> 
-						
-					</div>
-				</c:if> --%>
 
 			</section>
 
@@ -210,6 +163,8 @@
             }
 	</script>
 	
+	<!-- nav -->
+	<jsp:include page="/WEB-INF/views/common/nav.jsp" />
 	
 	<!-- footer -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
