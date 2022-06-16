@@ -15,8 +15,9 @@ import javax.servlet.http.HttpSession;
 
 
 @WebFilter(filterName = "loginFilter",
-		urlPatterns = {"/reservationCheck/reservationCheck", "/reservationCheck/reservationCancel",
+		urlPatterns = {"/reservationCheck/reservationCheck", "/reservationCheck/reservationCancel",  "/menu/qna",
 				"/reservation/*"})
+
 
 public class loginFilter extends HttpFilter implements Filter {
     

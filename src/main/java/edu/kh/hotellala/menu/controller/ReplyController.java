@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.kh.hotellala.board.model.service.BoardService;
 import edu.kh.hotellala.board.model.vo.Board;
+import edu.kh.hotellala.member.model.vo.Member;
 
 @WebServlet("/menu/*")
 public class ReplyController extends HttpServlet {
@@ -24,6 +26,8 @@ public class ReplyController extends HttpServlet {
 	      ///community
 	      												// menu/  
 	      String command = uri.substring(  (contextPath + "/menu/").length()  ); 
+	      
+	      HttpSession session = req.getSession();
 	      
 	      try {
 	    	  String path = null;
@@ -67,6 +71,12 @@ public class ReplyController extends HttpServlet {
 				path = "/WEB-INF/views/menu/notice.jsp";
 	    	  }
 	    	  if(command.equals("qnaCheck")) {
+	    		  
+//	    		Member member = (Member)(session.getAttribute("loginMember"));
+//	    		int memberNo = member.getMemberNo();
+	    		BoardService service = new BoardService();
+	    		List<Board> list = service.qnaCheck(Integer.parseInt(req.getParameter("memberNo")));
+	    		req.setAttribute("list", list);
 	    		path = "/WEB-INF/views/menu/qnaCheck.jsp";
 	    	  }
 	    	  

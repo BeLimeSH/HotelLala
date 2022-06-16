@@ -123,4 +123,36 @@ public class BoardDAO {
 		
 		return list;
 	}
+
+	/** QNA 답변 조회 DAO
+	 * @param conn
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<Board> qnaCheck(Connection conn, int memberNo) throws Exception {
+		List<Board> list = new ArrayList<Board>();
+		
+		try {
+			
+			String sql = prop.getProperty("qnaCheck");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,memberNo);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				
+				Board board = new Board();
+				board.setBoardTitle(rs.getString("QNA_TITLE"));
+				board.setBoardContent(rs.getString("QNA_CONTENT"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setAnswerContent(rs.getString("ANSWER_CONTENT"));
+				list.add(board);
+			}
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 }

@@ -39,5 +39,16 @@ public class BoardService {
 		return list;
 	}
 
+	/**QNA 답변 조회
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> qnaCheck(int i) throws Exception{
+		Connection conn = getConnection();
+		List<Board> list = dao.qnaCheck(conn, i);
+		close(conn);
+		return list;
+	}
+
 
 }

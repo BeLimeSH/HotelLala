@@ -100,10 +100,16 @@
 
 /* 페이지네이션(pagination) */
 .pagination{
+    margin-left:290px;
+    margin-top:-75px;
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: center;
+}
+.pagination{
+    margin-left:290px;
+    margin-top:-75px;
 }
 
 .pagination > li {
@@ -131,6 +137,7 @@
 
 /* 검색  영역  */
 #boardSearch{
+    margin-left:640px;
     width: 500px;
     height: 30px;
     display: flex;
@@ -138,7 +145,12 @@
 
     margin: 30px auto;
 }
-
+.maf{
+    margin-left:30px;
+}
+.jc{
+    margin-left:60px;
+}
 /* 검색 영역 공통 스타일 */
 
 #boardSearch *{
