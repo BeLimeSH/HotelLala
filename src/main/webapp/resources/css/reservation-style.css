@@ -662,7 +662,7 @@ input::-webkit-inner-spin-button {
 
 /* ---------------------------------------------------------------------------------------- */
 /* reservation-complete */
-#completePage{margin: 50px 0 100px; padding: 50px;}
+#completePage{margin: 150px 0 100px; padding: 50px;}
 
 .complete-box{
     display: flex;
@@ -744,6 +744,7 @@ input::-webkit-inner-spin-button {
     background-color: #feb47b;
     color: white;
     cursor: pointer;
+    letter-spacing: -1px;
 }
 
 .result-btn-area>button:hover{

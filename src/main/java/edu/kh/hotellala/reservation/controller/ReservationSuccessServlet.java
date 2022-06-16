@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.hotellala.reservation.model.service.ReservationRequestService;
 import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 
@@ -17,6 +18,8 @@ public class ReservationSuccessServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		ReservationRequestService service = new ReservationRequestService();
 		
 		Payment payment = new Payment();
 		
@@ -28,17 +31,13 @@ public class ReservationSuccessServlet extends HttpServlet {
 			String requestNo = reservation.getRequestNo();
 			
 			//결제 수단, 객실 가격, 결제일, 결제 금액
-//			payment = service.select
+			payment = service.selectPayment(requestNo);
 			
-			
-			
+			req.setAttribute("payment", payment);
 			
 		} catch(Exception e) {
-			
+			e.printStackTrace();
 		}
-		
-		
-		
 		
 		String path = "/WEB-INF/views/payment/paymentComplete.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);

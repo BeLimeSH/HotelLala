@@ -46,7 +46,7 @@ public class ReservationRequestDAO {
 	 * @return roomList
 	 * @throws Exception
 	 */
-	public List<RoomType> selectAvailableRoom(Connection conn, int headCount) throws Exception {
+	public List<RoomType> selectAvailableRoom(Connection conn, int headCount, ReservationRequest reservation) throws Exception {
 		
 		List<RoomType> roomList = new ArrayList<RoomType>();
 		
@@ -55,6 +55,10 @@ public class ReservationRequestDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, headCount);
+			pstmt.setDate(2, reservation.getCheckIn());
+			pstmt.setDate(3, reservation.getCheckOut());
+			pstmt.setDate(4, reservation.getCheckIn());
+			pstmt.setDate(5, reservation.getCheckOut());
 			
 			rs = pstmt.executeQuery();
 			
@@ -238,6 +242,41 @@ public class ReservationRequestDAO {
 			close(pstmt);
 		}
 		return result;
+	}
+
+	/**
+	 * 결제 완료 내역 조회 DAO
+	 * @param conn
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Payment selectPayment(Connection conn, String requestNo) throws Exception {
+		
+		Payment payment = new Payment();
+		
+		try {
+			String sql = prop.getProperty("selectPayment");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, requestNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				payment.setPayType( rs.getString(1) );
+				payment.setPaymentDate( rs.getString(2) );
+				payment.setRoomRates( rs.getInt(3) );
+				payment.setPaymentAmount( rs.getInt(4) );
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return payment;
 	}
 
 

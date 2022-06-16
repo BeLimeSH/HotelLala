@@ -92,7 +92,7 @@
                                 <li>요청 사항</li>
                                 
                                 <!-- 값이 없으면 안보이는 부분 -->
-                                <div id="req-result">${reservation.extraBed}</div>
+                                <div id="req-result">${reservation.extraRequest}</div>
                             </ul>
                         </div>
                     </div>
@@ -105,7 +105,9 @@
                         <ul>
                             <li>
                                 <span>결제 방법</span>
-                                <span class="result-val">신용카드</span>
+
+                                <span class="result-val" id="payTypeSpan">${payment.payType}</span>
+
                             </li>
                             <li>
                                 <span>결제 시간</span>
@@ -116,35 +118,77 @@
 
                             <li>
                                 <span>객실 비용</span>
-                                <span class="result-val">110,000 원</span>
+                                <span class="result-val" id="roomRatesSpan">${payment.roomRates} 원</span>
                             </li>
                             <li>
                                 <span>추가 옵션 비용</span>
-                                <span class="result-val">0원</span>
+                                <span class="result-val" id="optionRates">0원</span>
                             </li>
 
                         </ul>
                         <div class="complete-pay-box">
                             <span>결제 금액</span>
-                            <span class="result-val">${payment.paymentAmount} 원</span>
+                            <span class="result-val" id="amountSpan">${payment.paymentAmount} 원</span>
                         </div>
                     </div>
                 </section>
     
                 <!-- 버튼 -->
                 <section class="result-btn-area">
-                    <button>메인페이지로</button>
+                    <button onclick="location.href = '${contextPath}'">메인페이지로</button>
                     <button>예약 내역 확인</button>
                 </section>
-    
             </section>
-
         </section>
-    
     </main>
 
     <!-- footer -->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        //옵션 비용
+        const adultBreakfast = "${op.adultBreakfast}";
+        const childBreakfast = "${op.childBreakfast}";
+        const extraBed = "${op.extraBed}";
+
+        let sum =  priceToString( 30000*adultBreakfast + 25000*childBreakfast + 65000*extraBed );
+
+        //결제 수단
+        const payType = "${payment.payType}";
+
+        //객실 비용
+        const roomRates = "${payment.roomRates}";
+
+        //결제 금액
+        const paymentAmount = "${payment.paymentAmount}";
+
+        (function(){
+
+            document.getElementById('optionRates').innerText = sum + " 원";
+
+            if( payType == "card" ){
+                document.getElementById('payTypeSpan').innerText = "신용카드";
+            }
+            if( payType == "trans" ){
+                document.getElementById('payTypeSpan').innerText = "실시간 계좌이체";
+            }
+            if( payType == "phone" ){
+                document.getElementById('payTypeSpan').innerText = "핸드폰 결제";
+            }
+
+            document.getElementById('roomRatesSpan').innerText = priceToString(roomRates);
+            document.getElementById('amountSpan').innerText = priceToString(paymentAmount);
+
+        })();
+
+        //가격 포맷 바꾸기
+        function priceToString(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+    </script>
+
+    <script src="${contextPath}/resources/js/main.js"></script>
 
 </body>
 </html>

@@ -16,7 +16,9 @@ toggleBtn2.addEventListener('click',()=>{
 });
 
 //메인 사진 슬라이드 쇼
-if( $('.mainPhoto').length != 0 ) {
+const mainPhotolist = document.getElementsByClassName("mainPhoto");
+
+if( mainPhotolist.length != 0 ) {
   
   console.log("야호");
   
@@ -27,7 +29,7 @@ if( $('.mainPhoto').length != 0 ) {
   
   $(function(){
       
-      var mainPhoto = $('.mainPhoto');
+      let mainPhoto = $('.mainPhoto');
       // firstSlide = mainPhoto.find('.slide').first() // 첫번째 슬라이드
       // .stop(true).animate({'opacity':1},200); // 첫번째 슬라이드만 보이게 하기
         
@@ -37,7 +39,7 @@ if( $('.mainPhoto').length != 0 ) {
         
           firstSlide = mainPhoto.find('.slide').first().appendTo(mainPhoto); //첫 번째 슬라이드 맨 마지막으로 보내기
     
-          var lastSlide = mainPhoto.find('.slide').last().stop(true).animate({'opacity':0},400); //맨 마지막으로 보낸 슬라이드 fadeOut시키기
+          let lastSlide = mainPhoto.find('.slide').last().stop(true).animate({'opacity':0},400); //맨 마지막으로 보낸 슬라이드 fadeOut시키기
           
           firstSlide = mainPhoto.find('.slide').first().stop(true).animate({'opacity':1},400);//맨 처음 슬라이드 fadeIn 시키기
       }
