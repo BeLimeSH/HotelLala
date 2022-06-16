@@ -124,13 +124,13 @@
 																</c:if> --%>
 																	
 																	
-																	<!-- 환불 사유 작성 부분 -->
-																	<%-- <c:if test="${reserve.fl == 0 }"> --%>
+																<!-- 환불 사유 작성 부분 -->
+																<%-- <c:if test="${reserve.fl == 0 }"> --%>
 																    <div class="refund-write-area">
 																        <textarea class="refundReason"></textarea>
 																        <button type="button" class="w-btn-outline w-btn-blue-outline cancelReqeust" id="${reserve.requestNo}">환불 요청</button>
 																    </div>
-																    <%-- </c:if> --%>
+															    <%-- </c:if> --%>
 
 													</c:forEach>
 												</ul>
