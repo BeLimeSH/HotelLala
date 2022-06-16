@@ -17,5 +17,12 @@
 	WHERE ROOM_TYPE = ?
 	</entry>
 	
+	<!-- 결제 정보 삽입 -->
+	<entry key="insertPayment">
+	INSERT INTO PAYMENT VALUES(
+    PAYMENT_NO_SEQ.NEXTVAL, DEFAULT, ?, 'Y', ?, ?, ?
+	)
+	</entry>
+	
 
 </properties>

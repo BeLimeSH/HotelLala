@@ -1,4 +1,4 @@
-package edu.kh.hotellala.reservation.model.vo;
+package edu.kh.hotellala.reservationCheck.model.vo;
 
 import java.sql.Date;
 
@@ -13,16 +13,12 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Payment {
+public class Refund {
 	
+	private int refundNo;
 	private int paymentNo;
-	private Date paymentDate;
-	private int paymentAmount;
-	private char paymentFlags;
-	
+	private String refundFlags;
+	private Date refundDate;
+	private String refundReason; 
 	private int memberNo;
-	private String requestNo;
-	
-	private String payType;
-
 }

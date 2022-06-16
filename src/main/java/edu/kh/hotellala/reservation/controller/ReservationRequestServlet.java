@@ -48,7 +48,7 @@ public class ReservationRequestServlet extends HttpServlet {
 			HttpSession session = req.getSession();
 			
 			//1시간 후 만료 -> 로그인에 있으면 빼도 될것
-			session.setMaxInactiveInterval(3600);
+//			session.setMaxInactiveInterval(3600);
 			
 			//memberNo 얻어오기
 			int memberNo = 0;
@@ -65,7 +65,7 @@ public class ReservationRequestServlet extends HttpServlet {
 			
 			//전달된 파라미터 변수에 저장
 			String reserveDate = req.getParameter("reserveDate");
-			String dateRange = req.getParameter("dateRange");
+			String dateRange = req.getParameter("dateRange"); //1박
 			int adultCount = Integer.parseInt( req.getParameter("adultCount") );
 			int childCount = Integer.parseInt( req.getParameter("childCount") );
 			

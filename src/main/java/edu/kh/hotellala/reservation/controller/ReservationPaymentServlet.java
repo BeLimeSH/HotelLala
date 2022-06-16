@@ -54,8 +54,8 @@ public class ReservationPaymentServlet extends HttpServlet {
 			//세션에서 객실 타입 가져오기
 			String type = reservation.getRoomType();
 			
-			System.out.println(reservation);
-			System.out.println(op);
+//			System.out.println(reservation);
+//			System.out.println(op);
 			
 			int roomRates = service.selectRates(type);
 			

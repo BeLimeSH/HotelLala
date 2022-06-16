@@ -3,22 +3,27 @@
 <properties>
 <comment>reservation-sql-pjh.xml</comment>
 		
-	<!-- 예약 조회(주문번호, 회원번호, 체크인날짜, 체크아웃날짜, 예약상태) -->
-	<entry key="selectBoardList">
-		SELECT REQUEST_NO, MEMBER_NO,
-		TO_CHAR(CHECK_IN 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CHECK_IN,
-		TO_CHAR(CHECK_OUT 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CHECK_OUT,
-		RESERVATION_FLAG
+	<!-- 예약 조회(주문번호, 회원번호, 예약상태, 체크인날짜, 체크아웃날짜, 객실 종류, 객실 번호) -->
+	<entry key="reservationCheck">
+		SELECT REQUEST_NO, MEMBER_NO, CHECK_IN, CHECK_OUT, ROOM_NO
 		FROM RESERVATION
-		WHERE REQUEST_NO = ?
-		AND RESERVATION_FLAG = 'Y'
+		WHERE MEMBER_NO = ?
+		AND CHECK_IN BETWEEN ? AND ?
 	</entry>
 	
-	<!-- 예약 취소(환불 번호, 결제번호, 환불 금액, 환불 요청일 + 환불 처리 여부?) -->
-	<entry key="selectBoardList">
-		SELECT REFUND_NO,
-		REFUND_DT(REFUND_DT 'YYYY"년" MM"월" DD"일" HH24:MI:SS') REFUND_DT,
-		REFUND_AMOUNT, REFUND_FLAG  
+	
+	<!-- 예약 취소 요청(환불번호, 결제번호, 환불처리여부(DEFAULT:N),
+		환불요청일(DEFAULT:SYSDATE), 환불사유, 회원번호 -->
+	<entry key="reservationCancelRequest">
+		INSERT INTO REFUND VALUES(REFUND_NO_SEQ.NEXTVAL, ?, DAFAULT, SYSDATE, ?, ?)
+	</entry>
+	
+	
+	<!-- 예약 취소 내역 조회 -->
+	<entry key="reservationCancelCheck">
+		SELECT REFUND_NO, PAYMENT_NO, REFUND_DT, REFUND_RESON
+		FROM REFUND
+		WHERE REFUND_FL = 'Y'
 	</entry>
 	
 </properties>

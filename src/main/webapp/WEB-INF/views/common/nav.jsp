@@ -32,7 +32,7 @@
                 <br><br><br>
     
                 <ul class="list3">
-                    <h1><a href="#" class="white">예약하기</a></h1>
+                    <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
                 </ul>
                 
                 <br>
@@ -53,7 +53,7 @@
                 <p class="cursor">MENU</p>
             </a>
     
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
+            <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
             <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
         </div>
 

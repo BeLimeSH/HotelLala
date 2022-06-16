@@ -161,10 +161,10 @@ footer{
     display:none;
 }
 .accordion-container .up{
-    position: absolute;
-    right:15px;
+    /* position: absolute;
+    right:15px; */
     display:none;
-    margin-right: 304px;
+    /* margin-right: 304px; */
 }
 .up.active{
     display:inline-block;
@@ -191,4 +191,12 @@ footer{
     background-color: #ddd;
     border:none;
     cursor: pointer;
+}
+.down-update{
+    display: flex;
+    /* width: 100%; */
+    justify-content: end;
+}
+.title-update{
+    width:100%; 
 }

@@ -7,6 +7,8 @@ import java.util.List;
 
 import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
+import edu.kh.hotellala.reservation.model.vo.OptionCount;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
@@ -54,6 +56,66 @@ public class ReservationRequestService {
 		close(conn);
 		
 		return roomRates;
+	}
+
+	/**
+	 * 예약 결제 정보 삽입 Service
+	 * @param reservation
+	 * @param payment
+	 * @param op
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertReservation(ReservationRequest reservation, Payment payment, OptionCount op) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = 0; // 결과값 전달 변수
+		
+		int count = 0; // 옵션 개수 담을 변수
+		
+		//예약 -> 날짜 사이에 있는 룸 넘버 조회해봐야 함 + extraRequest가 null? !null?
+		
+		
+		//결제
+		if(result > 0) {
+			result = dao.insertPayment(conn, payment);
+		}
+		
+		
+		//옵션
+		int optionCode = 0;
+		
+		// count != 0 일때 옵션 각각 삽입
+		if(result > 0 && op.getAdultBreakfast() > 0) {
+			optionCode = 1;
+			count = op.getAdultBreakfast();
+			
+			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
+		}
+		
+		if(result != 0 && op.getChildBreakfast() != 0) {
+			optionCode = 2;
+			count = op.getChildBreakfast();
+			
+			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
+		}
+		
+		if(result != 0 && op.getExtraBed() != 0) {
+			optionCode = 3;
+			count = op.getExtraBed();
+			
+			
+			result = dao.insertOption(conn, count, reservation.getRequestNo(), optionCode);
+		}
+		
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+
+		return result;
 	}
 
 

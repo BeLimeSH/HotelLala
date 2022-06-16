@@ -6,8 +6,10 @@ import static edu.kh.hotellala.common.JDBCTemplate.commit;
 import static edu.kh.hotellala.common.JDBCTemplate.rollback;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.util.List;
 
+import edu.kh.hotellala.reservationCheck.model.vo.Refund;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.dao.ReservationCheckDAO;
@@ -18,39 +20,37 @@ public class ReservationCheckService{
 	
 
 	/** 예약 조회 Service
-	 * @return list
+	 * @param reservation
+	 * @param checkOut 
+	 * @param checkIn 
+	 * @return checkList
 	 * @throws Exception
 	 */
-	public List<ReservationCheck> reservationCheck() throws Exception{
+	public List<ReservationRequest> reservationCheck(ReservationRequest reservation, Date checkIn, Date checkOut) throws Exception{
 		
-		Connection conn = getConnection();
+		Connection conn = getConnection(); 
 		
-		List<ReservationCheck> list = dao.reservationCheck(conn);
+		int memberNo = reservation.getMemberNo();
+		
+		List<ReservationRequest> checkList = dao.reservationCheck(conn, memberNo, checkIn, checkOut);
 		
 		close(conn);
 		
-		return list;
+		return checkList;
 	}
 
-	
-	public List<ReservationRequest> reservationCheck(ReservationRequest reservation) throws Exception{
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
 
-	/** 예약 취소 Service
-	 * @param requestNo
+	
+	/** 예약 취소 요청 Service
+	 * @param refund
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reserveCancel(int requestNo) throws Exception{
+	public int insertRefund(Refund refund) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.reserveCancel(conn, requestNo);
+		int result = dao.insertRefund(conn, refund);
 		
 		if(result > 0)	  commit(conn);
 		else			rollback(conn);
@@ -59,6 +59,29 @@ public class ReservationCheckService{
 		
 		return result;
 	}
+
+	
+	
+	
+
+	/** 예약 취소 내역 조회 Service
+	 * @param requestNo
+	 * @return result
+	 * @throws Exception
+	 */
+	/*
+	 * public int reserveCancel(int requestNo) throws Exception{
+	 * 
+	 * Connection conn = getConnection();
+	 * 
+	 * int result = dao.reserveCancel(conn, requestNo);
+	 * 
+	 * if(result > 0) commit(conn); else rollback(conn);
+	 * 
+	 * close(conn);
+	 * 
+	 * return result; }
+	 */
 
 
 

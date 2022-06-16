@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
+import edu.kh.hotellala.member.model.vo.Member;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
 import edu.kh.hotellala.reservationCheck.model.service.ReservationCheckService;
 import edu.kh.hotellala.reservationCheck.model.vo.ReservationCheck;
@@ -33,53 +34,61 @@ public class ReservationCheckServlet extends HttpServlet{
 			HttpSession session = req.getSession();
 			
 			// 파라미터 변수 저장
-			String reserveDate = req.getParameter("reserveDate");
-			String dateRange = req.getParameter("dateRange");
+			String reserveDate = req.getParameter("reserveDate"); // 시작~종료 일
+			
+			String dateRange = req.getParameter("dateRange"); // n 박
 			
 			//reserveDate -> 체크인 날짜 - 체크아웃 날짜 자르기
-			Date checkIn = Date.valueOf( reserveDate.substring(0, 10) );
-			Date checkOut = Date.valueOf( reserveDate.substring(13, 23) );
+			Date checkIn = Date.valueOf( reserveDate.substring(0, 10) );      // 시작 일(2022-06-15)
+			Date checkOut = Date.valueOf( reserveDate.substring(13, 23) ); // 종료 일(2022-06-16)
 			
-			// VO
-			ReservationRequest reservation = new ReservationRequest();
 			
-			if(reservation != null) {
-				session.setAttribute("reservation", reservation);
+			System.out.println(checkIn);
+			System.out.println(checkOut);
+			
+			// 회원 번호
+			int memberNo = 0;
+		
+			if(session.getAttribute("loginMember") != null) {
+				
+				Member member = (Member)(session.getAttribute("loginMember"));
+				memberNo = member.getMemberNo();
+				
+				// VO
+				ReservationRequest reservation = new ReservationRequest();
+				
+				reservation.setMemberNo(memberNo);
+				
+				reservation.setReserveDate(reserveDate);
+				reservation.setDateRange(dateRange);
+				
+				reservation.setCheckIn(checkIn);
+				reservation.setCheckOut(checkOut);
+				
+				
+				if(reservation != null) {
+					session.setAttribute("reservation", reservation);
+				}
+				
+				
+				// Service
+				ReservationCheckService service = new ReservationCheckService();
+				
+
+				// 예약 조회
+				List<ReservationRequest> checkList = service.reservationCheck(reservation, checkIn, checkOut);
+				
+				
+				req.setAttribute("checkList", checkList);
+				
+				
+				//new Gson().toJson(checkList, resp.getWriter());
+				String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
+				req.getRequestDispatcher(path).forward(req, resp);
+				
 			}
 			
-			/*
-			주문번호(X)
-			회원번호
-			예약상태
-			체크인날짜
-			체크아웃날짜
-			객실종류
-			객실호수
-			-------
-			예약 테이블 모두 출력?
-			 */
-			reservation.setRequestNo(requestNo);
-			reservation.setMemberNo(memberNo);
-			reservation.setReservationFlags(reservationFlags);
-			reservation.setCheckIn(checkIn);
-			reservation.setCheckOut(checkOut);
-			reservation.setRoomType(roomType);
-			reservation.setRoomNo(roomNo);
 			
-			
-			
-			// Service
-			ReservationCheckService service = new ReservationCheckService();
-			
-
-			// 예약 조회
-			List<ReservationRequest> checkList = service.reservationCheck(reservation);
-			
-			
-			req.setAttribute("checkList", checkList);
-			
-			
-			new Gson().toJson(checkList, resp.getWriter());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
