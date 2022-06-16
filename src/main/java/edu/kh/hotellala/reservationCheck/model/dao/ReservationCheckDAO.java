@@ -71,7 +71,7 @@ public class ReservationCheckDAO {
 				reservation.setCheckIn(rs.getDate(3));
 				reservation.setCheckOut(rs.getDate(4));
 				reservation.setRoomNo(rs.getInt(5));
-				reservation.setFl(rs.getString(6));
+				//reservation.setFl(rs.getString(6));
 				
 				checkList.add(reservation);
 	
@@ -104,7 +104,6 @@ public class ReservationCheckDAO {
 			pstmt.setInt(1, refund.getPaymentNo());
 			pstmt.setString(2, refund.getRefundReason());
 			pstmt.setInt(3, refund.getMemberNo());
-			pstmt.setString(4, refund.getRequestNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -143,17 +142,13 @@ public class ReservationCheckDAO {
 				refund.setRefundDate(rs.getDate(3));
 				refund.setRefundNo(rs.getInt(4));
 				refund.setRefundReason(rs.getString(5));
-				
-				
-			}
-			
-			
+				refund.setRequestNo(rs.getString(6));
+			}	
 			
 		} finally {
 			close(pstmt);
 			close(rs);
-		}
-		
+		}		
 		return refundList;
 	}
 

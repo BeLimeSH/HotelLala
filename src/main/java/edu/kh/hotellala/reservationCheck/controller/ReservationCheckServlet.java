@@ -85,11 +85,8 @@ public class ReservationCheckServlet extends HttpServlet{
 					// 예약 조회
 					List<ReservationRequest> checkList = service.reservationCheck(reservation, checkIn, checkOut);
 					
-					
 					req.setAttribute("checkList", checkList);
 					
-					
-					//new Gson().toJson(checkList, resp.getWriter());
 					String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
 					req.getRequestDispatcher(path).forward(req, resp);
 				}
