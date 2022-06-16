@@ -57,16 +57,23 @@
                             <label>CURRENT PASSWORD*</label>
                             <input type="password" name="currentPw" id="currentPw"  maxlength="30">              
                         </div>
+                       
+                        <span class="signUp-message">현재 비밀번호를 입력해주세요.</span>
 
                         <div class="myPage-row">
                             <label>NEW PASSWORD*</label>
                             <input type="password" name="newPw" id="newPw" maxlength="30">              
                         </div>
+                      
+                        <span class="signUp-message" id="pwMessage1">영어,숫자,특수문자(!,@,#,-,_) 6~30글자 사이로 작성해주세요.</span>
 
                         <div class="myPage-row">
                             <label>CONFIRM PASSWORD*</label>
                             <input type="password" name="newPwConfirm" id="newPwConfirm" maxlength="30">              
                         </div>
+                        
+                        <span class="signUp-message" id="pwMessage2" style="display:block">새비밀번호와 일치하게 작성해주세요.</span>
+
 
                         <button id="info-update-btn">변경하기</button>
 
