@@ -63,7 +63,7 @@
     
             <a href="#" class="seconds_bar">
                 <i class="fa-solid fa-bars cursor"></i>
-                <p class="cursor">MENU</p>
+                <p class="cursor" >MENU</p>
             </a>
     
             <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>

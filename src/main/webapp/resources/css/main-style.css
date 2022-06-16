@@ -296,7 +296,10 @@ nav *{
     padding:0;
 }
 
-nav ul {list-style: none;}
+nav ul {
+	list-style: none;
+	margin-right: 37px;
+}
 
 nav a {
 	text-decoration: none;
@@ -370,6 +373,7 @@ nav .seconds p:nth-of-type(1){
 }
 
 nav .seconds a:nth-of-type(2){
+	margin-right: 15px;
     position: absolute;
     top: 35px;
     right: 157px;
