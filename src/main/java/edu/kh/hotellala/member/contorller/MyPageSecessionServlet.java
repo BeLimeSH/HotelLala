@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,7 +43,7 @@ public class MyPageSecessionServlet extends HttpServlet {
 			MemberService service = new MemberService();
 			
 			int result = service.secession(memberNo , memberPw);
-			System.out.println("step 2");
+		
 			
 			
 			String path= null; //리다이렉트
@@ -60,14 +61,25 @@ public class MyPageSecessionServlet extends HttpServlet {
 				
 				resp.sendRedirect(req.getContextPath());//최상위 주소 
 //				path= req.getContextPath(); // 메인페이지
+				
+				Cookie c = new Cookie("saveId", ""); // 쿠키 생성
+				c.setMaxAge(0); // 쿠키 수명
+				c.setPath(req.getContextPath()); // 쿠키 적용 경로
+				resp.addCookie(c); // 쿠키 클라이언트에 전송
+				
+				
 			}else { //실패 
 				session.setAttribute("message", "비밀번호를 다시 입력해주세요.");
 		
-				path=req.getContextPath()+"/member/myPage/secession";
 
-				resp.sendRedirect(req.getContextPath());
+
+				path="secession";
+				resp.sendRedirect(path);
+				
 			}
 			
+			
+	
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

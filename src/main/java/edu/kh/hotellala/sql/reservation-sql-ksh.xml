@@ -24,5 +24,27 @@
 	)
 	</entry>
 	
+	<!-- 옵션 주문 정보 삽입 -->
+	<entry key="insertOption">
+	INSERT INTO OPTION_ORDER VALUES(
+    OPTION_NO_SEQ.NEXTVAL, ?, ?, ?
+	)
+	</entry>
+	
+	<!-- 비어있는 객실 조회(예약 정보 삽입 시) -->
+	<entry key="checkEmptyRoom">
+	SELECT COUNT(*)
+	FROM RESERVATION
+	WHERE (CHECK_IN BETWEEN ? AND ?
+	OR CHECK_OUT BETWEEN ? AND ?)
+	AND ROOM_NO = ?
+	</entry>
+	
+	<!-- 예약 정보 삽입 -->
+	<entry key="insertReservation">
+	INSERT INTO RESERVATION VALUES(
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Y', ?
+	)
+	</entry>
 
 </properties>

@@ -16,7 +16,7 @@
            
            <li> 문의</li>
               
-           <li><a href="#">* 문의하기</a></li>
+          
            <li><a href="${contextPath}/menu/qnaCheck">* 내 문의 확인</a></li>
         
            

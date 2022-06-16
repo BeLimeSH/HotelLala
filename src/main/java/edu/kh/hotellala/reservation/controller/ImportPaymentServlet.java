@@ -39,27 +39,17 @@ public class ImportPaymentServlet extends HttpServlet {
 			payment.setRequestNo( reservation.getRequestNo() );
 			payment.setPayType(payType);
 			
-			System.out.println(reservation);
-			System.out.println(op);
-			System.out.println(payment);
+//			System.out.println(reservation);
+//			System.out.println(op);
+//			System.out.println(payment);
 			
 			int result = service.insertReservation( reservation, payment, op );
 			
-			
-			
 			resp.getWriter().print(result); //data
-			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-	
-	
-	
-	
 	}
 	
 	//결제 성공했을 때
@@ -68,7 +58,6 @@ public class ImportPaymentServlet extends HttpServlet {
 	//adultCount, childCount, extraBed -> 각각 OPTION_ORDER 테이블에 삽입 (Session에서 얻어오기)
 	
 	//payment(import에서 보내준 데이터) -> PAYMENT 테이블 삽입
-	
 	
 	// -> 결제 완료 페이지로 넘어감...
 	

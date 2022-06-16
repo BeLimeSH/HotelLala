@@ -51,6 +51,8 @@ public class LoginServlet extends HttpServlet{
 			
 			HttpSession session =req.getSession();
 			
+			String path=null;//리다이렉트 경로
+			
 			if(loginMember != null) { //로그인 성공 
 				
 				session.setAttribute("loginMember", loginMember );
@@ -84,11 +86,15 @@ public class LoginServlet extends HttpServlet{
 				//응답 객체를 이용해서 클라이언트로 전달 
 				resp.addCookie(c);
 				
+				
+				resp.sendRedirect(req.getContextPath());
+				
 			}else { // 로그인 실패 
 				session.setAttribute("message", "아이디와 비밀번호가 일치하지 않습니다.");
+				path="login";
+				resp.sendRedirect(path);
 			}
 			
-			resp.sendRedirect(req.getContextPath());
 			
 			
 		

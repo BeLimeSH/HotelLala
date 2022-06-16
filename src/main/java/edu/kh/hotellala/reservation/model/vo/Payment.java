@@ -15,8 +15,10 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Payment {
 	
+	//결제 수단, 객실 가격, 결제일, 결제 금액
+	
 	private int paymentNo;
-	private Date paymentDate;
+	private String paymentDate;
 	private int paymentAmount;
 	private char paymentFlags;
 	
@@ -24,5 +26,7 @@ public class Payment {
 	private String requestNo;
 	
 	private String payType;
+	
+	private int roomRates;
 
 }
