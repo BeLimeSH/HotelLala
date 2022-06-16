@@ -1,4 +1,12 @@
-
+/* 마이페이지 */
+.myPage-content{
+    
+    width: 100%;
+    /* height: 100%; */
+    margin:  50px 0;
+    display: flex;
+    
+}
 /* a태그 공통 설정 */
 .board-list a {
     text-decoration: none;
@@ -13,12 +21,12 @@
 /* 게시판 목록 화면 전체 영역 설정 */
 .board-list{
     width: 1000px;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 /* 게시판 이름 */
 .board-name{
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin-left: 30px;
 }
 
@@ -42,7 +50,7 @@
 
 .list-table>thead{
     background-color: #ddd;
-    color: white;
+    color: black;
 }
 
 .list-table tr{
