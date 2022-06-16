@@ -46,7 +46,7 @@ public class ReservationRequestDAO {
 	 * @return roomList
 	 * @throws Exception
 	 */
-	public List<RoomType> selectAvailableRoom(Connection conn, int headCount) throws Exception {
+	public List<RoomType> selectAvailableRoom(Connection conn, int headCount, ReservationRequest reservation) throws Exception {
 		
 		List<RoomType> roomList = new ArrayList<RoomType>();
 		
@@ -55,6 +55,10 @@ public class ReservationRequestDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, headCount);
+			pstmt.setDate(2, reservation.getCheckIn());
+			pstmt.setDate(3, reservation.getCheckOut());
+			pstmt.setDate(4, reservation.getCheckIn());
+			pstmt.setDate(5, reservation.getCheckOut());
 			
 			rs = pstmt.executeQuery();
 			

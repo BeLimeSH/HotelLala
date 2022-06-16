@@ -6,9 +6,16 @@
 	<!-- 인원 수에 따른 객실 조회 -->
 	<entry key="selectAvailableRoom">
 	SELECT ROOM_TYPE, ROOM_RATES, ROOM_THUMBNAIL
-	FROM ROOM_TB
+	FROM ROOM_TB T
 	WHERE MAX_NUM >= ?
+	AND (SELECT COUNT(*)
+    FROM RESERVATION R
+    WHERE (CHECK_IN BETWEEN ? AND ?
+    OR CHECK_OUT BETWEEN ? AND ?)
+    AND T.ROOM_TYPE = R.ROOM_TYPE) &lt; 3
 	</entry>
+	
+
 
 	<!-- 타입에 따른 객실 가격 조회 -->
 	<entry key="selectRates">

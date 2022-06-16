@@ -30,11 +30,8 @@ public class ReservationRequestService {
 		// 인원 수 세팅
 		int headCount = reservation.getAdultCount() + reservation.getChildCount();
 		
-		//인원수 조건에 맞는 roomList
-		List<RoomType> roomList = dao.selectAvailableRoom(conn, headCount);
-		
-		
-		// 객실 타입 받아와서 날짜 + 객실 호수(객실 타입으로 switch로 지정)를 where절 조건에 넣어서 조회되는 수 카운트 하기
+		//조건에 맞는 roomList
+		List<RoomType> roomList = dao.selectAvailableRoom(conn, headCount, reservation);
 		
 		close(conn);
 		
@@ -75,8 +72,6 @@ public class ReservationRequestService {
 		String roomType = reservation.getRoomType();
 		String no = "10";
 		
-		System.out.println(roomType);
-		
 		//예약 -> 날짜 사이에 있는 룸 넘버 조회해봐야 함 + extraRequest가 null? !null?
 		switch(roomType) {
 		
@@ -104,8 +99,6 @@ public class ReservationRequestService {
 				break;
 			}
 		}
-		
-		System.out.println(roomNo);
 		
 		//예약 정보 삽입
 		result = dao.insertReservation(conn, reservation, roomNo);

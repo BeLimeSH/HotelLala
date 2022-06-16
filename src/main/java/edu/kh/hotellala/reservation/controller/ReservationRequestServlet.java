@@ -35,20 +35,15 @@ public class ReservationRequestServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		//남는 객실 조회
+		//이용가능한 객실 조회
 		
-		//객실 + 날짜 값 입력받아오기 --> 추가 예정
-		//2022/06/12 - 2022/06/13
-		
+		//객실 + 날짜 값 입력받아오기
 		//ajax의 data로 파라미터 값을 얻어오고
 		//얻어온 파라미터 값을 세션에 저장!!
 		
 		try{
 			//Session 객체 얻어오기
 			HttpSession session = req.getSession();
-			
-			//1시간 후 만료 -> 로그인에 있으면 빼도 될것
-//			session.setMaxInactiveInterval(3600);
 			
 			//memberNo 얻어오기
 			int memberNo = 0;
@@ -86,8 +81,6 @@ public class ReservationRequestServlet extends HttpServlet {
 			reservation.setAdultCount(adultCount);
 			reservation.setChildCount(childCount);
 		
-//			System.out.println(reservation);
-			
 			if(reservation != null) {
 				session.setAttribute("reservation", reservation);
 			}
@@ -97,8 +90,6 @@ public class ReservationRequestServlet extends HttpServlet {
 			
 			//객실 조회하기
 			List<RoomType> roomList = service.selectAvailableRoom(reservation);
-			
-//			System.out.println(roomList);
 			
 			req.setAttribute("roomList", roomList);
 			
@@ -116,8 +107,6 @@ public class ReservationRequestServlet extends HttpServlet {
 
 		LocalDateTime time = LocalDateTime.now();
 		String timeSet = time.format( DateTimeFormatter.ofPattern("yyyyMMddHHmmss") );
-		
-//		System.out.println("timeSet : " + timeSet);
 		
 		//0~9 난수 생성
 		int random = (int)(Math.random() * 10);
