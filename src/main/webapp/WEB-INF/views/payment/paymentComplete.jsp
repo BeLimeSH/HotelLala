@@ -20,8 +20,8 @@
 <body>
 
     <!-- 헤더 비슷한 거 -->
-    <a href="${contextPath}" class="logo-img">
-        <img src="${contextPath}/resources/images/logo/logo-black.png" class="logo-img" alt="logo">
+    <a href="${contextPath}">
+        <img src="${contextPath}/resources/images/logo/logo-black.png" class="hotelLogo" alt="logo">
     </a>
 
     <!-- nav -->
@@ -138,7 +138,7 @@
                 <!-- 버튼 -->
                 <section class="result-btn-area">
                     <button onclick="location.href = '${contextPath}'">메인페이지로</button>
-                    <button>예약 내역 확인</button>
+                    <button onclick="location.href = '${contextPath}/reservation/check'">예약 내역 확인</button>
                 </section>
             </section>
         </section>

@@ -21,7 +21,7 @@
 
     <!-- 헤더 비슷한 거 -->
     <a href="${contextPath}">
-        <img src="${contextPath}/resources/images/logo/logo-black.png" class="logo-img" alt="logo">
+        <img src="${contextPath}/resources/images/logo/logo-black.png" class="hotelLogo" alt="logo">
     </a>
 
     <!-- nav -->

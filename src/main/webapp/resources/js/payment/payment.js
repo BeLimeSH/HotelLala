@@ -21,7 +21,7 @@ for(let i=0; i<3; i++) {
 
         if(payOption[i].checked){
             payOption[i].previousElementSibling.style.backgroundColor = "white";
-            payOption[i].previousElementSibling.style.color = "#ff7E5F";
+            payOption[i].previousElementSibling.style.color = "rgb(237, 87, 60)";
             
             payMethod = payOption[i].value;
             // console.log(payMethod);
@@ -30,7 +30,7 @@ for(let i=0; i<3; i++) {
     
     payOptionBox.addEventListener("click", function(){
         if(!payOption[i].checked) {
-            payOption[i].previousElementSibling.style.backgroundColor = "#ff7E5F";
+            payOption[i].previousElementSibling.style.backgroundColor = "rgb(237, 87, 60)";
             payOption[i].previousElementSibling.style.color = "white";
         }
     });

@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="resources/css/main-style.css" type="text/css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
-
     
     <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
 </head>
@@ -83,9 +82,23 @@
                     
                     <!-- 사진 슬라이드 -->
                     <div id="slideShow">
-                        <button><i class="fa-solid fa-chevron-left"></i></button>
-                        <img src="resources/images/main/hall.jpg" alt="호텔사진">
-                        <button><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="back">
+                            <div class="i_1">
+                                <img src="resources/images/main/beach.jpg">
+                            </div>
+                            <div class="i_2">
+                                <img src="resources/images/main/party.jpg" >
+                            </div>
+                            <div class="i_3">
+                                <img src="resources/images/main/restaurant.jpg" >
+                            </div>
+                            <div class="i_4">
+                                <img src="resources/images/main/restaurant2.jpg">
+                            </div>
+                            <div class="i_5">
+                                <img src="resources/images/main/swimming-pool.jpg">
+                            </div>
+                        </div>
                     </div>
                 </article>
 
