@@ -12,7 +12,12 @@
 
            <li>예약확인</li>
               
-           <li><a href="#">*객실 예약</a></li>
+           <li><a href="${contextPath}/reservation/check">*객실 예약 조회</a></li>
+           
+           <li> 문의</li>
+              
+           <li><a href="#">* 문의하기</a></li>
+           <li><a href="${contextPath}/menu/qnaCheck">* 내 문의 확인</a></li>
         
            
            <li>개인정보관리</li>
