@@ -5,31 +5,31 @@
     
     <div class="name">
         <a href="${contextPath}/member/myPage/info">
-            <em class="nm">${loginMember.memberName} 님</em>
+            <strong class="nm">${loginMember.memberName} 님</strong>
         </a>
     </div>
     <ul class="list-group">
 
-           <li>예약확인</li>
+           <li class="bottom">예약확인</li>
               
-           <li><a href="${contextPath}/reservation/check">*객실 예약 조회</a></li>
+           <li class="margin"><a href="${contextPath}/reservation/check">객실 예약 조회</a></li>
            
-           <li> 문의</li>
+           <li class="bottom"> 문의</li>
               
           
-           <li><a href="${contextPath}/menu/qnaCheck">* 내 문의 확인</a></li>
+           <li class="margin"><a href="${contextPath}/menu/qnaCheck"> 내 문의 확인</a></li>
         
            
-           <li>개인정보관리</li>
+           <li class="bottom">개인정보관리</li>
           
-           <li><a href="${contextPath}/member/myPage/info">*개인정보수정</a></li>
+           <li class="margin"><a href="${contextPath}/member/myPage/info">개인정보수정</a></li>
            
            <!-- /hotellala/member/myPage/changePw-->
-           <li><a href="${contextPath}/member/myPage/changePw">*비밀번호 변경</a></li>
-           <li><a href="${contextPath}/member/myPage/secession">*회원탈퇴</a></li>
+           <li class="margin"><a href="${contextPath}/member/myPage/changePw">비밀번호 변경</a></li>
+           <li class="margin"><a href="${contextPath}/member/myPage/secession">회원탈퇴</a></li>
                
            
-           <li><a href="${contextPath}/member/logout">로그아웃</a></li>
+           <li class="margin"><a href="${contextPath}/member/logout">로그아웃</a></li>
            
 
        </ul>
