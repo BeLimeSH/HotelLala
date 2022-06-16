@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 
     <title>객실 상세보기</title>
 
@@ -29,19 +30,19 @@
                 <div class="swiper-wrapper">
                     <!-- <div class="swiper-slide">내용</div> 를 추가하면된다 -->
                     <div class="swiper-slide">
-                        <img src="${contextPath}/resources/images/room/Single/single0.jpg">
+                        <img src="${contextPath}${roomBoard.imageOne}">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="${contextPath}/resources/images/room/Single/single1.jpg">
+                        <img src="${contextPath}${roomBoard.imageTwo}">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="${contextPath}/resources/images/room/Single/single2.jpg">
+                        <img src="${contextPath}${roomBoard.imageThree}">
                     </div>
                     
                     <div class="swiper-slide">
-                        <img src="${contextPath}/resources/images/room/Single/single3.jpg">
+                        <img src="${contextPath}${roomBoard.imageFour}">
                     </div>
                     
                 </div>
@@ -61,9 +62,7 @@
                 <!-- 객실 정보 -->
                 <div>
                     <!-- 객실 소개 -->
-                    <div id="roomInfo">
-                        호텔에서 기본적으로 제공하는 객실로서 아늑한 분위기의 인테리어로 편안한 휴식을 원하는 고객들에게 인기가 있는 객실입니다.
-                    </div>
+                    <div id="roomInfo">${roomBoard.roomInfo}</div>
 
                     <div class="wifiMessage">모든 객실과 레스토랑에서 유ㆍ무선 인터넷(wi-fi) 연결 가능합니다.</div>
 
@@ -74,7 +73,7 @@
                         <ul>
                             <li>
                                 <span>위치</span>
-                                <span>2 ~ 7층</span>
+                                <span>${roomBoard.roomFloor}</span>
                             </li>
                             
                             <li>
@@ -84,16 +83,16 @@
 
                             <li>
                                 <span>침대 타입</span>
-                                <span>더블, 트윈</span>
+                                <span>${roomBoard.bedType}</span>
                             </li>
                             <li>
                                 <span>방 크기</span>
-                                <span>30 ㎡</span>
+                                <span>${roomBoard.roomSize}</span>
                             </li>
 
                             <li>
                                 <span>기준 인원</span>
-                                <span>2인(최대 3인)</span>
+                                <span>${roomBoard.standardNumber}</span>
                             </li>
 
                         </ul>

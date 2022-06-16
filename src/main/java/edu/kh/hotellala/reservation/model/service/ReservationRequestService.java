@@ -10,6 +10,7 @@ import edu.kh.hotellala.reservation.model.dao.ReservationRequestDAO;
 import edu.kh.hotellala.reservation.model.vo.OptionCount;
 import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.ReservationRequest;
+import edu.kh.hotellala.reservation.model.vo.RoomBoard;
 import edu.kh.hotellala.reservation.model.vo.RoomType;
 
 public class ReservationRequestService {
@@ -159,5 +160,20 @@ public class ReservationRequestService {
 		return payment;
 	}
 
-
+	/**
+	 * 객실 상세 조회 Service
+	 * @param type
+	 * @return roomBoard
+	 * @throws Exception
+	 */
+	public RoomBoard selectRoomDetail(String type) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		RoomBoard roomBoard = dao.selectRoomDetail(conn, type);
+		
+		close(conn);
+		
+		return roomBoard;
+	}
 }
