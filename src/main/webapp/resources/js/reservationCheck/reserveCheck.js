@@ -1,4 +1,4 @@
-// 예약 조회(ajax)
+/*// 예약 조회(ajax)
 function reserveCheck(){
 	
 	$.ajax({
@@ -31,9 +31,7 @@ function reserveCheck(){
 				// 객실호수
 				const roomNo = document.createElement("td");
                 roomNo.innerText = reserve.roomNo; 
-				
-				/* ----------------------------------------------------- */
-				
+								
 				// 로그인한 회원번호와 예약 시 회원번호가 같을 시
 				if( loginMemberNo ==  reserve.memberNo ){
 					
@@ -63,24 +61,25 @@ function reserveCheck(){
 	});
 	
 }
+*/
 
 
 // 예약 취소
-(function(){
-    const cancelBtn = document.getElementById("cancelBtn");
+// (function(){
+//     const cancelBtn = document.getElementById("cancelBtn");
 
-    if(cancelBtn != null){
+//     if(cancelBtn != null){
 
-        cancelBtn.addEventListener("click", function(){
+//         cancelBtn.addEventListener("click", function(){
 
-            let url = "reservationCheck/cancel"; // 상대경로
+//             let url = "reservationCheck/cancel"; // 상대경로
 
-            if( confirm("정말로 삭제 하시겠습니까?") ){
-                location.href = url; // get방식으로 url에 요청
-            }
+//             if( confirm("예약을 취소 하시겠습니까?") ){
+//                 location.href = url; // get방식으로 url에 요청
+//             }
 
-        });
+//         });
 
-    }
+//     }
 
-})();
+// })();

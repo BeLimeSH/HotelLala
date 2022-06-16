@@ -16,9 +16,9 @@
 <body>
     <div class="container">
         <div class="logo">
-	        <a href="${contextPath}">
-				<img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
-	        </a>
+           <a href="${contextPath}">
+            <img class="logo-img" src="${contextPath}/resources/images/logo/logo-black.png" alt="logo">
+           </a>
         </div>
         
         <section class="signUp-content">
@@ -166,8 +166,8 @@
 
       <jsp:include page="/WEB-INF/views/common/nav.jsp"/>
         <%--   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>--%>
- 	
- 	<div>
+    
+    <div>
  
 
     </div>
@@ -177,9 +177,9 @@
         </script>
         <c:remove var="message" scope="session"/>
     </c:if>
-	
+   
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
     <script src="${contextPath}/resources/js/member/signUp.js"></script>
 </body>
