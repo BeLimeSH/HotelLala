@@ -104,7 +104,7 @@ public class ReservationCheckDAO {
 			pstmt.setInt(1, refund.getPaymentNo());
 			pstmt.setString(2, refund.getRefundReason());
 			pstmt.setInt(3, refund.getMemberNo());
-			
+			pstmt.setString(4, refund.getRequestNo());
 			
 			result = pstmt.executeUpdate();
 			
