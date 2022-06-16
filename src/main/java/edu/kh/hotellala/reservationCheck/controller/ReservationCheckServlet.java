@@ -99,7 +99,11 @@ public class ReservationCheckServlet extends HttpServlet{
 			if(command.equals("cancelRequest")) {
 				
 				String refundNo = req.getParameter("refundNo");
-				String requestNo = req.getParameter("requestNo");
+				//String requestNo = req.getParameter("requestNo");
+				
+				ReservationRequest reservation = new ReservationRequest();
+				String requestNo =  reservation.getRequestNo();
+						
 				String refundReason = req.getParameter("refundReason");
 		
 				Member member = (Member)(session.getAttribute("loginMember"));
