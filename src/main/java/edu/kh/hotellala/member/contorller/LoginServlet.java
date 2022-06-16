@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 페이지로 forward
-		String path ="/WEB-INF/views/member/login1.jsp";
+		String path ="/WEB-INF/views/member/login.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 
 	}
