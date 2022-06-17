@@ -29,6 +29,7 @@ public class ReservationCheckServlet extends HttpServlet{
 			
 			String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
 			req.getRequestDispatcher(path).forward(req, resp);
+
 	}
 	
 	@Override
@@ -85,11 +86,8 @@ public class ReservationCheckServlet extends HttpServlet{
 					// 예약 조회
 					List<ReservationRequest> checkList = service.reservationCheck(reservation, checkIn, checkOut);
 					
-					
 					req.setAttribute("checkList", checkList);
 					
-					
-					//new Gson().toJson(checkList, resp.getWriter());
 					String path = "/WEB-INF/views/reservationCheck/reservationCheck.jsp";
 					req.getRequestDispatcher(path).forward(req, resp);
 				}
@@ -102,7 +100,11 @@ public class ReservationCheckServlet extends HttpServlet{
 			if(command.equals("cancelRequest")) {
 				
 				String refundNo = req.getParameter("refundNo");
-				String requestNo = req.getParameter("requestNo");
+				//String requestNo = req.getParameter("requestNo");
+				
+				ReservationRequest reservation = new ReservationRequest();
+				String requestNo =  reservation.getRequestNo();
+						
 				String refundReason = req.getParameter("refundReason");
 		
 				Member member = (Member)(session.getAttribute("loginMember"));
@@ -118,6 +120,10 @@ public class ReservationCheckServlet extends HttpServlet{
 					refund.setRequestNo(requestNo);
 					refund.setRefundReason(refundReason);
 					refund.setMemberNo(memberNo);
+					
+					if(refund != null) {
+						session.setAttribute("refund", refund);
+					}
 					
 					// Service
 					int result = service.insertRefund(refund);
@@ -172,3 +178,5 @@ public class ReservationCheckServlet extends HttpServlet{
 		}
 	}
 }
+
+

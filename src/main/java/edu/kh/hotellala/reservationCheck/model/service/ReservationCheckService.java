@@ -63,28 +63,14 @@ public class ReservationCheckService{
 
 
 
-//	/** 예약 취소 내역(환불 내역) 조회 Service
-//	 * @param refund 
-//	 * @param refundReason
-//	 * @return cancelCheckList
-//	 * @throws Exception
-//	 */
-//	public List<Refund> reservationCancelCheck(Refund refund, String refundReason) throws Exception{
-//		
-//		Connection conn = getConnection(); 
-//		
-//		int memberNo = refund.getMemberNo();
-//		int paymentNo = refund.getPaymentNo();
-//		
-//		List<Refund> cancelCheckList = dao.reservationCancelCheck(conn, paymentNo, memberNo, refundReason);
-//		
-//		close(conn);
-//		
-//		return cancelCheckList;
-//	}
 
 
-
+	/**
+	 * @param refund
+	 * @param requestNo 
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Refund> refundCheck(Refund refund) throws Exception{
 		
 		Connection conn = getConnection(); 
@@ -97,6 +83,8 @@ public class ReservationCheckService{
 		
 		return refundList;
 	}
+
+
 
 
 	
