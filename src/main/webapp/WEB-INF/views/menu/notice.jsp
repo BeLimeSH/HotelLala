@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
     
-    <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/qna2.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/notice.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     

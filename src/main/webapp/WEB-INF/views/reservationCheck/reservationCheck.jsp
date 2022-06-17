@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css" type="text/css">
 <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
-<link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+<link rel="stylesheet" href="${contextPath}/resources/css/common/common-style1.css">
 
 <!-- 예약 조회 탭 스타일 -->
 <link rel="stylesheet" href="${contextPath}/resources/css/reservation-Check.css" type="text/css">
