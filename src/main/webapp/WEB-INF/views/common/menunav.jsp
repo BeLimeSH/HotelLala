@@ -64,8 +64,8 @@
                 <p class="cursor" style=color:black;>MENU</p>
             </a>
     
-            <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
-            <a href="notice.html"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
+            <a href="${contextPath}/reservation/date"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>
+            <a href="${contextPath}/menu/notice"><div class="menu-btn-title02 cursor-hover">공지사항</div></a>
         </div>
 
     </nav>
