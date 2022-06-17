@@ -13,7 +13,7 @@
     <title>마이페이지(개인정보수정)</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/member/myPage-style.css">
     <link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
-    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style1.css">
 
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
 </head>

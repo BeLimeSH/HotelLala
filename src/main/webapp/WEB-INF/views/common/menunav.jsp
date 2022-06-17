@@ -8,37 +8,48 @@
             <a href="#" class="first_bar">
                 <i class="fa-solid fa-x cursor"></i>
                 <p class="cursor">close</p>
-            <a href="${contextPath}/login"><p class="login cursor">Login</p></a>
-            <a href="${contextPath}/signUp"><p class="signup cursor">signUp</p></a>
+           <c:if test="${empty sessionScope.loginMember}">
+
+    		<a href="${contextPath}/member/logout"><p class="login cursor">Login</p></a>
+            <a href="${contextPath}/member/myPage/info"><p class="signup cursor">signUp</p></a>
+
+            </c:if>
+
+            <c:if test="${!empty sessionScope.loginMember}">
+            
+                    <a href="${contextPath}/member/logout">Logout</a>
+                    <a href="${contextPath}/member/myPage/info">마이페이지</a>
+           
+            </c:if>
                 
     
             <div class="nav_bar">
     
                 <ul class="list1">
                     <h4>Contact</h4>
-                    <li><a href="notice">공지사항</a></li>
-                    <li><a href="qna">Q&A</a></li>
-                    <li><a href="faq">FAQ</a></li>
+                    <li><a href="${contextPath}/menu/notice">공지사항</a></li>
+                    <li><a href="${contextPath}/menu/qna">Q&A</a></li>
+                    <li><a href="${contextPath}/menu/faq">FAQ</a></li>
                 </ul>
     
                 <br><br>
     
                 <ul class="list2">
                     <h4>Location</h4>
-                    <li><a href="location">오시는 길</a></li>
-                    <li><a href="room">호텔라라 소개</a></li>
+                    <li><a href="${contextPath}/menu/location">오시는 길</a></li>
+                	<!--  <li><a href="${contextPath}/menu/room">호텔라라 소개</a></li>--> 
                 </ul>
     
                 <br><br><br>
     
                 <ul class="list3">
-                    <h1><a href="#" class="white">예약하기</a></h1>
+                    <h1><a href="${contextPath}/reservation/date" class="white">예약하기</a></h1>
                 </ul>
                 
                 <br>
     
                 <ul class="list3">
-                    <h1><a href="#" class="white">예약확인</a></h1>
+                    <h1><a href="${contextPath}/reservation/check" class="white">예약확인</a></h1>
                 </ul>
                 
                 <br>
@@ -50,7 +61,7 @@
     
             <a href="#" class="seconds_bar">
                 <i class="fa-solid fa-bars cursor"></i>
-                <p class="cursor">MENU</p>
+                <p class="cursor" style=color:black;>MENU</p>
             </a>
     
             <a href="#"><div class="menu-btn-title01 cursor-horver">예약하기</div></a>

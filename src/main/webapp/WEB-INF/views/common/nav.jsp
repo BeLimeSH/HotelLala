@@ -39,7 +39,7 @@
                 <ul class="list2">
                     <h4>Location</h4>
                     <li><a href="${contextPath}/menu/location">오시는 길</a></li>
-                    <li><a href="${contextPath}/menu/room">호텔라라 소개</a></li>
+                 <!--    <li><a href="${contextPath}/menu/room">호텔라라 소개</a></li> -->
                 </ul>
     
                 <br><br><br>
@@ -51,7 +51,7 @@
                 <br>
     
                 <ul class="list3">
-                    <h1><a href="#" class="white">예약확인</a></h1>
+                    <h1><a href="${contextPath}/reservation/check" class="white">예약확인</a></h1>
                 </ul>
                 
                 <br>

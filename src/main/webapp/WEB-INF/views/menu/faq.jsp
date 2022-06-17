@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
-    <link rel="stylesheet" href="${contextPath}/resources/css/qna.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/qna2.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/faq.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
     <script src="https://kit.fontawesome.com/243327ab3a.js" crossorigin="anonymous"></script>
