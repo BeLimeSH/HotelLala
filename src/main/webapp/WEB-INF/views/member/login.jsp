@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
     
-    <link rel="stylesheet" href="resources/css/qna.css">
+    <link rel="stylesheet" href="resources/css/qna2.css">
     <link rel="stylesheet" href="resources/css/notice.css">
     <link rel="stylesheet" href="resources/css/login.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/common/common-style.css">
@@ -66,7 +66,7 @@
                     </span>
                     <button type="submit" class="loginBtn">로그인</button>
                     <div class="loginLink">
-                        <a href="signup.html">회원가입</a>
+                        <a href="signUp">회원가입</a>
                         <a href="">아이디/비밀번호 찾기</a>
                     </div>
                 </div>

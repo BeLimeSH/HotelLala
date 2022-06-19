@@ -161,10 +161,6 @@ function cancelReserve(memberNo){
     
     if( confirm("예약을 취소 하시겠습니까?") ){
 
-        // 요청주소 : /hotellala/reservation/check
-        // 파라미터 : key : "replyNo", value : 매개변수 replyNo
-        // 전달방식 : "GET"
-
         $.ajax({
             url : contextPath + "/reservation/cancel",
             data : {"memberNo" : memberNo},

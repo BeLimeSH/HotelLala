@@ -99,9 +99,6 @@ nav .seconds a:nth-of-type(2){
 .list1{
     margin-left: -38px;
 }
-.list2{
-	margin-right: 28px;
-}
 nav .seconds a:nth-of-type(3){
     position: absolute;
     top: 35px;
@@ -182,6 +179,7 @@ nav .fa-bars{
 }
 
 nav .third p{
+	color:black;
     position:absolute;
     top:121px;
     right:32px;
