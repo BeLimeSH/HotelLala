@@ -8,7 +8,6 @@ nextYear.setDate(today.getDate() + 365);
 const dateRange = document.getElementById("dateRange");
 
 //datepicker
-//날짜 선택 페이지, 객실 선택 페이지에서의 동작이 다름 -> if문으로 처리
 
 $(function() {
     $('#reserve-datepicker').daterangepicker({
@@ -53,7 +52,7 @@ $(function() {
         "maxDate": nextYear,
         "opens": "right"
     }, function(start, end, label) {
-        console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        // console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         
         let startDate = new Date(start.format('YYYY-MM-DD'));
         let endDate = new Date(end.format('YYYY-MM-DD'));
