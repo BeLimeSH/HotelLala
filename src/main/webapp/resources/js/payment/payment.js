@@ -46,7 +46,7 @@ iamportPayment.addEventListener("click", function(){
         return;
     }
     
-    var IMP = window.IMP;
+    let IMP = window.IMP;
     IMP.init("imp33404182");
     
     //IMP.request_pay(param, callback) 결제창 호출
@@ -63,11 +63,7 @@ iamportPayment.addEventListener("click", function(){
             jQuery.ajax({
                 url: contextPath + "/reservation/impay", //import 서블릿 /reservation/impay
                 method: "POST",
-                // headers: { "Content-Type": "application/json" },
                 data: {
-                    // imp_uid: rsp.imp_uid,
-                    // merchant_uid: rsp.merchant_uid,
-                    // "requestNo": rsp.merchant_uid,
                     "amount" : amount,
                     "payType" : payMethod
                 }

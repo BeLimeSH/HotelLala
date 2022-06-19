@@ -3,7 +3,7 @@
 <properties>
 	<comment>reservation-sql-ksh.xml</comment>
 
-	<!-- 인원 수에 따른 객실 조회 -->
+	<!-- 인원 수 + 객실 수에 따른 객실 조회 -->
 	<entry key="selectAvailableRoom">
 	SELECT ROOM_TYPE, ROOM_RATES, ROOM_THUMBNAIL
 	FROM ROOM_TB T
