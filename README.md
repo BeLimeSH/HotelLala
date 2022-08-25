@@ -1,6 +1,6 @@
 # Semi Project(HotelLala)
 
-<img src="" width="250px">
+<img src="https://user-images.githubusercontent.com/106005368/186703743-865935a7-c638-4f43-be48-c09bacaa078e.png" width="250px">
 
 <br>
 
@@ -12,6 +12,7 @@
 
 ## DB 설계
 
+![세미프로젝트](https://user-images.githubusercontent.com/106005368/186703162-68ce6062-3e7c-4b1c-9da3-61219762945c.png)
 
 <br>
 
@@ -44,6 +45,3 @@
 * 메인 페이지
 
 * 호텔 예약 및 결제 기능
-
-
-
