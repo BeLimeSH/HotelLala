@@ -1,8 +1,5 @@
 # Semi Project(HotelLala)
-
-<img src="https://user-images.githubusercontent.com/106005368/186703743-865935a7-c638-4f43-be48-c09bacaa078e.png" width="250px">
-
-<br>
+![image](https://user-images.githubusercontent.com/106005368/186708969-9a28298c-1faf-40c8-9fc6-6c29ada596ea.png)
 
 ## 프로젝트 소개
 
